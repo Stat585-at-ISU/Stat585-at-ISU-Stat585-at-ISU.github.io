@@ -10,6 +10,6 @@ extramd <- list.files("blog-2023", "(LICENSE|README).md", full.names = T, recurs
 unlink(extramd)
 
 # Remove other unnecessary files
-otherfilepat <- "(create-file\\.png|\\.DS_Store|gitignore|Rproj)"
+otherfilepat <- "(create-file\\.png|\\.DS_Store|gitignore|Rproj|\\.bak)"
 otherfiles <- list.files("blog-2023", otherfilepat, full.names = T, recursive = T)
 unlink(otherfiles)
