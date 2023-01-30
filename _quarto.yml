@@ -9,8 +9,6 @@ website:
         text: Home
       - href: schedule.html
         text: Schedule
-      - href: labs.qmd
-        text: Labs
       - href: blog.qmd
         text: Blog
       - href: projects.qmd
