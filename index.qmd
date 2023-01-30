@@ -30,5 +30,7 @@ Not all data lives in nice, clean spreadsheets, not all data fits in a computer'
 
 ## More info...
 Use the navigation bar above!
-The course organization on GitHub: https://github.com/stat585-at-ISU
-Repo that creates this website: https://github.com/Stat585-at-ISU/Stat585-at-ISU.github.io
+
+The course organization on GitHub: [https://github.com/stat585-at-ISU](https://github.com/stat585-at-ISU)
+
+Repo that creates this website: [https://github.com/Stat585-at-ISU/Stat585-at-ISU.github.io](https://github.com/Stat585-at-ISU/Stat585-at-ISU.github.io)
