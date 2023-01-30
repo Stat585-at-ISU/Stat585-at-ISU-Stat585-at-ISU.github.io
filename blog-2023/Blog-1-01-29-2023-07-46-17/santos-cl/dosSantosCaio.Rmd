@@ -1,0 +1,71 @@
+---
+author: Caio dos Santos
+date: 2023-01-26
+category: "Asking Good Questions"
+title: Asking Good Questions
+---
+
+## THE POST
+
+### [Calculate distance between latitude and longitude points?](https://stackoverflow.com/questions/75228511/calculate-distance-between-latitude-and-longitude-points/75228753#75228753)
+
+It seemed like the Stack Overflow user [Jamie](https://stackoverflow.com/users/20152268/jamie) was having some trouble calculating the distance between a hospital in Fresno, CA (119.85 °W, 36.84° N) and the home location of several patients.
+
+Jamie had a data frame with the geographical coordinates of city in which the hospital patients lived and wanted to calculate the geographical distance that each patient traveled.
+
+Jamie provided the geographical coordinates of the hospital
+
+```{r eval=FALSE}
+Latitude: 36.840
+
+Longitude: -119.850
+```
+
+In addition, Jamie also provided the an example data frame
+
+```{r eval=FALSE}
+structure(list(major_city = c("Mountain View", "Watsonville", "Honolulu", "Los Altos", "Morgan Hill", "Fulton", "Oak Grove", "Port Kent", "Bedford", "San Jose"), 
+
+latitude = c(37.39, 36.9, 21.31, 37.36, 37.1, 43.3, 36.69, 44.526, NA, 37.27),
+
+longitude = c(-122.07, -121.7, -157.85, -122.15, -121.7, -76.4, -87.44, -73.409, NA, -121.84)), 
+row.names = c(NA, -10L), class = c("data.table", "data.frame"), 
+.internal.selfref = <pointer: 0x7f98af80bae0>, index = integer(0))
+
+```
+
+I provided an answer using the *apply* function. The idea was to apply a function rowwise which returned the distance from the hospital to the home location of each patient.
+
+```{r, eval=FALSE}
+df <- data.frame(major_city = c("Mountain View","Watsonville", "Honolulu", "Los Altos", "Morgan Hill", "Fulton", "Oak Grove", "Port Kent", "Bedford", "San Jose"),
+                 latitude = c(37.39, 36.9, 21.31, 37.36, 37.1, 43.3, 36.69, 44.526, NA, 37.27),
+                 longitude = c(-122.07, -121.7, -157.85, -122.15, -121.7, -76.4, -87.44, -73.409, NA, -121.84))
+
+df$distance_m <- apply(df, MARGIN = 1, function(x) {
+  geosphere::distGeo(as.numeric(c(x['longitude'], x['latitude'])),
+                     c(-119.85, 36.84)) 
+  })
+
+df$distance_km <- df$distance_m / 1000
+
+```
+
+The ouput provided the distance for all rows in the data frame
+
+```{r, eval=FALSE}
+      major_city latitude longitude distance_m distance_km
+1  Mountain View   37.390  -122.070   206527.4    206.5274
+2    Watsonville   36.900  -121.700   165083.2    165.0832
+3       Honolulu   21.310  -157.850  4045683.3   4045.6833
+4      Los Altos   37.360  -122.150   212440.1    212.4401
+5    Morgan Hill   37.100  -121.700   167241.2    167.2412
+6         Fulton   43.300   -76.400  3731976.3   3731.9763
+7      Oak Grove   36.690   -87.440  2879678.0   2879.6780
+8      Port Kent   44.526   -73.409  3962114.4   3962.1144
+9        Bedford       NA        NA         NA          NA
+10      San Jose   37.270  -121.840   183321.3    183.3213
+```
+
+## MY EXPERIENCE
+
+This was my first time answering questions on Stack Overflow. This question in specific was good because the poster provided a minimal reproducible example. When I was looking for questions to answer, I saw several questions that could not be answered because they did not provide examples. Overall, it was a pleasant experience, being able to provide answers to a community that has greatly helped me when I taking my first steps towards learning R.

@@ -1,0 +1,10 @@
+---
+author: Ian Parzyszek
+date: 2023-01-26
+category: "Asking Good Questions"
+title: Asking Good Questions
+---
+
+https://stackoverflow.com/questions/75254510/using-dplyr-correctly-to-combine-shared-values-of-a-row-to-a-new-column-of-a-tab/75254534#75254534
+
+It would have been nice if this individual had included some code or an example they wanted to have answered. I was not 100% confident on what this person was asking, but if I interpreted it correctly it should give them a good start. 

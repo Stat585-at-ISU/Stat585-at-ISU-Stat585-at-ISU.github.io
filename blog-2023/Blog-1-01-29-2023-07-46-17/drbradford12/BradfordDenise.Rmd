@@ -1,0 +1,35 @@
+---
+author: Denise Bradford
+date: 2023-01-26
+category: "Asking Good Questions"
+title: Asking Good Questions
+---
+
+[R Help Community Question]( https://community.rstudio.com/t/make-ui-inputs-that-dynamically-update-with-each-other/158270?u=drb1112)
+
+**The actual question from R Help Community:**
+Make dynamic inputs related to each other?
+
+Im trying to make an application, and one functionality I would like is to have inputs that dynamically update each other!
+
+to explain this a bit further, I would like to have a functionality where you can have a raw value, a percentile, and a letter grade, and that all 3 show up on the original page of inputs!
+
+so when you put in the input for the raw value, it will show the letter grade and the percentile on that same page dynamically, and when you put in the percentile it will update the raw value and letter grade on that page
+
+ideally I could do this with the grade as well (so an A will correspond to a 93rd percentile value, an A- to a 90th percentile value, and putting that in, in a dropdown sense, would update the Raw value and letter grade on the same page to those corresponding values)
+
+just wondering how I could go about this?!
+
+
+**My answer**
+My response could be much clearer if I made an example for every possible outcome of using the UI Dynamically but the previous response linked to the Mastering Shiny R book, chapter 10. As chapter 10 may have been the starting place, suggesting Chapter 15 was at an attempt to allow the user to understand more about the UI being reactive when changed. Or in the event that the UI is not what they were actually looking for in their response to their question.
+
+Pros:
+- The person asked a question that was important and specific to Shiny. 
+- The person knows enough to be detailed in the outcome
+
+Cons:
+- The person who posted the question failed to ask a question that was specific with an example. As a result, it would be hard to make the best recommendation.
+- We don't know what the data look like
+
+

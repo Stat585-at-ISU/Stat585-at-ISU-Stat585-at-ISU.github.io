@@ -1,0 +1,36 @@
+---
+author: Yichuan Bai
+date: 2023-01-26
+category: "Asking Good Questions"
+title: Asking Good Questions
+---
+
+## Prompt:
+
+Asking good questions is a valuable skill to have - asking questions in an online setting is both easier and harder than asking questions in person: we can prepare to ask a question but we are also expected to prepare.
+The links posted here give some advice on how to ask good questions:
+
+- stackoverflow's [Asking a good question](http://stackoverflow.com/help/how-to-ask)
+
+- R's [Posting guidelines](https://www.r-project.org/posting-guide.html)
+
+- [minimal complete verifiable example](https://stackoverflow.com/help/mcve), [minimal reproducible example](https://www.tidyverse.org/help/)
+
+Follow these links and read through the advice given, then
+
+1. **Pick at least one question from stackoverflow or the R help and answer it.**
+
+Write a blog post answering the following questions: 
+
+2. **Document which question you answered (link to your answer).**
+
+3. **Relate your experience of answering the question to your reading. **
+
+# Questions Answered
+- https://stackoverflow.com/questions/74867143/subset-the-datatable-by-multiple-user-input-filter-separated-by-comma/75226388#75226388
+- https://stackoverflow.com/questions/75248893/widen-r-datatable-column/75251791#75251791
+
+# Answering Experience
+- It's important to let other people be able to reproduce your question. In the first question I answered, the code included in the question is reproducible, which make it easier for me to find out the solution. In the second question, there isn't an example dataset in the question. Though I am able to reproduce his shiny app, but I need to generate a dataset myself.
+- You may able to solve your problem by some searchings. One question I answered is how to change the column width of table in shiny app. Similar questions have been answered before. But there are multiple issues needed to be fixed. So the question may not be fixed by one searching. Actually several different related questions need to be searched to solve the problem.
+- The questions I answered both have a clear title and a clear description about their problems. It's easy for me to determine whether I could help by looking at the title and glancing at the first few lines of the questions.

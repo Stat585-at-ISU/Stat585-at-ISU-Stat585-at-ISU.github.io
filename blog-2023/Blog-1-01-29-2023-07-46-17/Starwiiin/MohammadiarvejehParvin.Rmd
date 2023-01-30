@@ -1,0 +1,85 @@
+---
+author: Parvin Mohammadiarvejeh
+date: 2023-01-26
+category: "Asking Good Questions"
+title: Asking Good Questions
+---
+
+## Prompt:
+
+Asking good questions is a valuable skill to have - asking questions in an online setting is both easier and harder than asking questions in person: we can prepare to ask a question but we are also expected to prepare.
+The links posted here give some advice on how to ask good questions:
+
+- stackoverflow's [Asking a good question](http://stackoverflow.com/help/how-to-ask)
+
+- R's [Posting guidelines](https://www.r-project.org/posting-guide.html)
+
+- [minimal complete verifiable example](https://stackoverflow.com/help/mcve), [minimal reproducible example](https://www.tidyverse.org/help/)
+
+Follow these links and read through the advice given, then
+
+1. **Pick at least one question from stackoverflow or the R help and answer it.**
+
+Write a blog post answering the following questions: 
+
+2. **Document which question you answered (link to your answer).**
+
+3. **Relate your experience of answering the question to your reading. **
+ 
+
+<!--Go to [https://github.com/Stat585-at-ISU/blog](https://github.com/Stat585-at-ISU/blog) for instructions about how to prepare and submit your blog post.-->
+Instructions to follow.
+
+
+# Parvin's work
+
+1 & 2. I picked this question, link: (https://stackoverflow.com/questions/75225812/how-to-identify-rows-where-observations-are-identical-in-two-different-columns-i)
+
+My stackoverflow account name: StarWiiin
+
+
+
+In the following R chunk, I prepared my solution with code:
+```{r}
+# Create a data including two columns: start_id, end_id
+
+start_id = c("one", "two", "three", "four", "five", "six", "seven")
+end_id = c("one", "three", "two", "four", "seven", "six", "five")
+
+
+df = data.frame(start_id, end_id)
+df
+
+```
+
+
+
+```{r}
+# create a new column which is True if start_id equals end_id, otherwise it is False.
+library(dplyr)
+df = df %>% 
+  mutate(status= if_else(.$start_id == .$end_id, 'True', 'False'))
+df
+```
+
+
+
+3. I tried to answer breifly but comprehensive. Since the question was related to R, I created a dataframe based on the writer explanations and I gave the solution exactly by solving the example. Also, I got the output myseld and I checked it to be sure it is true. So, my solution is easily reproducible and verified. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

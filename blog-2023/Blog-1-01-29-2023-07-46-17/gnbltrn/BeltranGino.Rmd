@@ -1,0 +1,45 @@
+---
+author: Gino Beltran
+date: 2023-01-26
+category: "Asking Good Questions"
+title: Asking Good Questions
+---
+
+Answering a question was hard for me, given my limited experience with R and programing.  Instead, I focused on evaluating the quality of the question and found one that needed some guidance--based on the materials we read in class about asking good questions.  A student had copied and pasted a homework, which contained multiple questions about a data set.  My response was aimed at suggesting the question needed to be more specific to get the help needed. 
+Link to my response
+https://stackoverflow.com/questions/75254300/uic-assignment-need-help-please-let-me-know-how-to-do-them/75254399#75254399
+
+Some else had just answered the same question, and included a link with specific guidance for students seeking help for homework (see link below).  I read this resource and found it very informative, which made me contemplate the other side of every question... the answer.  I realized my answer was perhaps too simple.  I also realized that a good answer can be recycled and used many times and it becomes a guideline.  
+Asking about homework link
+https://meta.stackoverflow.com/questions/334822/how-do-i-ask-and-answer-homework-questions
+
+Thanks,
+Gino
+
+
+
+
+## Prompt:
+
+Asking good questions is a valuable skill to have - asking questions in an online setting is both easier and harder than asking questions in person: we can prepare to ask a question but we are also expected to prepare.
+The links posted here give some advice on how to ask good questions:
+
+- stackoverflow's [Asking a good question](http://stackoverflow.com/help/how-to-ask)
+
+- R's [Posting guidelines](https://www.r-project.org/posting-guide.html)
+
+- [minimal complete verifiable example](https://stackoverflow.com/help/mcve), [minimal reproducible example](https://www.tidyverse.org/help/)
+
+Follow these links and read through the advice given, then
+
+1. **Pick at least one question from stackoverflow or the R help and answer it.**
+
+Write a blog post answering the following questions: 
+
+2. **Document which question you answered (link to your answer).**
+
+3. **Relate your experience of answering the question to your reading. **
+ 
+
+<!--Go to [https://github.com/Stat585-at-ISU/blog](https://github.com/Stat585-at-ISU/blog) for instructions about how to prepare and submit your blog post.-->
+Instructions to follow.

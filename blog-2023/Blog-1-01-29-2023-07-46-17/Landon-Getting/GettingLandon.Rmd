@@ -1,0 +1,36 @@
+---
+author: Landon Getting
+date: 2023-01-26
+category: "Asking Good Questions"
+title: Asking Good Questions
+---
+
+## Prompt:
+
+Asking good questions is a valuable skill to have - asking questions in an online setting is both easier and harder than asking questions in person: we can prepare to ask a question but we are also expected to prepare. The links posted here give some advice on how to ask good questions:
+
+-   stackoverflow's [Asking a good question](http://stackoverflow.com/help/how-to-ask)
+
+-   R's [Posting guidelines](https://www.r-project.org/posting-guide.html)
+
+-   [minimal complete verifiable example](https://stackoverflow.com/help/mcve), [minimal reproducible example](https://www.tidyverse.org/help/)
+
+Follow these links and read through the advice given, then
+
+1.  **Pick at least one question from stackoverflow or the R help and answer it.**
+
+Write a blog post answering the following questions:
+
+2.  **Document which question you answered (link to your answer).**
+
+3.  **Relate your experience of answering the question to your reading.**
+
+<!--Go to [https://github.com/Stat585-at-ISU/blog](https://github.com/Stat585-at-ISU/blog) for instructions about how to prepare and submit your blog post.-->
+
+Instructions to follow.
+
+## Blog Post - Landon Getting
+
+While trying to identify a question to answer, I was surprised at the rate of response to most of the posted questions on StackOverflow. Many of the trivial, popular, or generic questions were answered in around 20 minutes. By the time I was done crafting my response, there had already been an accepted answer. However, I went back a few days and found an interesting unanswered question. I answered "[How to plot the effects of various explanatory variables on the response variable](https://stackoverflow.com/questions/75241834/how-to-plot-the-effects-of-various-explanatory-variables-on-the-response-variabl)" on StackOverflow.
+
+Plotting data in many dimensions can be a difficult task and it made sense why this question was unanswered. In my limited experience, there is not a widely accepted and general method for this type of visual. I did some 'search and research' as suggested in "How do I ask a good question?" and came up wanting more - as the author of the question likely did. I think the author could have been more precise with their title. Something along the lines of "Plotting Effect of Predictors in MLR on Response Variable?" However, the post was overall short and to the point. I also would have liked to see some data provided to help generate examples. I created a quick shiny app to show how an interactive solution may be useful in addition to a simple column graph for relative comparison of the effects.
