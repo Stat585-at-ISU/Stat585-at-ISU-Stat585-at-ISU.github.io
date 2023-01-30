@@ -1,0 +1,11 @@
+For the final project you are asked to create an R package. You are free to choose package functionality, but there should be
+
+- a minimum of five functions with a coherent theme,
+- a shiny app show-casing some of the functionality
+- a website for the package
+- a README page with installation instructions and basic demonstration of functionality
+- evidence of testing the functionality
+- 8-10 page report detailing your work. This report should be written as a package vignette, included in your package’s documentation.
+
+
+You are asked to present your work as a team in one of the speaking slots during dead week and finals week. Each team member is supposed to present for about 5 mins.

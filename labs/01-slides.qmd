@@ -1,0 +1,75 @@
+---
+title: "Lab 1"
+format: revealjs
+navigation-mode: vertical
+---
+
+## How this is going to work
+
+1. Find your team
+
+2. You are asked to work through a set of questions 
+
+3. The deliverable is a final push to your github repository and (in Canvas) an upload of the link to your repository. Don't forget that ALL of the team members should contribute to the repo :)
+
+
+## Agenda for today
+
+1. Link RStudio and git
+
+2. Deal with the weather (stations) ...
+
+3. ... and some funny file formats
+
+## Repo for the lab
+
+1. Accept the link to the github classroom assignment (sent by email). 
+
+2. Check whether one of your team members has already created a team. In that case, join them. If none of your team members is listed yet, create a team.
+
+3. Link the repository to RStudio ... (see next set of slides)
+
+## Connecting RStudio and git
+
+
+Work through [chapter 12](https://happygitwithr.com/rstudio-git-github.html#rstudio-git-github) of Jenny Bryan's book "Happy git with R"
+
+Use your lab's repository as the example repository in RStudio. 
+
+
+Add a link to the lab repository in your write-up.
+
+
+## Weather stations
+
+::: r-fit-text
+The National Climate Data Center at NOAA publishes information on temperature and precipitation across a network of stations in the US.
+
+The Data can be accessed through via https://www.ncei.noaa.gov/pub/data/ushcn/v2.5/, a code book with a description of the data structure is available at
+https://www.ncei.noaa.gov/pub/data/ushcn/v2.5/readme.txt
+
+1. Download a copy of the file `ushcn-v2.5-stations.txt`.
+
+2. Make yourself familar with the command `read_fwf` from package `readr`. 
+
+3. Use the codebook description for the stations file, extract all columns and bring them into the intended format (i.e. numbers are numbers)
+
+4. Create a plot with `ggplot2` to show latitude, longitude and elevation. Can you also include state information and time zone?
+
+5. Deliverable: include the code necessary to read the file and to create the plot in `README.Rmd`. Also include the file `ushcn-v2.5-stations.txt` to your repository. 
+:::
+
+## Funny file formats
+
+::: r-fit-text
+The file `ushcn.tavg.latest.raw.tar.gz`
+at ftp://ftp.ncdc.noaa.gov/pub/data/ushcn/v2.5 contains data on average temperatures across the US. 
+
+1. Download the file and get it to open with tools available in R. (Double-clicking is cheating! :) )
+
+2. Determine how many files are contained inside `ushcn.tavg.latest.raw.tar.gz` and the name of the file containing the temperature data of your home towns or Fort Dodge, IA (please specify).
+
+3. Deliverable: In the Rmarkdown file include the code necessary to extract files from the archive `ushcn.tavg.latest.raw.tar.gz`. Include code to answer the above questions.
+
+If things don't work write a paragraph on why things do not work and what you have tried. 
+:::

@@ -1,0 +1,34 @@
+---
+title: "Data Technologies for Statistical Analysis"
+author: "Heike Hofmann"
+---
+
+## Spring 2023
+
+TR 2:10 - 3:25 pm, Lagomarcino 1445, see zoom link in Canvas
+
+Office Hours: by appointment
+
+Instructor: Heike Hofmann, hofmann at iastate dot edu
+
+TA: Ganesh Krishnan, ganeshk at iastate dot edu
+
+![Supposedly. [Source](http://www.phdcomics.com/comics.php?f=961)](https://phdcomics.com/comics/archive/phd010708s.gif){fig-alt="Two panels. On the left, what your research supposedly looks like, with a nice flowchart showing the path between computer, controller, prototype, data, data acquisition, and computer. The panel is labeled Figure 1: Experimental Diagram. On the right, a panel labeled Figure 2: Experimental mess, showing what your research actually looks like, with a heap of electronics and wires, with a sign saying 'touch anything and DIE'."}
+
+## Course description:
+Not all data lives in nice, clean spreadsheets, not all data fits in a computer's main memory. As statisticians we cannot always rely on other people and sciences to get the data into formats that we can deal with: we will discuss aspects of statistical computing as they are relevant for data analysis. Read and work with data in different formats: flat files, databases, web technologies. Elements of literate programming help us with making our workflow transparent and analyses reproducible. We will discuss communication of results in form of R packages and interactive web applications.
+
+
+## Learn how to...
+- read and combine data from flat files, SQL database, binary netCDF, and making use of web technologies as data source.
+- compute with data.
+- clean the data, check the quality, impute missing values.
+- write efficient and reproducible code so others are able to replicate the analysis.
+- develop software, individually and collaboratively, debug, profile and package R code.
+- experiment with event driven programming to build an interactive graphic, and a GUI.
+- pull data together to solve a contemporary problem.
+
+## More info...
+Use the navigation bar above!
+The course organization on GitHub: https://github.com/stat585-at-ISU
+Repo that creates this website: https://github.com/Stat585-at-ISU/Stat585-at-ISU.github.io

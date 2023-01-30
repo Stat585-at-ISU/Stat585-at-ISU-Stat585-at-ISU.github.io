@@ -1,0 +1,10 @@
+---
+title: "Blog"
+listing:
+  contents: 
+    - "blog-2023/*/*/!(LICENSE|README).[RrQq]{1,}md"
+  sort: "date desc"
+  type: table
+  categories: true
+---
+
