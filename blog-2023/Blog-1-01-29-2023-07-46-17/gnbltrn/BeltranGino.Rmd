@@ -1,7 +1,7 @@
 ---
 author: Gino Beltran
 date: 2023-01-26
-category: "Asking Good Questions"
+categories: "Asking Good Questions"
 title: Asking Good Questions
 ---
 
