@@ -8,14 +8,34 @@ The full syllabus is available [here](syllabus.pdf)
 
 Week | Topic | Notes
 ----- | --------------- | ------------------------------------------------------
-1 - 2 | Working Environment and Review Git, GitHub, and R Markdown | **Jan 17 ** [Course intro & syllabus](../materials-2023/00_getting-started/slides.html) \| [Collaborations - test case](../materials-2023/01_collaborative-environment/01_test-case.html) \| data: [2015 BRFSS data for Iowa](../materials-2023/01_collaborative-environment/data/brfss_iowa.csv) \| Code book: [BRFSS Codebook 2015](https://www.cdc.gov/brfss/annual_data/2015/pdf/codebook15_llcp.pdf)<br/>**Jan 19** [Collaborations - test case - part 2](../materials-2023/01_collaborative-environment/01_test-case.html#16) \| [a solution to the test case](../materials-2023/01_collaborative-environment/02_test-case-solution.html) <br/>**Jan 24** [tools for collaborations](../materials-2023/01_collaborative-environment/03_tools-of-the-trade.html) \| [R Markdown refresher](https://ds202-at-isu.github.io/materials/01_collaborative-environment/03_rmarkdown.html#1) \| [to add or not to add? that is the git-tion](../materials-2023/01_collaborative-environment/05_responsible_git.html)
-3 - 4 | Data structures in R: factors, lists, trees | **Jan 26** [Results from R & friends](../materials-2023/02_tidyverse/01b_r-and-friends.html) \| [Reviewing elements of the tidyverse: ggplot2, dplyr, tidyr with solutions](../materials-2023/02_tidyverse/01_intro.html)<br/>**Jan 31** [Reviewing elements of the tidyverse: ggplot2, dplyr, tidyr with solutions](../materials-2023/02_tidyverse/01_intro.html) \| [Review of basic R types and structures, first look at lists](../materials-2023/03_data-structures/01_data-structures.html)<br/>**Feb 2** [Lab #1](labs/01-slides.qmd)<br/>**Feb 7** <br/>**Feb 9**
-5 | Review of functional programming, Elements of programming: conditionals, loops | **Feb 14** <br/> **Feb 16** Lab #2
-6 | Split-apply-combine strategies with lists | **Feb 21** <br/> **Feb 23**
-7-8 | Package system in R | **Feb 28** <br/>**Mar 2** Lab #3<br/>**Mar 7**<br/>**Mar 9**<br/>**Mar 21**
-9-10 | Testing code & Critical analysis of code | **Mar 23** <br/>**Mar 28**
-11 | Web scraping, working with text: awk and grep (lab week) | **Mar 30** <br/>**Apr 4**
-12 | Event driven programming | **Apr 6** <br/>**Apr 11**<br/>**Apr 13**
-13 | Parsing data, profiling code | **Apr 18** <br/>**Apr 20**
-14 | Databases | **Apr 25** <br/>**Apr 27**
-15, Finals | Project Presentations | **May 2** <br/>**May 4**<br/>**May 11, 12-2pm**
+1 - 2     | Working Environment and Review Git, GitHub, and R Markdown   | **Jan 17 ** [Course intro & syllabus](../materials-2023/00_getting-started/slides.html) \| [Collaborations - test case](../materials-2023/01_collaborative-environment/01_test-case.html) \| data: [2015 BRFSS data for Iowa](../materials-2023/01_collaborative-environment/data/brfss_iowa.csv) \| Code book: [BRFSS Codebook 2015](https://www.cdc.gov/brfss/annual_data/2015/pdf/codebook15_llcp.pdf)
+&nbsp;    | &nbsp;                                                       | **Jan 19** [Collaborations - test case - part 2](../materials-2023/01_collaborative-environment/01_test-case.html#16) \| [a solution to the test case](../materials-2023/01_collaborative-environment/02_test-case-solution.html)
+&nbsp;    | &nbsp;                                                       | **Jan 24** [tools for collaborations](../materials-2023/01_collaborative-environment/03_tools-of-the-trade.html) \| [R Markdown refresher](https://ds202-at-isu.github.io/materials/01_collaborative-environment/03_rmarkdown.html#1) \| [to add or not to add? that is the git-tion](../materials-2023/01_collaborative-environment/05_responsible_git.html)
+3 - 4     | Data structures in R: factors, lists, trees                  | **Jan 26** [Results from R & friends](../materials-2023/02_tidyverse/01b_r-and-friends.html) \| [Reviewing elements of the tidyverse: ggplot2, dplyr, tidyr with solutions](../materials-2023/02_tidyverse/01_intro.html)
+&nbsp;    | &nbsp;                                                       | **Jan 31** [Reviewing elements of the tidyverse: ggplot2, dplyr, tidyr with solutions](../materials-2023/02_tidyverse/01_intro.html) \| [Review of basic R types and structures, first look at lists](../materials-2023/03_data-structures/01_data-structures.html)
+&nbsp;    | &nbsp;                                                       | **Feb 2** [Lab #1](labs/01-slides.qmd)
+&nbsp;    | &nbsp;                                                       | **Feb 7** 
+&nbsp;    | &nbsp;                                                       | **Feb 9**
+5         | Review of functional programming, conditionals, loops        | **Feb 14**
+&nbsp;    | &nbsp;                                                       | **Feb 16** Lab #2
+6         | Split-apply-combine strategies with lists                    | **Feb 21**
+&nbsp;    | &nbsp;                                                       | **Feb 23**
+7-8       | Package system in R                                          | **Feb 28**
+&nbsp;    | &nbsp;                                                       | **Mar 2** Lab #3
+&nbsp;    | &nbsp;                                                       | **Mar 7**
+&nbsp;    | &nbsp;                                                       | **Mar 9**
+&nbsp;    | &nbsp;                                                       | **Mar 21**
+9-10      | Testing code & Critical analysis of code                     | **Mar 23** 
+&nbsp;    | &nbsp;                                                       | **Mar 28**
+11        | Web scraping, working with text: awk and grep (lab week)     | **Mar 30** 
+&nbsp;    | &nbsp;                                                       | **Apr 4**
+12        | Event driven programming                                     | **Apr 6**
+&nbsp;    | &nbsp;                                                       | **Apr 11**
+&nbsp;    | &nbsp;                                                       | **Apr 13**
+13        | Parsing data, profiling code                                 | **Apr 18**
+&nbsp;    | &nbsp;                                                       | **Apr 20**
+14        | Databases                                                    | **Apr 25** 
+&nbsp;    | &nbsp;                                                       | **Apr 27**
+15, Finals | Project Presentations                                       | **May 2**
+&nbsp;    | &nbsp;                                                       | **May 4**
+&nbsp;    | &nbsp;                                                       | **May 11, 12-2pm**

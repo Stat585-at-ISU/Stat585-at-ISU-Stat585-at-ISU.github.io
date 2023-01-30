@@ -22,8 +22,8 @@ website:
 
 format:
   html:
-    theme: cosmo
-    css: ["styles.css", "css/extra.css"]
+    theme: united #superhero
+    css: ["styles.css"]
     toc: true
 
 execute:
