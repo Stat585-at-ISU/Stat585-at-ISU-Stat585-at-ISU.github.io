@@ -16,7 +16,7 @@ website:
         text: Blog
       - href: projects.qmd
         text: Projects
-      - href: https://canvas.iastate.edu/courses/90437
+      - href: https://canvas.iastate.edu/courses/98137
         text: Canvas (ISU)
       - href: https://canvas.unl.edu/courses/150086
         text: Canvas (UNL)
