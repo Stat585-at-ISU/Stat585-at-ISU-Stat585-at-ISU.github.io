@@ -1,0 +1,21 @@
+Chapter 27: The Repeated Amend:
+Ian Parzyszek
+	1)
+
+In this chapter we focused on situations where you are making continual changes and updates to a project, but you don’t want to continually have a lot of commits. This could look sloppy and not as useful. However, you also do not want to have very few commits and not have a lot to fall back on. They gave an example of a rock climber and you want to have enough ankers to protect you, but too many can slow you down. 
+They introduced the idea of adding the idea of “WIP” amendments. This is used when you made some changes and you may be in the middle of something and it will signal to other people that more commits may be coming. 
+It seemed to me that ideally you want to have “WIP*” comments which denotes that these changes only exist in your local repo, yet on git. Then you can continue to finish what you are working on. And on your end you may see a history that looks like this:
+			A – B –C – WIP*--D
+But once you finish what you have done push it only once you have finished D…then your repository commit history will look like this:
+			A—B—C—D 
+			(much nicer)
+The Chapter went on to talk about what if you did push this intermediate step of WIP what do you do? Should you go back and change it so it looks nicer, should you not? And it all depends on the collaborators you have and if you believe that may have pulled from Git.
+
+
+2) The biggest mishap I have had in a group project (that maybe git could be useful) was probably when two people were working together in the same room on part of the project and someone else was working remotely. What had happened was we were both making changes to the same part of the project at the same time, but didn’t know about it then when we came back together we found out that now we have to find a way to bring everything together again. I think maybe git could have been used in a way that it could have found a way to merge to two versions together and we could find a way to pick and choose which sections we would keep.
+I know we said we would learn about this soon, so I’m not exactly sure how this works in git, but I imagine it could be helpful.
+
+3). I don’t think this is necessarily a feature of git itself but rather an understanding that git users have, and that is the “WIP”  commit message. Which can be extremely usefully whenever you are working with a group. If you accidently push something it lets your group know that you are in the middle of something and it is not yet to finalized or have a functional project yet. And it is also useful so that you yourself won’t have bunch of cluttered commits in your history.
+
+
+

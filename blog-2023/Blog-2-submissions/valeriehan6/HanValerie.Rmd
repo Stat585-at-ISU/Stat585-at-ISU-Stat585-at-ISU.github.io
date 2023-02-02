@@ -1,0 +1,56 @@
+---
+layout: blog
+topic: "02"
+short-topic: Happy git and GitHub
+due-date: 2023-02-02
+root: ../../
+output:
+  html_document:
+    keep_md: TRUE
+---
+
+## Prompt:
+
+git and Github are tools for helping with versioning of files in collaborative efforts as well as archiving entries for your future self. 
+Unfortunately working with git isn't always completely straightforward. 
+Jenny Bryan's book "Happy git and github with R" helps with that. The book is available from [http://happygitwithr.com/](http://happygitwithr.com/). Have a look over the index and pick one of the chapters for a more in-depth read.
+
+Write a blog post answering the following questions: 
+
+1. **Write a short (100-150 words) summary of the chapter you read in-depth.**
+
+I read [https://happygitwithr.com/workflows-browsability.html#workflows-browsability](Chapter 34: Make a GitHub repo browsable), which talks about which files should be saved to a repository to make for a good browsing experience. 
+
+GitHub displays Markdown files well (but not RMarkdown or HTML), so when writing in RMarkdown, you should make sure to save the intermediate Markdown file to the GitHub repo. This can be done in the YAML header with 
+
+```{r, eval=FALSE}
+output:  
+  html_document:  
+    keep_md: TRUE
+```
+
+
+
+Also note that any file named `README.md` will automatically appear on the GitHub page of the directory it's in. 
+ 
+Data file-wise, deliminated files (.csv or .tsv) are rendered well by GitHub, though some cleaning may need to be done since GitHub is a bit picky with certain formatting like quotes. For results files, PNGs are the best, though GitHub has added some PDF functionality. For other document types, the open-source Pandoc program can convert many different formats into Markdown.
+
+
+
+2. **Looking back at all of the team projects you have been involved in, describe the biggest mishap you had. Could that have been avoided using git? How?**. 
+
+In general, the biggest team project mishaps have been when one person isn't contributing. I'm not sure this could be directly solved with GitHub since we were all aware the person wasn't contributing. However, if the instructor required that the project used a GitHub repo to save work/progress (and would check commits on the repo), perhaps the non-contributing member would have felt more pressure to contribute to the repo. In all but one of the code-heavy projects, we did use GitHub to save our work (though it wasn't available to instructor) and for non-code stuff we used Google docs, so we didn't face other direct problems that would've been solved by git.
+
+
+3. **Give an example of one new git feature that you learned about from Jenny Bryan's book.**.
+
+I learned a new workflow [https://happygitwithr.com/repeated-amend.html](the repeated amend). I didn't realize that it could be valuable to commit but not push when in "WIP" mode to create little "footholds" for yourself. I'll try to use the command:
+
+`git commit --amend --no-edit`
+
+in the future.
+
+
+
+
+

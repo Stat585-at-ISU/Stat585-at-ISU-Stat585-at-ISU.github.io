@@ -1,0 +1,19 @@
+---
+layout: blog
+topic: "02"
+short-topic: Happy git and GitHub
+due-date: 2023-02-02
+root: ../../
+---
+
+# The chapter
+
+In the 30th [Happy git with R](http://happygitwithr.com/), Jane Bryan describes how one can use GitHub to time travel. Although she does not mean actual time travel, she describes a particularly useful feature of Git: the ability too look at previous versions of one's code. There a multiple instances in which this would be useful. For instance, one might want to refer back to the color scheme used in one of the previous drafts of a manuscript; or worse, one might have to convert their barplot to a boxplot after arguing with their advisor that the boxplot was the better option from the beginning. In summary, regardless of why one would have to refer back to previous version of their code, Git facilitates this process.
+
+# Tragic stories from the past
+
+In a previous [project](http://soystage.uark.edu), my advisor and I were trying to code equations that represented how Soybean [*Glicyne max* (L.) Merril] responded to day-length and environmental temperature. This was literally the first time I was trying to code in any language. Although GitHub was already well-known back in 2018, I had no knowledge of it- neither did my advisor. All the code was stored on the desktop machine I was using for work. It was an old machine that seemed to have seen one or two wars in its life. We all had heard horror stories of people losing months or years of work because their machine suddenly stopped working but, like most people, we thought that would never happen to us. Well, it did. We lost months of work coding and I had to start over. Fortunately, by the time I wrote the code again, I was much more familiar with Python and I was able to finish the project in weeks instead of months. The project saw the light of day but this could all have been avoided using Git.
+
+## New git features from the book
+
+I was not familiar with the idea that one could refer other people to a specific version of a repository just by providing them with the hyperlink. This is fascinating, as project discussions could be much more effective since collaborators could simply say: I believe this aspect of the project worked better in version *XX.XX*, follow this [link](http://theoretical-link.com) to check for yourself what I mean.
