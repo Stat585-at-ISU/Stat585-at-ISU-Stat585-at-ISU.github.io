@@ -1,5 +1,5 @@
 ---
-author: Your Name
+author: The Prompt
 date: 2023-02-02
 categories: "Happy Git with R"
 title: Happy Git with R
@@ -22,3 +22,17 @@ Write a blog post answering the following questions:
 
 3. **Give an example of one new git feature that you learned about from Jenny Bryan's book.**.
 
+
+To make your blog post show up properly on this site, you have to
+
+1. change the name of the file LastnameFirstname.Rmd to something else,
+2. change the yaml in your Rmd file to:
+
+```
+---
+author: Your Name
+date: 2023-02-02
+categories: "Happy Git with R"
+title: Happy Git with R
+---
+```
