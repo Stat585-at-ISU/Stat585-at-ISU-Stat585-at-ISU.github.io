@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="YCB">
+<meta name="dcterms.date" content="2023-02-02">
 
-<title>Stat 585 – lastnamefirstname</title>
+<title>Stat 585 - Happy Git with R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -125,7 +127,37 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Happy Git with R</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Happy Git with R</div>
+  </div>
+  </div>
 
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>YCB </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 2, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
 
 <section id="prompt" class="level2">
 <h2 class="anchored" data-anchor-id="prompt">Prompt:</h2>
@@ -133,9 +165,16 @@ ul.task-list li input[type="checkbox"] {
 <p>Write a blog post answering the following questions:</p>
 <ol type="1">
 <li><strong>Write a short (100-150 words) summary of the chapter you read in-depth.</strong></li>
+</ol>
+<p>Chapter selected: 29 Pull, but you have local work This chapter introduce how to pull changes from upstream when you have local changes since the last pull. If the local changes do not affect the work from upstream, you can directly use ‘git pull’. If there are overlapped changes between remote and local files, you can either use ‘git stash’ or make a commit, which is preferred by the author. The simplest option is to fetch remote commits and merge them. For the conflicted parts, you need to either pick up one version of the changes or create a hybrid to resolve the conflicts. After using ‘git add’ to mark the files, you could commit and push. Another option is to use ‘git pull –rebase’, which pulls the upstream work in one commit and embodies the local work in another with no merge commits.</p>
+<ol start="2" type="1">
 <li><strong>Looking back at all of the team projects you have been involved in, describe the biggest mishap you had. Could that have been avoided using git? How?</strong>.</li>
+</ol>
+<p>When working with others, I and my teammates did separate parts but we still looked at each other’s code and made small changes that we thought are necessary. But as time goes by, we forgot the changes we made and there is something we should not change or the code would crash. And it is hard to find out the problem because the code could be long. This can be avoided by using git. We can look at the commit history and it is easier to find which changes are made and which cause the problem.</p>
+<ol start="3" type="1">
 <li><strong>Give an example of one new git feature that you learned about from Jenny Bryan’s book.</strong>.</li>
 </ol>
+<p>‘git stash’ would be a new feature I never used before. This feature allows you to temporarily store the changes you made locally away. And then you are allowed to use other commands such as ‘git pull’. In the Chapter 29, they use ‘git stash store’ to store the local changes in the stash list and use ‘git stash pop’ to get back the stashed state and apply it to the current state.</p>
 
 
 </section>

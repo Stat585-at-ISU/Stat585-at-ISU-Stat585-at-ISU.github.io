@@ -13,3 +13,5 @@ unlink(extramd)
 otherfilepat <- "(create-file\\.png|\\.DS_Store|gitignore|Rproj|\\.bak)"
 otherfiles <- list.files("blog-2023", otherfilepat, full.names = T, recursive = T)
 unlink(otherfiles)
+
+#####

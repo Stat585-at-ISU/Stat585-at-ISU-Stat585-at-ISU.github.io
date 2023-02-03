@@ -1,0 +1,33 @@
+---
+layout: blog
+topic: "02"
+short-topic: Happy git and GitHub
+due-date: 2023-02-02
+root: ../../
+---
+
+## Prompt:
+
+git and Github are tools for helping with versioning of files in collaborative efforts as well as archiving entries for your future self. 
+Unfortunately working with git isn't always completely straightforward. 
+Jenny Bryan's book "Happy git and github with R" helps with that. The book is available from [http://happygitwithr.com/](http://happygitwithr.com/). Have a look over the index and pick one of the chapters for a more in-depth read.
+
+Write a blog post answering the following questions: 
+
+1. **Write a short (100-150 words) summary of the chapter you read in-depth.**
+
+**Solution:** 
+I have gone through Chapter 18 in depth, it provides a comprehensive introduction as well as hand-on experience to R Markdown which is a wonderful tool for creating documents and reports, it also allows to embed R code within a document and produces a various format output like HTML, pdf, word using knitr options. It also helps in creating the first R Markdown document with ‘Hello World’ and also covers the basics of formatting and styling text, including how to add headings, images,bullet points, and tables. Apart from formatting and styling it also explains how to customize CSS and themes to the document. It will help with creating professional reports as well as documents of the work. Moreover, it also explains the how to connect and push R markdown file to GitHub and how to publish the report. 
+
+2. **Looking back at all of the team projects you have been involved in, describe the biggest mishap you had. Could that have been avoided using git? How?**. 
+
+
+**Solution:** 
+Being a software developer in the past, I have used versioning tools like git and subversion. When I started using git within my team, I ended up with multiples mishap in the team projects. one of the scenarios I pulled the code and try editing it but forget to commit and push, and then I pulled the latest version again which ended up losing my own work. As there is no backup copy of my code and I was working on master copy, the pulled request overwrites my work.  
+It could be avoided if I used branching concept of git. Branching ensures my work is saved even if I pull the latest version of the code from the main branch. If I knew the standard procedure of git, I may not end up losing my work. I think branching is one of the best ways to cooperate and contribute to team projects. 
+
+
+3. **Give an example of one new git feature that you learned about from Jenny Bryan's book.**.
+
+**Solution:** 
+From chapter 12 of Jenny Bryan's book, I learnt how to connect RStudio with Git and GitHub. In my case, Somehow, RStudio are not able to detect git, install the git explained in chapter 6 of the book and finally able to connect RStudio to git and GitHub. 

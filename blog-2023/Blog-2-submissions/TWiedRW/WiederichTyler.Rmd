@@ -15,5 +15,13 @@ Jenny Bryan's book "Happy git and github with R" helps with that. The book is av
 Write a blog post answering the following questions: 
 
 1. **Write a short (100-150 words) summary of the chapter you read in-depth.**
+
+For this blog, I looked at Chapter 29: "Pull, but you have local work". When work is saved locally and not saved to GitHub, pulling the repo is done normally without error. If one pulls and the file exists differently in the repo, then an error occurs.  `git stash` will save local changes when pulling. This won't change the fact that the files are still in conflict, but it provides temporary relief. 
+
 2. **Looking back at all of the team projects you have been involved in, describe the biggest mishap you had. Could that have been avoided using git? How?**. 
+
+The biggest mishap is probably having merge conflicts with git. Sometimes when I can't figure out how to pull/merge when conflicts exist, I simply delete what I have and pull from the repo to start again fresh (after saving my work somewhere locally). 
+
 3. **Give an example of one new git feature that you learned about from Jenny Bryan's book.**.
+
+`git stash save` and `git stash pop`. Although the author mentions staying away from these in favor of other methods, I think they are neat tricks!

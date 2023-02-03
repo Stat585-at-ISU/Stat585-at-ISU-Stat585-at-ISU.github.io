@@ -1,0 +1,33 @@
+---
+layout: blog
+topic: "02"
+short-topic: Happy git and GitHub
+due-date: 2023-02-02
+root: ../../
+---
+
+## Prompt:
+
+git and Github are tools for helping with versioning of files in collaborative efforts as well as archiving entries for your future self. Unfortunately working with git isn't always completely straightforward. Jenny Bryan's book "Happy git and github with R" helps with that. The book is available from <http://happygitwithr.com/>. Have a look over the index and pick one of the chapters for a more in-depth read.
+
+Write a blog post answering the following questions:
+
+1.  **Write a short (100-150 words) summary of the chapter you read in-depth.**
+2.  **Looking back at all of the team projects you have been involved in, describe the biggest mishap you had. Could that have been avoided using git? How?**.
+3.  **Give an example of one new git feature that you learned about from Jenny Bryan's book.**.
+
+## Chapter 27: The Repeated Amend - Summary
+
+During Lab 1, you may have encountered a similar situation to our group. Our repository was quickly filled with many small commits that ranged from changing a single argument to entire sections of the lab. The repeated amend workflow will be useful in the future as I strive to make my version history more digestible for collaborators.
+
+Instead of performing many small commits, the amend action allows you to edit a previous commit as you make unforeseen positive progress. This is possible in RStudio through the "amend previous commit" check box in the commit interface window. Once you have completed a section of code or accomplished a goal, then commit. The commit history will show you finished the section or accomplished the goal in a single commit rather than many smaller commits. Once you've tested the code and feel good about the commit, you can push it and repeat the process for the next task.
+
+## Team Mishap
+
+In an introductory data mining class, my group took an especially long time to develop, train, and test our model because no one knew which file was most updated or advanced. We desperately needed a lesson on reproducible code as well. R scripts were named after the author and usually had a number or adjective to further describe the iteration (ex. Landon_6 or Zach_CleanData). Git would have eliminated this confusion through a main branch that is pulled from and pushed to as progress is made individually.
+
+In many of the scripts, file paths were hard coded. Instead of saving a cleaned or manipulated data frame as a new file in a common repo, we each spent hours running code to produce it as an object in our local R Studio. It was a disaster. The group has come a long way since the project and it is funny to look back on our ineptitude.
+
+## New Git Feature!
+
+If you become stuck during a cycle of repeated amends (or at any time prior to a commit), utilize the "Diff" or "Commit" actions in RStudio to either discard all changes or discard a chunk of changes.

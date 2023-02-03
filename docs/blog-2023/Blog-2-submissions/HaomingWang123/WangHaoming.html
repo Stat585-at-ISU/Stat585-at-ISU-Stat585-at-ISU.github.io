@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Haoming Wang">
+<meta name="dcterms.date" content="2023-02-02">
 
-<title>Stat 585 – lastnamefirstname</title>
+<title>Stat 585 - Happy Git with R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -125,7 +127,37 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Happy Git with R</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Happy Git with R</div>
+  </div>
+  </div>
 
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Haoming Wang </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 2, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
 
 <section id="prompt" class="level2">
 <h2 class="anchored" data-anchor-id="prompt">Prompt:</h2>
@@ -133,9 +165,16 @@ ul.task-list li input[type="checkbox"] {
 <p>Write a blog post answering the following questions:</p>
 <ol type="1">
 <li><strong>Write a short (100-150 words) summary of the chapter you read in-depth.</strong></li>
+</ol>
+<p>I read the Chapter One of “Happy git and github with R”. After reading this chapter, I had an overall idea of the purposes of using Git and GitHub to improve our R programming experience. I have learned that, with GitHub, not only can we collaborate with our colleagues on projects in a more convenient way, but we are also provided a real-time backup and a record of our work progress. This backup helps us easily pick up our previous work, and the record of our work progress makes the bugs easier to be detected in case we fail to get a desired result. Another interesting point about GitHub that I learned from this chapter is Pull Requests. I found it useful especially for developing those complex packages with many different functions.</p>
+<ol start="2" type="1">
 <li><strong>Looking back at all of the team projects you have been involved in, describe the biggest mishap you had. Could that have been avoided using git? How?</strong>.</li>
+</ol>
+<p>Once I had a project that requires me to generate some training data and use it to train a neural network model. I created two R script files, one for my training data and another for my neural network training model. After I generated my data, I forgot to save it in my local file and I directly used it to train my model. Since the data was quite large, the neural network training took me about 40 minutes. As R finished training my model, it suddenly crashed and I failed to save all my data and model which was very annoying. However, with git, although I might fail to save my model locally if my R crashes, I still have my codes and I can immediately get my training data by running the codes. In this case, it would take me much less time to restore all my work and model.</p>
+<ol start="3" type="1">
 <li><strong>Give an example of one new git feature that you learned about from Jenny Bryan’s book.</strong>.</li>
 </ol>
+<p>One new git feature I learned about is the user’s ability to track the package development and do their own modifications as the proposed changes. This feature provides me a platform to get a closer look at those packages I frequently use. After knowing that I am also able to do some modifications to make them better, I am also motivated to thoroughly understand the functionality of those famous packages.</p>
 
 
 </section>

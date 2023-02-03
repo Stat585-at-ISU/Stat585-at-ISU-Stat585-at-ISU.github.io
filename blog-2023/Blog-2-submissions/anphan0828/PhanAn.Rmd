@@ -1,0 +1,35 @@
+---
+layout: blog
+topic: "02"
+short-topic: Happy git and GitHub
+due-date: 2023-02-02
+root: ../../
+---
+
+## Prompt:
+
+git and Github are tools for helping with versioning of files in collaborative efforts as well as archiving entries for your future self. 
+Unfortunately working with git isn't always completely straightforward. 
+Jenny Bryan's book "Happy git and github with R" helps with that. The book is available from [http://happygitwithr.com/](http://happygitwithr.com/). Have a look over the index and pick one of the chapters for a more in-depth read.
+
+Write a blog post answering the following questions: 
+
+1. **Write a short (100-150 words) summary of the chapter you read in-depth.**
+
+I chose chapter 9: **Personal access token for HTTPS** to read because I was having trouble with it when I first approached Git and GitHub. 
+
+The chapter talks about how a user can connect to GitHub remotely from their local computer since a regular password is no longer accepted as a credential. There are two protocols, HTTPS and SSH, and HTTPs is actually recommended by GitHub. Either protocol works independently with any repository. The chapter lists instructions to generate and use personal access token (PAT) both on the website and from R. There are ways to store the PAT (which I personally was so frustrated with losing it all the time) via some R packages. Last but not least, the chapter discusses frequently occurred problems and solutions.
+
+
+2. **Looking back at all of the team projects you have been involved in, describe the biggest mishap you had. Could that have been avoided using git? How?**. 
+
+Version conflicts are annoying and almost inevitable for any projects with collaborations. Even with personal projects, I found myself (a lot of times) rewriting what I have already done a few weeks ago because I did not keep track of the versions. That is when Git comes to the rescue and it forces me to organize my projects better. 
+
+For collaborative projects, each of us figures that we should clone the repo, then create a branch for our own local copy to add changes. Without a branch, conflicts occur if the master copy of `file.txt` had been modified by user A (after user B cloned it) but user B later pushes another modified `file.txt` to remote. Git would then require user B to pull before pushing their version, but that would overwrite their copy they want to push, causing so many problems. We actually learn git branching on a [website: learngitbranching.js.org](https://learngitbranching.js.org) to, once and for all, sort this problem out with Git. The website is highly interactive and explains how Git works in a convenient way for user.
+
+For personal projects, I used to not keep track of the versions, i.e., just modify the script repeatedly, which is not a good practice. My PI suggested that I upload my project/software to GitHub and also to PyPI (so that it can be installed in Python) for transparency and version control. It was tough getting to know Git but worth it. I mainly use Git locally and just push the files I want to the remote repository. Now all of the previous versions are stored in Git and I can access them anytime. Furthermore, I now know that I can do all such stuff within RStudio (I have only used Git in the terminal)
+
+
+3. **Give an example of one new git feature that you learned about from Jenny Bryan's book.**
+
+Storing and viewing PAT using R is definitely helpful, which cannot be done on the GitHub website. I still do not know why GitHub does not allow it, maybe for security reason, but I am glad `gitcreds` lets me see my PAT anytime. I added an Rmarkdown file `MyExample.Rmd` where I tried to store and view my current PAT

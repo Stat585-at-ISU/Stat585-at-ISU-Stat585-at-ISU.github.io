@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Marie Hardt">
+<meta name="dcterms.date" content="2023-02-02">
 
-<title>Stat 585 – lastnamefirstname</title>
+<title>Stat 585 - Happy Git with R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -125,7 +127,37 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Happy Git with R</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Happy Git with R</div>
+  </div>
+  </div>
 
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Marie Hardt </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 2, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
 
 <section id="prompt" class="level2">
 <h2 class="anchored" data-anchor-id="prompt">Prompt:</h2>
@@ -133,8 +165,14 @@ ul.task-list li input[type="checkbox"] {
 <p>Write a blog post answering the following questions:</p>
 <ol type="1">
 <li><strong>Write a short (100-150 words) summary of the chapter you read in-depth.</strong></li>
+</ol>
+<p>I read Chapter 12: Connect RStudio to Git/GitHub. To have RStudio and GitHub communicate with each other, you should start with a new repository on GitHub that is initialized with a README. Then you need to copy a link to the GitHub repository, either HTTPS or SSH (whichever you prefer). Once everything is set up in GitHub, you move to RStudio and create a new project with version control. Then you paste the URL for your GitHub repository into the “Repository URL” box in RStudio and finish the project creation process. Assuming everything went smoothly, you should be able to see the README.md file from GitHub in your RStudio project. To further make sure everything is set up correctly, you can change the README.md file in RStudio, commit the changes, and push them to GitHub. If the changes appear in GitHub online, you’re good to go!</p>
+<ol start="2" type="1">
 <li><strong>Looking back at all of the team projects you have been involved in, describe the biggest mishap you had. Could that have been avoided using git? How?</strong>.</li>
-<li><strong>Give an example of one new git feature that you learned about from Jenny Bryan’s book.</strong>.</li>
+</ol>
+<p>I have experienced a common inconvenience in several group projects and group homework assignments in my graduate statistics classes. The assignments usually involved writing a report or showing our work and including R code. If there hadn’t been the requirement to include R code, we probably would have used a collaboration tool like Overleaf to write the report. Since we also had to include working R code, this meant the groups preferred to work with RMarkdown files. After deciding which group member would type each question, we would each work on our own individual RMarkdown file, send them to each other when we were finished with our work, and then copy and paste everyone’s work into one file for submission. Using git would have been a lot easier because all group members could have been able to see each other’s work sooner. Combining the work into one file also would have been much simpler with git.</p>
+<ol start="3" type="1">
+<li><strong>Give an example of one new git feature that you learned about from Jenny Bryan’s book.</strong>. I learned that you can connect RStudio to GitHub using HTTPS instead of SSH. When I last worked with RStudio and GitHub together (a few years ago), I thought you could only connect the two using SSH. The HTTPS method seems much easier.</li>
 </ol>
 
 

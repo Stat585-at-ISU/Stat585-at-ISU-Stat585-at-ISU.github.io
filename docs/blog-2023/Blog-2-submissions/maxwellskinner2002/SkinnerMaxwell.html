@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Stat 585 – lastnamefirstname</title>
+<title>Stat 585 – skinnermaxwell</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -133,9 +133,17 @@ ul.task-list li input[type="checkbox"] {
 <p>Write a blog post answering the following questions:</p>
 <ol type="1">
 <li><strong>Write a short (100-150 words) summary of the chapter you read in-depth.</strong></li>
+</ol>
+<p>The chapter I read was Chapter 9: Personal access token for HTTPS. The chapter focused on access tokens and the differences and uses between HTTPS versus SSH. Access tokens are important in interacting with remote Git servers like Github. Using credentials like an access token proves we are a specific Github user. Git can communicate with a remote server either through HTTPS or SSH, the different protocols use different credentials. With HTTPS you will use an access token. An access token can be made a number of ways but as simple as using the R function “usethis::create_github_token()” in the command line. SSH keys were talked about in chapter 10.</p>
+<ol start="2" type="1">
 <li><strong>Looking back at all of the team projects you have been involved in, describe the biggest mishap you had. Could that have been avoided using git? How?</strong>.</li>
+</ol>
+<p>In my final project for DS201, my team’s final project was entirely based in Google Colab. While Colab is a great resource for individual work and can be used if one is forced to use Google Drive or similar Google products, it is not great for organizing work accross multiple people. There were many issues that came with storing files in google drive and importing them into a script in Colab. As well, my team couldn’t ever figure out how to correctly mount each individual’s google drive to the project to be able to import things like excel files so we were forced to do the majority of work from just one computer instead of doing work equally accross everyone.</p>
+<p>Using git would have solved this issue completely. Sharing files and making sure everyone is working with the same version of a file would have been solved simply by using git. Importing something as simple as an excel file is easy as the we can put the script and the excel file in the same folder for easy access. Github has made group projects now an ease. Minimal hiccups when it comes to productivity and having teammates work on the same file from different locations.</p>
+<ol start="3" type="1">
 <li><strong>Give an example of one new git feature that you learned about from Jenny Bryan’s book.</strong>.</li>
 </ol>
+<p>In Chapter 9, Jenny talks about the R function “usethis::create_github_token()” which is used to get and store a personal access token. And using a R package such as gitcreds, we can store this generated token locally onto your computer. This is great for working with remote servers and kinds of Github servers that require tokens. As with the changes in July 2020 detailed in this article github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ , the only way to access Git operations is through token authentication.</p>
 
 
 </section>

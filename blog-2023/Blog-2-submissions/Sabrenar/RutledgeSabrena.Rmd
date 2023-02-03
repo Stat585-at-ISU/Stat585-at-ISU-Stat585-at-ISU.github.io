@@ -1,8 +1,8 @@
 ---
-layout: blog
+author: Sabrena Rutledge
 topic: "02"
-short-topic: Happy git and GitHub
-due-date: 2023-02-02
+categories: "Happy git and R"
+date: 2023-02-02
 root: ../../
 ---
 
@@ -16,7 +16,15 @@ Write a blog post answering the following questions:
 
 1. **Write a short (100-150 words) summary of the chapter you read in-depth.**
  
+ I read chapter 27 titled "The Repeated Amend." It detailed a method to save several incremental changes to a Git repo in only one commit instead of several commits. This method is analogous to working on a word document and saving a new version after a larger change versus after only a few small changes.  
+The author outlines a workflow for the method then provides a couple work-arounds for common problems. The author’s method is to have several amended commits on the local repo then push a “finalized” commit to the Github repo. 
+The biggest point of this chapter is to NOT push the local repo to the Github repo frequently. 
+ 
 2. **Looking back at all of the team projects you have been involved in, describe the biggest mishap you had. Could that have been avoided using git? How?**. 
+
+The biggest mishap I’ve had in team project is updated scripts for the project not being in the same location as the data. Frequently, the data has been in one server, and the finalized data analysis scripts have been on a Github repo. 
+This could have been avoided if there was a some sort of readme file directing readers to the Github in the directory with the data.
 
 3. **Give an example of one new git feature that you learned about from Jenny Bryan's book.**.
 
+I learned about Git commands from “Happy Git and Github for the useR.” I have only accessed Github repos from their respective Github websites.

@@ -1,3 +1,10 @@
+---
+author: Ian Parzyszek
+date: 2023-02-02
+categories: "Happy Git with R"
+title: Happy Git with R
+
+---
 Chapter 27: The Repeated Amend:
 Ian Parzyszek
 	1)

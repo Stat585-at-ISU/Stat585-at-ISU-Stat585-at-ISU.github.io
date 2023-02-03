@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Yingchao Zhou">
-<meta name="dcterms.date" content="2023-02-02">
 
-<title>Stat 585 - Happy Git with R</title>
+<title>Stat 585 – wiederichtyler</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -127,37 +125,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Happy Git with R</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Happy Git with R</div>
-  </div>
-  </div>
 
-
-
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Yingchao Zhou </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">February 2, 2023</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-
-</header>
 
 <section id="prompt" class="level2">
 <h2 class="anchored" data-anchor-id="prompt">Prompt:</h2>
@@ -166,23 +134,15 @@ ul.task-list li input[type="checkbox"] {
 <ol type="1">
 <li><strong>Write a short (100-150 words) summary of the chapter you read in-depth.</strong></li>
 </ol>
-<p>I read the chapter “9. Personal access token for HTTPS”.</p>
-<p>This chapter mainly teaches us how to set up a personal access token (PAT) to allow the local computer talk to the GitHub. Note the password for login on GitHub is not an acceptable credential.</p>
-<p>The whole generating and storing process may be done through R package usethis. Commands <code>usethis::create_github_token()</code> will generate the PAT and <code>gitcreds::gitcreds_set()</code> can store the credential.</p>
-<p>You may also generate the PAT on <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a> and store the token generated at a secure place.</p>
-<p>Bu default, the APT will expire in 30 days. And you need to re-generate and re-store the APT in the same steps.</p>
+<p>For this blog, I looked at Chapter 29: “Pull, but you have local work”. When work is saved locally and not saved to GitHub, pulling the repo is done normally without error. If one pulls and the file exists differently in the repo, then an error occurs. <code>git stash</code> will save local changes when pulling. This won’t change the fact that the files are still in conflict, but it provides temporary relief.</p>
 <ol start="2" type="1">
 <li><strong>Looking back at all of the team projects you have been involved in, describe the biggest mishap you had. Could that have been avoided using git? How?</strong>.</li>
 </ol>
-<p>It was a mess…</p>
-<p>I once worked with a classmate. We had a Github repository but I didn’t know how to push the changes from Rstudio or terminal, so every time I actually only committed the changes without pushing them to Github. I also occasionally uploaded my R script to Github page.</p>
-<p>However, once after I made a major change, I didn’t upload my file in a timely manner and my classmate worked with the wrong code for a day. When they taught me how to push to Github after this, the main branch was several steps ahead due to me uploading .R file. We had to force the push and lost some commits.<br>
-Unfortunately, it turned out that we needed some old code that we lost in that force push… And we had to take some trouble to recover the commits.</p>
-<p>If I had learned how to push from Rstudio (or just terminal) and only updated the code through push, we would have a clean record of the code.</p>
+<p>The biggest mishap is probably having merge conflicts with git. Sometimes when I can’t figure out how to pull/merge when conflicts exist, I simply delete what I have and pull from the repo to start again fresh (after saving my work somewhere locally).</p>
 <ol start="3" type="1">
 <li><strong>Give an example of one new git feature that you learned about from Jenny Bryan’s book.</strong>.</li>
 </ol>
-<p>You may use <code>git remote set-url</code> to change between https://github.com/usr/project.git and git@github.com:usr/project.git and switch between HTTPS and SSH credentials. (I currently use SSH. It’s good to know I can switch freely.)</p>
+<p><code>git stash save</code> and <code>git stash pop</code>. Although the author mentions staying away from these in favor of other methods, I think they are neat tricks!</p>
 
 
 </section>

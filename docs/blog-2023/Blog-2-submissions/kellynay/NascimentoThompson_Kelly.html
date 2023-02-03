@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Kelly Nascimento Thompson">
+<meta name="dcterms.date" content="2023-02-02">
 
-<title>Stat 585 – nascimentothompson_kelly</title>
+<title>Stat 585 - Happy Git with R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -125,7 +127,37 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Happy Git with R</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Happy Git with R</div>
+  </div>
+  </div>
 
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Kelly Nascimento Thompson </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 2, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
 
 <section id="prompt" class="level2">
 <h2 class="anchored" data-anchor-id="prompt">Prompt:</h2>
@@ -133,9 +165,16 @@ ul.task-list li input[type="checkbox"] {
 <p>Write a blog post answering the following questions:</p>
 <ol type="1">
 <li><strong>Write a short (100-150 words) summary of the chapter you read in-depth.</strong></li>
+</ol>
+<p>Chapter 20 (“Repo, commit, diff, tag”) Git is a version control framework aiming to help developers who collaborate on big software projects. Repo or repositories are set of files that Git manages as they evolve. For new or existing projects, RStudio users are recommended to dedicate a local directory for it, create an RStudio project, and create a Git repository. By doing so, these applications will leave notes for themselves in hidden files or directories. When saving files, a commit is made, taking a snapshot of all files in the project instead of saving individual files. Diff is the set of differences between two file commits. One common practice in Git projects is writing a commit message each time a commit is made. These messages help colleagues understand recent changes made in the project. A tag is a name that represents the version of the project or references the last commit made.</p>
+<ol start="2" type="1">
 <li><strong>Looking back at all of the team projects you have been involved in, describe the biggest mishap you had. Could that have been avoided using git? How?</strong>.</li>
+</ol>
+<p>My research involves modeling soil erosion at the STRIPS sites (https://www.nrem.iastate.edu/research/STRIPS/). I get rainfall, runoff, and sediment field data for ground truth validation purposes from another research group. These daily measurements from 2016 to 2022 are saved in Excel files created from R scripts. The data includes column names such as “treatment, site, date, rainfall, and runoff.” When I filtered the data, I noticed the rainfall data was included under the treatment column, and they are not supposed to be there. I contacted the collaborator who handled the data and asked the reasoning behind it; he explained it was for graphing purposes, saying that he would add an updated file to the Cybox folder removing the rainfall data from the treatment column. Git could avoid this issue because we would have access to the scripts that generate such files, and I would not have to go to Cybox to download a new version of the field data. Thus, it is important to work in a version control system in a case like this, where files are updated every year.</p>
+<ol start="3" type="1">
 <li><strong>Give an example of one new git feature that you learned about from Jenny Bryan’s book.</strong>.</li>
 </ol>
+<p>I followed the steps on Chapter 11 - “Connect to GitHub”. I created a new repository on github.com and cloned the repo to my local computer using the Git Bash shell. Following the book instructions I was able to change my working directory, list its files, and display the README file. I also installed GitHub Desktop and cloned repos from github.com. I tested by cloning Blog 1 to my computer.</p>
 
 
 </section>

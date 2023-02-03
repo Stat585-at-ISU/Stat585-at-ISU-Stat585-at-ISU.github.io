@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Stat 585 – lastnamefirstname</title>
+<title>Stat 585 – gettinglandon</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -119,6 +119,9 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#prompt" id="toc-prompt" class="nav-link active" data-scroll-target="#prompt">Prompt:</a></li>
+  <li><a href="#chapter-27-the-repeated-amend---summary" id="toc-chapter-27-the-repeated-amend---summary" class="nav-link" data-scroll-target="#chapter-27-the-repeated-amend---summary">Chapter 27: The Repeated Amend - Summary</a></li>
+  <li><a href="#team-mishap" id="toc-team-mishap" class="nav-link" data-scroll-target="#team-mishap">Team Mishap</a></li>
+  <li><a href="#new-git-feature" id="toc-new-git-feature" class="nav-link" data-scroll-target="#new-git-feature">New Git Feature!</a></li>
   </ul>
 </nav>
     </div>
@@ -129,13 +132,27 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="prompt" class="level2">
 <h2 class="anchored" data-anchor-id="prompt">Prompt:</h2>
-<p>git and Github are tools for helping with versioning of files in collaborative efforts as well as archiving entries for your future self. Unfortunately working with git isn’t always completely straightforward. Jenny Bryan’s book “Happy git and github with R” helps with that. The book is available from <a href="http://happygitwithr.com/">http://happygitwithr.com/</a>. Have a look over the index and pick one of the chapters for a more in-depth read.</p>
+<p>git and Github are tools for helping with versioning of files in collaborative efforts as well as archiving entries for your future self. Unfortunately working with git isn’t always completely straightforward. Jenny Bryan’s book “Happy git and github with R” helps with that. The book is available from <a href="http://happygitwithr.com/" class="uri">http://happygitwithr.com/</a>. Have a look over the index and pick one of the chapters for a more in-depth read.</p>
 <p>Write a blog post answering the following questions:</p>
 <ol type="1">
 <li><strong>Write a short (100-150 words) summary of the chapter you read in-depth.</strong></li>
 <li><strong>Looking back at all of the team projects you have been involved in, describe the biggest mishap you had. Could that have been avoided using git? How?</strong>.</li>
 <li><strong>Give an example of one new git feature that you learned about from Jenny Bryan’s book.</strong>.</li>
 </ol>
+</section>
+<section id="chapter-27-the-repeated-amend---summary" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-27-the-repeated-amend---summary">Chapter 27: The Repeated Amend - Summary</h2>
+<p>During Lab 1, you may have encountered a similar situation to our group. Our repository was quickly filled with many small commits that ranged from changing a single argument to entire sections of the lab. The repeated amend workflow will be useful in the future as I strive to make my version history more digestible for collaborators.</p>
+<p>Instead of performing many small commits, the amend action allows you to edit a previous commit as you make unforeseen positive progress. This is possible in RStudio through the “amend previous commit” check box in the commit interface window. Once you have completed a section of code or accomplished a goal, then commit. The commit history will show you finished the section or accomplished the goal in a single commit rather than many smaller commits. Once you’ve tested the code and feel good about the commit, you can push it and repeat the process for the next task.</p>
+</section>
+<section id="team-mishap" class="level2">
+<h2 class="anchored" data-anchor-id="team-mishap">Team Mishap</h2>
+<p>In an introductory data mining class, my group took an especially long time to develop, train, and test our model because no one knew which file was most updated or advanced. We desperately needed a lesson on reproducible code as well. R scripts were named after the author and usually had a number or adjective to further describe the iteration (ex. Landon_6 or Zach_CleanData). Git would have eliminated this confusion through a main branch that is pulled from and pushed to as progress is made individually.</p>
+<p>In many of the scripts, file paths were hard coded. Instead of saving a cleaned or manipulated data frame as a new file in a common repo, we each spent hours running code to produce it as an object in our local R Studio. It was a disaster. The group has come a long way since the project and it is funny to look back on our ineptitude.</p>
+</section>
+<section id="new-git-feature" class="level2">
+<h2 class="anchored" data-anchor-id="new-git-feature">New Git Feature!</h2>
+<p>If you become stuck during a cycle of repeated amends (or at any time prior to a commit), utilize the “Diff” or “Commit” actions in RStudio to either discard all changes or discard a chunk of changes.</p>
 
 
 </section>

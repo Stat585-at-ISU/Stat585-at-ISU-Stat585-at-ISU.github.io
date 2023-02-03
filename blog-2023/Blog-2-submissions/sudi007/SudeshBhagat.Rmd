@@ -1,0 +1,25 @@
+---
+author: Sudesh Bhagat
+date: 2023-02-02
+categories: "Happy Git with R"
+title: Happy Git with R
+---
+
+
+## Prompt:
+
+git and Github are tools for helping with versioning of files in collaborative efforts as well as archiving entries for your future self. 
+Unfortunately working with git isn't always completely straightforward. 
+Jenny Bryan's book "Happy git and github with R" helps with that. The book is available from [http://happygitwithr.com/](http://happygitwithr.com/). Have a look over the index and pick one of the chapters for a more in-depth read.
+
+Write a blog post answering the following questions: 
+
+1. **Write a short (100-150 words) summary of the chapter you read in-depth.**
+The chapter I read in-depth was Chapter1, Why Git? Why GitHub? This chapter caught my attention because although one may have used Git, it helps to get a refresher on the precise function of Git, along with its features. It introduces Git and GitHub to a new user in novice terms and with analogies that are easy to understand. The chapter also explains how to get Git working for users, where the first step is to install Git and connect it with GitHub and R. The chapter warns of probable challenges like merging projects when working collaboratively. Special features such as issues and pull request are presented, in addition to information about the benefits of using R with Git and GitHub. Target audience is discussed to help users discern whether Git and GitHub are of use to them.
+
+2. **Looking back at all of the team projects you have been involved in, describe the biggest mishap you had. Could that have been avoided using git? How?**.
+Version control has been a challenge I have often faced in team projects, leading to working late nights under pressure. For example, for one of the classes last semester, a team of four was working on a project. Each one of us was working on a different aspect of the project which was stored on their local computers. It was then time to combine the various different files and present a final document. It was difficult to combine these individual sets of large files. The resultant document was difficult to understand. Using Git, these files could have been stored on the Git repository, with everyone accessing different sections of the document. This feature would have facilitated such collaboration that more
+than one person would have been able to see and work on the final combined file.
+
+3. **Give an example of one new git feature that you learned about from Jenny Bryan's book.**.
+A new feature that I learned from the book was how it can be combined with RStudio. I use RStudio for my projects. Knowing that RStudio can be combined with Git helps me understand how changes can be made to projects in RStudio and then stored in the Git repository.
