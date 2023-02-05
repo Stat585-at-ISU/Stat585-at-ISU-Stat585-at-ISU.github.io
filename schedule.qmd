@@ -12,9 +12,9 @@ Week | Topic | Notes
 &nbsp;    | &nbsp;                                                       | **Jan 19** [Collaborations - test case - part 2](../materials-2023/01_collaborative-environment/01_test-case.html#16) \| [a solution to the test case](../materials-2023/01_collaborative-environment/02_test-case-solution.html)
 &nbsp;    | &nbsp;                                                       | **Jan 24** [tools for collaborations](../materials-2023/01_collaborative-environment/03_tools-of-the-trade.html) \| [R Markdown refresher](https://ds202-at-isu.github.io/materials/01_collaborative-environment/03_rmarkdown.html#1) \| [to add or not to add? that is the git-tion](../materials-2023/01_collaborative-environment/05_responsible_git.html)
 3 - 4     | Data structures in R: factors, lists, trees                  | **Jan 26** [Results from R & friends](../materials-2023/02_tidyverse/01b_r-and-friends.html) \| [Reviewing elements of the tidyverse: ggplot2, dplyr, tidyr with solutions](../materials-2023/02_tidyverse/01_intro.html)
-&nbsp;    | &nbsp;                                                       | **Jan 31** [Reviewing elements of the tidyverse: ggplot2, dplyr, tidyr with solutions](../materials-2023/02_tidyverse/01_intro.html) \| [Review of basic R types and structures, first look at lists](../materials-2023/03_data-structures/01_data-structures.html)
+&nbsp;    | &nbsp;                                                       | **Jan 31** [Reviewing elements of the tidyverse: ggplot2, dplyr, tidyr with solutions](../materials-2023/02_tidyverse/01_intro.html) 
 &nbsp;    | &nbsp;                                                       | **Feb 2** [Lab #1](labs/01-slides.qmd)
-&nbsp;    | &nbsp;                                                       | **Feb 7** 
+&nbsp;    | &nbsp;                                                       | **Feb 7** [Review of basic R types and structures, first look at lists](../materials-2023/03_data-structures/01_data-structures.html)
 &nbsp;    | &nbsp;                                                       | **Feb 9**
 5         | Review of functional programming, conditionals, loops        | **Feb 14**
 &nbsp;    | &nbsp;                                                       | **Feb 16** Lab #2
