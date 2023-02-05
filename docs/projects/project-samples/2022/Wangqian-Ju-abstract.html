@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Zahra Khoshmanesh, Atousa Zarindast, Joshua Budi">
+<meta name="author" content="Wangqian Ju, Zhili Qiao, Jinji Pang">
 
-<title>Stat 585 - SentiAnalyzer - Sentiment analysis for consumer review</title>
+<title>Stat 585 - Build modularized shiny app with ggpaintr</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,22 +24,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -61,7 +61,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Stat 585</span>
     </a>
   </div>
@@ -81,19 +81,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html">
+    <a class="nav-link" href="../../../index.html">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../schedule.html">
+    <a class="nav-link" href="../../../schedule.html">
  <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html">
+    <a class="nav-link" href="../../../blog.html">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../projects.html">
+    <a class="nav-link" href="../../../projects.html">
  <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
@@ -122,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">SentiAnalyzer - Sentiment analysis for consumer review</h1>
+<h1 class="title">Build modularized shiny app with ggpaintr</h1>
 </div>
 
 
@@ -132,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Zahra Khoshmanesh, Atousa Zarindast, Joshua Budi </p>
+             <p>Wangqian Ju, Zhili Qiao, Jinji Pang </p>
           </div>
   </div>
     
@@ -143,10 +143,7 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Consumer reviews are very instrumental in projecting the development and direction of businesses. The wealth of information provided with online reviews can be analyzed to access the general sentiment of the consumer towards the product/service. This sentiment analysis will provide general idea and quantitative measure of the consumer’s sentiment.</p>
-<p>The required data set, in .tsv format, consist of a text review and a binary input of 0 or 1 indicating whether the consumer liked the item or not. These will be balanced using “ROSE” package, which attempts to generate synthetic data by randomly over-sampling examples in case of imbalance data.</p>
-<p>Then using a text mining package “tm”, it will mine for the words/word base of interest such as keywords that conveys sentiment based on dictionary list provided by the package. This “stream-lined” tokens that were independent variables on the raw dataset is then joined in a matrix through either of the three algorithms of the user’s choice such as Bag of Words, Tfdfi, or Bigram and will be analyzed based on its sentiment. Next, using “caTools” package, we split the data set to 0.2 data and 0.8 training set split ratio to be fed to different classification models of provided by the existing machine learning algorithms training models.</p>
-<p>The package also compares the accuracy of the prediction model based on the machine learning algorithm which the user can choose from: decision tree, naïve bayes, or random forest. The result is different parameters of the sentiment prediction that is built in a confusion matrix: Accuracy, Precision, Recall, and F1 score. Lastly, these parameters will be visualized as a wordcloud as well as presented in an interactive Shiny app. Overall, this package will put together different algorithms and visualization of a version of natural language processing (NLP) and will allow a broader audience of user to access this tool.</p>
+<p>We here introduce an open-source R package ggpaintr, for building a modularized shiny app in the similar grammar of ggplot2. This package provides built-in modules for both ui and server side of a shiny app so that a shiny app with a graphical user interface for ggplot2 can be easily implemented. And users can write and provide their own modules to further extend and customize the package’s functionality. A shiny app called ggpaintr_app is built with the ggpaintr package and included in the package. ggpaintr_app serves as a shiny app for those unfamiliar with the Grammar of Graphics or ggplot2 but want to create a plot using ggplot2. The corresponding ggplot2 R codes will also be provided once a plot has been created. Additionally, another shiny app called ggpaintr_iris_app is included in the package to showcase how to deploy the basic functionality of this package to build other shiny apps or packages.</p>
 
 
 

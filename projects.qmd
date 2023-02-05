@@ -4,9 +4,9 @@ title: "Projects"
 
 This class requires a presentation and a report for a final project. Final projects are team-based with teams consisting of 3 to 5 members.
 
-{{< include project-reqs.qmd >}}
+{{< include projects/project-requirements.qmd >}}
 
-You can have a look at the scope of some projects from [2019](project-samples/2019.qmd) and [2022](project-samples/2022.qmd)
+You can have a look at the scope of some projects from [2019](projects/project-samples/2019.qmd) and [2022](projects/project-samples/2022.qmd)
 
 
 There are several stages to the project. Only the last two stages are graded. All other stages are not graded. You should use them as an opportunity to get feedback. For stages 1-3 feedback will be given as soon as you submit your contribution, i.e. you don't have to wait until after Spring break to submit your project idea.
@@ -20,4 +20,4 @@ Abstract and Presentation slots
 - Stage 4: Presentation (Dead week and Finals, graded)
 - Stage 5 (May 9th, graded): Package submission to canvas (Finals week)
 
-We will be using the following [project rubric](project-rubric.qmd) for evaluating the final submission. Presentations are peer-evaluated. Feedback will be given in [this form](https://heike.wufoo.com/forms/m11utxhi014nt1m/).
+We will be using the following [project rubric](projects/project-rubric.qmd) for evaluating the final submission. Presentations are peer-evaluated. Feedback will be given in [this form](https://heike.wufoo.com/forms/m11utxhi014nt1m/).

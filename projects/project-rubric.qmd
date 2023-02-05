@@ -4,7 +4,7 @@ title: "Project Rubric"
 
 ## Final projects Stat 585
 
-{{< include project-reqs.qmd >}}
+{{< include project-requirements.qmd >}}
 
 ## Grading Rubric:
 
