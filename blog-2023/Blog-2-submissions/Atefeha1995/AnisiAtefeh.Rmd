@@ -1,9 +1,9 @@
+
 ---
-layout: blog
-topic: "02"
-short-topic: Happy git and GitHub
-due-date: 2023-02-02
-root: ../../
+author: Atefeh Anisi
+date: 2023-02-02
+categories: "Happy Git with R"
+title: Happy Git with R
 ---
 
 ## Prompt:

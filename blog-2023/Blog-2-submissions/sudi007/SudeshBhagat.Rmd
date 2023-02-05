@@ -1,11 +1,15 @@
 ---
-author: Sudesh Bhagat
-date: 2023-02-02
+title: "Happy Git with R"
+author: "Sudesh Bhagat"
+date: '2023-02-03'
 categories: "Happy Git with R"
-title: Happy Git with R
+output: html_document
+root: ../../
 ---
 
-
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
 ## Prompt:
 
 git and Github are tools for helping with versioning of files in collaborative efforts as well as archiving entries for your future self. 

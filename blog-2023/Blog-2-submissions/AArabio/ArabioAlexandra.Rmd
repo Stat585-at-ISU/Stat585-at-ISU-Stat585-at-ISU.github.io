@@ -1,7 +1,7 @@
 ---
-author: Alexandra Arabio
+author: Alexadra Arabio
 date: 2023-02-02
-catergories: "Happy Git with R"
+categories: "Happy Git with R"
 title: Happy Git with R
 ---
 

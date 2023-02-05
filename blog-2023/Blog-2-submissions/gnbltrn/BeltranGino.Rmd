@@ -9,29 +9,33 @@ root: ../../
 
 **Summary of Chapter 6.  Install Git.
 
-This chapter includes instructions on how to install Git Bash.  Given that I am new to github and git, I found it somewhat confusing at first.  I had watched YouTube videos to familiarize myself with github and run into several videos about Git Bash, so after I completed the instruction and installed Git in my PC, I then realized they were the same. After reading this chapter in more detail, I learned that Git has multiple names. 
+This chapter includes instructions on how to install Git Bash.  Given that I am new to Github and Git, I found it somewhat confusing at first.  I had watched YouTube videos to familiarize myself with github and run into several videos about Git Bash, but did not know what it was, so after I completed the instructions in the book and installed Git in my PC, I then realized they were the same. After reading this chapter in more detail, I learned that Git has multiple names. 
 
-Summary
-1.	Verify if you already have Git and consider updating if you have al older version.
+Summary.
+
+1.	Verify if you already have Git and consider updating if you have an older version.
 
 git --version
 ## git version 2.39.1
 
-2. Install Git for Windows
+2. Install Git for Windows.
+
 Option 1 (highly recommended) from the link below (I used this option):
 https://gitforwindows.org/
 Option 2 (recommended): Install Git for Windows via the Chocolatey package manager. I personally did not use this option.
 choco install git.install
 
-3.	Updating Git for Windows if you have an old version
+3.	Updating Git for Windows if you have an old version.
 git update-git-for-windows
 
 The rest of the chapter if for Mac and Linux users, which I didn’t use.
 
-**Biggest Mishap Experience
-I have worked on a number of projects big and small, but I have no experience withing on coding projects.  It seems to me git and github apply the concepts of “document control” and “versioning” to coding, which allows the user to have one source of truth while cooperate with others.  I have use other tools such as MS Project, SharePoint, SAP/R3, and more recently MS One Drive for the same purpose of document control and cooperation and have had no big mishap so far.  However, I can mention that when not using these tools, authoring a new document is significantly more troublesome and painful.  Just having the ability to go back to a previous version can be a life saver. 
+**Biggest Mishap Experience.
 
-**Git Example of One New Feature
+I have worked on a number of projects, big and small, but I have no experience working on coding or software development projects.  It seems to me, git and github apply the concepts of “document control” and “versioning” to coding, which allows the user to have one source of truth while cooperate with others.  I have used other tools such as MS Project, SharePoint, SAP/R3, and more recently MS OneDrive for the same purpose of document control and cooperation.  I have had no big mishap so far.  However, I can mention that when not using these tools, authoring with others, a new document for instance, can be significantly more troublesome and painful.  Just having the ability to go back to a previous version can be a life saver. 
+
+**Git Example of One New Feature.
+
 Everything from Git and the book was new to me, but I can highlight I didn’t know about the capability of R to be connected with github to work in a team environment. 
 
 

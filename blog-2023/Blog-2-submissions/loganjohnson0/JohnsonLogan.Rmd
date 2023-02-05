@@ -1,0 +1,27 @@
+---
+author: Logan Johnson
+date: 2023-02-02
+categories: "Happy Git with R"
+title: Happy Git with R
+---
+
+## Prompt:
+
+git and Github are tools for helping with versioning of files in collaborative efforts as well as archiving entries for your future self. 
+Unfortunately working with git isn't always completely straightforward. 
+Jenny Bryan's book "Happy git and github with R" helps with that. The book is available from [http://happygitwithr.com/](http://happygitwithr.com/). Have a look over the index and pick one of the chapters for a more in-depth read.
+
+Write a blog post answering the following questions: 
+
+1. **Write a short (100-150 words) summary of the chapter you read in-depth.**
+
+I read Chapter 16 for a more in-depth understanding of how to start using GitHub with RStudio with existing projects. Assuming GitHub accounts are already created, Jenny recommends starting a new repository for the project. On your local machine, all your scripts and code should be in a single project. Because it is your own local files, your are cloning to your local machine. Using the "usethis" package from R, it is simple to set up a GitHub repository on your machine. The "usethis" package performs some additional set up in the background. There is a more manual method to set up the repository, however, it is just not as simple. You can then copy your R projects into the newly created GitHub repository on your computer. You can then begin to commit and push your files to GitHub and confirm that they transitioned over to GitHub correctly.
+
+2. **Looking back at all of the team projects you have been involved in, describe the biggest mishap you had. Could that have been avoided using git? How?**. 
+
+When I first began using R and RStudio, a fellow graduate student was helping me learn how to code while also providing his own code to share on the project. In this instance, we both had code on our computer that had various changes made independently of each other. After a few months, we both had worked on and off with these data. Had we been using GitHub, it would have been a lot easier to share the tips and tricks that we both learned from each other to make the code better. We also would have been able to keep up with each other's analyses a lot easier than sending code over email.
+
+3. **Give an example of one new git feature that you learned about from Jenny Bryan's book.**.
+
+I am basically brand new to git and GitHub. I've learned more about the commit, push, and pull process. Understanding how these function helps me a lot. I realize that I can keep files on my computer without having to worry about pushing everything I do to GitHub. I also better understand the process of pulling, committing, and pushing to always have the most up to date version of a piece of code.
+ 
