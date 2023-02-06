@@ -1,9 +1,19 @@
 ---
-author: The Prompt
+author: "Firstname Lastname"
+title: "Title of your post"
+categories: Building a book
 date: 2023-02-09
-categories: "Building a Book"
-title: Building a Book
+output: github_document
 ---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
 
 ## Prompt:
 
@@ -49,6 +59,7 @@ Errors happen, they are frustrating, but if we learn something from them, we can
 **Deliverable (2):** Write a paragraph on the biggest problem you encountered when you were building the book, (and how you managed to solve it.)
 
 
+You can write your experience directly into the `README.Rmd` file. Just make sure that you change the yaml at the top: change the author at the top, and give your post a new title (don't change the category :)) 
 
-Submit to your repo and you are done!
+Commit and push to your repo and you are done!
 

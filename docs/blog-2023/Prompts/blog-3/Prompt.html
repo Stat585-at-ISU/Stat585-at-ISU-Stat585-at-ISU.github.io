@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Firstname Lastname">
+<meta name="dcterms.date" content="2023-02-09">
 
-<title>Stat 585 – renamed</title>
+<title>Stat 585 - Title of your post</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -118,34 +120,83 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#prompt" id="toc-prompt" class="nav-link active" data-scroll-target="#prompt">Prompt:</a></li>
+  <li><a href="#prompt" id="toc-prompt" class="nav-link active" data-scroll-target="#prompt">Prompt:</a>
+  <ul class="collapse">
+  <li><a href="#what-we-want-build-a-book" id="toc-what-we-want-build-a-book" class="nav-link" data-scroll-target="#what-we-want-build-a-book">What we want: build a book</a></li>
+  <li><a href="#what-to-do-when-things-dont-work" id="toc-what-to-do-when-things-dont-work" class="nav-link" data-scroll-target="#what-to-do-when-things-dont-work">What to do when things don’t work?</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Title of your post</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Building a book</div>
+  </div>
+  </div>
 
 
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Firstname Lastname </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 9, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
 <section id="prompt" class="level2">
 <h2 class="anchored" data-anchor-id="prompt">Prompt:</h2>
-<p>git and Github are tools for helping with versioning of files in collaborative efforts as well as archiving entries for your future self. Unfortunately working with git isn’t always completely straightforward. Jenny Bryan’s book “Happy git and github with R” helps with that. The book is available from <a href="http://happygitwithr.com/">http://happygitwithr.com/</a>. Have a look over the index and pick one of the chapters for a more in-depth read.</p>
-<p>Write a blog post answering the following questions:</p>
+<p>The goal of this week’s blog is to document what you are doing when things do not go according to plan.</p>
+<p>Similar to previous exercises, we have a specific use case in mind: we want to build a book from a github repository.</p>
+<p>What happens in practice usually, is that we run into some problems. So your real task turns into that of a bug-hunter and fixer. Luckily, you have a community (the class discussion board) who might be able to help you.</p>
+<section id="what-we-want-build-a-book" class="level3">
+<h3 class="anchored" data-anchor-id="what-we-want-build-a-book">What we want: build a book</h3>
+<p>Build the html version of the 2nd edition for Hadley Wickham’s book <code>Advanced R Programming</code> from a github repository.</p>
+<p>Steps:</p>
 <ol type="1">
-<li><strong>Write a short (100-150 words) summary of the chapter you read in-depth.</strong></li>
+<li>Clone the repository <code>https://github.com/hadley/adv-r</code>.</li>
+<li>Open the R project in the repository in RStudio.</li>
+<li>Activate the <code>Build</code> tab (by default in the top right panel). Click on the <code>Build Book</code> button.</li>
+<li>The book will be available in html format as index.html</li>
 </ol>
-<p><strong>Solution:</strong> I have gone through Chapter 18 in depth, it provides a comprehensive introduction as well as hand-on experience to R Markdown which is a wonderful tool for creating documents and reports, it also allows to embed R code within a document and produces a various format output like HTML, pdf, word using knitr options. It also helps in creating the first R Markdown document with ‘Hello World’ and also covers the basics of formatting and styling text, including how to add headings, images,bullet points, and tables. Apart from formatting and styling it also explains how to customize CSS and themes to the document. It will help with creating professional reports as well as documents of the work. Moreover, it also explains the how to connect and push R markdown file to GitHub and how to publish the report.</p>
-<ol start="2" type="1">
-<li><strong>Looking back at all of the team projects you have been involved in, describe the biggest mishap you had. Could that have been avoided using git? How?</strong>.</li>
-</ol>
-<p><strong>Solution:</strong> Being a software developer in the past, I have used versioning tools like git and subversion. When I started using git within my team, I ended up with multiples mishap in the team projects. one of the scenarios I pulled the code and try editing it but forget to commit and push, and then I pulled the latest version again which ended up losing my own work. As there is no backup copy of my code and I was working on master copy, the pulled request overwrites my work.<br>
-It could be avoided if I used branching concept of git. Branching ensures my work is saved even if I pull the latest version of the code from the main branch. If I knew the standard procedure of git, I may not end up losing my work. I think branching is one of the best ways to cooperate and contribute to team projects.</p>
-<ol start="3" type="1">
-<li><strong>Give an example of one new git feature that you learned about from Jenny Bryan’s book.</strong>.</li>
-</ol>
-<p><strong>Solution:</strong> From chapter 12 of Jenny Bryan’s book, I learnt how to connect RStudio with Git and GitHub. In my case, Somehow, RStudio are not able to detect git, install the git explained in chapter 6 of the book and finally able to connect RStudio to git and GitHub.</p>
+<p><strong>Deliverable (1):</strong> what is the last word in chapter 15? - You don’t have to answer this question, if things don’t work.</p>
+</section>
+<section id="what-to-do-when-things-dont-work" class="level3">
+<h3 class="anchored" data-anchor-id="what-to-do-when-things-dont-work">What to do when things don’t work?</h3>
+<p>Errors happen, they are frustrating, but if we learn something from them, we can turn them into valuable experiences.</p>
+<ul>
+<li><p>check the Questions and Answers forum in Canvas whether there is a solution available for your problem.</p></li>
+<li><p>if the above document does (not yet) include your question, document the error you encounter (be as concise and specific as you can at the same time)</p></li>
+<li><p>if the Question and Answers forum does (not yet) include a solution, describe one approach on how you tried to solve the problem (and how this did not work).</p></li>
+<li><p>submit the description of your problem in Canvas at Discussions &gt; Questions and Answers. Write the paragraph in the mindset that you want to get help from somebody, and you try to describe the problem you are encountering.</p></li>
+<li><p>Extra points (1 pt for the first suggested working solution): post a solution to one of the problems in the Questions and Answers forum (your own does not count!).</p></li>
+</ul>
+<p><strong>Deliverable (2):</strong> Write a paragraph on the biggest problem you encountered when you were building the book, (and how you managed to solve it.)</p>
+<p>You can write your experience directly into the <code>README.Rmd</code> file. Just make sure that you change the yaml at the top: change the author at the top, and give your post a new title (don’t change the category :))</p>
+<p>Commit and push to your repo and you are done!</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

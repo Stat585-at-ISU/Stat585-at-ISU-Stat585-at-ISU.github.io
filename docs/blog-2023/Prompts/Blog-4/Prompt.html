@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="The Prompt">
-<meta name="dcterms.date" content="2023-02-09">
+<meta name="author" content="Firstname Lastname">
+<meta name="dcterms.date" content="2023-02-16">
 
-<title>Stat 585 - Building a Book</title>
+<title>Stat 585 - Title of your post</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -120,11 +120,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#prompt" id="toc-prompt" class="nav-link active" data-scroll-target="#prompt">Prompt:</a>
-  <ul class="collapse">
-  <li><a href="#what-we-want-build-a-book" id="toc-what-we-want-build-a-book" class="nav-link" data-scroll-target="#what-we-want-build-a-book">What we want: build a book</a></li>
-  <li><a href="#what-to-do-when-things-dont-work" id="toc-what-to-do-when-things-dont-work" class="nav-link" data-scroll-target="#what-to-do-when-things-dont-work">What to do when things don’t work?</a></li>
-  </ul></li>
+  <li><a href="#prompt" id="toc-prompt" class="nav-link active" data-scroll-target="#prompt">Prompt:</a></li>
   </ul>
 </nav>
     </div>
@@ -133,9 +129,9 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Building a Book</h1>
+<h1 class="title">Title of your post</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Building a Book</div>
+    <div class="quarto-category">Split-apply-combine</div>
   </div>
   </div>
 
@@ -146,14 +142,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>The Prompt </p>
+             <p>Firstname Lastname </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 9, 2023</p>
+      <p class="date">February 16, 2023</p>
     </div>
   </div>
   
@@ -165,36 +161,24 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="prompt" class="level2">
 <h2 class="anchored" data-anchor-id="prompt">Prompt:</h2>
-<p>The goal of this week’s blog is to document what you are doing when things do not go according to plan.</p>
-<p>Similar to previous exercises, we have a specific use case in mind: we want to build a book from a github repository.</p>
-<p>What happens in practice usually, is that we run into some problems. So your real task turns into that of a bug-hunter and fixer. Luckily, you have a community (the class discussion board) who might be able to help you.</p>
-<section id="what-we-want-build-a-book" class="level3">
-<h3 class="anchored" data-anchor-id="what-we-want-build-a-book">What we want: build a book</h3>
-<p>Build the html version of the 2nd edition for Hadley Wickham’s book <code>Advanced R Programming</code> from a github repository.</p>
-<p>Steps:</p>
+<p>The <code>plyr</code> package has by now been replaced by other, even faster packages, but the idea of <em>Split, apply, combine</em> is as relevant as ever.</p>
+<p>Read the paper <a href="https://www.jstatsoft.org/article/view/v040i01">The Split-Apply-Combine Strategy for Data Analysis</a> by Hadley Wickham.</p>
+<p>Write a blog post addressing the following questions:</p>
 <ol type="1">
-<li>Clone the repository <code>https://github.com/hadley/adv-r</code>.</li>
-<li>Open the R project in the repository in RStudio.</li>
-<li>Activate the <code>Build</code> tab (by default in the top right panel). Click on the <code>Build Book</code> button.</li>
-<li>The book will be available in html format as index.html</li>
+<li><p>The R code for the split-apply-combine paper is posted with the paper. Pick one of the examples demonstrating <code>plyr</code> functionality (such as <code>dlply</code> or <code>ddply</code>, …) and rewrite the example using functionality from the package <code>dplyr</code>. Make sure that your example works and returns identical results.</p></li>
+<li><p>Which (base R) functions do you know that support the split-apply-combine strategy? In your opinion, are these sufficient? State why or why not?</p></li>
+<li><p>The ChatGPT response to the prompt “Describe the split-apply-combine paradigm” is given below. Generally, the chatbot’s answers are decent. ChatGPT does have problems getting details right. Which details would you change in the response?</p></li>
 </ol>
-<p><strong>Deliverable (1):</strong> what is the last word in chapter 15? - You don’t have to answer this question, if things don’t work.</p>
-</section>
-<section id="what-to-do-when-things-dont-work" class="level3">
-<h3 class="anchored" data-anchor-id="what-to-do-when-things-dont-work">What to do when things don’t work?</h3>
-<p>Errors happen, they are frustrating, but if we learn something from them, we can turn them into valuable experiences.</p>
-<ul>
-<li><p>check the Questions and Answers forum in Canvas whether there is a solution available for your problem.</p></li>
-<li><p>if the above document does (not yet) include your question, document the error you encounter (be as concise and specific as you can at the same time)</p></li>
-<li><p>if the Question and Answers forum does (not yet) include a solution, describe one approach on how you tried to solve the problem (and how this did not work).</p></li>
-<li><p>submit the description of your problem in Canvas at Discussions &gt; Questions and Answers. Write the paragraph in the mindset that you want to get help from somebody, and you try to describe the problem you are encountering.</p></li>
-<li><p>Extra points (1 pt for the first suggested working solution): post a solution to one of the problems in the Questions and Answers forum (your own does not count!).</p></li>
-</ul>
-<p><strong>Deliverable (2):</strong> Write a paragraph on the biggest problem you encountered when you were building the book, (and how you managed to solve it.)</p>
-<p>Submit to your repo and you are done!</p>
+<blockquote class="blockquote">
+<p>The “split-apply-combine” paradigm is a data analysis strategy used in statistics and data science to analyze grouped data. It consists of three steps:</p>
+<p>Split: The data is first split into groups based on one or more variables of interest.</p>
+<p>Apply: A specific operation or function is applied to each group of data, usually for the purpose of aggregating, summarizing, or transforming the data within each group.</p>
+<p>Combine: The results of the operation applied to each group are then combined and returned as a single output.</p>
+<p>The split-apply-combine paradigm is particularly useful in cases where the data cannot be analyzed as a whole and instead must be analyzed in smaller, more manageable chunks. This allows for more efficient data processing and improved scalability. The paradigm is commonly implemented using tools such as the “groupby” function in the R and Python programming languages, and the “dplyr” library in R.</p>
+</blockquote>
+<p>You can write your answers directly the <code>README.Rmd</code> file. Make sure that the file knits (you will need to activate any packages your use in your code chunks with a call to <code>library(xxx)</code>, where xxx is the name of the package, such as <code>plyr</code> ). Commit your changes and push to your repo; add any files in the <code>README_files</code> directory to your repository.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
