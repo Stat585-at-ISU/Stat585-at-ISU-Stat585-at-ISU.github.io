@@ -1,5 +1,5 @@
 ---
-author: "Firstname Lastname"
+author: "The Prompt"
 title: "Title of your post"
 categories: Split-apply-combine
 date: 2023-02-16
