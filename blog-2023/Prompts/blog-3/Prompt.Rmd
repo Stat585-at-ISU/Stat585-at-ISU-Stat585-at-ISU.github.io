@@ -3,7 +3,6 @@ author: "The Prompt"
 title: "Title of your post"
 categories: Building a book
 date: 2023-02-09
-output: github_document
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
