@@ -1,0 +1,22 @@
+---
+title: Happy Git with R
+author: Matt Kavanaugh
+date: "2023-02-02"
+output: html_document
+categories: "Happy Git with R"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+Write a blog post answering the following questions: 
+
+1. **Write a short (100-150 words) summary of the chapter you read in-depth.**
+For this blog, I read Chapter 30, which is called "Time Travel: See The Past". It discussed the various ways in which one is able to retrieve a prior version of a project if they desire to make a change or simply want to analyze the history of their work. The first section summarizes hyperlinks, which allow access to commits on a Github repository and access to past versions. Hyperlinks allow one to select specific lines of code in a certain state and share them with others, making for easy collaboration on any project. The "blame" feature enables those who have access to see the commit history, including who edited a file and when such edit occurred. Similarly, the "history" feature enables one to see commits on a single file rather than the entire repository. Finally, the "search" feature enables a user to locate code, commits, or comments on specific files in a repository.
+2. **Looking back at all of the team projects you have been involved in, describe the biggest mishap you had. Could that have been avoided using git? How?**. 
+In my R programming class during my senior year of college, my group and I were working on a project that entailed analysis of air pollution and its impacts on a number of health conditions, such as obesity, asthma, diabetes, and cancer. Each member of the group analyzed a different variable and produced a number of graphs using ggplot2 as well as linear correlation tests and graphs that were produced using the base R capabilities. Unfortunately, this occurred during the busy period at the end of the semester, and several of our 5 group members had many other projects and exams that were taking place. Additionally, one of the group members got badly sick, and was unable to attend group meetings or even complete much work virtually. Hence, group meetings came to a halt, and we had made little progress on the project with only two days remaining until the due date. Hence, we ended up pulling an all nighter the night before the due date in which we all sat down to knock in out. There were varying levels of experience with R programming, so several of us had to teach others how use ggplot2 and several other R packages. It was frustrating to have to do so much work last minute, and git definitely could have solved this problem. It would have been easy to share R markdown and code files via a shared repository so that others in the group could see what had been done and by who. Additionally, using git would have allowed our team to provide suggestions to each person's contribution and allowed us to continue progressing on the project remotely, even when some members were not available.
+3. **Give an example of one new git feature that you learned about from Jenny Bryan's book.**.
+One example of a git feature that I learned about from this chapter was the issue search feature. This is an advanced search feature that allows for a quick way to search for specific issues within a repository using the built-in features of is:issue and is:open. This allows someone to easily find and troubleshoot issues without needing to look through hundreds or thousands of lines of code.
