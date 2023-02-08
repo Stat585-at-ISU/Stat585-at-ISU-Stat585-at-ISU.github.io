@@ -1,7 +1,9 @@
 ---
 author: "The Prompt"
 title: "Title of your post"
-categories: Split-apply-combine
+categories: 
+  - Split-apply-combine
+  - Prompt
 date: 2023-02-16
 ---
 

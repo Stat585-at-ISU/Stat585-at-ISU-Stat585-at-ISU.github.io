@@ -1,7 +1,9 @@
 ---
 author: The Prompt
 date: 2023-02-02
-categories: "Happy Git with R"
+categories: 
+  - "Happy Git with R"
+  - Prompt
 title: Happy Git with R
 ---
 
