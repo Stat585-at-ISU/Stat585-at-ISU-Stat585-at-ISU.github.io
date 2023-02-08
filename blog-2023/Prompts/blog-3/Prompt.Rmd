@@ -5,6 +5,7 @@ categories:
   - Building a book
   - Prompt
 date: 2023-02-09
+output: html_document
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
