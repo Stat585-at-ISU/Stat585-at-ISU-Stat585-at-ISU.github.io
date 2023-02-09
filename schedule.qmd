@@ -15,7 +15,7 @@ Week | Topic | Notes
 &nbsp;    | &nbsp;                                                       | **Jan 31** [Reviewing elements of the tidyverse: ggplot2, dplyr, tidyr with solutions](../materials-2023/02_tidyverse/01_intro.html) 
 &nbsp;    | &nbsp;                                                       | **Feb 2** [Lab #1](labs/01-slides.qmd)
 &nbsp;    | &nbsp;                                                       | **Feb 7** [Review of basic R types and structures, first look at lists](../materials-2023/03_data-structures/01_data-structures.html), [code](../materials-2023/code/code-2023-02-07.R)
-&nbsp;    | &nbsp;                                                       | **Feb 9** [Review of basic R types and structures, first look at lists](../materials-2023/03_data-structures/01_data-structures.html)
+&nbsp;    | &nbsp;                                                       | **Feb 9** [ List objects](../materials-2023/03_data-structures/01_data-structures.html#18), [Dates and time](../materials-2023/03_data-structures/02_date-and-time.html) 
 5         | Review of functional programming, conditionals, loops        | **Feb 14**
 &nbsp;    | &nbsp;                                                       | **Feb 16** Lab #2
 6         | Split-apply-combine strategies with lists                    | **Feb 21**
