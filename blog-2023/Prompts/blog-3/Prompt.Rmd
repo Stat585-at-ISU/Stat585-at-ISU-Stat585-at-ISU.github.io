@@ -1,5 +1,5 @@
 ---
-author: "The Prompt"
+author: "The Prompt for Blog 3"
 title: "Title of your post"
 categories: 
   - Building a book
