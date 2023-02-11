@@ -1,0 +1,63 @@
+---
+author: "Tyler Wiederich"
+title: "Building a book"
+categories: Building a book
+date: 2022-02-09
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Prompt:
+
+
+The goal of this  week's blog is to document what you are doing when things do not go according to plan. 
+
+Similar to previous exercises, we have a specific use case in mind: we want to build a book from a github repository. 
+
+What happens in practice usually, is that we run into some problems. 
+So your real task turns into that of a bug-hunter and fixer. Luckily, you have a community (the class discussion board) who might be able to help you. 
+
+
+
+### What we want: build a book
+
+Build the html version of the 2nd edition for Hadley Wickham's book `Advanced R Programming` from a github repository.
+
+Steps:
+
+1. Clone the repository `https://github.com/hadley/adv-r`.
+2. Open the R project in the repository in RStudio.
+3. Activate the `Build` tab (by default in the top right panel). Click on the `Build Book` button.
+4. The book will be available in html format as index.html
+
+**Deliverable (1):** what is the last word in chapter 15? - You don't have to answer this question, if things don't work. 
+
+This did not work for my computer. 
+
+### What to do when things don't work?
+
+Errors happen, they are frustrating, but if we learn something from them, we can turn them into valuable experiences.
+
+- check the Questions and Answers forum in Canvas whether there is a solution available for your problem. 
+
+- if the above document does (not yet) include your question, document the error you encounter (be as concise and specific as you can at the same time)
+
+- if the Question and Answers forum does (not yet) include a solution, describe one approach on how you tried to solve the problem (and how this did not work).
+
+- submit the description of your problem in Canvas at Discussions > Questions and Answers.  Write the paragraph in the mindset that you want to get help from somebody, and you try to describe the problem you are encountering. 
+
+- Extra points (1 pt for the first suggested working solution): post a solution to one of the problems in the Questions and Answers forum (your own does not count!). 
+
+
+**Deliverable (2):** Write a paragraph on the biggest problem you encountered when you were building the book, (and how you managed to solve it.)
+
+
+The biggest problem for building the book was the object `wrap` was missing from Introduction.Rmd. This caused the book to not compile. The error message returned `Quitting from lines 4-5 (Introduction.Rmd)`. This line from the particular Rmd file is `source("common.R")`, which I suspect has two possible causes. The first is a reference to the function `error_wrap`, which appears to be a custom function from somewhere else inside the project directory (does not appear in the R help files). There was also a call from `registerS3method` that uses `wrap`, so the error might also occur from here. Since I am not sure where `wrap` is needed, this is where my solution to fixing the problem stops.

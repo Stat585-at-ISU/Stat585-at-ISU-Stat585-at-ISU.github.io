@@ -1,0 +1,14 @@
+---
+author: Caio dos Santos
+date: 2023-02-09
+categories: "Building a Book"
+title: Building a Book
+---
+
+## Last word on chapter 15
+
+The last word on chapter 15 was: ***Class***
+
+## Biggest problems I had while building the book
+
+I thought the biggest problems I would have would be related to installing several libraries. Then, I kept track of all the libraries that R asked me to install in order to knit the book: *bookdown, htmltools, lobstr, emo, sloop, zeallot, bench, ggbeeswarm, and tinyTex*. However, I had the biggest problem with a self-brought upon complication of storing my scripts in Box. I usually do this as an extra layer of protection against losing my code. The bookdown package was not able to find some of the files every now and then. In special, bookdown had a problem with *ga_script.html*. It was as if the existed and not at the same time. Eventually, I fixed it by cloning the repository straight to my machine instead of the cloud.

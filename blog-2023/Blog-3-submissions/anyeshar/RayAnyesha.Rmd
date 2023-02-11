@@ -1,0 +1,39 @@
+---
+author: ar
+date: 2023-02-09
+categories: "Building a Book"
+title: Building a Book
+---
+
+## Prompt:
+
+
+The goal of this  week's blog is to document what you are doing when things do not go according to plan. 
+
+Similar to previous exercises, we have a specific use case in mind: we want to build a book from a github repository. 
+
+What happens in practice usually, is that we run into some problems. 
+So your real task turns into that of a bug-hunter and fixer. Luckily, you have a community (the class discussion board) who might be able to help you. 
+
+
+
+### What we want: build a book
+
+Build the html version of the 2nd edition for Hadley Wickham's book `Advanced R Programming` from a github repository.
+
+Steps:
+
+1. Clone the repository `https://github.com/hadley/adv-r`.
+2. Open the R project in the repository in RStudio.
+3. Activate the `Build` tab (by default in the top right panel). Click on the `Build Book` button.
+4. The book will be available in html format as index.html
+
+**Deliverable (1):** what is the last word in chapter 15? - You don't have to answer this question, if things don't work. 
+The last word is "class".
+
+
+**Deliverable (2):** Write a paragraph on the biggest problem you encountered when you were building the book, (and how you managed to solve it.)
+The biggest problem was figuring out what was going wrong. Everytime I tried to build the book, it gave me the following error: "Error in get(genname, envir = envir) : object 'wrap' not found". When I googled this issue, it seemed like it was an intalling packages error. It also made me realize there were many packaes the book was using that I didn't have installed. I went through each markdown in the repository and installed any packages that were required. Then I googled what the srap function was a part of and found that it was a part of the Kmisc package. When I went to install that, it said I needed Rtools. The hardest part of building this book was the amount of packages it needed and figuring out which packegaes those were. However, after all that, it said Kmisc was not available for my version of R. However, on the Q and A in class someone posted a solution and I switched wrap to sew and was able to get further. I had a second error that was also addressed in the Q and A and set error=true so it would continue to run. Another issue was the emoji file called "emo" instead of "emoji". I ended up finding that function and it said emo and ji instead of emoji so I changed that. Then there were many issues with the md files being missing, and I was not able to fix those. 
+.
+
+

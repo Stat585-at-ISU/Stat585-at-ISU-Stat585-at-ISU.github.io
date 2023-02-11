@@ -1,0 +1,84 @@
+---
+title: "Building a Book"
+author: "Sudesh Bhagat"
+date: '2023-02-09'
+categories: "Building a Book"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Prompt:
+
+
+The goal of this  week's blog is to document what you are doing when things do not go according to plan. 
+
+Similar to previous exercises, we have a specific use case in mind: we want to build a book from a github repository. 
+
+What happens in practice usually, is that we run into some problems. 
+So your real task turns into that of a bug-hunter and fixer. Luckily, you have a community (the class discussion board) who might be able to help you. 
+
+
+
+### What we want: build a book
+
+Build the html version of the 2nd edition for Hadley Wickham's book `Advanced R Programming` from a github repository.
+
+Steps:
+
+1. Clone the repository `https://github.com/hadley/adv-r`.
+2. Open the R project in the repository in RStudio.
+3. Activate the `Build` tab (by default in the top right panel). Click on the `Build Book` button.
+4. The book will be available in html format as index.html
+
+**Deliverable (1):** what is the last word in chapter 15? - You don't have to answer this question, if things don't work. 
+
+The Last word in chapter 15 is pseudo-class.The sentence reads as follows "The S4 any pseudo-class plays the same role as the S3 default pseudo-cLass"
+
+
+### What to do when things don't work?
+
+Errors happen, they are frustrating, but if we learn something from them, we can turn them into valuable experiences.
+
+- check the Questions and Answers forum in Canvas whether there is a solution available for your problem. 
+
+I was encountering an error while building the book. I had posted this challenge I was facing on the Question and Answers forum in Canvas. I received a solution to it. My classmate, Motahareh Kashanian, suggested that Rtools need to updated. Landon Getting further added to this suggestion by offering the path to solve the issue.
+
+- if the above document does (not yet) include your question, document the error you encounter (be as concise and specific as you can at the same time)
+
+My question on Canvas is as follows:I am facing the following error as shown below and have installed all necessary packages, but I cannot figure out what I am missing. Any guidance will be appreciated.
+
+
+
+In system(cmd) : 'make' not found
+Quitting from lines 77-84 (Rcpp.Rmd) 
+Error in sourceCpp(code = code, env = env, rebuild = rebuild, cacheDir = cacheDir,  : 
+  Error 1 occurred building shared library.
+Calls: local ... eval_with_user_handlers -> eval -> eval -> cppFunction -> sourceCpp
+
+
+- if the Question and Answers forum does (not yet) include a solution, describe one approach on how you tried to solve the problem (and how this did not work).
+
+I found a solution for my error from the question and Answers forum. I have already stated the solution I received above.
+
+- submit the description of your problem in Canvas at Discussions > Questions and Answers.  Write the paragraph in the mindset that you want to get help from somebody, and you try to describe the problem you are encountering.
+
+I am trying to build a book in R. However, while building it, I face the following error. I have installed all the necessary packages. But I cannot figure out the reason for the error. A screenshot of the error is posted below. Any guidance will be appreciated
+
+- Extra points (1 pt for the first suggested working solution): post a solution to one of the problems in the Questions and Answers forum (your own does not count!). 
+
+I offered a solution to one of the questions posted on the Question and Answer forum. One of my classmates was facing a challenge in terms of opening the URL. They had posted the error they were facing on the Question and Answer forum as follows:I offered a solution to this error by suggesting that they try to uninstall and install from RGUI. This suggestion was based on my own experience where I had faced a similar problem and the solution that I offered had worked for me.
+#install
+#tinytex::install_tinytex()
+# to uninstall TinyTeX, run
+#tinytex::uninstall_tinytex()
+
+**Deliverable (2):** Write a paragraph on the biggest problem you encountered when you were building the book, (and how you managed to solve it.)
+
+My biggest challenge while trying to build the book was the installation of a particular type of font called inconsolata. This font was required for the PDF file to be knnited. As I didn’t know how to solve this problem, I turned to StackOverflow in search for a solution and I found one there. According to the solution suggested on StackOverflow, to use this font in Windows, I was first required to install this font on my system. I did that by downloading the .tff file of the font from Google Fonts. Thereafter, I set it as a default font for R graphics. In order to do that I used the windowsFonts function from the grDevices package. Once the font was installed, my issue was resolved and I could continue to build the book. 
+
+
+Submit to your repo and you are done!
+
