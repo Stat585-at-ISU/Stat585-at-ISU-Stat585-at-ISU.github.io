@@ -2,7 +2,7 @@
 author: "The Prompt for Blog 3"
 title: "Title of your post"
 categories: 
-  - Building a book
+  - Building a Book
   - Prompt
 date: 2023-02-09
 output: html_document

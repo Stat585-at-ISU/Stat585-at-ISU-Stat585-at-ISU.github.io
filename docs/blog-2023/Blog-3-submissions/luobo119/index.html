@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="The Prompt for Blog 3">
+<meta name="author" content="YCB">
 <meta name="dcterms.date" content="2023-02-09">
 
-<title>Stat 585 - Title of your post</title>
+<title>Stat 585 - Experience of building a book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -133,10 +133,9 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Title of your post</h1>
+<h1 class="title">Experience of building a book</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Building a Book</div>
-    <div class="quarto-category">Prompt</div>
   </div>
   </div>
 
@@ -147,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>The Prompt for Blog 3 </p>
+             <p>YCB </p>
           </div>
   </div>
     
@@ -181,6 +180,7 @@ ul.task-list li input[type="checkbox"] {
 <li>The book will be available in html format as index.html</li>
 </ol>
 <p><strong>Deliverable (1):</strong> what is the last word in chapter 15? - You don’t have to answer this question, if things don’t work.</p>
+<p><strong>Answer:</strong> Last word in chapter 15 is <strong>class</strong> in index.html or <strong>pseudo-class</strong> if references included.</p>
 </section>
 <section id="what-to-do-when-things-dont-work" class="level3">
 <h3 class="anchored" data-anchor-id="what-to-do-when-things-dont-work">What to do when things don’t work?</h3>
@@ -193,8 +193,48 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Extra points (1 pt for the first suggested working solution): post a solution to one of the problems in the Questions and Answers forum (your own does not count!).</p></li>
 </ul>
 <p><strong>Deliverable (2):</strong> Write a paragraph on the biggest problem you encountered when you were building the book, (and how you managed to solve it.)</p>
-<p>You can write your experience directly into the <code>README.Rmd</code> file. Just make sure that you change the yaml at the top: change the author at the top, and give your post a new title (don’t change the category :))</p>
-<p>Commit and push to your repo and you are done!</p>
+<p>The biggest problem is that it is hard to find what is wrong when I have the error ‘dev.control() called without an open graphics device’ because it does not point to any specific file that might contain the problem. I found someone had the same issue in one GitHub post, and one person commented that there might be some missing pieces in the package ‘Cairo’. I followed his instructions and solved the problem.</p>
+<p>According to my experience in building the book, we need to update and install all the packages used first. Then I still encountered some errors before I could successfully compile the book. I’d like to record all the problems I encountered and my solutions here.</p>
+<ul>
+<li><strong>Error in get(genname, envir = envir) : object ‘wrap’ not found</strong><br>
+<strong>Calls: local … withVisible -&gt; eval -&gt; eval -&gt; registerS3method -&gt; get</strong>
+<ul>
+<li>The error is from ‘common.R’ file ‘registerS3method’ function. Because for knitr 1.40, knitr:::wrap() has been removed, and knitr::sew() is used instead.</li>
+<li>Using registerS3method(“sew”, …) instead of registerS3method(“sew”, …).</li>
+</ul></li>
+<li><strong>Error in if (c(TRUE, FALSE)) 1 : the condition has length &gt; 1</strong>
+<ul>
+<li>The error is from ‘Control-flow.Rmd’ file.</li>
+<li>Showing the errors without stopping R by adding chunk option ‘error=TRUE’</li>
+</ul></li>
+<li><strong>Error in dev.control(displaylist = if (record) “enable” else “inhibit”) :</strong><br>
+<strong>dev.control() called without an open graphics device</strong><br>
+<strong>Calls: local … call_block -&gt; block_exec -&gt; eng_r -&gt; chunk_device -&gt; dev.control</strong><br>
+
+<ul>
+<li>This is because for mac, XQuartz is missing for package ‘Cairo’.</li>
+<li>Downloading ‘Quartz X11’ and re-install ‘Cairo’. (https://github.com/brentthorne/posterdown/issues/42)</li>
+</ul></li>
+<li><strong>Package fontspec Error: The font “Inconsolata” cannot be found.</strong>
+<ul>
+<li>Installing the font by using<br>
+<em>brew tap homebrew/cask-fonts</em><br>
+<em>brew install –cask font-Inconsolata</em></li>
+</ul></li>
+<li><strong>LaTeX Error: Command \href undefined.</strong>
+<ul>
+<li>Adding ‘\usepackage{hyperref}’ in ‘latex/preamble.tex’.</li>
+</ul></li>
+</ul>
+<p>Appendix:</p>
+<ol type="1">
+<li>https://github.com/hadley/r-pkgs/blob/main/common.R<br>
+</li>
+<li>https://github.com/statcomputing/compiling-advanced-r-beili0022<br>
+</li>
+<li>https://github.com/yihui/bookdown-crc/commit/683e5fbd87478240c84cbebaf04058dd685090c8 <!-- You can write your experience directly into the `README.Rmd` file. Just make sure that you change the yaml at the top: change the author at the top, and give your post a new title (don't change the category :))  --></li>
+</ol>
+<!-- Commit and push to your repo and you are done! -->
 
 
 </section>

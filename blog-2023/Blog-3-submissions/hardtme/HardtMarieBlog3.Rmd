@@ -1,7 +1,7 @@
 ---
 author: "Marie Hardt"
 title: "Adventures in Book Building"
-categories: Building a book
+categories: Building a Book
 date: 2023-02-09
 output: github_document
 ---

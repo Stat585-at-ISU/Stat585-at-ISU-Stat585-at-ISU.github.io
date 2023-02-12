@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="The Prompt for Blog 3">
+<meta name="author" content="Motina">
 <meta name="dcterms.date" content="2023-02-09">
 
-<title>Stat 585 - Title of your post</title>
+<title>Stat 585 - Drawning in ERRORS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -133,10 +133,9 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Title of your post</h1>
+<h1 class="title">Drawning in ERRORS</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Building a Book</div>
-    <div class="quarto-category">Prompt</div>
   </div>
   </div>
 
@@ -147,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>The Prompt for Blog 3 </p>
+             <p>Motina </p>
           </div>
   </div>
     
@@ -181,6 +180,8 @@ ul.task-list li input[type="checkbox"] {
 <li>The book will be available in html format as index.html</li>
 </ol>
 <p><strong>Deliverable (1):</strong> what is the last word in chapter 15? - You don’t have to answer this question, if things don’t work.</p>
+<p>It took forever to compile, but I finally got the HTML version to work!</p>
+<p>The last word in chapter 15? CLASS! IT IS CLASS!</p>
 </section>
 <section id="what-to-do-when-things-dont-work" class="level3">
 <h3 class="anchored" data-anchor-id="what-to-do-when-things-dont-work">What to do when things don’t work?</h3>
@@ -193,6 +194,22 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Extra points (1 pt for the first suggested working solution): post a solution to one of the problems in the Questions and Answers forum (your own does not count!).</p></li>
 </ul>
 <p><strong>Deliverable (2):</strong> Write a paragraph on the biggest problem you encountered when you were building the book, (and how you managed to solve it.)</p>
+<ul>
+<li><p>Building the book has been a pain! :))</p></li>
+<li><p>The <strong>first</strong> error I got was <strong>“Failed to load Cairo DLL”</strong> in R, which is because I use. MacOS. According to CRAN, it’s related to XQuartz since it’s not part of OS X anymore. I installed XQuartz and basically all Cairo problems are fixed.</p></li>
+<li><p>The next error was object <strong>‘wrap’ not found!</strong></p></li>
+<li><p>I fixed the error by changing “wrap” to “sew” in the registerS3method() function in common.R.</p></li>
+<li><p>In the meantime, I installed a bunch of packages to get going! :))</p></li>
+<li><p>After that, I get to a big one! Error in <strong>if (c(TRUE, FALSE)) 1 : the condition has length &gt; 1</strong></p></li>
+<li><p>It turns out the behavior described is now the default (as of R 4.2.0).In other words, the command “if (c(TRUE, FALSE)) 1” will fail no matter what condition is set. To fix this, I just set error=TRUE in the addressed code chunk!</p></li>
+<li><p>Again, there was a bunch of missing packages! :))</p></li>
+<li><p>At this point it was taking almost 15-20 minutes to compile the book, and I ended up getting an error saying **LaTeX failed to compile _main.tex.**</p></li>
+<li><p>I tried updating tinytex, but I got the same error! I installed tlmgr to install packages, but it didn’t work! As I write this I’m trying options(tinytex.verbose = TRUE) to see if it fixes the error. I’ll let you know how it goes!</p></li>
+</ul>
+<p>. . . .</p>
+<ul>
+<li>Hey, it’s been a while! My PDF version wouldn’t compile, but I made it work with HTML! I’m still trying to fix the LaTex error! :)</li>
+</ul>
 <p>You can write your experience directly into the <code>README.Rmd</code> file. Just make sure that you change the yaml at the top: change the author at the top, and give your post a new title (don’t change the category :))</p>
 <p>Commit and push to your repo and you are done!</p>
 

@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="The Prompt for Blog 3">
+<meta name="author" content="Sabrena Rutledge">
 <meta name="dcterms.date" content="2023-02-09">
 
-<title>Stat 585 - Title of your post</title>
+<title>Stat 585 - Building a book with R’s bookdown</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -133,10 +133,9 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Title of your post</h1>
+<h1 class="title">Building a book with R’s bookdown</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Building a Book</div>
-    <div class="quarto-category">Prompt</div>
   </div>
   </div>
 
@@ -147,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>The Prompt for Blog 3 </p>
+             <p>Sabrena Rutledge </p>
           </div>
   </div>
     
@@ -181,6 +180,7 @@ ul.task-list li input[type="checkbox"] {
 <li>The book will be available in html format as index.html</li>
 </ol>
 <p><strong>Deliverable (1):</strong> what is the last word in chapter 15? - You don’t have to answer this question, if things don’t work.</p>
+<p>The last word in chapter 15 is pseudo-class.</p>
 </section>
 <section id="what-to-do-when-things-dont-work" class="level3">
 <h3 class="anchored" data-anchor-id="what-to-do-when-things-dont-work">What to do when things don’t work?</h3>
@@ -193,6 +193,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Extra points (1 pt for the first suggested working solution): post a solution to one of the problems in the Questions and Answers forum (your own does not count!).</p></li>
 </ul>
 <p><strong>Deliverable (2):</strong> Write a paragraph on the biggest problem you encountered when you were building the book, (and how you managed to solve it.)</p>
+<p>The biggest problem I encountered in building the html book was just needing a variety of packages not already installed. These errors were solved by installing the necessary packages. However, when not specifying the output for the build book command, the largest obstacle is LaTeX failed to compile main.tex. Re-installing tinytex and trying to obtain a larger error message with the options function both failed. This error appears to be a major problem since the traditional debugging methods are not resolving the error. If it was absolutely necessary to obtain a pdf version of the bookdown, then I would first try to obtain the pdf version of a different book to see if it is an issue with the system or with the book I am trying to obtain. Then I would debug either the book or the package depending on the results of the first part. Yet, if it was not necessary to obtain a pdf version of the bookdown, then I would select “bookdown::bs4_book” or “bookdown::gitbook” in order to obtain the html version of the bookdown.</p>
 <p>You can write your experience directly into the <code>README.Rmd</code> file. Just make sure that you change the yaml at the top: change the author at the top, and give your post a new title (don’t change the category :))</p>
 <p>Commit and push to your repo and you are done!</p>
 

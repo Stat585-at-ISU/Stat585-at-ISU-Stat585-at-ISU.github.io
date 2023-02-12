@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="The Prompt for Blog 3">
+<meta name="author" content="An Phan">
 <meta name="dcterms.date" content="2023-02-09">
 
-<title>Stat 585 - Title of your post</title>
+<title>Stat 585 - Building a Book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +22,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -120,11 +183,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#prompt" id="toc-prompt" class="nav-link active" data-scroll-target="#prompt">Prompt:</a>
-  <ul class="collapse">
-  <li><a href="#what-we-want-build-a-book" id="toc-what-we-want-build-a-book" class="nav-link" data-scroll-target="#what-we-want-build-a-book">What we want: build a book</a></li>
-  <li><a href="#what-to-do-when-things-dont-work" id="toc-what-to-do-when-things-dont-work" class="nav-link" data-scroll-target="#what-to-do-when-things-dont-work">What to do when things don’t work?</a></li>
-  </ul></li>
+  <li><a href="#what-we-want-build-a-book" id="toc-what-we-want-build-a-book" class="nav-link active" data-scroll-target="#what-we-want-build-a-book">What we want: build a book</a></li>
+  <li><a href="#things-that-did-not-work" id="toc-things-that-did-not-work" class="nav-link" data-scroll-target="#things-that-did-not-work">Things that did not work:</a></li>
   </ul>
 </nav>
     </div>
@@ -133,10 +193,9 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Title of your post</h1>
+<h1 class="title">Building a Book</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Building a Book</div>
-    <div class="quarto-category">Prompt</div>
   </div>
   </div>
 
@@ -147,7 +206,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>The Prompt for Blog 3 </p>
+             <p>An Phan </p>
           </div>
   </div>
     
@@ -164,40 +223,47 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-<section id="prompt" class="level2">
-<h2 class="anchored" data-anchor-id="prompt">Prompt:</h2>
-<p>The goal of this week’s blog is to document what you are doing when things do not go according to plan.</p>
-<p>Similar to previous exercises, we have a specific use case in mind: we want to build a book from a github repository.</p>
-<p>What happens in practice usually, is that we run into some problems. So your real task turns into that of a bug-hunter and fixer. Luckily, you have a community (the class discussion board) who might be able to help you.</p>
 <section id="what-we-want-build-a-book" class="level3">
 <h3 class="anchored" data-anchor-id="what-we-want-build-a-book">What we want: build a book</h3>
 <p>Build the html version of the 2nd edition for Hadley Wickham’s book <code>Advanced R Programming</code> from a github repository.</p>
-<p>Steps:</p>
-<ol type="1">
-<li>Clone the repository <code>https://github.com/hadley/adv-r</code>.</li>
-<li>Open the R project in the repository in RStudio.</li>
-<li>Activate the <code>Build</code> tab (by default in the top right panel). Click on the <code>Build Book</code> button.</li>
-<li>The book will be available in html format as index.html</li>
-</ol>
 <p><strong>Deliverable (1):</strong> what is the last word in chapter 15? - You don’t have to answer this question, if things don’t work.</p>
-</section>
-<section id="what-to-do-when-things-dont-work" class="level3">
-<h3 class="anchored" data-anchor-id="what-to-do-when-things-dont-work">What to do when things don’t work?</h3>
-<p>Errors happen, they are frustrating, but if we learn something from them, we can turn them into valuable experiences.</p>
+<p>After struggling with so many errors, I was able to build a book under two formats: html (<code>index.html</code>) and pdf (<code>_main.pdf</code>). Surprisingly, chapter 15 ends differently for these two formats.</p>
 <ul>
-<li><p>check the Questions and Answers forum in Canvas whether there is a solution available for your problem.</p></li>
-<li><p>if the above document does (not yet) include your question, document the error you encounter (be as concise and specific as you can at the same time)</p></li>
-<li><p>if the Question and Answers forum does (not yet) include a solution, describe one approach on how you tried to solve the problem (and how this did not work).</p></li>
-<li><p>submit the description of your problem in Canvas at Discussions &gt; Questions and Answers. Write the paragraph in the mindset that you want to get help from somebody, and you try to describe the problem you are encountering.</p></li>
-<li><p>Extra points (1 pt for the first suggested working solution): post a solution to one of the problems in the Questions and Answers forum (your own does not count!).</p></li>
+<li>For <strong>main.pdf</strong>: the last sentence is exercise number 2 of section 15.6.3 “Define a <code>length</code> method for the <code>Person</code> class.” (attached image <code>_main.pdf.png</code>)</li>
+<li>For <strong>index.html</strong>: the last sentence looks like a footnote (or description, or citation) numbered 81 “The S4 <code>ANY</code> pseudo-class plays the same role as the S3 <code>default</code> pseudo-class.” (attached image <code>index.html.pdf</code>) I think this was not added for compiling in the pdf format.</li>
 </ul>
-<p><strong>Deliverable (2):</strong> Write a paragraph on the biggest problem you encountered when you were building the book, (and how you managed to solve it.)</p>
-<p>You can write your experience directly into the <code>README.Rmd</code> file. Just make sure that you change the yaml at the top: change the author at the top, and give your post a new title (don’t change the category :))</p>
-<p>Commit and push to your repo and you are done!</p>
-
-
 </section>
+<section id="things-that-did-not-work" class="level3">
+<h3 class="anchored" data-anchor-id="things-that-did-not-work">Things that did not work:</h3>
+<p><strong>Deliverable (2):</strong> Write a paragraph on the biggest problem you encountered when you were building the book, (and how you managed to solve it.).</p>
+<p>I decided to describe the most frustrating problems I faced:</p>
+<ul>
+<li>A bunch of packages that were not installed kept interrupting the render process (e.g., <code>htmltools</code>, <code>bookdown</code>, <code>cli</code>, even <code>Rcpp</code>). I tried to install each and every package when required. Eventually, I found a smarter solution to <a href="https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/automate-your-workflow/auto-install-r-packages/">install all required packages automatically</a>.The script filters for library files in the project and auto-installs them almost perfectly.<br>
+</li>
+<li><em>Quitting from lines 4-5 (Introduction.Rmd) Error in get(genname, envir = envir) : object ‘wrap’ not found</em>. For this, I tried looking at the code chunk, then consulted the Q&amp;A in Canvas, and changed “wrap” to “sew”.</li>
+<li><em>Quitting from lines 106-107 (Control-flow.Rmd) Error in if (c(TRUE, FALSE)) 1 : the condition has length &gt; 1</em>. We receive an error message because we passed a vector to the <code>if()</code> statement, instead of a warning. At first, I commented that line out (in <code>Control-flow.Rmd</code>) for a quick solution. Then I switched to a more appropriate approach as suggested on Canvas, that is setting <code>error=TRUE</code> for that specific chunk. This option let me continue rendering the book (<a href="https://bookdown.org/yihui/rmarkdown-cookbook/opts-error.html">do not stop on error</a>) as well as show the error on purpose in the book.</li>
+<li>Some packages are “not available for this version of R”. I was using R 4.2.1 on a department PC at this point, which I cannot update R by myself (only certain versions of software are available on Software Center) so I had to find an alternative solution. I installed package <code>emo</code> from source by cloning Hadley’s <a href="https://github.com/hadley/emo.git">repo</a> into the local repo:</li>
+</ul>
+<pre><code>$ git clone --recurse-submodules https://github.com/hadley/emo.git</code></pre>
+<div class="cell" data-hash="index_cache/html/unnamed-chunk-2_1eb75f659e92999983132a7f22554a3c">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"emo2"</span>,<span class="at">repos=</span><span class="cn">NULL</span>,<span class="at">type=</span><span class="st">"source"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Warning in install.packages("emo2", repos = NULL, type = "source"):</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; installation of package 'emo2' had non-zero exit status</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(emo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This is another way to install packages that are not on CRAN.</p>
+<ul>
+<li><em>Quitting from lines 183-185 (Quotation.Rmd) Error in file(con, “w”) : cannot open the connection</em>. This occurred multiple times (I found other classmates also faced the same problem), I decided to rebuild without changing anything and it worked.</li>
+<li>The last error: <em>Error: LaTeX failed to compile main.tex. See <a href="https://yihui.org/tinytex/r/#debugging" class="uri">https://yihui.org/tinytex/r/#debugging</a> for debugging tips.</em> which took me a lot of time. After installing, re-installing, uninstalling desperately, I went back to read the error details more closely, and figured that some fonts are missing, so the <code>tinytex</code> package is not the main problem. I was working on Ubuntu then, so I decided to install two fonts that were missing (<strong>Inconsolata</strong>, <strong>Andale Mono</strong>, found in <code>preamble.tex</code>) from the terminal and refreshed the cache to update new fonts:</li>
+</ul>
+<!-- -->
+<pre><code>$ sudo apt-get install fonts-inconsolata -y
+$ sudo apt-get install ttf-mscorefonts-installer
+$ sudo fc-cache -fv</code></pre>
+<p>One last TeX error was solved by adding <code>\usepackage{hyperref}</code> in <code>preamble.tex</code> following <a href="https://github.com/yihui/bookdown-crc/commit/683e5fbd87478240c84cbebaf04058dd685090c8">Yihui’s solution</a>.</p>
+<p>And there we have it, the book has been successfully built entirely from R, with the help of LaTeX and some Cpp code. Now the errors feel less frustrating to deal with, I guess I have encountered around 10% of all possible errors 😄 🙌 🎉 🙌!</p>
+
+
 </section>
 
 </main> <!-- /main -->

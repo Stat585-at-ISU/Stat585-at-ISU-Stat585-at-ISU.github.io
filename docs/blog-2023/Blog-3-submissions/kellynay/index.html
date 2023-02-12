@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="The Prompt for Blog 3">
+<meta name="author" content="Kelly Nascimento Thompson">
 <meta name="dcterms.date" content="2023-02-09">
 
-<title>Stat 585 - Title of your post</title>
+<title>Stat 585 - Rendering a book using ‘bookdown’</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -123,7 +123,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#prompt" id="toc-prompt" class="nav-link active" data-scroll-target="#prompt">Prompt:</a>
   <ul class="collapse">
   <li><a href="#what-we-want-build-a-book" id="toc-what-we-want-build-a-book" class="nav-link" data-scroll-target="#what-we-want-build-a-book">What we want: build a book</a></li>
-  <li><a href="#what-to-do-when-things-dont-work" id="toc-what-to-do-when-things-dont-work" class="nav-link" data-scroll-target="#what-to-do-when-things-dont-work">What to do when things don’t work?</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -133,10 +132,9 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Title of your post</h1>
+<h1 class="title">Rendering a book using ‘bookdown’</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Building a Book</div>
-    <div class="quarto-category">Prompt</div>
   </div>
   </div>
 
@@ -147,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>The Prompt for Blog 3 </p>
+             <p>Kelly Nascimento Thompson </p>
           </div>
   </div>
     
@@ -181,20 +179,9 @@ ul.task-list li input[type="checkbox"] {
 <li>The book will be available in html format as index.html</li>
 </ol>
 <p><strong>Deliverable (1):</strong> what is the last word in chapter 15? - You don’t have to answer this question, if things don’t work.</p>
-</section>
-<section id="what-to-do-when-things-dont-work" class="level3">
-<h3 class="anchored" data-anchor-id="what-to-do-when-things-dont-work">What to do when things don’t work?</h3>
-<p>Errors happen, they are frustrating, but if we learn something from them, we can turn them into valuable experiences.</p>
-<ul>
-<li><p>check the Questions and Answers forum in Canvas whether there is a solution available for your problem.</p></li>
-<li><p>if the above document does (not yet) include your question, document the error you encounter (be as concise and specific as you can at the same time)</p></li>
-<li><p>if the Question and Answers forum does (not yet) include a solution, describe one approach on how you tried to solve the problem (and how this did not work).</p></li>
-<li><p>submit the description of your problem in Canvas at Discussions &gt; Questions and Answers. Write the paragraph in the mindset that you want to get help from somebody, and you try to describe the problem you are encountering.</p></li>
-<li><p>Extra points (1 pt for the first suggested working solution): post a solution to one of the problems in the Questions and Answers forum (your own does not count!).</p></li>
-</ul>
+<p>Answer: “pseudo-class” is the last word of Chapter 15. I obtained this answer by rendering the book into HTML format.</p>
 <p><strong>Deliverable (2):</strong> Write a paragraph on the biggest problem you encountered when you were building the book, (and how you managed to solve it.)</p>
-<p>You can write your experience directly into the <code>README.Rmd</code> file. Just make sure that you change the yaml at the top: change the author at the top, and give your post a new title (don’t change the category :))</p>
-<p>Commit and push to your repo and you are done!</p>
+<p>The biggest problem was knitting the book to pdf. I tried two LaTeX distributions (MiKTex and TinyTeX) and read several responses to similar questions on Stack Overflow and the Posit Community. Following the solutions, I installed, uninstalled and updated packages, and set the PATH by editing the system environment variables; however the error “LaTeX failed to compile _main.tex” persisted. Unfortunately I did not find a solution for this problem, but by opening a new Rmarkdown file, I typed Sys.which(“pdflatex”) and RStudio found the Tinytex package installed. I also successfully knitted a pdf document using this new file. Thus, there must be something wrong in the book script.</p>
 
 
 </section>
