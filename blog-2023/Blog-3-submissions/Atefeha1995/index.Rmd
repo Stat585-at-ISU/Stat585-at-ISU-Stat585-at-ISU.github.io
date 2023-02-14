@@ -3,6 +3,7 @@ author: "Atefeh Anisi"
 title: "I finally built a book"
 categories: Building a Book
 date: 2023-02-09
+output: github_document
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->

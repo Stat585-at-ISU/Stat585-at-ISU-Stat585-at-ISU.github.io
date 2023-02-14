@@ -3,9 +3,6 @@ author: An Phan
 title: Building a Book
 categories: "Building a Book"
 date: 2023-02-09
-output: 
-  html_document:
-    keep_md: true
 ---
 
 ```{r, include = FALSE}
@@ -41,7 +38,7 @@ $ git clone --recurse-submodules https://github.com/hadley/emo.git
 ```
 
 ```{r}
-install.packages("emo2",repos=NULL,type="source")
+# install.packages("emo2",repos=NULL,type="source")
 library(emo)
 ```
 

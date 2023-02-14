@@ -29,6 +29,12 @@
     ]
   },
   {
+    "listing": "/labs.html",
+    "items": [
+      "/labs/01-slides.html"
+    ]
+  },
+  {
     "listing": "/blog.html",
     "items": [
       "/blog-2023/Prompts/Blog-5/Prompt.html",
@@ -37,12 +43,15 @@
       "/blog-2023/Blog-3-submissions/kundan7kumar/KumarKundan.html",
       "/blog-2023/Blog-3-submissions/anyeshar/RayAnyesha.html",
       "/blog-2023/Blog-3-submissions/Landon-Getting/index.html",
-      "/blog-2023/Blog-3-submissions/mattkav49/MattKavanaugh.Blog.3.html",
+      "/blog-2023/Blog-3-submissions/Hiiiua/HuaMuxin.html",
+      "/blog-2023/Blog-3-submissions/mattkav49/Matt.Kavanaugh.html",
+      "/blog-2023/Blog-3-submissions/charlestbonk/index.html",
       "/blog-2023/Blog-3-submissions/TWiedRW/index.html",
       "/blog-2023/Blog-3-submissions/charchit/ShuklaCharchit.html",
       "/blog-2023/Blog-3-submissions/kellynay/index.html",
       "/blog-2023/Blog-3-submissions/HarunCelikOtto/index.html",
       "/blog-2023/Blog-3-submissions/valeriehan6/HanValerie.html",
+      "/blog-2023/Blog-3-submissions/IanParzyszek/index.html",
       "/blog-2023/Blog-3-submissions/loganjohnson0/JohnsonLogan.html",
       "/blog-2023/Blog-3-submissions/Atefeha1995/index.html",
       "/blog-2023/Blog-3-submissions/anphan0828/index.html",
@@ -63,6 +72,7 @@
       "/blog-2023/Blog-2-submissions/kundan7kumar/KumarKundan.html",
       "/blog-2023/Blog-2-submissions/anyeshar/RayAnyesha.html",
       "/blog-2023/Blog-2-submissions/Landon-Getting/GettingLandon.html",
+      "/blog-2023/Blog-2-submissions/Hiiiua/HuaMuxin.html",
       "/blog-2023/Blog-2-submissions/charlestbonk/BonkCharlie.html",
       "/blog-2023/Blog-2-submissions/TWiedRW/WiederichTyler.html",
       "/blog-2023/Blog-2-submissions/charchit/ShuklaCharchit.html",
@@ -87,6 +97,7 @@
       "/blog-2023/Blog-1-submissions/kundan7kumar/KumarKundan.html",
       "/blog-2023/Blog-1-submissions/anyeshar/RayAnyesha.html",
       "/blog-2023/Blog-1-submissions/Landon-Getting/GettingLandon.html",
+      "/blog-2023/Blog-1-submissions/Hiiiua/HuaMuxin.html",
       "/blog-2023/Blog-1-submissions/mattkav49/KavanaughMatt.html",
       "/blog-2023/Blog-1-submissions/charlestbonk/BonkCharlie.html",
       "/blog-2023/Blog-1-submissions/TWiedRW/WiederichTyler.html",
@@ -108,8 +119,7 @@
       "/blog-2023/Blog-1-submissions/Sabrenar/RutledgeSabrena.html",
       "/blog-2023/Blog-1-submissions/luobo119/YichuanBai.html",
       "/blog-2023/Blog-1-submissions/AArabio/ArabioAlexandra.html",
-      "/blog-2023/Blog-1-submissions/Starwiiin/MohammadiarvejehParvin.html",
-      "/blog-2023/Blog-3-submissions/charlestbonk/index.html"
+      "/blog-2023/Blog-1-submissions/Starwiiin/MohammadiarvejehParvin.html"
     ]
   }
 ]

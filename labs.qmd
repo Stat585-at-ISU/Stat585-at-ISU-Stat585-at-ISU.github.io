@@ -1,0 +1,9 @@
+---
+title: "Labs"
+listing:
+  contents: 
+    - "labs"
+  sort: "title desc"
+  type: table
+---
+

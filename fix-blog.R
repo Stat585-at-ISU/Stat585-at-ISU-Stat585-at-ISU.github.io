@@ -31,13 +31,13 @@ unlink_readme <- dframe %>% ungroup() %>% filter(n > 1, basename=="README.Rmd") 
 unlink(unlink_readme)
 
 # fix naming issues
-rmds <- list.files("blog-2023", pattern="Rmd", full.names = T, recursive = T)
+rmds <- list.files("blog-2023", pattern="[qRrQ]md", full.names = T, recursive = T)
 base_safe <- make.names(basename(rmds))
 idx <- which(base_safe != basename(rmds))
 file.rename(rmds[idx], file.path(dirname(rmds), base_safe)[idx])
 
 # Remove other unnecessary files
-otherfilepat <- "(create-file\\.png|\\.DS_Store|gitignore|Rproj|\\.bak)"
+otherfilepat <- "(create-file|DS_Store|gitignore|Rproj|bak)"
 otherfiles <- list.files("blog-2023", otherfilepat, full.names = T, recursive = T)
 unlink(otherfiles)
 
