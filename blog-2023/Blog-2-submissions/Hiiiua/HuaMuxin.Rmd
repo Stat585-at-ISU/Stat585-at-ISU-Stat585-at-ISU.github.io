@@ -1,0 +1,24 @@
+---
+author: Muxin Hua
+date: 02/02/2023
+categories: "Happy Git with R"
+title: Happy Git with R
+---
+
+
+## Prompt:
+
+git and Github are tools for helping with versioning of files in collaborative efforts as well as archiving entries for your future self. 
+Unfortunately working with git isn't always completely straightforward. 
+Jenny Bryan's book "Happy git and github with R" helps with that. The book is available from [http://happygitwithr.com/](http://happygitwithr.com/). Have a look over the index and pick one of the chapters for a more in-depth read.
+
+Write a blog post answering the following questions: 
+
+1. **Write a short (100-150 words) summary of the chapter you read in-depth.**        
+The chapter **Branches** talks about how to work individually on experimental ideas without harming the main project. Basically, one only needs to create and check out a branch, then it will be easy to switch back and forth between the branches to work on the edition as needed. Once the work has been done, one can always merge in *main*. However, there could be conflicts in merging, they come from divergence in the branches and the right way to resolve the conflict is pulling out the unmerged file and see the lines in conflict and edit them. It’s always an option to abort merging and back to the previous state.
+
+2. **Looking back at all of the team projects you have been involved in, describe the biggest mishap you had. Could that have been avoided using git? How?**.         
+I used to work with teammates on a project. During the data cleaning part, we can't specifically divide the work so each of us wanted to some explorations so we fell in the dilemma that if we should committing our own exploration or not. It should be a good idea to check out branches before deciding if we want to add any new codes.
+
+3. **Give an example of one new git feature that you learned about from Jenny Bryan's book.**.        
+A new feature I learned from this book is taking advantage of refs to identify a specific point in the repo's history.

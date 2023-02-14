@@ -1,0 +1,51 @@
+---
+author: "Kelly Nascimento Thompson"
+title: "Rendering a book using `bookdown`"
+categories: "Building a book"
+date: 2023-02-09
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Prompt:
+
+
+The goal of this  week's blog is to document what you are doing when things do not go according to plan. 
+
+Similar to previous exercises, we have a specific use case in mind: we want to build a book from a github repository. 
+
+What happens in practice usually, is that we run into some problems. 
+So your real task turns into that of a bug-hunter and fixer. Luckily, you have a community (the class discussion board) who might be able to help you. 
+
+
+
+### What we want: build a book
+
+Build the html version of the 2nd edition for Hadley Wickham's book `Advanced R Programming` from a github repository.
+
+Steps:
+
+1. Clone the repository `https://github.com/hadley/adv-r`.
+2. Open the R project in the repository in RStudio.
+3. Activate the `Build` tab (by default in the top right panel). Click on the `Build Book` button.
+4. The book will be available in html format as index.html
+
+**Deliverable (1):** what is the last word in chapter 15? - You don't have to answer this question, if things don't work. 
+
+Answer: "pseudo-class" is the last word of Chapter 15. I obtained this answer by rendering the book into HTML format.
+
+
+**Deliverable (2):** Write a paragraph on the biggest problem you encountered when you were building the book, (and how you managed to solve it.)
+
+The biggest problem was knitting the book to pdf. I tried two LaTeX distributions (MiKTex and TinyTeX) and read several responses to similar questions on Stack Overflow and the Posit Community. Following the solutions, I installed, uninstalled and updated packages, and set the PATH by editing the system environment variables; however the error "LaTeX failed to compile _main.tex" persisted. Unfortunately I did not find a solution for this problem, but by opening a new Rmarkdown file, I typed Sys.which("pdflatex") and RStudio found the Tinytex package installed. I also successfully knitted a pdf document using this new file. Thus, there must be something wrong in the book script.
+
+
+

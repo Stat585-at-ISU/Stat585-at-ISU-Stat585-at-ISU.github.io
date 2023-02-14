@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.2.313">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -247,9 +247,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>$ git clone --recurse-submodules https://github.com/hadley/emo.git</code></pre>
 <div class="cell" data-hash="index_cache/html/unnamed-chunk-2_1eb75f659e92999983132a7f22554a3c">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"emo2"</span>,<span class="at">repos=</span><span class="cn">NULL</span>,<span class="at">type=</span><span class="st">"source"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Warning in install.packages("emo2", repos = NULL, type = "source"):</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; installation of package 'emo2' had non-zero exit status</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(emo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Installing package into '/home/susan/R/x86_64-pc-linux-gnu-library/4.2'</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; (as 'lib' is unspecified)</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Warning in install.packages("emo2", repos = NULL, type = "source"): installation</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; of package 'emo2' had non-zero exit status</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(emo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This is another way to install packages that are not on CRAN.</p>
 <ul>
@@ -261,7 +263,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 $ sudo apt-get install ttf-mscorefonts-installer
 $ sudo fc-cache -fv</code></pre>
 <p>One last TeX error was solved by adding <code>\usepackage{hyperref}</code> in <code>preamble.tex</code> following <a href="https://github.com/yihui/bookdown-crc/commit/683e5fbd87478240c84cbebaf04058dd685090c8">Yihui’s solution</a>.</p>
-<p>And there we have it, the book has been successfully built entirely from R, with the help of LaTeX and some Cpp code. Now the errors feel less frustrating to deal with, I guess I have encountered around 10% of all possible errors 😄 🙌 🎉 🙌!</p>
+<p>And there we have it, the book has been successfully built entirely from R, with the help of LaTeX and some Cpp code. Now the errors feel less frustrating to deal with, I guess I have encountered around 10% of all possible errors 😄 🙌 🙌 🙌!</p>
 
 
 </section>

@@ -1,7 +1,7 @@
 ---
 title: "Building a Book"
 author: "Sudesh Bhagat"
-date: '2023-02-09'
+date: 2023-02-09
 categories: "Building a Book"
 output: html_document
 ---

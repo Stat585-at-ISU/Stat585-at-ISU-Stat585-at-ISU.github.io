@@ -1,0 +1,71 @@
+---
+author: "Sabrena Rutledge"
+title: "Building a book with R's bookdown"
+categories: "Building a book"
+date: "2022-02-09"
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Prompt:
+
+
+The goal of this  week's blog is to document what you are doing when things do not go according to plan. 
+
+Similar to previous exercises, we have a specific use case in mind: we want to build a book from a github repository. 
+
+What happens in practice usually, is that we run into some problems. 
+So your real task turns into that of a bug-hunter and fixer. Luckily, you have a community (the class discussion board) who might be able to help you. 
+
+
+
+### What we want: build a book
+
+Build the html version of the 2nd edition for Hadley Wickham's book `Advanced R Programming` from a github repository.
+
+Steps:
+
+1. Clone the repository `https://github.com/hadley/adv-r`.
+2. Open the R project in the repository in RStudio.
+3. Activate the `Build` tab (by default in the top right panel). Click on the `Build Book` button.
+4. The book will be available in html format as index.html
+
+**Deliverable (1):** what is the last word in chapter 15? - You don't have to answer this question, if things don't work. 
+
+The last word in chapter 15 is pseudo-class. 
+
+### What to do when things don't work?
+
+Errors happen, they are frustrating, but if we learn something from them, we can turn them into valuable experiences.
+
+- check the Questions and Answers forum in Canvas whether there is a solution available for your problem. 
+
+- if the above document does (not yet) include your question, document the error you encounter (be as concise and specific as you can at the same time)
+
+- if the Question and Answers forum does (not yet) include a solution, describe one approach on how you tried to solve the problem (and how this did not work).
+
+- submit the description of your problem in Canvas at Discussions > Questions and Answers.  Write the paragraph in the mindset that you want to get help from somebody, and you try to describe the problem you are encountering. 
+
+- Extra points (1 pt for the first suggested working solution): post a solution to one of the problems in the Questions and Answers forum (your own does not count!). 
+
+
+**Deliverable (2):** Write a paragraph on the biggest problem you encountered when you were building the book, (and how you managed to solve it.)
+
+The biggest problem I encountered in building the html book was just needing a variety of packages not already installed. These errors were solved by installing the necessary packages. However, when not specifying the output for the build book command, the largest obstacle is LaTeX failed to compile main.tex.
+Re-installing tinytex and trying to obtain a larger error message with the options function both failed. This error appears to be a major problem since the traditional debugging methods are not resolving the error. 
+If it was absolutely necessary to obtain a pdf version of the bookdown, then I would first try to obtain the pdf version of a different book to see if it is an issue with the system or with the book I am trying to obtain. Then I would debug either the book or the package depending on the results of the first part.
+Yet, if it was not necessary to obtain a pdf version of the bookdown, then I would select "bookdown::bs4_book" or "bookdown::gitbook" in order to obtain the html version of the bookdown.
+
+
+You can write your experience directly into the `README.Rmd` file. Just make sure that you change the yaml at the top: change the author at the top, and give your post a new title (don't change the category :)) 
+
+Commit and push to your repo and you are done!
+

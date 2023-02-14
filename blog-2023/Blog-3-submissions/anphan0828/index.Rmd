@@ -2,13 +2,18 @@
 author: An Phan
 title: Building a Book
 categories: Building a Book
-date: 2022-02-09
+date: 2023-02-09
 output: 
   html_document:
     keep_md: true
 ---
 
-
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
 
 ### What we want: build a book
 
@@ -35,11 +40,8 @@ I decided to describe the most frustrating problems I faced:
 $ git clone --recurse-submodules https://github.com/hadley/emo.git
 ```
 
-
-```r
-install.packages("emo2",repos=NULL,type="source")
-#> Installing package into '/home/ahphan/R/x86_64-pc-linux-gnu-library/4.2'
-#> (as 'lib' is unspecified)
+```{r}
+# install.packages("emo2",repos=NULL,type="source")
 library(emo)
 ```
 
@@ -56,4 +58,4 @@ This is another way to install packages that are not on CRAN.
 
 One last TeX error was solved by adding `\usepackage{hyperref}` in `preamble.tex` following [Yihui's solution](https://github.com/yihui/bookdown-crc/commit/683e5fbd87478240c84cbebaf04058dd685090c8).
 
-And there we have it, the book has been successfully built entirely from R, with the help of LaTeX and some Cpp code. Now the errors feel less frustrating to deal with, I guess I have encountered around 10% of all possible errors 😄 🙌 🙌 🎉!
+And there we have it, the book has been successfully built entirely from R, with the help of LaTeX and some Cpp code. Now the errors feel less frustrating to deal with, I guess I have encountered around 10% of all possible errors `r emo::ji("smile")` `r emo::ji("hooray")` `r emo::ji("hooray")` `r emo::ji("hooray")`!

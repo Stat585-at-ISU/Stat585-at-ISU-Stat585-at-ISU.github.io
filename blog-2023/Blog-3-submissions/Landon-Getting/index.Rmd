@@ -1,0 +1,34 @@
+---
+author: "Landon Getting"
+title: "Book Building is Backbreaking"
+categories: "Building a book"
+date: 2023-02-09
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Deliverable 1 - Last Word:
+
+The last word in Chapter 15 is '**class**'!
+
+## Deliverable 2 - Biggest Problem:
+
+Although I encountered many issues in building Hadley's book, the biggest problem was getting the .pdf file to build. I received the following error after successfully building the .html file and attempting to build the .pdf file:
+
+`LaTeX failed to compile _main.tex`
+
+I read the post by Motahareh Kashanian in the class Canvas forum and determined that my installation of MiKTeX may not be helpful in solving the error. I uninstalled MiKTeX and utilized the following commands from [tinytex website](https://yihui.org/tinytex/) to install tinytex:
+
+`install.packages('tinytex')`
+
+`tinytex::install_tinytex()`
+
+Next, I experienced the most frustrating error of the entire build process; font failure. I received a variety of errors indicating that the inconsolata font could not be found. One of my Lab #1 group members (shoutout Logan) suggested installing the font via [Google Fonts](https://fonts.google.com/specimen/Inconsolata?query=inconsolata). After the font was installed, I found [this article](https://tex.stackexchange.com/questions/484876/tex-live-2018-not-finding-font-inconsolata) which stated that the preamble.tex document needed 'inconsolata' to be lowercase rather than 'Inconsolata' to be found. Finally, I changed the fallback font to Arial since I could not find a free install for Andale Mono. After these changes, the book built correctly into a .pdf file! Best feeling ever!

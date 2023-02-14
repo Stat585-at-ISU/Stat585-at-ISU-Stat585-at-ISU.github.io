@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.2.313">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="The Prompt for Blog 3">
+<meta name="author" content="Muxin Hua">
 <meta name="dcterms.date" content="2023-02-09">
 
-<title>Stat 585 - Title of your post</title>
+<title>Stat 585 - Building a Book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -133,10 +133,9 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Title of your post</h1>
+<h1 class="title">Building a Book</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Building a Book</div>
-    <div class="quarto-category">Prompt</div>
+    <div class="quarto-category">Building a book</div>
   </div>
   </div>
 
@@ -147,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>The Prompt for Blog 3 </p>
+             <p>Muxin Hua </p>
           </div>
   </div>
     
@@ -164,7 +163,6 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
 <section id="prompt" class="level2">
 <h2 class="anchored" data-anchor-id="prompt">Prompt:</h2>
 <p>The goal of this week’s blog is to document what you are doing when things do not go according to plan.</p>
@@ -181,6 +179,7 @@ ul.task-list li input[type="checkbox"] {
 <li>The book will be available in html format as index.html</li>
 </ol>
 <p><strong>Deliverable (1):</strong> what is the last word in chapter 15? - You don’t have to answer this question, if things don’t work.</p>
+<p>I got the word <strong>pseudo-class</strong>.</p>
 </section>
 <section id="what-to-do-when-things-dont-work" class="level3">
 <h3 class="anchored" data-anchor-id="what-to-do-when-things-dont-work">What to do when things don’t work?</h3>
@@ -193,8 +192,10 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Extra points (1 pt for the first suggested working solution): post a solution to one of the problems in the Questions and Answers forum (your own does not count!).</p></li>
 </ul>
 <p><strong>Deliverable (2):</strong> Write a paragraph on the biggest problem you encountered when you were building the book, (and how you managed to solve it.)</p>
-<p>You can write your experience directly into the <code>README.Rmd</code> file. Just make sure that you change the yaml at the top: change the author at the top, and give your post a new title (don’t change the category :))</p>
-<p>Commit and push to your repo and you are done!</p>
+<p>I got most of the problem of <em>package not found</em>, so the most reasonable way to do is install these packages, for the most of time, it worked well.<br>
+However, there were two problems took more efforts.<br>
+The first one is <em>Error in if (c(TRUE, FALSE)) 1 : the condition has length &gt; 1 Calls: local … withVisible -&gt; eval_with_user_handlers -&gt; eval -&gt; eval</em>. This Error was very specific that this is an error came from the file <em>Control-flow.Rmd</em>. I went straight to this file and spotted the chunk raising the error. I noticed the chunks nearby have similar code expect they specified <code>Error = TRUE</code>. I tried to add this command to the chunk and it just worked! The second peoblem was more tricky. I got <em><code>dev.control()</code> called without an open graphics device https://github.com/brentthorne/posterdown/issues/42</em>. There was also some complaining about <em>emo</em> not installed. I was trying to solve it by installing it. Turned out there was no matching library for R version. I searched google to find I should install things from github. But the trickt part is that <code>devtool</code> should be the ideal way to do that, but my R wouldn’t let me to do so and kept asking me to restart R session. Eventually this is solved by installing and running <em>remotes</em> with rejecting R session restart request.</p>
+<p>Submit to your repo and you are done!</p>
 
 
 </section>
