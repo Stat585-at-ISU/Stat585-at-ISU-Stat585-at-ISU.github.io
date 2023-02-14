@@ -1,0 +1,131 @@
+---
+author: "Harun Celik"
+title: "Error Fixing Process"
+categories: Building a Book
+date: 2023-02-09
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Prompt:
+
+
+The goal of this  week's blog is to document what you are doing when things do not go according to plan. 
+
+Similar to previous exercises, we have a specific use case in mind: we want to build a book from a github repository. 
+
+What happens in practice usually, is that we run into some problems. 
+So your real task turns into that of a bug-hunter and fixer. Luckily, you have a community (the class discussion board) who might be able to help you. 
+
+
+
+### What we want: build a book
+
+Build the html version of the 2nd edition for Hadley Wickham's book `Advanced R Programming` from a github repository.
+
+Steps:
+
+1. Clone the repository `https://github.com/hadley/adv-r`.
+2. Open the R project in the repository in RStudio.
+3. Activate the `Build` tab (by default in the top right panel). Click on the `Build Book` button.
+4. The book will be available in html format as index.html
+
+**Deliverable (1):** what is the last word in chapter 15? - You don't have to answer this question, if things don't work. 
+
+
+### What to do when things don't work?
+
+Errors happen, they are frustrating, but if we learn something from them, we can turn them into valuable experiences.
+
+- check the Questions and Answers forum in Canvas whether there is a solution available for your problem. 
+
+- if the above document does (not yet) include your question, document the error you encounter (be as concise and specific as you can at the same time)
+
+- if the Question and Answers forum does (not yet) include a solution, describe one approach on how you tried to solve the problem (and how this did not work).
+
+- submit the description of your problem in Canvas at Discussions > Questions and Answers.  Write the paragraph in the mindset that you want to get help from somebody, and you try to describe the problem you are encountering. 
+
+- Extra points (1 pt for the first suggested working solution): post a solution to one of the problems in the Questions and Answers forum (your own does not count!). 
+
+
+**Deliverable (2):** Write a paragraph on the biggest problem you encountered when you were building the book, (and how you managed to solve it.)
+
+
+You can write your experience directly into the `README.Rmd` file. Just make sure that you change the yaml at the top: change the author at the top, and give your post a new title (don't change the category :)) 
+
+Commit and push to your repo and you are done!
+
+
+ANSWER SECTION
+
+LAST WORD
+
+The last word in Chapter 15 is ```class``` in the sentence, ```Define a length method for the Person class.```
+
+PROCESS:
+
+Unfortunately, I was unable to compile the pdf book, but I was able to get the bs4 version! Here was the process I followed to working through the errors. 
+
+I was able to copy the repository into a local folder on my PC and open up all the files without an issue. I ran into a problem initially because I didn't have the ```library(bookdown)``` package.  As I was trying to download the package, I came across the error 
+
+```
+WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+```
+
+Which I tried to overcome with a clean install of R once again. This unfortunately did not fix the error that I had and so I ran ```install.packages("Rtools")``` to be greeted with another error.
+
+```
+Warning in install.packages :
+  package ‘Rtools’ is not available for this version of R
+```
+
+At which point I did a run around forums on "community.rstudio" to find that I had to download Rtools from the Cran project. I am still unsure of why I need Rtools given that the documentation for Rtools43 indicates that "Moreover, online build services are available to check and build R packages for Windows, for which again one does not need to install Rtools43 locally."
+
+Installing Rtools43 did not make a noticeable difference, though I think this was because I actually needed the Rtools40 instead. However, I was now able to download the ```bookdown``` package and could see it in my packages list in Rstudio to start compiling. 
+
+Once I ran the compile, I saw that I had the same issue as everyone else regarding the 'wrap' argument in the registerS3method() argument which I then changed and re-compiled. I ran into an error about a package called ```lobstr``` which I did not have so I installed that package as well and the compiler continued.
+
+I came across an error regarding a package called ```emo``` that I did not have and followed the suggestion on the discussions forum to use ```devtools```  to install it. At this point in the console, I was asked to install Rtools40 which I realized might have been the correct version to install since my Rtools43 installation did not help here. I installed Rtools40 and followed Landon's suggestion in the Canvas Discussions to add it to my PATH. 
+
+I was able to successfully install ```emo``` and recompiled. I then ran into another error about not having the package ```sloop``` and ran an install on that. I followed the same procedure for package ```zeallot```, ```bench```, and ```ggbeeswarm```. After this, the compiler ran without error for longer than 5 minutes to tweak the files that were generated from the first processing of the knit. The following error then came about. 
+
+```
+Error: LaTeX failed to compile _main.tex. See https://yihui.org/tinytex/r/#debugging for debugging tips. See _main.log for more info.
+Execution halted
+Error: bookdown::render_book() failed to render the output format 'bookdown::pdf_book'.
+Execution halted
+```
+
+Knowing it was the _main.tex file, I tried to check where the error might be and I found within my error log the following code.
+
+```
+2023-02-11 13:58:26,032-0600 INFO  xelatex - starting with command line: C:\Users\harun\AppData\Local\Programs\MIKTEX~1.9\miktex\bin\x64\xelatex.exe -halt-on-error -interaction=batchmode _main.tex
+2023-02-11 13:58:26,046-0600 INFO  xelatex - allowing known shell commands
+2023-02-11 13:58:26,046-0600 INFO  xelatex - enabling input (output) from (to) processes
+2023-02-11 13:58:26,062-0600 INFO  xelatex - going to create file: xelatex.fmt
+2023-02-11 13:58:30,355-0600 FATAL xelatex - GUI framework cannot be initialized.
+2023-02-11 13:58:30,355-0600 FATAL xelatex - Info: 
+2023-02-11 13:58:30,355-0600 FATAL xelatex - Source: Libraries\MiKTeX\UI\Qt\mikuiqt.cpp
+2023-02-11 13:58:30,355-0600 FATAL xelatex - Line: 77
+2023-02-11 13:58:30,356-0600 INFO  xelatex - finishing with exit code 1
+```
+
+Line 77 of _main.tex has the code:
+```
+library(calc)
+```
+
+I'm not LateX savvy enough to understand what's going on here but the former error in Rstudio indicates that the problem is with the pdf_book format of the build and this seems to be confirmed reading through the discussions on Canvas. I could not find the problem within the specified tex file to overcome the compiling issue.
+
+As a workaround suggested by a classmate, I decided to run the ```bookdown::bs4_book``` build to see if I could at least get that working. It compiled without error and I was able to submit the deliverable through that format instead.
+![image](https://user-images.githubusercontent.com/98118631/218279471-f505bb5b-6072-43b0-ad02-a836e7614f4a.png)
+
+

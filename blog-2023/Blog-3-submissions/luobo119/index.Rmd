@@ -1,0 +1,95 @@
+---
+author: "YCB"
+title: "Experience of building a book"
+categories: Building a Book
+date: 2023-02-09
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Prompt:
+
+
+The goal of this  week's blog is to document what you are doing when things do not go according to plan. 
+
+Similar to previous exercises, we have a specific use case in mind: we want to build a book from a github repository. 
+
+What happens in practice usually, is that we run into some problems. 
+So your real task turns into that of a bug-hunter and fixer. Luckily, you have a community (the class discussion board) who might be able to help you. 
+
+
+
+### What we want: build a book
+
+Build the html version of the 2nd edition for Hadley Wickham's book `Advanced R Programming` from a github repository.
+
+Steps:
+
+1. Clone the repository `https://github.com/hadley/adv-r`.
+2. Open the R project in the repository in RStudio.
+3. Activate the `Build` tab (by default in the top right panel). Click on the `Build Book` button.
+4. The book will be available in html format as index.html
+
+**Deliverable (1):** what is the last word in chapter 15? - You don't have to answer this question, if things don't work. 
+
+**Answer:** Last word in chapter 15 is **class** in index.html or **pseudo-class** if references included.
+
+### What to do when things don't work?
+
+Errors happen, they are frustrating, but if we learn something from them, we can turn them into valuable experiences.
+
+- check the Questions and Answers forum in Canvas whether there is a solution available for your problem. 
+
+- if the above document does (not yet) include your question, document the error you encounter (be as concise and specific as you can at the same time)
+
+- if the Question and Answers forum does (not yet) include a solution, describe one approach on how you tried to solve the problem (and how this did not work).
+
+- submit the description of your problem in Canvas at Discussions > Questions and Answers.  Write the paragraph in the mindset that you want to get help from somebody, and you try to describe the problem you are encountering. 
+
+- Extra points (1 pt for the first suggested working solution): post a solution to one of the problems in the Questions and Answers forum (your own does not count!). 
+
+
+**Deliverable (2):** Write a paragraph on the biggest problem you encountered when you were building the book, (and how you managed to solve it.)
+
+The biggest problem is that it is hard to find what is wrong when I have the error 'dev.control() called without an open graphics device' because it does not point to any specific file that might contain the problem. I found someone had the same issue in one GitHub post, and one person commented that there might be some missing pieces in the package 'Cairo'. I followed his instructions and solved the problem.
+
+According to my experience in building the book, we need to update and install all the packages used first. Then I still encountered some errors before I could successfully compile the book. I'd like to record all the problems I encountered and my solutions here.
+
+* **Error in get(genname, envir = envir) : object 'wrap' not found**\
+  **Calls: local ... withVisible -> eval -> eval -> registerS3method -> get**
+  + The error is from 'common.R' file 'registerS3method' function. Because for knitr 1.40, knitr:::wrap() has been removed, and knitr::sew() is used instead.
+  + Using registerS3method("sew", ...) instead of registerS3method("sew", ...).
+* **Error in if (c(TRUE, FALSE)) 1 : the condition has length > 1**
+  + The error is from 'Control-flow.Rmd' file.
+  + Showing the errors without stopping R by adding chunk option 'error=TRUE'
+* **Error in dev.control(displaylist = if (record) "enable" else "inhibit") :**\
+  **dev.control() called without an open graphics device**\
+  **Calls: local ... call_block -> block_exec -> eng_r -> chunk_device -> dev.control**\
+  + This is because for mac, XQuartz is missing for package 'Cairo'. 
+  + Downloading 'Quartz X11' and re-install 'Cairo'. (https://github.com/brentthorne/posterdown/issues/42)
+
+* **Package fontspec Error: The font "Inconsolata" cannot be found.**
+  + Installing the font by using \
+    *brew tap homebrew/cask-fonts*\
+    *brew install --cask font-Inconsolata*
+
+* **LaTeX Error: Command \\href undefined.**
+  + Adding '\\usepackage{hyperref}' in 'latex/preamble.tex'.
+
+Appendix:
+
+1. https://github.com/hadley/r-pkgs/blob/main/common.R\
+2. https://github.com/statcomputing/compiling-advanced-r-beili0022\
+3. https://github.com/yihui/bookdown-crc/commit/683e5fbd87478240c84cbebaf04058dd685090c8
+<!-- You can write your experience directly into the `README.Rmd` file. Just make sure that you change the yaml at the top: change the author at the top, and give your post a new title (don't change the category :))  -->
+
+<!-- Commit and push to your repo and you are done! -->
+
