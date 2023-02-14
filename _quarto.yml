@@ -14,6 +14,8 @@ website:
         text: Schedule
       - href: blog.qmd
         text: Blog
+      - href: labs.qmd
+        text: Labs
       - href: projects.qmd
         text: Projects
       - href: https://canvas.iastate.edu/courses/98137
