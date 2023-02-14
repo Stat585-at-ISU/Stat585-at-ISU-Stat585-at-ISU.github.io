@@ -1,7 +1,7 @@
 ---
 author: "Firstname Lastname"
 title: "Title of your post"
-categories: "Building a book"
+categories: "Building a Book"
 date: "2022-02-09"
 output: github_document
 ---

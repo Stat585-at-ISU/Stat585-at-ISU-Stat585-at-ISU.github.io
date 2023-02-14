@@ -1,7 +1,7 @@
 ---
 author: "Harun Celik"
 title: "Error Fixing Process"
-categories: Building a book
+categories: Building a Book
 date: 2023-02-09
 output: github_document
 ---

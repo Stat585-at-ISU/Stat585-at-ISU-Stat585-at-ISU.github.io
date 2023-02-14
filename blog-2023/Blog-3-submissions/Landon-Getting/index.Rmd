@@ -1,7 +1,7 @@
 ---
 author: "Landon Getting"
 title: "Book Building is Backbreaking"
-categories: "Building a book"
+categories: "Building a Book"
 date: 2023-02-09
 output: github_document
 ---

@@ -1,7 +1,7 @@
 ---
 author: "Kelly Nascimento Thompson"
 title: "Rendering a book using `bookdown`"
-categories: "Building a book"
+categories: "Building a Book"
 date: 2023-02-09
 output: github_document
 ---

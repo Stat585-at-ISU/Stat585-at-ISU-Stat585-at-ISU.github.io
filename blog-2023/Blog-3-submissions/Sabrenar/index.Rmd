@@ -1,7 +1,7 @@
 ---
 author: "Sabrena Rutledge"
-title: "Building a book with R's bookdown"
-categories: "Building a book"
+title: "Building a Book with R's bookdown"
+categories: "Building a Book"
 date: "2022-02-09"
 output: github_document
 ---

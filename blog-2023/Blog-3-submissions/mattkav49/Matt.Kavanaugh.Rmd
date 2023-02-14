@@ -1,7 +1,7 @@
 ---
 author: "Matt Kavanaugh"
 title: "Building a Book"
-categories: "Building a book"
+categories: "Building a Book"
 date: "2022-02-09"
 output: github_document
 ---
