@@ -1,0 +1,191 @@
+---
+title: 'Lab Assignment #2: Getting that data'
+author: "Heike Hofmann"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE, echo = TRUE)
+```
+# Outline
+
+- `pdf` files are for text, right?
+
+- Looking under the hood ...
+
+
+
+The final deliverable is again a self-contained RMarkdown file and a dataset. 
+
+---
+
+# Lab organization
+
+1. As last time, there is a github classroom link. Select the invite with your team's number. 
+
+2. Hofmann, don't forget the Zoom breakout rooms. Join the room that matches your team number.
+
+3. Final deliverable: submit a link to your repository in Canvas (This will show me that you are done working on your project).
+
+4. Create a folder `data` in the repository. Assume that all of the data files used are inside this folder, similar to the code used in this Rmarkdown file. 
+
+
+
+---
+
+# First item: talk!
+
+Just as with lab #1, you are asked to create one file (README.Rmd) with your results. 
+
+All team members are supposed to contribute ... last time you might have realized that it is a pretty big mess if everybody writes into the README file all at the same time.
+
+This time: figure out a plan before you start working. Include your plan as a table in the README.Rmd file for lab #2. 
+
+---
+
+# Our Goal for this lab
+
+- read a pdf file into an R session
+
+- go through cleaning steps to turn the pdf into usable information
+
+- save the resulting code and data files
+
+
+---
+
+# Service calls to the Ames police 
+
+are collected and published each day for a time interval of the past four days as 'Press log'
+
+https://www.cityofames.org/government/departments-divisions-i-z/police/news-and-updates
+
+available under 
+
+https://data.city.ames.ia.us/publicinformation/PressLog.pdf
+
+---
+
+# Download the Press log file
+
+and inspect it ... 
+
+```{r}
+presslog_url <- "https://data.city.ames.ia.us/publicinformation/PressLog.pdf"
+download.file(presslog_url, destfile = "PressLog.pdf", mode = "wb")
+```
+
+---
+
+# Reading a pdf file
+
+The package `tabulizer` provides bindings (i.e. wrapper functionalities) for the java library Tabula PDF Table Extractor.
+
+Our first goal for the lab is to install the `tabulizer` package.
+
+Go to https://docs.ropensci.org/tabulizer/ and follow the  directions for installing the package
+
+---
+
+# `extract_tables`
+
+The function `extract_tables` returns a list object. 
+
+Describe the structure of this list:
+
+- What does the length of the list correspond to? 
+
+- What objects are the list's items? 
+
+- What are the dimensions of each of the list's items? 
+
+```{r eval=FALSE}
+library(tabulizer)
+plog <- extract_tables(file="PressLog.pdf")
+
+str(plog)
+```
+---
+
+# Transform the `plog` object into a clean data set
+
+Data set of service calls: 
+
+- format of object is data frame or tibble
+
+- columns are variables with appropriate names
+
+- each row corresponds to one incident
+
+- all variables have the correct format
+
+- save the result as a csv file with the name "presslog-yyyymmdd.csv', where yyyymmdd is the date of first reported incident the file 
+
+---
+
+# Helper files and code
+
+Data set of call codes: 
+
+- data frame (or tibble) with two columns named 'Abbreviation' and 'Description'
+
+- save the result as a csv file with the name "call-codes.csv"
+
+Save the code (just the R script, not an Rmd) in a file called "process_presslog_yyyymmdd.R"
+
+
+---
+
+# How robust is your code?
+
+The folder 'Presslogs' contains service call files from a couple of other days. 
+
+Process these files as well.
+Do you need to make any adjustments to your code? Keep track of those adjustments.
+
+
+Save data and code for these presslogs as: 
+
+  - "presslog-yyyymmdd.csv" 
+  - "process_presslog_yyyymmdd.R"
+
+---
+
+# Deliverables (1) or (2)
+
+## Deliverable (1)
+
+Create a markdown table with a description of the structure of your repository (i.e. which files are where, and what is included).
+The structure is not going to be graded itself, just your description of the structure. 
+You will find that good structures are easier to describe :)
+
+Combine all of your service call data sets into one, draw a barchart of the number of service calls by day, colour by service log file.
+
+
+## Deliverable (2)
+
+In case things went horribly wrong, and you could not get things to work, describe what you did, which error you encountered, and what strategies you tried before you gave up/ the time for the lab was up. 
+
+---
+
+# Submit
+
+<br>
+
+Push your changes to the repository, make sure that the **README.Rmd file knits** on your machines, push the **README.md** file as well. 
+
+Make sure to add all datasets and all code files to the repository.
+
+Upload a link to your repository to Canvas. Only one submission per team is required. 
+Finishing touches can be made until Monday, Feb 20, 11:59 pm.
+
+<br>
+<br>
+<br>
+And you are done!
+
