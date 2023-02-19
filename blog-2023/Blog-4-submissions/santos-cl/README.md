@@ -1,0 +1,284 @@
+plyr-dplyr-baseR
+================
+Caio dos Santos
+2022-02-16
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+## Prompt:
+
+The `plyr` package has by now been replaced by other, even faster
+packages, but the idea of *Split, apply, combine* is as relevant as
+ever.
+
+Read the paper [The Split-Apply-Combine Strategy for Data
+Analysis](https://www.jstatsoft.org/article/view/v040i01) by Hadley
+Wickham.
+
+Write a blog post addressing the following questions:
+
+1.  The R code for the split-apply-combine paper is posted with the
+    paper. Pick one of the examples demonstrating `plyr` functionality
+    (such as `dlply` or `ddply`, …) and rewrite the example using
+    functionality from the package `dplyr`. Make sure that your example
+    works and the results are identical.
+
+2.  Which (base R) functions do you know that support the
+    split-apply-combine strategy? In your opinion, are these sufficient?
+    State why or why not?
+
+3.  The ChatGPT response to the prompt “Describe the split-apply-combine
+    paradigm” is given below. Generally, the chatbot’s answers are
+    decent. ChatGPT does have problems getting details right. Which
+    details would you change in the response?
+
+> The “split-apply-combine” paradigm is a data analysis strategy used in
+> statistics and data science to analyze grouped data. It consists of
+> three steps:
+>
+> Split: The data is first split into groups based on one or more
+> variables of interest.
+>
+> Apply: A specific operation or function is applied to each group of
+> data, usually for the purpose of aggregating, summarizing, or
+> transforming the data within each group.
+>
+> Combine: The results of the operation applied to each group are then
+> combined and returned as a single output.
+>
+> The split-apply-combine paradigm is particularly useful in cases where
+> the data cannot be analyzed as a whole and instead must be analyzed in
+> smaller, more manageable chunks. This allows for more efficient data
+> processing and improved scalability. The paradigm is commonly
+> implemented using tools such as the “groupby” function in the R and
+> Python programming languages, and the “dplyr” library in R.
+
+You can write your answers directly the `README.Rmd` file. Make sure
+that the file knits (you will need to activate any packages your use in
+your code chunks with a call to `library(xxx)`, where xxx is the name of
+the package, such as `plyr` ). Commit your changes and push to your
+repo; add any files in the `README_files` directory to your repository.
+
+# 1 - Ozone example
+
+This section contais the ***Ozone example*** described in [The
+Split-Apply-Combine Strategy for Data
+Analysis](https://www.jstatsoft.org/article/view/v040i01). I have
+removed some of the parts to reduce the output but I have kept the
+essential parts for us to demonstrate de functionalities of ***plyr***
+and ***dplyr***
+
+``` r
+library(MASS)
+library(plyr)
+library(reshape2)
+
+value <- ozone[1, 1, ]
+time <- 1:72 / 12
+month.abbr <- c("Jan", "Feb", "Mar", "Apr", "May", 
+ "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
+month <- factor(rep(month.abbr, length = 72), levels = month.abbr)
+year <- rep(1:6, each = 12)
+
+
+deseas1 <- rlm(value ~ month - 1)
+
+
+deseasf <- function(value) rlm(value ~ month - 1, maxit = 50)
+models <- alply(ozone, 1:2, deseasf)
+#> Warning in rlm.default(x, y, weights, method = method, wt.method = wt.method, :
+#> 'rlm' failed to converge in 50 steps
+
+#> Warning in rlm.default(x, y, weights, method = method, wt.method = wt.method, :
+#> 'rlm' failed to converge in 50 steps
+
+#> Warning in rlm.default(x, y, weights, method = method, wt.method = wt.method, :
+#> 'rlm' failed to converge in 50 steps
+
+#> Warning in rlm.default(x, y, weights, method = method, wt.method = wt.method, :
+#> 'rlm' failed to converge in 50 steps
+
+#> Warning in rlm.default(x, y, weights, method = method, wt.method = wt.method, :
+#> 'rlm' failed to converge in 50 steps
+
+#> Warning in rlm.default(x, y, weights, method = method, wt.method = wt.method, :
+#> 'rlm' failed to converge in 50 steps
+
+#> Warning in rlm.default(x, y, weights, method = method, wt.method = wt.method, :
+#> 'rlm' failed to converge in 50 steps
+failed <- laply(models, function(x) !x$converged)
+
+
+coefs <- laply(models, coef)
+dimnames(coefs)[[3]] <- month.abbr
+names(dimnames(coefs))[3] <- "month"
+
+deseas <- laply(models, resid)
+dimnames(deseas)[[3]] <- 1:72
+names(dimnames(deseas))[3] <- "time"
+
+
+
+coefs_df <- melt(coefs)
+head(coefs_df)
+#>     lat   long month    value
+#> 1 -21.2 -113.8   Jan 264.3964
+#> 2 -18.7 -113.8   Jan 261.3284
+#> 3 -16.2 -113.8   Jan 260.9643
+#> 4 -13.7 -113.8   Jan 258.9999
+#> 5 -11.2 -113.8   Jan 255.9999
+#> 6  -8.7 -113.8   Jan 254.9999
+```
+
+This far, we have successfully extracted the trends for for each month
+and sampling point (combination of latitude, longitude, and month). Now,
+we can use ***plyr*** to calculate average trends for each sampling
+point across months (combination of latitude and longitude). The *ddply
+**function takes as an argument a data frame and outputs a data frame as
+well. Note*****: the original exmaple redefined the coef_df data frame
+using the** *ddply* function. Here, I changed the name to coefs_df_plyr
+so we conserved the coef_df data frame unchanged, since we want to reuse
+this data frame using ***dplyr*** and ***base R***
+
+``` r
+
+coefs_df_plyr <- ddply(coefs_df, .(lat, long), transform, 
+  avg = mean(value),
+  std = value / max(value)
+)
+levels(coefs_df_plyr$month) <- month.abbr
+head(coefs_df_plyr)
+#>     lat   long month    value      avg       std
+#> 1 -21.2 -113.8   Jan 264.3964 268.6604 0.9277068
+#> 2 -21.2 -113.8   Feb 259.2036 268.6604 0.9094862
+#> 3 -21.2 -113.8   Mar 255.0000 268.6604 0.8947368
+#> 4 -21.2 -113.8   Apr 252.0052 268.6604 0.8842288
+#> 5 -21.2 -113.8   May 258.5089 268.6604 0.9070486
+#> 6 -21.2 -113.8   Jun 265.3387 268.6604 0.9310129
+```
+
+To do accomplish the same with the ***dplyr*** package, we can use use
+the group_by and mutate functions
+
+``` r
+library('dplyr')
+#> 
+#> Attaching package: 'dplyr'
+#> The following objects are masked from 'package:plyr':
+#> 
+#>     arrange, count, desc, failwith, id, mutate, rename, summarise,
+#>     summarize
+#> The following object is masked from 'package:MASS':
+#> 
+#>     select
+#> The following objects are masked from 'package:stats':
+#> 
+#>     filter, lag
+#> The following objects are masked from 'package:base':
+#> 
+#>     intersect, setdiff, setequal, union
+
+coefs_df %>%
+  group_by(lat, long) %>%
+  mutate(
+    avg = mean(value),
+    std = value / max(value)
+  ) %>%
+  arrange(lat, long) %>%
+  data.frame() -> coefs_df_dplyr
+
+levels(coefs_df_dplyr$month) <- month.abbr
+
+head(coefs_df_dplyr)
+#>     lat   long month    value      avg       std
+#> 1 -21.2 -113.8   Jan 264.3964 268.6604 0.9277068
+#> 2 -21.2 -113.8   Feb 259.2036 268.6604 0.9094862
+#> 3 -21.2 -113.8   Mar 255.0000 268.6604 0.8947368
+#> 4 -21.2 -113.8   Apr 252.0052 268.6604 0.8842288
+#> 5 -21.2 -113.8   May 258.5089 268.6604 0.9070486
+#> 6 -21.2 -113.8   Jun 265.3387 268.6604 0.9310129
+```
+
+We can check that the outputs are identical
+
+``` r
+all(coefs_df_dplyr == coefs_df_plyr)
+#> [1] TRUE
+```
+
+# 2 - Base R function for split-apply-combine
+
+Base R has a set of functions that can deal with splitting datasets into
+smaller pieces, applying an operation to that smaller piece and
+combining it into a complete dataset again. A couple examples would be:
+
+a- The ***Apply*** family of functions combined with the ***split***
+function
+
+``` r
+coefs_df_base1 <- lapply(split(coefs_df, coefs_df[c('lat', 'long')]),
+                        function(df) {
+                          df$avg <- mean(df$value)
+                          df$std <- df$value / max(df$value)
+                          
+                          return(df)
+                        })
+coefs_df_base1 <- do.call('rbind', c(coefs_df_base1, make.row.names = FALSE))
+levels(coefs_df_base1$month) <- month.abbr
+
+head(coefs_df_base1)
+#>     lat   long month    value      avg       std
+#> 1 -21.2 -113.8   Jan 264.3964 268.6604 0.9277068
+#> 2 -21.2 -113.8   Feb 259.2036 268.6604 0.9094862
+#> 3 -21.2 -113.8   Mar 255.0000 268.6604 0.8947368
+#> 4 -21.2 -113.8   Apr 252.0052 268.6604 0.8842288
+#> 5 -21.2 -113.8   May 258.5089 268.6604 0.9070486
+#> 6 -21.2 -113.8   Jun 265.3387 268.6604 0.9310129
+```
+
+b - There is also a function called ***by***
+
+``` r
+coefs_df_base2 <- by(coefs_df, coefs_df[c('lat', 'long')],
+                      function(df) {
+                          df$avg <- mean(df$value)
+                          df$std <- df$value / max(df$value)
+                          
+                          return(df)
+                        })
+
+coefs_df_base2 <- do.call('rbind', c(coefs_df_base2, make.row.names = FALSE))
+levels(coefs_df_base2$month) <- month.abbr
+
+head(coefs_df_base2)
+#>     lat   long month    value      avg       std
+#> 1 -21.2 -113.8   Jan 264.3964 268.6604 0.9277068
+#> 2 -21.2 -113.8   Feb 259.2036 268.6604 0.9094862
+#> 3 -21.2 -113.8   Mar 255.0000 268.6604 0.8947368
+#> 4 -21.2 -113.8   Apr 252.0052 268.6604 0.8842288
+#> 5 -21.2 -113.8   May 258.5089 268.6604 0.9070486
+#> 6 -21.2 -113.8   Jun 265.3387 268.6604 0.9310129
+```
+
+I believe these functions are sufficient. However, I enjoy the
+simplicity that the Tidyverse brings to data-analysis. The tidyverse
+functions come with several pre-made decisions, allowing the user to
+focus more on the data itself than on the code. However, defaults and
+pre-made decisions tend to be limiting in terms of generalization. In
+base R, there is a constant need of book-keeping in terms of how to
+write the code and the fact that sometimes the output of one function
+will not match the input of the next function the user might want to
+apply. That being said, I use base R more often than the Tidyverse for
+the possibility of generalizing the functions and converting code
+between different programming languages.
+
+# 3 - ChatGPT output
+
+The majority of what ChatGPT answered seems correct to me. Only a couple
+details really stand out as incorrect. The output talks about using a
+“groupby” function in programming languages but none of these two listed
+languages really have a “group by” function among their standard
+functions. However, there is one main package or library for each of
+these languages that implements this grouping. In R, the ***dplyr***
+package comes with the “group_by” function. In Python, the ***pandas***
+library comes with the method called “groupby” for data frames.

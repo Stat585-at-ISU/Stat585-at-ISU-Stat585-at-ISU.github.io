@@ -1,0 +1,219 @@
+---
+author: "Parvin Mohammadiarvejeh"
+title: "Split-apply-combine"
+categories: Split-apply-combine
+date: 2023-02-16
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Prompt:
+
+The `plyr` package has by now been replaced by other, even faster
+packages, but the idea of *Split, apply, combine* is as relevant as
+ever.
+
+Read the paper [The Split-Apply-Combine Strategy for Data
+Analysis](https://www.jstatsoft.org/article/view/v040i01) by Hadley
+Wickham.
+
+Write a blog post addressing the following questions:
+
+1.  The R code for the split-apply-combine paper is posted with the
+    paper. Pick one of the examples demonstrating `plyr` functionality
+    (such as `dlply` or `ddply`, ...) and rewrite the example using
+    functionality from the package `dplyr`. Make sure that your example
+    works and the results are identical.
+
+# load the packages
+```{r}
+library(plyr)
+library(dplyr)
+library(ggplot2)
+```
+
+# Load the data
+```{r}
+
+data("baseball")
+head(baseball)
+summary(baseball)
+```
+
+
+# Select the columns....
+```{r}
+baseball_1 = select(baseball, id, year, ab, rbi)
+head(baseball_1)
+```
+
+# Drop the NAs
+```{r}
+library(tidyr)
+baseball_1 = drop_na(baseball_1)
+summary(baseball_1)
+```
+
+
+
+# Group by the players by ID
+```{r}
+players_df <- group_by(baseball_1, id)
+players_df
+```
+
+
+
+# Create the career year using mutate function
+```{r}
+players_df_cyear = mutate(players_df, cyear = year - min(year) + 1)
+players_df_cyear
+```
+
+
+
+# Get the rows that ab is greater than 25
+```{r}
+players_df_cyear_sub = filter(players_df_cyear, ab > 25)
+```
+
+
+
+
+
+
+# Add a column which is rbi/ab
+```{r}
+players_df_cyear_sub = mutate(players_df_cyear, ratio_rbi_ab = rbi/ab)
+players_df_cyear_sub
+```
+
+
+
+
+
+
+
+# Another solution that I had
+# Compute the career year function
+```{r}
+#compute_cyear <- function(player_id){
+#sub_data = subset(baseball_1, id == player_id)
+#cyear = transform(sub_data, cyear = year - min(year) + 1)
+
+
+
+```
+
+
+
+
+# Get the unique id for players and get the cyear using compute_cyear function
+```{r}
+#players_id = unique(baseball_1$id)
+#data = lapply(players_id,  compute_cyear)
+
+```
+
+
+
+
+
+# Subset the ab>25 for all the data sets
+```{r}
+#for (i in 1:length(players_id)) {  
+#  data[[i]] = subset(data[[i]], ab>25)
+#  data[[i]]$ratio_rbi_ab = data[[i]]$rbi/data[[i]]$ab
+#}
+
+
+#data[[6]]
+
+```
+
+
+
+
+
+
+# A function to plot the...
+```{r}
+
+
+
+
+#plotpattern <- function(df) {
+  
+#  xlim <- range(df$cyear, na.rm=TRUE)
+#  ylim <- range(df$ratio_rbi_ab, na.rm=TRUE)
+#  qplot(cyear, ratio_rbi_ab, data = df, geom = "line",
+#  xlim = xlim, ylim = ylim)
+#}
+
+
+```
+
+
+
+
+
+```{r}
+#pdf("paths.pdf", width = 8, height = 4)
+
+
+
+#lapply(data, plotpattern)
+```
+
+
+
+
+
+
+
+
+
+2.  Which (base R) functions do you know that support the
+    split-apply-combine strategy? In your opinion, are these sufficient?
+    State why or why not?
+    
+Parvin's answer: Before this blog, I just knew the aggregate, apply, lapply, sapply, tapply, filter, mutate, group_by, etc. These functions are very useful to work with data set similar to "baseball" but I noticed that they may not be enough efficient for the split-apply-combine strategy. When we have a big data set that includes many features, and it has several records for one unique observation (like the one we see in the baseball that there are multiple records for each player), it is hard to implement the split-apply-combine strategy using the base R functions. I found the plyr package very useful.
+
+3. The ChatGPT response to the prompt "Describe the split-apply-combine paradigm" is given below. Generally, the chatbot's answers are decent. ChatGPT does have problems getting details right. Which details would you change in the response? 
+
+    
+>    The "split-apply-combine" paradigm is a data analysis strategy used in statistics and data science to analyze grouped data. It consists of three steps:
+>
+>    Split: The data is first split into groups based on one or more variables of interest.
+>
+>    Apply: A specific operation or function is applied to each group of data, usually for the purpose of aggregating, summarizing, or transforming the data within each group.
+>
+> Combine: The results of the operation applied to each group are then combined and returned as a single output.
+>
+> The split-apply-combine paradigm is particularly useful in cases where the data cannot be analyzed as a whole and instead must be analyzed in smaller, more manageable chunks. This allows for more efficient data processing and improved scalability. The paradigm is commonly implemented using tools such as the "groupby" function in the R and Python programming languages, and the "dplyr" library in R.
+
+
+
+Parvin's answer: 
+potential first change: The "split-apply-combine" paradigm is a data analysis strategy used in statistics and data science to transform and analyze large grouped data. It consists of main three steps:
+
+potential second change: Split: The first step is to split the data into smaller, more manageable subsets. This is typically done based on one or more categorical variables that are present in the data. For example, you might split a customer database into subsets based on demographic characteristics, such as age or gender.
+
+potential third change: Apply: The second step is to apply a function or calculation to each subset of data. This function should be able to operate on the data independently, without requiring any knowledge of the other subsets. The function can be any type of operation, such as a statistical summary, a calculation, or a transformation of the data.
+
+potential fourth change: Combine: The final step is to combine the results of the applied function back together into a single result. This is typically done by aggregating the results in some way, such as taking the mean or sum of the results for each subset.
+
+potential fifthe change: Overall, the split-apply-combine paradigm is a powerful approach for analyzing large data sets because it allows for complex calculations and operations to be performed on the data without requiring a full scan of the entire data set. It can also be easily parallelized, which makes it an efficient approach for analyzing large data sets on distributed computing platforms.
+
+You can write your answers directly the `README.Rmd` file. 
+Make sure that the file knits (you will need to activate any packages your use in your code chunks with a call to `library(xxx)`, where xxx is the name of the package, such as `plyr` ).
+Commit your changes and push to your repo;  add any files in the `README_files` directory to your repository. 
+

@@ -1,0 +1,89 @@
+---
+author: "Maxwell Skinner"
+title: "Title of your post"
+categories: Split-apply-combine
+date: 2023-02-16
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  warning = FALSE,
+  message = FALSE,
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Prompt:
+
+The `plyr` package has by now been replaced by other, even faster
+packages, but the idea of *Split, apply, combine* is as relevant as
+ever.
+
+Read the paper [The Split-Apply-Combine Strategy for Data
+Analysis](https://www.jstatsoft.org/article/view/v040i01) by Hadley
+Wickham.
+
+Write a blog post addressing the following questions:
+
+1.  The R code for the split-apply-combine paper is posted with the
+    paper. Pick one of the examples demonstrating `plyr` functionality
+    (such as `dlply` or `ddply`, ...) and rewrite the example using
+    functionality from the package `dplyr`. Make sure that your example
+    works and the results are identical.
+    
+    ```{r}
+    #Previous example code using "plyr"
+    library("plyr")
+    baberuth <- subset(baseball, id == "ruthba01")
+    baberuth <- transform(baberuth, cyear = year - min(year) + 1)
+    ```
+
+In this example. The author used the subset and transform method to filter the baseball dataset to only include rows that have the id "ruthba01". There was also a column created in the subset dataframe labelled cyear with counted the consecutive years that Babe Ruth played. Both of these things can be done in the "dplyr" package as well as the "plyr" package. 
+
+```{r}
+#Example code using "dplyr"
+library("dplyr")
+baberuth2 <- dplyr::filter(baseball, id %in% c("ruthba01"))
+baberuth2 <- baberuth2 %>% mutate(cyear = year - min(year) + 1)
+```
+
+2.  Which (base R) functions do you know that support the
+    split-apply-combine strategy? In your opinion, are these sufficient?
+    State why or why not?
+    
+    Answer: 
+    
+    The split() function in base R is used to split a dataframe into multiple dataframes. The parameters include the datframe being split, f, meaning the grouping of vectors or selecting the column according to which we split the dataframe, and drop, which deletes or skips the specified row.
+    
+    As the name would imply this would follow the "split" part of the split-apply-combine strategy. While this function is useful and very simple to use. There are better functions inside of better packages now. The subset() function in the "dplyr" package creates a new dataframe from an original one without much hassle. The split() function from base R outputs a list of the splitted dataframe. While would be useful for a quick readthrough of a couple of rows. Using both the subset() and View() functions creates a more seamless way of looking at as well as manipulating large datasets. 
+    
+    The apply() function in base R takes a dataframe or matrix as an input and gives the output as a vector, list, or array. This is used mainly to avoid loops. The apply function would be used in the "apply" and possibly the "combine" portion of the strategy based off of what specific function was being applied to the dataframe. While apply() is useful. Packages like "dpylr" have created more robust and efficient functions like lapply() and sapply() that applys a function to all the elements in the input more effectively than just apply() does. Using these kinds of functions as well, you have more options with outputting your results. lapply() outputs as a list, sapply() outputs to a vector or matrix. 
+    
+    In general, base R functions lack what a package like dplyr would have in terms of a "%>%" forward pipe operator. This allows the chaining of multiple functions together seamlessly. In base R you would have to save multiple intermediate results into multiple different variables in order to keep track of everything. The forward pipe operator shortens what could be multiple different variables into just one simple command. Base R functions will have you covered for the most part when it comes to any large scale data analysis. But more modern packages like dplyr and tidyverse are more efficient and effective in doing a lot with a little amount of code. 
+    
+    
+3. The ChatGPT response to the prompt "Describe the split-apply-combine paradigm" is given below. Generally, the chatbot's answers are decent. ChatGPT does have problems getting details right. Which details would you change in the response? 
+
+    
+>    The "split-apply-combine" paradigm is a data analysis strategy used in statistics and data science to analyze grouped data. It consists of three steps:
+>
+>    Split: The data is first split into groups based on one or more variables of interest.
+>
+>    Apply: A specific operation or function is applied to each group of data, usually for the purpose of aggregating, summarizing, or transforming the data within each group.
+>
+> Combine: The results of the operation applied to each group are then combined and returned as a single output.
+>
+> The split-apply-combine paradigm is particularly useful in cases where the data cannot be analyzed as a whole and instead must be analyzed in smaller, more manageable chunks. This allows for more efficient data processing and improved scalability. The paradigm is commonly implemented using tools such as the "groupby" function in the R and Python programming languages, and the "dplyr" library in R.
+
+
+Answer: I think ChatGPT did a decent job of describing the paradigm. It did a general overview of what was detailed in the paper by Wickam detailed above. I would say that for split, not all data is split entirely, most of the time one would just subset a small portion of it and focus on the problem at hand versus splitting the entire dataframe into multiple groups. Like in the code example above with filtering Babe Ruth stats from a much larger dataset. But all in all, I think ChatGPT did a decent job of explaining the paradigm. Nothing was entirely inaccurate in my view. 
+
+
+You can write your answers directly the `README.Rmd` file. 
+Make sure that the file knits (you will need to activate any packages your use in your code chunks with a call to `library(xxx)`, where xxx is the name of the package, such as `plyr` ).
+Commit your changes and push to your repo;  add any files in the `README_files` directory to your repository. 
+

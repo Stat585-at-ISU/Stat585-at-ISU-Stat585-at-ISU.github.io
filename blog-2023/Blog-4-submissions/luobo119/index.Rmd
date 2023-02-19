@@ -1,0 +1,86 @@
+---
+author: "yc bai"
+title: "Split-apply-combine"
+categories: Split-apply-combine
+date: 2023-02-16
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Prompt:
+
+The `plyr` package has by now been replaced by other, even faster
+packages, but the idea of *Split, apply, combine* is as relevant as
+ever.
+
+Read the paper [The Split-Apply-Combine Strategy for Data
+Analysis](https://www.jstatsoft.org/article/view/v040i01) by Hadley
+Wickham.
+
+Write a blog post addressing the following questions:
+
+1.  The R code for the split-apply-combine paper is posted with the
+    paper. Pick one of the examples demonstrating `plyr` functionality
+    (such as `dlply` or `ddply`, ...) and rewrite the example using
+    functionality from the package `dplyr`. Make sure that your example
+    works and the results are identical.
+```{r, message=FALSE}
+library(plyr)
+library(dplyr)
+```
+
+```{r, message=FALSE}
+#plyr example
+baseball_plyr <- ddply(baseball, .(id), transform, 
+  cyear = year - min(year) + 1)
+#using dplyr 
+baseball_dplyr = baseball %>% group_by(id) %>% mutate(cyear = year - min(year) + 1) %>%
+  arrange(id) %>% as.data.frame()
+```
+**Head of 'plyr' result**
+```{r}
+head(baseball_plyr)
+```
+**Head of 'dplyr' result**
+```{r}
+head(baseball_dplyr)
+```
+**Results are identical**
+
+```{r}
+all.equal(baseball_plyr, baseball_dplyr)
+```
+
+2.  Which (base R) functions do you know that support the
+    split-apply-combine strategy? In your opinion, are these sufficient?
+    State why or why not?
+
+**I know the functions 'apply', 'lapply', 'sapply' and 'vapply' support the split-apply-combine strategy. But the input of 'apply' can only be an array, and the inputs for 'lapply', 'sapply' and 'vapply' are a vector. So it's not sufficient. Packages like 'plyr' and 'dplyr' can take in more types of data and the functions are more flexible. For example, you can specify variables on which the data is split. But you can only split the data by row or by column in 'apply'.**
+
+3. The ChatGPT response to the prompt "Describe the split-apply-combine paradigm" is given below. Generally, the chatbot's answers are decent. ChatGPT does have problems getting details right. Which details would you change in the response? 
+
+    
+>    The "split-apply-combine" paradigm is a data analysis strategy used in statistics and data science ~~to analyze grouped data~~. It consists of three steps:
+>
+>    Split: The data is first split into groups based on one or more variables of interest, **or split into pieces based on a given splitting scheme**.
+>
+>    Apply: A specific operation or function is applied to each **piece** ~~group~~ of data **independently**, usually for the purpose of aggregating, summarizing, **modeling**, or transforming the data within each group.
+>
+> Combine: The results of the operation applied to each **piece** ~~group~~ are then combined and returned as a single output.
+>
+> The split-apply-combine paradigm is particularly useful in cases where the data cannot be analyzed as a whole and instead must be analyzed in smaller, more manageable chunks, **or you want to apply the same operations on each piece of data**. This allows for more efficient data processing and improved scalability. The paradigm is commonly implemented using tools such as the "groupby" function in ~~the R and~~ Python ~~programming languages~~, and the "dplyr" library in R.
+
+
+
+You can write your answers directly the `README.Rmd` file. 
+Make sure that the file knits (you will need to activate any packages your use in your code chunks with a call to `library(xxx)`, where xxx is the name of the package, such as `plyr` ).
+Commit your changes and push to your repo;  add any files in the `README_files` directory to your repository. 
+

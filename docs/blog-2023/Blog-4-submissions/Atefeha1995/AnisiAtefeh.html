@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Atefeh Anisi">
+<meta name="dcterms.date" content="2023-02-16">
+
+<title>Stat 585 - Working with ‘Plyr’ package</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Stat 585</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../schedule.html">
+ <span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../blog.html">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../labs.html">
+ <span class="menu-text">Labs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../projects.html">
+ <span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://canvas.iastate.edu/courses/98137">
+ <span class="menu-text">Canvas (ISU)</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://canvas.unl.edu/courses/150086">
+ <span class="menu-text">Canvas (UNL)</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#prompt" id="toc-prompt" class="nav-link active" data-scroll-target="#prompt">Prompt:</a></li>
+  <li><a href="#baseball-case-study-from-the-paper" id="toc-baseball-case-study-from-the-paper" class="nav-link" data-scroll-target="#baseball-case-study-from-the-paper">Baseball case study from the paper</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Working with ‘Plyr’ package</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Split-apply-combine</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Atefeh Anisi </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 16, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<section id="prompt" class="level2">
+<h2 class="anchored" data-anchor-id="prompt">Prompt:</h2>
+<p>The <code>plyr</code> package has by now been replaced by other, even faster packages, but the idea of <em>Split, apply, combine</em> is as relevant as ever.</p>
+<p>Read the paper <a href="https://www.jstatsoft.org/article/view/v040i01">The Split-Apply-Combine Strategy for Data Analysis</a> by Hadley Wickham.</p>
+<p>Write a blog post addressing the following questions:</p>
+<ol type="1">
+<li>The R code for the split-apply-combine paper is posted with the paper. Pick one of the examples demonstrating <code>plyr</code> functionality (such as <code>dlply</code> or <code>ddply</code>, …) and rewrite the example using functionality from the package <code>dplyr</code>. Make sure that your example works and the results are identical.</li>
+</ol>
+<p>First, we need to call libraries.</p>
+<pre><code>library(ggplot2)
+library(plyr)
+library(dplyr)
+</code></pre>
+</section>
+<section id="baseball-case-study-from-the-paper" class="level1">
+<h1>Baseball case study from the paper</h1>
+<p>The example shows that we can subset the data based on id, and then apply the changes on that specific subset. IF we want to do this for all different ids, we need to repeat this two lines of code multiple times or we should apply a for loop on different ids.</p>
+<pre><code>
+baberuth &lt;- subset(baseball, id == "ruthba01")
+baberuth &lt;- transform(baberuth, cyear = year - min(year) + 1)</code></pre>
+<p>This line of code using the function ddply from the “Plyr” package can do the same thing easier. The code is also shorter and less complex. The ddply function will get the whole data frame as the input, get the variable to split the data frame by it (id), apply mentioned changes on different independent pieces, and finally combine pieces together.</p>
+<pre><code>baseball &lt;- ddply(baseball, .(id), transform, 
+  cyear = year - min(year) + 1)
+</code></pre>
+<p>We can also do the same with other base functions in R. For example, these lines of code mentioned below can do the same on our dataframe.</p>
+<pre><code>
+baseball &lt;- baseball %&gt;% group_by(id) %&gt;% mutate(cyear =year - min(year) + 1)
+baseball
+</code></pre>
+<ol start="2" type="1">
+<li>Which (base R) functions do you know that support the split-apply-combine strategy? In your opinion, are these sufficient? State why or why not?</li>
+</ol>
+<p>Before now, I had only used basic R methods like apply() and lapply(). When we constantly labor with many inputs and seek out various outputs, they are insufficient. So, to get numerous outputs from various inputs, we need more functions. In addition, there are occasions when we only need to perform some of the functions on a portion of the data or when we need to perform many distinct functions on different data portions. We should divide the data into manageable pieces, perform a particular function separately on each piece, and combine all the pieces. These two tasks are, therefore, insufficient. In this assignment, I tried doing the same on the data frame using group_by and mutate functions. It worked, but using the ddply() function from “Plyr” package was much easier and integrated. Also, depending on the data frame and the functions you want to apply to different pieces of the data, mixing and integrating basic functions will be very complicated and may cause problems.</p>
+<ol start="3" type="1">
+<li>The ChatGPT response to the prompt “Describe the split-apply-combine paradigm” is given below. Generally, the chatbot’s answers are decent. ChatGPT does have problems getting details right. Which details would you change in the response?</li>
+</ol>
+<blockquote class="blockquote">
+<p>The “split-apply-combine” paradigm is a data analysis strategy used in statistics and data science to analyze grouped data. It consists of three steps:</p>
+<p>Split: The data is first split into groups based on one or more variables of interest.</p>
+<p>Apply: A specific operation or function is applied to each group of data, usually for the purpose of aggregating, summarizing, or transforming the data within each group.</p>
+<p>Combine: The results of the operation applied to each group are then combined and returned as a single output.</p>
+<p>The split-apply-combine paradigm is particularly useful in cases where the data cannot be analyzed as a whole and instead must be analyzed in smaller, more manageable chunks. This allows for more efficient data processing and improved scalability. The paradigm is commonly implemented using tools such as the “groupby” function in the R and Python programming languages, and the “dplyr” library in R.</p>
+</blockquote>
+<p>I checked the ChatGPT again for the answer, and here is what I got:</p>
+<blockquote class="blockquote">
+<p>The split-apply-combine paradigm is a data analysis approach used in the field of statistics and data science to analyze and summarize data. This approach consists of three main steps, which are:</p>
+<p>Split: The first step involves splitting the data into smaller subsets based on one or more grouping variables. For example, if we have a data set containing information about sales transactions for a company, we could split the data by product category or by region.</p>
+<p>Apply: The second step involves applying a function to each of the subsets generated in the first step. The function could be a statistical measure, such as mean or standard deviation, or a custom function that performs a specific analysis on the data. The idea is to obtain summary statistics or other insights for each subset of the data.</p>
+<p>Combine: The final step involves combining the results obtained in the second step into a single output. This could involve summarizing the results in a table or graph, or performing further analysis on the summarized data.</p>
+<p>The split-apply-combine paradigm is particularly useful when working with large datasets, as it allows us to analyze the data in smaller, more manageable subsets. It is also a very flexible approach, as it can be applied to many different types of data and analysis problems.</p>
+</blockquote>
+<p>So much similar to the one above. I think this is a good answer for the whole topic explaining what is the topic, which area it is related to, and what are the major parts of it. If I want to add more details to this answer, it would be the explanation about different types of data which the strategy is able to work with. Also, it would be good to add the name of a few packages in python, R and etc, which are the best choices when someone is applying this strategy.</p>
+<p>You can write your answers directly the <code>README.Rmd</code> file. Make sure that the file knits (you will need to activate any packages your use in your code chunks with a call to <code>library(xxx)</code>, where xxx is the name of the package, such as <code>plyr</code> ). Commit your changes and push to your repo; add any files in the <code>README_files</code> directory to your repository.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

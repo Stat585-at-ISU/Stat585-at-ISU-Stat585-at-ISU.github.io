@@ -1,0 +1,142 @@
+Testing the ‘dplyr’ functionality
+================
+Kelly Nascimento Thompson
+2022-02-16
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+## Prompt:
+
+The `plyr` package has by now been replaced by other, even faster
+packages, but the idea of *Split, apply, combine* is as relevant as
+ever.
+
+Read the paper [The Split-Apply-Combine Strategy for Data
+Analysis](https://www.jstatsoft.org/article/view/v040i01) by Hadley
+Wickham.
+
+Write a blog post addressing the following questions:
+
+1.  The R code for the split-apply-combine paper is posted with the
+    paper. Pick one of the examples demonstrating `plyr` functionality
+    (such as `dlply` or `ddply`, …) and rewrite the example using
+    functionality from the package `dplyr`. Make sure that your example
+    works and the results are identical.
+
+\#Case study Baseball: \#Example page 14:
+
+``` r
+# Using "plyr" package
+
+library("plyr")
+# Get performance of a batter over his career
+# Calculate "career year"
+
+baberuth <- subset(baseball, id == "ruthba01")
+baberuth_plyr <- transform(baberuth, cyear = year - min(year) + 1)
+
+# Do the same for all players
+
+baseball_all <- ddply(baseball, .(id), transform,
+    cyear = year - min(year) + 1)
+```
+
+\#Example page 14:
+
+``` r
+# Using "dplyr" package
+library("tidyr")
+library("dplyr")
+#> 
+#> Attaching package: 'dplyr'
+#> The following objects are masked from 'package:plyr':
+#> 
+#>     arrange, count, desc, failwith, id, mutate, rename, summarise,
+#>     summarize
+#> The following objects are masked from 'package:stats':
+#> 
+#>     filter, lag
+#> The following objects are masked from 'package:base':
+#> 
+#>     intersect, setdiff, setequal, union
+
+# Calculate "career year"
+
+baberuth <- filter(baseball, id == "ruthba01")
+baberuth_dplyr <- mutate(baberuth, cyear = year - min(year) + 1)
+
+# Do the same for all players
+
+baseball <- baseball %>% group_by(id) %>%
+  mutate(cyear = year - min(year) + 1) %>%
+  arrange(baseball$id) %>% ungroup(id)
+```
+
+2.  Which (base R) functions do you know that support the
+    split-apply-combine strategy? In your opinion, are these sufficient?
+    State why or why not?
+
+Nested loops or the apply family of functions, however they present some
+disadvantages.
+
+Nested loops: A disadvantage is that there is lots of book-keeping code
+because the array size is hard coded in several places and output
+structures need to be created before filling them with data.
+
+Apply family of functions - apply(), lapply(), mapply(): These simplify
+the task, but the process to go from a 2d array of models to 3d array of
+residuals is not straightforward.
+
+For data frames: The split-apply-combine strategy can be achieved as
+follows: Split: split() Apply: lapply() Combine: rbind()
+
+The major complication is giving appropriate labels to the data because
+types of label will depend on the output data structure (i.e arrays =
+dimnames and data frames = additional columns). For this reason,
+mapply() is needed to match source data to extract informative labels.
+
+3.  The ChatGPT response to the prompt “Describe the split-apply-combine
+    paradigm” is given below. Generally, the chatbot’s answers are
+    decent. ChatGPT does have problems getting details right. Which
+    details would you change in the response?
+
+> The “split-apply-combine” paradigm is a data analysis strategy used in
+> statistics and data science to analyze grouped data. It consists of
+> three steps:
+>
+> Split: The data is first split into groups based on one or more
+> variables of interest.
+>
+> Apply: A specific operation or function is applied to each group of
+> data, usually for the purpose of aggregating, summarizing, or
+> transforming the data within each group.
+>
+> Combine: The results of the operation applied to each group are then
+> combined and returned as a single output.
+>
+> The split-apply-combine paradigm is particularly useful in cases where
+> the data cannot be analyzed as a whole and instead must be analyzed in
+> smaller, more manageable chunks. This allows for more efficient data
+> processing and improved scalability. The paradigm is commonly
+> implemented using tools such as the “groupby” function in the R and
+> Python programming languages, and the “dplyr” library in R.
+
+The term “analyze grouped data” seems too general to describe the
+split-apply-combine strategy. Even though the following bullet points
+describe each of the steps individually, it would be ideal to have an
+introductory sentence similar to what is shown in the paper from Hadley
+Wickman.
+
+I would change it this way: “The ’split-apply-combine” paradigm is a
+data analysis strategy used in statistics and data science to break up a
+larger data set into manageable pieces, operate on each piece
+independently, and then put all the pieces back together.”
+
+Perhaps the “apply” step is a little wordy. I would change it to
+“calculate summary statistics on each data group.”
+
+The final paragraph looks correct for concluding sentences and explains
+why this strategy is useful in data science. Since ChatGPT mentioned the
+“groupby” function, it would be necessary to add the five key functions
+from the “dplyr” library: filter(), arrange(), select(), mutate(), and
+summarise().

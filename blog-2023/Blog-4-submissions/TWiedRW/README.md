@@ -1,0 +1,159 @@
+Split-apply-combine
+================
+Tyler Wiederich
+2022-02-16
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+## Prompt:
+
+The `plyr` package has by now been replaced by other, even faster
+packages, but the idea of *Split, apply, combine* is as relevant as
+ever.
+
+Read the paper [The Split-Apply-Combine Strategy for Data
+Analysis](https://www.jstatsoft.org/article/view/v040i01) by Hadley
+Wickham.
+
+Write a blog post addressing the following questions:
+
+**1. The R code for the split-apply-combine paper is posted with the
+paper. Pick one of the examples demonstrating `plyr` functionality (such
+as `dlply` or `ddply`, …) and rewrite the example using functionality
+from the package `dplyr`. Make sure that your example works and the
+results are identical.**
+
+``` r
+
+#plyr approach
+library(plyr)
+
+#Year with plyr
+baberuth <- subset(baseball, id == "ruthba01")
+baberuth <- transform(baberuth, cyear = year - min(year) + 1)
+baseball <- ddply(baseball, .(id), transform,
+  cyear = year - min(year) + 1)
+baseball_subset <- subset(baseball, ab >= 25)
+
+#Models with plyr
+model <- function(df) {
+ lm(rbi / ab ~ cyear, data = df)
+}
+bmodels <- dlply(baseball_subset, .(id), model)
+rsq <- function(x) summary(x)$r.squared
+bcoefs <- ldply(bmodels, function(x) c(coef(x), rsquare = rsq(x)))
+names(bcoefs)[2:3] <- c("intercept", "slope")
+baseballcoef <- merge(baseball_subset, bcoefs, by = "id")
+results = subset(baseballcoef, rsquare > 0.999)$id
+
+
+
+#dplyr approach
+library(dplyr)
+#> 
+#> Attaching package: 'dplyr'
+#> The following objects are masked from 'package:plyr':
+#> 
+#>     arrange, count, desc, failwith, id, mutate, rename, summarise,
+#>     summarize
+#> The following objects are masked from 'package:stats':
+#> 
+#>     filter, lag
+#> The following objects are masked from 'package:base':
+#> 
+#>     intersect, setdiff, setequal, union
+library(purrr)
+#> 
+#> Attaching package: 'purrr'
+#> The following object is masked from 'package:plyr':
+#> 
+#>     compact
+library(tidyr)
+
+#Year with dplyr
+baseball2 <- baseball %>% 
+  group_by(id) %>% 
+  mutate(cyear2 = year - min(year) + 1)
+
+#Models with dplyr (and others)
+baseball3 = baseball2 %>% 
+  filter(ab >= 25) %>% 
+  group_by(id) %>% 
+  nest() %>% 
+  mutate(bmodels = map(data, model),
+         bcoefs = map_dfr(bmodels, function(x)(c(coef(x), rsquare = rsq(x))))) %>% 
+  unnest(bcoefs) %>%  
+  mutate(intercept = `(Intercept)`, slope = cyear) %>% 
+  select(-`(Intercept)`, -cyear) %>% 
+  unnest(data) %>% 
+  filter(rsquare > 0.999)
+
+#Verify that the years are the same
+all(baseball$cyear == baseball2$cyear2)
+#> [1] TRUE
+
+#Verify that the players are the same
+all(baseball3$id == results)
+#> [1] TRUE
+```
+
+For this blog post, I chose the baseball example to work with. Getting
+the number of years is fairly straightforward with dplyr using the
+`group_by` function and `mutate`. The main differences show up when
+modeling the data to each player. With plyr, it first creates a list of
+models and then applies some functions to that list. This is not
+possible with dplyr alone, but it is possible with the help of tidyr
+(for the `nest` and `unnest` functions) and purrr (for the `map`
+function). The results come out to be the same, but plyr uses less code.
+
+**2. Which (base R) functions do you know that support the
+split-apply-combine strategy? In your opinion, are these sufficient?
+State why or why not?**
+
+The base R functions that support the split-apply-combine strategy are
+the apply functions. I currently have found these apply functions to be
+sufficient and I often incorporate then whenever I can (even going as
+far to avoid for loops if I can help it). From the paper, it seems like
+the apply functions fall short when data takes more than two dimensions.
+They then require extra care to operate whereas the plyr functions
+extend the functionality of the apply functions more easily.
+
+**3. The ChatGPT response to the prompt “Describe the
+split-apply-combine paradigm” is given below. Generally, the chatbot’s
+answers are decent. ChatGPT does have problems getting details right.
+Which details would you change in the response?**
+
+> The “split-apply-combine” paradigm is a data analysis strategy used in
+> statistics and data science to analyze grouped data. It consists of
+> three steps:
+>
+> Split: The data is first split into groups based on one or more
+> variables of interest.
+>
+> Apply: A specific operation or function is applied to each group of
+> data, usually for the purpose of aggregating, summarizing, or
+> transforming the data within each group.
+>
+> Combine: The results of the operation applied to each group are then
+> combined and returned as a single output.
+>
+> The split-apply-combine paradigm is particularly useful in cases where
+> the data cannot be analyzed as a whole and instead must be analyzed in
+> smaller, more manageable chunks. This allows for more efficient data
+> processing and improved scalability. The paradigm is commonly
+> implemented using tools such as the “groupby” function in the R and
+> Python programming languages, and the “dplyr” library in R.
+
+I would have to say that ChatGPT is almost entirely correct, but the
+coding is a bit off. The `groupby` does not exist in R, and the tools
+necessary for the split-apply-combine paradigm need additional packages
+to use with dplyr. `groupby` is a simple fix by using `group_by` and the
+other useful packages are tidyr and purrr (along with plyr as another
+approach). In my experience of asking ChatGPT coding questions, it seems
+to combine different languages and/or syntaxes. Additionally, the apply
+step could use a little more expansion. This step could include more,
+such as using the data for some purpose such as modelling or graphing.
+
+A little off-topic, but another example of ChatGPT messing up a coding
+response is when I had it give me a mixed model using `aov()`, but used
+the random term syntax from `lme4`. It’s close, but not quite there.

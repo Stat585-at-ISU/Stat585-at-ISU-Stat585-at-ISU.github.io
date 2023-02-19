@@ -1,0 +1,113 @@
+---
+author: "Alexandra Arabio"
+title: "Split, Apply, Combine - Relevancy"
+categories: Split-apply-combine
+date: 2023-02-16
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+Citation used for this blog: 
+
+Wickham, H. . (2011). The Split-Apply-Combine Strategy for Data Analysis. Journal of Statistical Software, 40(1), 1–29. https://doi.org/10.18637/jss.v040.i01
+
+
+## Prompt:
+
+The `plyr` package has by now been replaced by other, even faster
+packages, but the idea of *Split, apply, combine* is as relevant as
+ever.
+
+Read the paper [The Split-Apply-Combine Strategy for Data
+Analysis](https://www.jstatsoft.org/article/view/v040i01) by Hadley
+Wickham.
+
+Write a blog post addressing the following questions:
+
+1.  The R code for the split-apply-combine paper is posted with the
+    paper. Pick one of the examples demonstrating `plyr` functionality
+    (such as `dlply` or `ddply`, ...) and rewrite the example using
+    functionality from the package `dplyr`. Make sure that your example
+    works and the results are identical.
+
+
+```{r}
+#plyr functionality using dplyr
+library("plyr")
+library("dplyr")
+library("tidyverse")
+# ----------------------------
+
+# Base ball case study ============================================
+baberuth <- subset(baseball, id == "ruthba01")
+baberuth <- transform(baberuth, cyear = year - min(year) + 1)
+
+
+# ----------------------------
+
+baseball <- ddply(baseball, .(id), transform, 
+  cyear = year - min(year) + 1)
+
+
+# ----------------------------
+
+##ddply splits a data frame, applies a function, and then returns results in a data frame ...
+
+baberuth <- subset(baseball, id == "ruthba01")
+baberuth <- transform(baberuth, cyear = year - min(year) + 1)
+
+baberuth1 <- subset(baseball, id == "ruthba01")
+baberuth1 <- transform(baberuth, cyear = year - min(year) + 1)
+
+# ----------------------------
+
+baseball <- ddply(baseball, .(id), transform, 
+  cyear = year - min(year) + 1)
+
+#dplyr with do()
+
+baseball1 <- baberuth1 %>% 
+  group_by(id) %>% 
+  do(cyear = baberuth1$year - min(baberuth1$year) + 1)
+
+```
+
+
+2.  Which (base R) functions do you know that support the
+    split-apply-combine strategy? In your opinion, are these sufficient?
+    State why or why not?
+
+There are many different functions within base R that support the split-apply-combine strategy. Hadley touches on this discussion in the beginning parts of her paper; one of the most commonly used functions for this in base R is probably the aggregate function. This function works by combining or grouping data by common values of a factor to then generate summary statistics or apply functions for those groups. 
+
+As Hadley mentions through, the readability of some base R functions are much more messy as compared to ones that could be used through other packages. In a package like dplyr, we are able to utilize the group_by and summarise functions to complete the same task but produce more readable output and workflow. Whereas the aggregate functions only allows one to apply a single names function to a grouped data the summarise function allows for more functions to be used. 
+
+By using this step by step method through grouping and running summaries... the dplyr functions are able to be used together to accomplish more tasks. 
+
+ In my opinion, I think that there are many different base R functions that support the split_apply-combine strategy that Hadley discusses... however, functions in the dplyr package accomplish the same types of tasks and are generally more easily understand.
+
+3. The ChatGPT response to the prompt "Describe the split-apply-combine paradigm" is given below. Generally, the chatbot's answers are decent. ChatGPT does have problems getting details right. Which details would you change in the response? 
+
+    
+>    The "split-apply-combine" paradigm is a data analysis strategy used in statistics and data science to analyze grouped data. It consists of three steps:
+>
+>    Split: The data is first split into groups based on one or more variables of interest.
+>
+>    Apply: A specific operation or function is applied to each group of data, usually for the purpose of aggregating, summarizing, or transforming the data within each group.
+>
+> Combine: The results of the operation applied to each group are then combined and returned as a single output.
+>
+> The split-apply-combine paradigm is particularly useful in cases where the data cannot be analyzed as a whole and instead must be analyzed in smaller, more manageable chunks. This allows for more efficient data processing and improved scalability. The paradigm is commonly implemented using tools such as the "groupby" function in the R and Python programming languages, and the "dplyr" library in R.
+
+I do think that the ChatGPT response to the prompt is pretty good. The split-apply-combine does allow one to break down a larger problem into more manageable parts to work with each individually before then combining the dataset together again. Working through this format limits the chance of errors, is less time consuming, and is not as tedious as other methods may be. 
+
+You can write your answers directly the `README.Rmd` file. 
+Make sure that the file knits (you will need to activate any packages your use in your code chunks with a call to `library(xxx)`, where xxx is the name of the package, such as `plyr` ).
+Commit your changes and push to your repo;  add any files in the `README_files` directory to your repository. 
+

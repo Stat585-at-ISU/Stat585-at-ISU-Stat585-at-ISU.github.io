@@ -1,0 +1,108 @@
+---
+author: "Marie Hardt"
+title: "Split-Apply-Combine"
+category: Split-apply-combine
+date: 2023-02-16
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Prompt:
+
+The `plyr` package has by now been replaced by other, even faster
+packages, but the idea of *Split, apply, combine* is as relevant as
+ever.
+
+Read the paper [The Split-Apply-Combine Strategy for Data
+Analysis](https://www.jstatsoft.org/article/view/v040i01) by Hadley
+Wickham.
+
+Write a blog post addressing the following questions:
+
+1.  The R code for the split-apply-combine paper is posted with the
+    paper. Pick one of the examples demonstrating `plyr` functionality
+    (such as `dlply` or `ddply`, ...) and rewrite the example using
+    functionality from the package `dplyr`. Make sure that your example
+    works and the results are identical.
+    
+I revisited one of the baseball case study examples from section 5.1  of the paper. The code for the original example is given below (with a modification to save the new dataset as `plyr_baseball` instead of `baseball` as in the paper):
+
+```{r, echo = T}
+library(plyr)
+baseball_plyr <- ddply(baseball, .(id), transform, 
+  cyear = year - min(year) + 1)
+```
+
+We'll now look at the first fifteen rows and last fifteen rows of the new `baseball_plyr` dataset.
+
+```{r, echo = T}
+head(baseball_plyr, 15)
+tail(baseball_plyr, 15)
+```
+
+Next, I'll rewrite the example using functions from the `dply` package. 
+
+```{r, echo = T}
+library(dplyr)
+library(magrittr) # For pipe %>% 
+
+baseball_dplyr <- baseball %>% 
+                    dplyr::group_by(id) %>%
+                    dplyr::mutate(cyear = year - min(year) + 1) %>% 
+                    dplyr::arrange(id) # Arrange data as in baseball_plyr
+```
+
+We'll now look at the first fifteen rows and last fifteen rows of the new `baseball_dplyr` dataset after converting it from a tibble to a dataframe to better match `baseball_plyr`.
+
+```{r, echo = T}
+baseball_dplyr <- as.data.frame(baseball_dplyr)
+head(baseball_dplyr, 15)
+tail(baseball_dplyr, 15)
+```
+The two datasets appear to be identical. We can also compare them with `all.equal`:
+
+```{r, echo = T}
+all.equal(baseball_plyr, baseball_dplyr)
+```
+As we expected, `baseball_plyr` and `baseball_dplyr` are identical. This means I successfully recreated the `plyr` example from the paper using functions from the `dplyr` package.
+
+2.  Which (base R) functions do you know that support the
+    split-apply-combine strategy? In your opinion, are these sufficient?
+    State why or why not?
+    
+    In the paper, Hadley Wickham mentioned several base `R` functions and how they compare to functions in the `plyr` package. These base `R` functions that support the split-apply-combine paradigm include `aggregate`, `apply`,`by`,`lapply`,`mapply`,`replicate`, and `sapply`.
+
+I think these base `R` functions are sufficient to allow people to implement the split-apply-combine paradigm in `R`. However, these functions may not be the most efficient and user-friendly way to implement the split-apply-combine paradigm in `R`. 
+
+Consider the following analogy: you have to take a long car trip in the United States and you don't especially care about the scenery or places you visit along the way. Since you just want to get from point A to point B in the most efficient way possible, the best route would be for you to take interstate highways and major US highways. While you could still get from point A to point B by driving along smaller roads like state highways and county roads, your journey will likely take longer and won't be the most direct route. You also have a higher chance of getting lost along the way.
+
+In the analogy above, packages like `plyr` and `dplyr` are the equivalent of driving on interstate highways and major US highways during your long car trip. The functions in these packages allow you to efficiently bring your data into the necessary form for the analyses you'd like to run. The `plyr` and `dplyr` functions are written to follow similar syntax within each package, so it's easy to know what code you have to write. Base `R` functions like `aggregate` and `apply` are like driving on state highways and county roads during your road trip. While these routes can get you to your destination, they are not always straightforward and you'll likely run into mishaps along the way.
+
+3. The ChatGPT response to the prompt "Describe the split-apply-combine paradigm" is given below. Generally, the chatbot's answers are decent. ChatGPT does have problems getting details right. Which details would you change in the response? 
+
+    
+>    The "split-apply-combine" paradigm is a data analysis strategy used in statistics and data science to analyze grouped data. It consists of three steps:
+>
+>    Split: The data is first split into groups based on one or more variables of interest.
+>
+>    Apply: A specific operation or function is applied to each group of data, usually for the purpose of aggregating, summarizing, or transforming the data within each group.
+>
+> Combine: The results of the operation applied to each group are then combined and returned as a single output.
+>
+> The split-apply-combine paradigm is particularly useful in cases where the data cannot be analyzed as a whole and instead must be analyzed in smaller, more manageable chunks. This allows for more efficient data processing and improved scalability. The paradigm is commonly implemented using tools such as the "groupby" function in the R and Python programming languages, and the "dplyr" library in R.
+
+I think that ChatGPT's explanation that in the "apply" step, "[a] *specific* [emphasis added] operation or function is applied to each group of data..." almost makes it sound like each data group could have a different function applied to it. It's my understanding that under the split-apply-combine paradigm, we do the same thing to all of the groups. Here's how I'd rewrite this portion:
+
+>   Apply: The same function is applied to each group in the data, usually to aggregate, summarize, or transform the data within each group.
+
+As noted in class on February 14, 2023, ChatGPT made a mistake with the "groupby" function in the last paragraph. While the appropriate function is indeed called `groupby` in the `pandas` library for Python, the function name in the R package `dplyr` is `group_by`.
+
+

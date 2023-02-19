@@ -1,0 +1,116 @@
+---
+author: "Yingchao Zhou"
+title: "Split, apply, combine"
+categories: Split-apply-combine
+date: 2023-02-16
+output: md_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Prompt:
+
+The `plyr` package has by now been replaced by other, even faster
+packages, but the idea of *Split, apply, combine* is as relevant as
+ever.
+
+Read the paper [The Split-Apply-Combine Strategy for Data
+Analysis](https://www.jstatsoft.org/article/view/v040i01) by Hadley
+Wickham.
+
+Write a blog post addressing the following questions:
+
+1.  The R code for the split-apply-combine paper is posted with the
+    paper. Pick one of the examples demonstrating `plyr` functionality
+    (such as `dlply` or `ddply`, ...) and rewrite the example using
+    functionality from the package `dplyr`. Make sure that your example
+    works and the results are identical.
+
+2.  Which (base R) functions do you know that support the
+    split-apply-combine strategy? In your opinion, are these sufficient?
+    State why or why not?
+
+3. The ChatGPT response to the prompt "Describe the split-apply-combine paradigm" is given below. Generally, the chatbot's answers are decent. ChatGPT does have problems getting details right. Which details would you change in the response? 
+
+    
+>    The "split-apply-combine" paradigm is a data analysis strategy used in statistics and data science to analyze grouped data. It consists of three steps:
+>
+>    Split: The data is first split into groups based on one or more variables of interest.
+>
+>    Apply: A specific operation or function is applied to each group of data, usually for the purpose of aggregating, summarizing, or transforming the data within each group.
+>
+> Combine: The results of the operation applied to each group are then combined and returned as a single output.
+>
+> The split-apply-combine paradigm is particularly useful in cases where the data cannot be analyzed as a whole and instead must be analyzed in smaller, more manageable chunks. This allows for more efficient data processing and improved scalability. The paradigm is commonly implemented using tools such as the "groupby" function in the R and Python programming languages, and the "dplyr" library in R.
+
+
+You can write your answers directly the `README.Rmd` file. 
+Make sure that the file knits (you will need to activate any packages your use in your code chunks with a call to `library(xxx)`, where xxx is the name of the package, such as `plyr` ).
+Commit your changes and push to your repo;  add any files in the `README_files` directory to your repository. 
+
+### 1 Rewrite plyr example using dplyr  
+
+I choose `ddply`.
+
+Check out `ddply` first:
+
+```{r}
+library("ggplot2")
+library("plyr")
+options(digits = 3)
+
+## check original baseball dataset first
+head(baseball[,c("id", "year")])
+```
+
+```{r}
+baseball1 <- ddply(baseball, .(id), transform, 
+  cyear = year - min(year) + 1)
+head(baseball1[,c("id", "year", "cyear")])
+```
+
+This operation creates a new variable "cyear", which is the year of a record minus the minimum year record for the same id, then plus 1. We also notice the records are grouped by the same id.
+
+We can take a closer look for id "aaronha01" to make sure we have the right understanding:
+
+```{r}
+baseball[baseball$id == "aaronha01",c("id", "year")]
+```
+
+```{r}
+baseball1[baseball1$id == "aaronha01",c("id", "year", "cyear")]
+```
+
+Next we rewrite this example using dplyr:
+
+```{r}
+library(dplyr)
+baseball %>% group_by(id) %>%
+  arrange(id) %>%
+  mutate(cyear = year - min(year) + 1) -> baseball2
+```
+
+
+Check whether the two datasets are the same.
+
+```{r}
+baseball1 %>% select_if(~ !any(is.na(.))) -> baseball1
+baseball2 %>% select_if(~ !any(is.na(.))) -> baseball2
+
+sum(baseball1 != baseball2)
+```
+
+### 2 Base R option  
+
+I know some functions in the "apply" family can do split-apply-combine operations, like `apply`, `lapply`, `sapply`. I think these are useful functions and can get a lot of work done. But sometimes they are tricky in what type of data they would take, the specification of dimension, etc. For example, `lapply` can take a list or vector and return a list, which takes a lot of space when the list object is large. 
+
+### 3 Change to ChatGPT  
+
+There is no `groupby` function in R. I would say SQL has a `group by` operator and SAS has a `by` operator.

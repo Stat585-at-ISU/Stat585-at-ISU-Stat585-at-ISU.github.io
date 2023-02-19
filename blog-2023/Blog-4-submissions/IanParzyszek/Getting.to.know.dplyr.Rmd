@@ -1,0 +1,86 @@
+---
+author: "Ian Parzyszek"
+title: "Getting familiar with dpylr"
+categories: Split-apply-combine
+date: 2023-02-16
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+
+
+```
+
+## Prompt:
+
+The `plyr` package has by now been replaced by other, even faster
+packages, but the idea of *Split, apply, combine* is as relevant as
+ever.
+
+Read the paper [The Split-Apply-Combine Strategy for Data
+Analysis](https://www.jstatsoft.org/article/view/v040i01) by Hadley
+Wickham.
+
+Write a blog post addressing the following questions:
+
+1.  The R code for the split-apply-combine paper is posted with the
+    paper. Pick one of the examples demonstrating `plyr` functionality
+    (such as `dlply` or `ddply`, ...) and rewrite the example using
+    functionality from the package `dplyr`. Make sure that your example
+    works and the results are identical.
+    
+    
+```{r}
+library("plyr")
+library("dplyr")
+```
+
+
+
+```{r}
+#This chunk calculates the year they are on for that year
+baseball_plyr <- ddply(baseball, .(id), transform, 
+  cyear = year - min(year) + 1)
+baseball_plyr
+
+
+```
+
+Code using dplyr
+```{r}
+baseball_dplyr<- baseball%>%
+  group_by(id)%>%
+  mutate(cyear = year - min(year) + 1)
+baseball_dplyr
+```
+
+
+2.  Which (base R) functions do you know that support the
+    split-apply-combine strategy? In your opinion, are these sufficient?
+    State why or why not?
+
+    
+I am most familiar with the base R functions split/apply/ and rbind/cbind.  I don't think these are the most efficent ways to analyze data, especially working with larger data. There can be multiple steps in code or lines of code to get the results you are looking for. However with dplyr you can use pipes to organize/clean your code. I also think that using mutate or the group_by functions are extremely useful and the base R functions can be much more difficult to get the same answers. 
+
+3. The ChatGPT response to the prompt "Describe the split-apply-combine paradigm" is given below. Generally, the chatbot's answers are decent. ChatGPT does have problems getting details right. Which details would you change in the response? 
+
+    
+>    The "split-apply-combine" paradigm is a data analysis strategy used in statistics and data science to analyze grouped data. It consists of three steps:
+>
+>    Split: The data is first split into groups based on one or more variables of interest.
+>
+>    Apply: A specific operation or function is applied to each group of data, usually for the purpose of aggregating, summarizing, or transforming the data within each group.
+
+> Combine: The results of the operation applied to each group are then combined and returned as a single output.
+>
+> The split-apply-combine paradigm is particularly useful in cases where the data cannot be analyzed as a whole and instead must be analyzed in smaller, more manageable chunks. This allows for more efficient data processing and improved scalability. The paradigm is commonly implemented using tools such as the "groupby" function in the R and Python programming languages, and the "dplyr" library in R.
+
+I'm not exactly sure what is being asked here. I think this does a pretty good generalization of the Split-apply-combine paradigm. The only issues that could happen perhaps could be the combing. When combinin the data back in our apply stage there could be shifts that could occur so we have to be careful of how we split/apply so we then can combine at the end.
+
+
