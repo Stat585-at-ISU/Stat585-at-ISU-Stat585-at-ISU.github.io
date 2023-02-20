@@ -46,3 +46,6 @@ unlink(otherfiles)
 lnfn <- dir("blog-2023", pattern="LastnameFirstname.*", full.names = TRUE, recursive = TRUE)
 lnfn <- grep("Blog-", lnfn, value=TRUE)
 unlink(lnfn)
+
+# only run some files:
+# quarto::quarto_render("blog-2023/Blog-4-submissions")

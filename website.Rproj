@@ -11,3 +11,7 @@ Encoding: ISO8859-1
 
 RnwWeave: knitr
 LaTeX: XeLaTeX
+
+PythonType: system
+PythonVersion: 3.10.10
+PythonPath: /usr/local/bin/python3.10
