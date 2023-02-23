@@ -19,7 +19,7 @@ Week | Topic | Notes
  &nbsp;        | &nbsp;                                                       | **Feb 14** [ Recap of Blog 3](../materials-2023/99_recaps/03_blog-recap.html), [List objects](../materials-2023/03_data-structures/01_data-structures.html#26), [code](../materials-2023/code/code-2023-02-14.R)
 &nbsp;     |   &nbsp;     | **Feb 16** [Lab #2](labs/02_lab_2023.html)
 6         | Split-apply-combine strategies with lists, Review of functional programming, conditionals, loops.                    | **Feb 21** [Dates and time](../materials-2023/03_data-structures/02_date-and-time.html), [code](../materials-2023/code/code-2023-02-21.R)  
-&nbsp;    | &nbsp;                                                       | **Feb 23** [Reviewing Functions](../materials-2023/04_functional-programming/01_functions.html) 
+&nbsp;    | &nbsp;                                                       | **Feb 23** [Reviewing Functions](../materials-2023/04_functional-programming/01_functions.html) [Split-apply-combine with lists](../materials-2023/04_functional-programming/02b_purrr.html) 
 7-8       | Package system in R                                          | **Feb 28**
 &nbsp;    | &nbsp;                                                       | **Mar 2** Lab #3
 &nbsp;    | &nbsp;                                                       | **Mar 7**
