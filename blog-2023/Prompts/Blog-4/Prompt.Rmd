@@ -1,6 +1,6 @@
 ---
-author: "The Prompt for Blog 4"
-title: "Title of your post"
+author: "Who wrote this"
+title: "The Split-Apply-Combine paradigm - Prompt 4"
 categories: 
   - Split-apply-combine
   - Prompt

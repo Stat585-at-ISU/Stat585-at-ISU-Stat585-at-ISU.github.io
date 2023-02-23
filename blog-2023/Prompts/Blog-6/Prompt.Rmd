@@ -1,6 +1,6 @@
 ---
-author: "The Prompt for Blog 6"
-title: "Title of your post"
+author: "Who wrote this"
+title: "More on reproducibility... -- Prompt 6"
 categories: 
   - "More on reproducibility..."
   - Prompt

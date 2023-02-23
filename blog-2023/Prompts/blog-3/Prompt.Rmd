@@ -1,6 +1,6 @@
 ---
-author: "The Prompt for Blog 3"
-title: "Title of your post"
+author: "Who wrote this"
+title: "Building a book -- Prompt 3"
 categories: 
   - Building a Book
   - Prompt

@@ -1,6 +1,6 @@
 ---
-author: "The Prompt for Blog 5"
-title: "Title of your post"
+author: "Who wrote this"
+title: "Ethics and Reproducibility... -- Prompt 5"
 categories: 
   - "Ethics and Reproducibility..."
   - Prompt
