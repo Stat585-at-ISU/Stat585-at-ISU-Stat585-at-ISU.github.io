@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Landon Getting">
+<meta name="dcterms.date" content="2023-02-23">
+
+<title>Stat 585 - TREEFINDER - Leveraging Research Software for Political Agendas</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Stat 585</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../schedule.html">
+ <span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../blog.html">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../labs.html">
+ <span class="menu-text">Labs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../projects.html">
+ <span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://canvas.iastate.edu/courses/98137">
+ <span class="menu-text">Canvas (ISU)</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://canvas.unl.edu/courses/150086">
+ <span class="menu-text">Canvas (UNL)</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#prompt" id="toc-prompt" class="nav-link active" data-scroll-target="#prompt"><em>Prompt:</em></a></li>
+  <li><a href="#citations" id="toc-citations" class="nav-link" data-scroll-target="#citations">Citations</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">TREEFINDER - Leveraging Research Software for Political Agendas</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Ethics and Reproducibility…</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Landon Getting </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 23, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/Stat585-at-ISU/blog-5-Landon-Getting/actions/workflows/check-yaml.yaml/badge.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Frontmatter check</figcaption><p></p>
+</figure>
+</div>
+<section id="prompt" class="level2">
+<h2 class="anchored" data-anchor-id="prompt"><em>Prompt:</em></h2>
+<p><em>In May 2015 Science retracted - without consent of the lead author - a paper on how canvassers can sway people’s opinions about gay marriage, see also: <a href="http://www.sciencemag.org/news/2015/05/science-retracts-gay-marriage-paper-without-agreement-lead-author-lacour" class="uri">http://www.sciencemag.org/news/2015/05/science-retracts-gay-marriage-paper-without-agreement-lead-author-lacour</a> The Science Editor-in-Chief cited as reasons for the retraction that the original survey data was not made available for independent reproduction of results, that survey incentives were misrepresented and that statements made about sponsorships turned out to be incorrect.</em><br> <em>The investigation resulting in the retraction was triggered by two Berkeley grad students who attempted to replicate the study and discovered that the data must have been faked.</em></p>
+<p><a href="https://fivethirtyeight.com/features/how-two-grad-students-uncovered-michael-lacour-fraud-and-a-way-to-change-opinions-on-transgender-rights/"><em>FiveThirtyEight</em></a> <em>has published an article with more details on the two Berkeley students’ work.</em></p>
+<p><em>Malicious changes to the data such as in the LaCour case are hard to prevent, but more rigorous checks should be built into the scientific publishing system. All too often papers have to be retracted for unintended reasons. <a href="https://retractionwatch.com/">Retraction Watch</a> is a data base that keeps track of retracted papers (see the related <a href="https://www.sciencemag.org/news/2018/10/what-massive-database-retracted-papers-reveals-about-science-publishing-s-death-penalty">Science magazine</a> publication).</em></p>
+<p><em>Read the paper <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285">Ten Simple Rules for Reproducible Computational Research</a> by Sandve et al.</em></p>
+<p><em>Write a blog post addressing the questions:</em></p>
+<ol type="1">
+<li><strong>Pick one of the papers from Retraction Watch that were retracted because of errors in the paper (you might want to pick a paper from the set of featured papers, because there are usually more details available). Describe what went wrong. Would any of the rules by Sandve et al.&nbsp;have helped in this situation?</strong></li>
+</ol>
+<p>I choose to examine ‘<em>TREEFINDER: a powerful graphical analysis environment for molecular phylogenetics’</em> which is a collaboration between 3 authors: Jobb, Haeseler, and Strimmer [1]. Although this paper remains of Retraction Watch’s ’Top 10 most highly cited retracted papers’, the reason for its retraction was unexpected. The first author, Gangolf Jobb, decided to limit the software license geographically which made the software unavailable for some scientists [2]. According to an article in the journal Science, Jobb specifically excluded European countries which immigration policies that he disagreed with [3].</p>
+<p>This action violated the rules of the journal and therefore the article was retracted. Haeseler and Strimmer, the other two authors, were unable to influence the software licensing changes and agreed with the retraction. In a paper from the University of Nebraska evaluating the Retraction Watch list, researchers determined the results to be valid despite the retraction [4].</p>
+<p>Ideally, all of the authors would have subscribed to Rule 10 from Sandve et al and provided public access to scripts, runs, and results. However, since one of the authors decided not to adhere to this rule, it is difficult to determine other rules which may have prevented the retraction. Depending on the legal ownership of the software, the other authors could have followed Rule 3 and released an older version of the software for public use.</p>
+<ol start="2" type="1">
+<li><strong>After reading the paper by Sandve et al.&nbsp;describe which rule you are most likely to follow and why, and which rule you find the hardest to follow and will likely not (be able to) follow in your future projects.</strong></li>
+</ol>
+<p>I am most likely to follow Rule 7 and store the raw data utilized for plots. As described by Sandve, this can be naturally followed if utilizing a system like R to generate visuals which I plan to utilize. I believe Rule 3 may be the hardest to follow. Even if I archive the exact versions of all external programs used in a system like CyBox, the university may move to a new system in a few years and the programs may be lost. Setting up a contingency plan for storing files and programs in the long term may be difficult and even unnecessary if the pace of current research surpasses my work prior to degradation of a short term plan. However, I will follow the rules to the best of my ability!</p>
+</section>
+<section id="citations" class="level2">
+<h2 class="anchored" data-anchor-id="citations">Citations</h2>
+<p>[1] Jobb, G., von Haeseler, A. &amp; Strimmer, K. RETRACTED ARTICLE: TREEFINDER: a powerful graphical analysis environment for molecular phylogenetics. <em>BMC Evol Biol</em> <strong>4</strong>, 18 (2004). <a href="https://doi.org/10.1186/1471-2148-4-18" class="uri">https://doi.org/10.1186/1471-2148-4-18</a></p>
+<p>[2] <a href="https://bmcecolevol.biomedcentral.com/articles/10.1186/s12862-015-0513-z" class="uri">https://bmcecolevol.biomedcentral.com/articles/10.1186/s12862-015-0513-z</a></p>
+<p>[3] <a href="https://www.science.org/content/article/paper-retracted-after-scientist-bans-use-his-software-countries-welcome-refugees" class="uri">https://www.science.org/content/article/paper-retracted-after-scientist-bans-use-his-software-countries-welcome-refugees</a></p>
+<p>[4] <a href="https://core.ac.uk/download/pdf/188140998.pdf">Jan, Rosy; Bano, Shohar; Syed, Ikhlaq ur Rehman; and Mehraj, Midhat, “Context Analysis of Top Seven Retracted Articles: ShouldRetraction Watch Revisit the List?” (2018). Library Philosophy and Practice (e-journal). 2016.</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
