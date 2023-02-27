@@ -29,9 +29,15 @@ Then do:
 
 1. **Install the R package `renv` on your local machine.**
 
+1b. **Go to your blog 4 repo, and run the command `usethis::use_github_action("render-rmarkdown.yaml")`**
+This creates the file `render-rmarkdown.yaml` inside the folder `.github/workflows` in your repo. 
+Add it to the repository and push it. 
+
+1c. **Optional - but maybe educational**: make a change to your Rmd file with the blog post (just a small change), and push it. Then go to your github site and watch the render-rmarkdown action fail. 
+
 2. **In the project for blog 4, initialize the workflow used by the `renv` package.**
 
-3. **Add all dependencies to the environment (implicitly by installing all the depepndencies or explicilty by listing dependencies in a DESCRIPTION file).**
+3. **Add all dependencies to the environment (implicitly by installing all the dependencies or explicitly by listing dependencies in a DESCRIPTION file).**
 
 4. **Add the `renv` folder to your blog 4 repository, and push the changes.**
 

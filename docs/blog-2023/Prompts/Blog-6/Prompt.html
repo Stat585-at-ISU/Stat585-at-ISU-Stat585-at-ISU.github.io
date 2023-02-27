@@ -174,9 +174,13 @@ ul.task-list li input[type="checkbox"] {
 <p>Read the vignette <a href="https://rstudio.github.io/renv/articles/renv.html">Introduction to renv</a> for the <code>renv</code> R package by Kevin Ushey.</p>
 <p>Then do:</p>
 <ol type="1">
-<li><p><strong>Install the R package <code>renv</code> on your local machine.</strong></p></li>
+<li><strong>Install the R package <code>renv</code> on your local machine.</strong></li>
+</ol>
+<p>1b. <strong>Go to your blog 4 repo, and run the command <code>usethis::use_github_action("render-rmarkdown.yaml")</code></strong> This creates the file <code>render-rmarkdown.yaml</code> inside the folder <code>.github/workflows</code> in your repo. Add it to the repository and push it.</p>
+<p>1c. <strong>Optional - but maybe educational</strong>: make a change to your Rmd file with the blog post (just a small change), and push it. Then go to your github site and watch the render-rmarkdown action fail.</p>
+<ol start="2" type="1">
 <li><p><strong>In the project for blog 4, initialize the workflow used by the <code>renv</code> package.</strong></p></li>
-<li><p><strong>Add all dependencies to the environment (implicitly by installing all the depepndencies or explicilty by listing dependencies in a DESCRIPTION file).</strong></p></li>
+<li><p><strong>Add all dependencies to the environment (implicitly by installing all the dependencies or explicitly by listing dependencies in a DESCRIPTION file).</strong></p></li>
 <li><p><strong>Add the <code>renv</code> folder to your blog 4 repository, and push the changes.</strong></p></li>
 <li><p><strong>Is the github action working? Read any potential error messages in the workflow and try to fix things. Make sure to check stackoverflow for help, don’t forget our Discussion board!</strong></p></li>
 </ol>
