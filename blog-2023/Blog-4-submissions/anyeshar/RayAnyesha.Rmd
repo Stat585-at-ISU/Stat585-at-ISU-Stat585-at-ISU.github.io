@@ -1,0 +1,70 @@
+---
+author: "AR"
+title: "plyr to dplyr"
+category: Split-apply-combine
+date: 2022-02-16
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Prompt:
+
+The `plyr` package has by now been replaced by other, even faster
+packages, but the idea of *Split, apply, combine* is as relevant as
+ever.
+
+Read the paper [The Split-Apply-Combine Strategy for Data
+Analysis](https://www.jstatsoft.org/article/view/v040i01) by Hadley
+Wickham.
+
+Write a blog post addressing the following questions:
+
+1.  The R code for the split-apply-combine paper is posted with the
+    paper. Pick one of the examples demonstrating `plyr` functionality
+    (such as `dlply` or `ddply`, ...) and rewrite the example using
+    functionality from the package `dplyr`. Make sure that your example
+    works and the results are identical.
+    
+
+```{r}
+library(plyr)
+library(dplyr)
+
+baseball <- ddply(baseball, .(id), transform,
+  cyear = year - min(year) + 1)
+
+
+#using dplyr
+baseball%>%
+  group_by(id)%>%
+  mutate(cyear = year - min(year) + 1)
+
+
+```
+I chose to replace the ddply function. ddply splits data frames by variables, which can be done in dplyr with group_by. mutate creates new columns that are functions of existing variables.
+
+2.  Which (base R) functions do you know that support the
+    split-apply-combine strategy? In your opinion, are these sufficient?
+    State why or why not?
+
+-	split()
+-	lapply()
+-	rbind()
+
+are all functions in base R. I think they work well, but maybe not as efficiently as plyr. However, I do believe they are sufficient. I use rbind and lapply() all the time. 
+
+
+3. The ChatGPT response to the prompt "Describe the split-apply-combine paradigm" is given below. Generally, the chatbot's answers are decent. ChatGPT does have problems getting details right. Which details would you change in the response? 
+
+First thing is, I wouldn’t say “analyze grouped data”. To me, it isn’t incorrect, just not great wording. It also missed that split-apply-combine can be used in base R and plyr.  Also, it missed that it is a paradigm and therefor has many applications outside of just data cleaning and manipulation. As Hadley Wickham's paper says, you can use it in modeling and visualization as well. 
+    
+
+
