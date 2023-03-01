@@ -357,7 +357,7 @@
 <ol type="1">
 <li><p>Accept the link to the github classroom assignment (sent by email).</p></li>
 <li><p>Check whether one of your team members has already created a team. In that case, join them. If none of your team members is listed yet, create a team.</p></li>
-<li><p>Link the repository to RStudio … (see next set of slides)</p></li>
+<li><p>Link the repository to RStudio …</p></li>
 </ol>
 </section>
 <section id="package-specifications-functions" class="slide level2">
@@ -367,10 +367,14 @@
 <ul>
 <li><p><code>get_pd_presslog (url, save_as)</code><br>
 this function is supposed to download the current ames pd presslog and save a copy to a specified location</p></li>
-<li><p><code>pdf_to_tbl (pdf, save_as)</code> takes as input a (pdf) presslog from Ames PD and returns a tibble. If <code>save_as</code> is specified, it also saves a copy of the result as csv file to a local file.</p></li>
-<li><p><code>get_presslog (from, to)</code> takes as input two dates/times and returns all (available) service calls made to the ames PDin the specified time frame.</p></li>
+<li><p><code>pdf_to_tbl (pdf, save_as)</code> takes as input a (path to a pdf) presslog from Ames PD and returns a tibble. If <code>save_as</code> is specified, it also saves a copy of the result as csv file to a local file.</p></li>
+<li><p><code>get_presslog (from, to)</code> takes as input two dates/times and returns all (available) service calls made to the Ames PD during the specified time frame.</p></li>
 </ul>
-<p>You could think about setting defaults, such as <code>url = "https://data.city.ames.ia.us/publicinformation/PressLog.pdf"</code> and <code>save_as = sprintf("presslog_amespd_%s.pdf", lubridate::today())</code></p>
+<p>You could think about setting defaults, such as</p>
+<ul>
+<li><code>url = "https://data.city.ames.ia.us/publicinformation/PressLog.pdf"</code> or</li>
+<li><code>save_as = sprintf("presslog_amespd_%s.pdf", lubridate::today())</code></li>
+</ul>
 </div>
 </section>
 <section id="package-specifications-data" class="slide level2">
@@ -386,7 +390,7 @@ this function is supposed to download the current ames pd presslog and save a co
 <p>Run command check locally (under Build &gt; Check) to if the package still passes.<br>
 There should be no errors, warnings, or notes.<br>
 <br>
-0 errors ??? | 0 warnings ??? | 0 note ???</p>
+0 errors ✔ | 0 warnings ✔ | 0 note ✔</p>
 <p>R CMD check succeeded</p>
 <p>Make sure to give your team a lot of time to hunt down these problems.</p>
 </div>

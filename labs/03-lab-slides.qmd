@@ -36,7 +36,7 @@ This time: figure out a plan before you start working. Include your plan as a ta
 
 2.  Check whether one of your team members has already created a team. In that case, join them. If none of your team members is listed yet, create a team.
 
-3.  Link the repository to RStudio ... (see next set of slides)
+3.  Link the repository to RStudio ... 
 
 ## Package specifications: Functions
 
@@ -46,11 +46,14 @@ The package should contain a set of functions (see [Lab 2 sample code](https://g
 -   `get_pd_presslog (url, save_as)`\
     this function is supposed to download the current ames pd presslog and save a copy to a specified location
 
--   `pdf_to_tbl (pdf, save_as)` takes as input a (pdf) presslog from Ames PD and returns a tibble. If `save_as` is specified, it also saves a copy of the result as csv file to a local file.
+-   `pdf_to_tbl (pdf, save_as)` takes as input a (path to a pdf) presslog from Ames PD and returns a tibble. If `save_as` is specified, it also saves a copy of the result as csv file to a local file.
 
--   `get_presslog (from, to)` takes as input two dates/times and returns all (available) service calls made to the ames PDin the specified time frame.
+-   `get_presslog (from, to)` takes as input two dates/times and returns all (available) service calls made to the Ames PD during the specified time frame.
 
-You could think about setting defaults, such as `url = "https://data.city.ames.ia.us/publicinformation/PressLog.pdf"` and `save_as = sprintf("presslog_amespd_%s.pdf", lubridate::today())`
+You could think about setting defaults, such as 
+
+  - `url = "https://data.city.ames.ia.us/publicinformation/PressLog.pdf"` or 
+  - `save_as = sprintf("presslog_amespd_%s.pdf", lubridate::today())`
 :::
 
 ## Package specifications: Data
@@ -68,7 +71,7 @@ Make sure to document the data and include an example use case.
 Run command check locally (under Build \> Check) to if the package still passes. \
 There should be no errors, warnings, or notes.\
 \
-0 errors ??? \| 0 warnings ??? \| 0 note ???
+0 errors ✔ \| 0 warnings ✔ \| 0 note ✔
 
 R CMD check succeeded
 
