@@ -1,8 +1,8 @@
 ---
 author: "Atefeh Anisi"
 title: "Working with 'Plyr' package"
-categories: Split-apply-combine
-date: 2023-02-16
+category: Split-apply-combine
+date: 2022-02-16
 output: github_document
 ---
 
@@ -35,7 +35,7 @@ Write a blog post addressing the following questions:
     works and the results are identical.
     
 First, we need to call libraries.
-```{}
+```{r}
 library(ggplot2)
 library(plyr)
 library(dplyr)
@@ -46,7 +46,7 @@ library(dplyr)
 # Baseball case study from the paper
 
 The example shows that we can subset the data based on id, and then apply the changes on that specific subset. IF we want to do this for all different ids, we need to repeat this two lines of code multiple times or we should apply a for loop on different ids.
-```{}
+```{r}
 
 baberuth <- subset(baseball, id == "ruthba01")
 baberuth <- transform(baberuth, cyear = year - min(year) + 1)
@@ -55,7 +55,7 @@ baberuth <- transform(baberuth, cyear = year - min(year) + 1)
 
 This line of code using the function ddply from the "Plyr" package can do the same thing easier. The code is also shorter and less complex. The ddply function will get the whole data frame as the input, get the variable to split the data frame by it (id), apply mentioned changes on different independent pieces, and finally combine pieces together.
 
-```{}
+```{r}
 baseball <- ddply(baseball, .(id), transform, 
   cyear = year - min(year) + 1)
 
@@ -63,7 +63,7 @@ baseball <- ddply(baseball, .(id), transform,
 
 
 We can also do the same with other base functions in R. For example, these lines of code mentioned below can do the same on our dataframe.
-```{}
+```{r}
 
 baseball <- baseball %>% group_by(id) %>% mutate(cyear =year - min(year) + 1)
 baseball

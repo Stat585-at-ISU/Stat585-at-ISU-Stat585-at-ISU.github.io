@@ -36,7 +36,7 @@ This time: figure out a plan before you start working. Include your plan as a ta
 
 2.  Check whether one of your team members has already created a team. In that case, join them. If none of your team members is listed yet, create a team.
 
-3.  Link the repository to RStudio ... 
+3.  Link the repository to RStudio ...
 
 ## Package specifications: Functions
 
@@ -50,10 +50,10 @@ The package should contain a set of functions (see [Lab 2 sample code](https://g
 
 -   `get_presslog (from, to)` takes as input two dates/times and returns all (available) service calls made to the Ames PD during the specified time frame.
 
-You could think about setting defaults, such as 
+You could think about setting defaults, such as
 
-  - `url = "https://data.city.ames.ia.us/publicinformation/PressLog.pdf"` or 
-  - `save_as = sprintf("presslog_amespd_%s.pdf", lubridate::today())`
+-   `url = "https://data.city.ames.ia.us/publicinformation/PressLog.pdf"` or
+-   `save_as = sprintf("presslog_amespd_%s.pdf", lubridate::today())`
 :::
 
 ## Package specifications: Data
@@ -64,17 +64,15 @@ Include a data set called `presslog_ames` in the package, that contains all avai
 Make sure to document the data and include an example use case.
 :::
 
-
 ## Does the package pass the tests?
 
 ::: r-fit-text
-Run command check locally (under Build \> Check) to if the package still passes. \
+Run command check locally (under Build \> Check) to if the package still passes.\
 There should be no errors, warnings, or notes.\
 \
-0 errors ✔ \| 0 warnings ✔ \| 0 note ✔
+0 errors ✔️ \| 0 warnings ✔️ \| 0 notes ✔️
 
 R CMD check succeeded
-
 
 
 Make sure to give your team a lot of time to hunt down these problems.
