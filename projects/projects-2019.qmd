@@ -5,6 +5,5 @@ listing:
     - "project-samples/2019/*.md"
   sort: "author"
   type: table
-  categories: true
 ---
 
