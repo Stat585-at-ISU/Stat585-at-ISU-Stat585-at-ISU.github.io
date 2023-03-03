@@ -1,4 +1,9 @@
 ---
 title: "Project Samples"
+listing:
+  contents: 
+    - "project-samples/"
+  sort: "author"
+  type: table
 ---
 
