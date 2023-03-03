@@ -1,0 +1,43 @@
+---
+author: "Landon Getting"
+title: "TREEFINDER - Leveraging Research Software for Political Agendas"
+date: "2023-02-23"
+categories: "Ethics and Reproducibility..."
+output: github_document
+---
+
+![Frontmatter check](https://github.com/Stat585-at-ISU/blog-5-Landon-Getting/actions/workflows/check-yaml.yaml/badge.svg)
+
+## *Prompt:*
+
+*In May 2015 Science retracted - without consent of the lead author - a paper on how canvassers can sway people's opinions about gay marriage, see also: <http://www.sciencemag.org/news/2015/05/science-retracts-gay-marriage-paper-without-agreement-lead-author-lacour> The Science Editor-in-Chief cited as reasons for the retraction that the original survey data was not made available for independent reproduction of results, that survey incentives were misrepresented and that statements made about sponsorships turned out to be incorrect.*<br> *The investigation resulting in the retraction was triggered by two Berkeley grad students who attempted to replicate the study and discovered that the data must have been faked.*
+
+[*FiveThirtyEight*](https://fivethirtyeight.com/features/how-two-grad-students-uncovered-michael-lacour-fraud-and-a-way-to-change-opinions-on-transgender-rights/) *has published an article with more details on the two Berkeley students' work.*
+
+*Malicious changes to the data such as in the LaCour case are hard to prevent, but more rigorous checks should be built into the scientific publishing system. All too often papers have to be retracted for unintended reasons. [Retraction Watch](https://retractionwatch.com/) is a data base that keeps track of retracted papers (see the related [Science magazine](https://www.sciencemag.org/news/2018/10/what-massive-database-retracted-papers-reveals-about-science-publishing-s-death-penalty) publication).*
+
+*Read the paper [Ten Simple Rules for Reproducible Computational Research](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285) by Sandve et al.*
+
+*Write a blog post addressing the questions:*
+
+1.  **Pick one of the papers from Retraction Watch that were retracted because of errors in the paper (you might want to pick a paper from the set of featured papers, because there are usually more details available). Describe what went wrong. Would any of the rules by Sandve et al. have helped in this situation?**
+
+I choose to examine '*TREEFINDER: a powerful graphical analysis environment for molecular phylogenetics'* which is a collaboration between 3 authors: Jobb, Haeseler, and Strimmer [1]. Although this paper remains of Retraction Watch's 'Top 10 most highly cited retracted papers', the reason for its retraction was unexpected. The first author, Gangolf Jobb, decided to limit the software license geographically which made the software unavailable for some scientists [2]. According to an article in the journal Science, Jobb specifically excluded European countries which immigration policies that he disagreed with [3].
+
+This action violated the rules of the journal and therefore the article was retracted. Haeseler and Strimmer, the other two authors, were unable to influence the software licensing changes and agreed with the retraction. In a paper from the University of Nebraska evaluating the Retraction Watch list, researchers determined the results to be valid despite the retraction [4].
+
+Ideally, all of the authors would have subscribed to Rule 10 from Sandve et al and provided public access to scripts, runs, and results. However, since one of the authors decided not to adhere to this rule, it is difficult to determine other rules which may have prevented the retraction. Depending on the legal ownership of the software, the other authors could have followed Rule 3 and released an older version of the software for public use.
+
+2.  **After reading the paper by Sandve et al. describe which rule you are most likely to follow and why, and which rule you find the hardest to follow and will likely not (be able to) follow in your future projects.**
+
+I am most likely to follow Rule 7 and store the raw data utilized for plots. As described by Sandve, this can be naturally followed if utilizing a system like R to generate visuals which I plan to utilize. I believe Rule 3 may be the hardest to follow. Even if I archive the exact versions of all external programs used in a system like CyBox, the university may move to a new system in a few years and the programs may be lost. Setting up a contingency plan for storing files and programs in the long term may be difficult and even unnecessary if the pace of current research surpasses my work prior to degradation of a short term plan. However, I will follow the rules to the best of my ability!
+
+## Citations
+
+[1] Jobb, G., von Haeseler, A. & Strimmer, K. RETRACTED ARTICLE: TREEFINDER: a powerful graphical analysis environment for molecular phylogenetics. *BMC Evol Biol* **4**, 18 (2004). <https://doi.org/10.1186/1471-2148-4-18>
+
+[2] <https://bmcecolevol.biomedcentral.com/articles/10.1186/s12862-015-0513-z>
+
+[3] <https://www.science.org/content/article/paper-retracted-after-scientist-bans-use-his-software-countries-welcome-refugees>
+
+[4] [Jan, Rosy; Bano, Shohar; Syed, Ikhlaq ur Rehman; and Mehraj, Midhat, "Context Analysis of Top Seven Retracted Articles: ShouldRetraction Watch Revisit the List?" (2018). Library Philosophy and Practice (e-journal). 2016.](<https://core.ac.uk/download/pdf/188140998.pdf>)

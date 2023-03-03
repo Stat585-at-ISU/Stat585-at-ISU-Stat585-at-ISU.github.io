@@ -1,0 +1,81 @@
+Ethics in Reproducible Research
+================
+Marie Hardt
+2023-02-23
+
+![Frontmatter
+check](https://github.com/Stat585-at-ISU/blog-5-hardtme/actions/workflows/check-yaml.yaml/badge.svg)
+
+## Prompt:
+
+In May 2015 Science retracted - without consent of the lead author - a
+paper on how canvassers can sway people’s opinions about gay marriage,
+see also:
+<http://www.sciencemag.org/news/2015/05/science-retracts-gay-marriage-paper-without-agreement-lead-author-lacour>
+The Science Editor-in-Chief cited as reasons for the retraction that the
+original survey data was not made available for independent reproduction
+of results, that survey incentives were misrepresented and that
+statements made about sponsorships turned out to be incorrect.<br> The
+investigation resulting in the retraction was triggered by two Berkeley
+grad students who attempted to replicate the study and discovered that
+the data must have been faked.
+
+[FiveThirtyEight](https://fivethirtyeight.com/features/how-two-grad-students-uncovered-michael-lacour-fraud-and-a-way-to-change-opinions-on-transgender-rights/)
+has published an article with more details on the two Berkeley students’
+work.
+
+Malicious changes to the data such as in the LaCour case are hard to
+prevent, but more rigorous checks should be built into the scientific
+publishing system. All too often papers have to be retracted for
+unintended reasons. [Retraction Watch](https://retractionwatch.com/) is
+a data base that keeps track of retracted papers (see the related
+[Science
+magazine](https://www.sciencemag.org/news/2018/10/what-massive-database-retracted-papers-reveals-about-science-publishing-s-death-penalty)
+publication).
+
+Read the paper [Ten Simple Rules for Reproducible Computational
+Research](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285)
+by Sandve et al.
+
+Write a blog post addressing the questions:
+
+1.  Pick one of the papers from Retraction Watch that were retracted
+    because of errors in the paper (you might want to pick a paper from
+    the set of featured papers, because there are usually more details
+    available). Describe what went wrong. Would any of the rules by
+    Sandve et al. have helped in this situation?
+
+I chose the paper “Synthetic lethality of combined glutaminase and Hsp90
+inhibition in mTORC1-driven tumor cells,” as described in this
+[Retraction Watch
+article](https://retractionwatch.com/2023/02/01/former-harvard-researchers-lose-pnas-paper-for-reusing-data/#more-126484).
+In this paper, the authors presented the same data in multiple figures
+without noting that they did so. This situation might have been avoided
+if the authors had followed Sandve et al.’s rule 7: always store raw
+data behind plots. If the authors knew the particular figures that went
+with all of the data they wanted to plot, they could have ensured that
+all of their figures showed all of the appropriate data without
+duplication. However, John Blenis, the paper’s corresponding author, has
+had corrections issued for earlier papers due to data omission and data
+duplication issues. This makes me wonder if the data duplication in the
+figures was not an innocent mistake that could have been fixed by
+following Sandve et al.’s rules.
+
+2.  After reading the paper by Sandve et al. describe which rule you are
+    most likely to follow and why, and which rule you find the hardest
+    to follow and will likely not (be able to) follow in your future
+    projects.
+
+The rule I find easiest to follow is rule 6: for analyses that include
+randomness, note underlying random seeds. Whenever I run an analysis
+that involves a (pseudo-)random process like drawing random numbers or
+running a Bayesian sampler (such as fitting `stan` models via the
+`rstan` package), I always seed a seed beforehand so I can get the same
+results back every time I run the analysis. However, it sounds like I
+need to do a better job of documenting which random seed I used in
+reports of my work. The rule I find hardest to follow is rule 2: avoid
+manual data manipulation steps. In my work, I always save the code I use
+to modify data, but I typically don’t try to automate the data
+manipulation process. (As an aside, I do not really like the term “data
+manipulation” since it sounds like we could be doing nefarious things
+with our data. I prefer “data cleaning” or “data wrangling.”)

@@ -1,0 +1,63 @@
+---
+author: "Your Name"
+title: "Paper retracted alert!"
+date: "2023-02-23"
+categories: "Ethics and Reproducibility..."
+output: github_document
+---
+
+![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)
+
+
+## Prompt:
+
+In May 2015 Science retracted - without consent of the lead author - a paper on  how canvassers can sway people's opinions about gay marriage, 
+see also: http://www.sciencemag.org/news/2015/05/science-retracts-gay-marriage-paper-without-agreement-lead-author-lacour
+The Science Editor-in-Chief cited as reasons for the retraction that the original survey data was not made available for independent reproduction of results, that survey incentives were misrepresented and that statements made about sponsorships turned out to be incorrect.<br>
+The investigation resulting in the retraction was triggered by two  Berkeley grad students who attempted to replicate the study and discovered that the data must have been faked.
+ 
+[FiveThirtyEight](https://fivethirtyeight.com/features/how-two-grad-students-uncovered-michael-lacour-fraud-and-a-way-to-change-opinions-on-transgender-rights/) has published an article with more details on the two Berkeley students' work.
+
+Malicious changes to the data such as in the LaCour case are hard to prevent, but more rigorous checks should be built into the scientific publishing system. All too often papers have to be retracted for unintended reasons. [Retraction Watch](https://retractionwatch.com/) is a data base that keeps track of retracted papers (see the related [Science magazine](https://www.sciencemag.org/news/2018/10/what-massive-database-retracted-papers-reveals-about-science-publishing-s-death-penalty) publication). 
+
+Read the paper [Ten Simple Rules for Reproducible Computational Research](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285) by Sandve et al.
+
+
+Write a blog post addressing the questions: 
+
+1. Pick one of the papers from Retraction Watch that were retracted because of errors in the paper (you might want to pick a paper from the set of featured papers, because there are usually more details available). Describe what went wrong. Would any of the rules by Sandve et al. have helped in this situation?
+
+I picked the [paper](https://www.nature.com/articles/s41586-018-0284-y): **Selective killing of cancer cells by a small molecule targeting the stress response to ROS** published in 2011 and retracted in 2018, also the 10th most highly cited retracted papers. The retraction note was saying that **Fig. 1d** and **Supplementary Fig. 31b** were lacking of original data, and the problem persisted even after two previous corrigendum updates in 2012 and 2015. 
+
+Following Sandve et al., this problem seems to be a violation to Rule 7 (*Always Store Raw Data behind Plots*). From what I saw from the paper, Fig. 1d is not exactly a plot, but a picture of western blots experiments proving the effect of piperlongumine. So, it came to me, and very possible, that the authors have already discarded their lab notes so they cannot submit the raw data anymore, and they also cannot reproduce the experiments. Eventually, the paper was retracted due to missing raw data. As I mentioned, if Rule 7 was followed, the authors might have avoided this situation.
+
+2. After reading the paper by Sandve et al. describe which rule you are most likely to follow and why, and which rule you find the hardest to follow and will likely not (be able to) follow in your future projects.
+
+Every rule is so relatable and I am glad that I read these. The first rule (*For Every Result, Keep Track of How It Was Produced*) is what I am most likely to follow because I have set a goal for myself this year to keep track of everything I have done, even the smallest bug. I was so frustrated last year because of repeating a series of debugging steps countless of times. I always thought I would be able to resolve this bug so I did not think of recording it, and I have paid the price! What supposed to be solved within 5 minutes had cost me 1 hour of debugging. 
+
+Another rule that I found pretty nice and new is Rule 8: *Generate Hierarchical Analysis Output*. I did not think of using hyperlinks to store links to intermediate data (since those are large and I usually have to store them on a cloud system or HPC) and so my data were just scattered everywhere without a record.
+
+The hardest rule could be Rule 10: *Provide Public Access to Scripts, Runs, and Results* because of our embarrassment of showing the world our inefficient and messy code! I know this is a good advice and I hope I can follow it some day, but right now "my code works" is all I need. That is also the reason why I take this course at the beginning, because the course content is so tempting!
+
+## Submission
+
+1. Push your changes to your repository. 
+
+2. You are ready to call it good, once all your github actions pass without an error. You can check on that by selecting 'Actions' on the menu and ensure that the last item has a green checkmark. The action for this repository checks the yaml of your contribution for the existence of the author name, a title, date and categories. Don't forget the space after the colon!
+Once the action passes, the badge along the top will also change its color accordingly. 
+As of right now, the status for the YAML front matter is:
+
+![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)
+
+
+```
+---
+author: "Your Name"
+title: "Specify your title"
+date: "2023-02-23"
+categories: "Ethics and Reproducibility..."
+---
+```
+
+
+

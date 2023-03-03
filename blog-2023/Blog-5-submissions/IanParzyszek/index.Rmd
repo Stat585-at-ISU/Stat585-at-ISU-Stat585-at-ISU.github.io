@@ -1,0 +1,23 @@
+---
+author: "Ian Parzyszek"
+title: "Replication of Data Presentation"
+date: "2023-02-23"
+categories: "Ethics and Reproducibility..."
+output: github_document
+---
+
+
+1. I found this retracted paper, “Synthetic lethality of combined glutaminase and Hsp90 inhibition in mTORC1-driven tumor cells" (https://retractionwatch.com/2023/02/01/former-harvard-researchers-lose-pnas-paper-for-reusing-data/). 
+
+In this paper there was several instances of duplicated figures and reused data. However, after it was retraced the author said that this error did/would not change their conclusions.
+
+I believe that this error could have been avoided if they adhered to "Rule 7: Always Store Raw Data behind Plots" and maybe if they would have tried to replicate their results themselves. Rule 7 could have helped by making sure that these figures and plots corresponded to the correct data. Or if they would have just tried to repeat their results they might have also caught the mistake of duplicating the figures.
+
+2. I think the hardest thing for me to follow will be "Rule 2: Avoid Manual Data
+Manipulation Steps". This is because my data cleaning and manipulation skills are not that developed, well not yet:). I tend to not know the best way to manipulate data, so I usually have to go through things line by line in not the most efficient, robust, and repeatable way.
+
+
+```
+
+
+

@@ -1,0 +1,54 @@
+---
+author: "Atefeh Anisi"
+title: "How to make our research reproducible"
+date: "2023-02-23"
+categories: "Ethics and Reproducibility..."
+output: github_document
+---
+
+![Frontmatter check](https://github.com/Stat585-at-ISU/Blog-5/actions/workflows/check-yaml.yaml/badge.svg)
+
+
+## Prompt:
+
+In May 2015 Science retracted - without consent of the lead author - a paper on  how canvassers can sway people's opinions about gay marriage, 
+see also: http://www.sciencemag.org/news/2015/05/science-retracts-gay-marriage-paper-without-agreement-lead-author-lacour
+The Science Editor-in-Chief cited as reasons for the retraction that the original survey data was not made available for independent reproduction of results, that survey incentives were misrepresented and that statements made about sponsorships turned out to be incorrect.<br>
+The investigation resulting in the retraction was triggered by two  Berkeley grad students who attempted to replicate the study and discovered that the data must have been faked.
+ 
+[FiveThirtyEight](https://fivethirtyeight.com/features/how-two-grad-students-uncovered-michael-lacour-fraud-and-a-way-to-change-opinions-on-transgender-rights/) has published an article with more details on the two Berkeley students' work.
+
+Malicious changes to the data such as in the LaCour case are hard to prevent, but more rigorous checks should be built into the scientific publishing system. All too often papers have to be retracted for unintended reasons. [Retraction Watch](https://retractionwatch.com/) is a data base that keeps track of retracted papers (see the related [Science magazine](https://www.sciencemag.org/news/2018/10/what-massive-database-retracted-papers-reveals-about-science-publishing-s-death-penalty) publication). 
+
+Read the paper [Ten Simple Rules for Reproducible Computational Research](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285) by Sandve et al.
+
+
+Write a blog post addressing the questions: 
+
+1. Pick one of the papers from Retraction Watch that were retracted because of errors in the paper (you might want to pick a paper from the set of featured papers, because there are usually more details available). Describe what went wrong. Would any of the rules by Sandve et al. have helped in this situation?
+
+
+I choose the retracted work that received the most citations after 2020. According to a study titled "Primary Prevention of Cardiovascular Disease with a Mediterranean Diet," those with high cardiovascular risk had a lower incidence of serious cardiovascular events while following a Mediterranean diet that included extra-virgin olive oil and nuts. When the manuscript was retracted in 2018, it had 1905 citations, and since then, 950 more times have been cited.
+This study was retracted after the editor pointed out that 11 of the 934 reports of randomized trials had baseline variable distributions that did not seem consistent with randomization. The reviewer also mentioned that they repeated the analysis for these 11 reports, and that in 5 of them, standard errors or standard deviations, were mistakenly provided. The authors have subsequently withdrawn their first report. Their most recent report, which explains the reanalysis, has been released.
+I think that if the authors adhered to rules 4, 5, and 6, they could avoid these issues. They might have discovered their errors in the analysis results if they had controlled their versions and kept track of intermediate results. Also, providing the reviewer with the necessary details about random processes may aid them in coming to the same conclusions.
+
+
+2. After reading the paper by Sandve et al. describe which rule you are most likely to follow and why, and which rule you find the hardest to follow and will likely not (be able to) follow in your future projects.
+
+In my earlier works, I adhered to guidelines 1, 2, 4, 5, 7 and 9. I believe that rules 3 and 6 are also simple to adhere to. The hardest regulations, in my opinion, are rules 8 and 10. It may not always be simple to generate the outcome of a hierarchical analysis because the file comprising all the information and analyses must be accessible to the public. Rule 10 is difficult since, in addition to the necessary skills, it requires a lot of effort from researchers and authors to document all the versions of their scripts, runs, and results. Even though it is difficult, we must do it. By doing this, we can stay well away of any future problems and make it easier for others to continue our analysis or work with the same data. Being able to post all the codes and information of my works there so that everyone can easily access them and avoid having to reinvent the wheel makes working with Git and GitHub quite exciting for me.
+
+## Submission
+
+1. Push your changes to your repository. 
+
+2. You are ready to call it good, once all your github actions pass without an error. You can check on that by selecting 'Actions' on the menu and ensure that the last item has a green checkmark. The action for this repository checks the yaml of your contribution for the existence of the author name, a title, date and categories. Don't forget the space after the colon!
+Once the action passes, the badge along the top will also change its color accordingly. 
+As of right now, the status for the YAML front matter is:
+
+![Frontmatter check](https://github.com/Stat585-at-ISU/Blog-5/actions/workflows/check-yaml.yaml/badge.svg)
+
+
+
+
+
+

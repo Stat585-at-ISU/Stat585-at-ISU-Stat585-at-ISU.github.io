@@ -1,0 +1,37 @@
+---
+output: github_document
+author: "Caio dos Santos"
+title: "Dotting I's and crossing T's..."
+date: "2023-02-23"
+categories: "Ethics and Reproducibility..."
+---
+
+![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)
+
+In May 2015 Science retracted - without consent of the lead author - a paper on how canvassers can sway people's opinions about gay marriage, see also: <http://www.sciencemag.org/news/2015/05/science-retracts-gay-marriage-paper-without-agreement-lead-author-lacour> The Science Editor-in-Chief cited as reasons for the retraction that the original survey data was not made available for independent reproduction of results, that survey incentives were misrepresented and that statements made about sponsorships turned out to be incorrect.<br> The investigation resulting in the retraction was triggered by two Berkeley grad students who attempted to replicate the study and discovered that the data must have been faked.
+
+[FiveThirtyEight](https://fivethirtyeight.com/features/how-two-grad-students-uncovered-michael-lacour-fraud-and-a-way-to-change-opinions-on-transgender-rights/) has published an article with more details on the two Berkeley students' work.
+
+Malicious changes to the data such as in the LaCour case are hard to prevent, but more rigorous checks should be built into the scientific publishing system. All too often papers have to be retracted for unintended reasons. [Retraction Watch](https://retractionwatch.com/) is a data base that keeps track of retracted papers (see the related [Science magazine](https://www.sciencemag.org/news/2018/10/what-massive-database-retracted-papers-reveals-about-science-publishing-s-death-penalty) publication).
+
+Read the paper [Ten Simple Rules for Reproducible Computational Research](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285) by Sandve et al.
+
+Write a blog post addressing the questions:
+
+1.  Pick one of the papers from Retraction Watch that were retracted because of errors in the paper (you might want to pick a paper from the set of featured papers, because there are usually more details available). Describe what went wrong. Would any of the rules by Sandve et al. have helped in this situation?
+
+2.  After reading the paper by Sandve et al. describe which rule you are most likely to follow and why, and which rule you find the hardest to follow and will likely not (be able to) follow in your future projects.
+
+## The retracted paper
+
+The paper titled [*Monitoring of Sports Health Indicators Based on Wearable Nanobiosensors*](https://www.hindawi.com/journals/amse/2022/3802603/) went viral among the data-science community on Twitter in late December of 2022. I remember that a couple co-workers and I saw a bar graph- Figure 9 in the manuscript- and thought that the error bars were similar to the capital letter T. However, we did not think twice about it. According to [Retraction Watch](https://retractionwatch.com), the paper was [retracted](https://retractionwatch.com/2022/12/22/that-paper-with-the-t-error-bars-was-just-retracted/) from the journal in late December of 2022.
+
+Although the paper has gotten famous for the T-shaped error bars, that was not the only reason the paper was retracted. The journal has stated that the fact that the error bars appeared to be the letter T was a factor. However, they have also shed light on the fact that the authors stated that they did not generate or analyze any new datasets in the current study. Ultimately, the journal concluded that there were questions about the reliability of the study.
+
+In [Sandve, et al. (2013)](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285), several rules are described to facilitate reproducible research. The article in question could, honestly, have benefited from having followed every single one of them. However, in special, ***Rule 1***(*For Every Result, Keep Track of How It Was Produced*) seems to be particularly relevant in this question. Had the authors been able to demonstrate how the results were produced, part of de doubt about this paper would have been dismissed. Secondly, I believe ***Rule 10*** (*Provide Public Access to Scripts, Runs, and Results*) would have been also important in this case. Providing public access to the scripts, runs, and results would allow for third-party verification of the results.
+
+## Rules I am inclined to follow (or not)
+
+In general, the rules that deal with keeping track of scripts, intermediate results, and how results were produced are the ones I am most likely to follow (e.g. rules 1, 2, 4, and 7). I believe this is really advantageous when analyzing data. I believe separate sub-directories for raw data and intermediate data is important because that way I can always go back to the raw data if something seems out of place. There is usually a script that I call "data-processing.R" or something like it. This script processes the raw data into intermediate data. Then, I usually have the "data-analysis.R" script also, generally. This script takes the intermediate data and outputs results.
+
+I am most likely not to follow rule 10, I believe. Depending on the field of study, collecting data is costly and labor-intensive. I tend to not want to share data until I am sure that there is nothing more I can extract from those data.
