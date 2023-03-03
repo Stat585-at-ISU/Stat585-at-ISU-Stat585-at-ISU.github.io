@@ -1,8 +1,7 @@
 ---
 title: "2022 Project Abstracts"
 listing:
-  contents: 
-    - "project-samples/2022/*.md"
+  contents: project-samples/2022/
   sort: "author"
   type: table
   categories: true
