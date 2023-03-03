@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Zahra Khoshmanesh, Atousa Zarindast, Joshua Budi">
+<meta name="author" content="Yunhui Qi">
 
-<title>Stat 585 - SentiAnalyzer - Sentiment analysis for consumer review</title>
+<title>Stat 585 - Post Selection Inference of Estimation from Penalized Matrix Decomposition</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,22 +24,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -61,7 +61,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Stat 585</span>
     </a>
   </div>
@@ -81,23 +81,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html">
+    <a class="nav-link" href="../../../index.html">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../schedule.html">
+    <a class="nav-link" href="../../../schedule.html">
  <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html">
+    <a class="nav-link" href="../../../blog.html">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../labs.html">
+    <a class="nav-link" href="../../../labs.html">
  <span class="menu-text">Labs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../projects.html">
+    <a class="nav-link" href="../../../projects.html">
  <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
@@ -126,7 +126,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">SentiAnalyzer - Sentiment analysis for consumer review</h1>
+<h1 class="title">Post Selection Inference of Estimation from Penalized Matrix Decomposition</h1>
 </div>
 
 
@@ -136,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Zahra Khoshmanesh, Atousa Zarindast, Joshua Budi </p>
+             <p>Yunhui Qi </p>
           </div>
   </div>
     
@@ -147,10 +147,7 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Consumer reviews are very instrumental in projecting the development and direction of businesses. The wealth of information provided with online reviews can be analyzed to access the general sentiment of the consumer towards the product/service. This sentiment analysis will provide general idea and quantitative measure of the consumer’s sentiment.</p>
-<p>The required data set, in .tsv format, consist of a text review and a binary input of 0 or 1 indicating whether the consumer liked the item or not. These will be balanced using “ROSE” package, which attempts to generate synthetic data by randomly over-sampling examples in case of imbalance data.</p>
-<p>Then using a text mining package “tm”, it will mine for the words/word base of interest such as keywords that conveys sentiment based on dictionary list provided by the package. This “stream-lined” tokens that were independent variables on the raw dataset is then joined in a matrix through either of the three algorithms of the user’s choice such as Bag of Words, Tfdfi, or Bigram and will be analyzed based on its sentiment. Next, using “caTools” package, we split the data set to 0.2 data and 0.8 training set split ratio to be fed to different classification models of provided by the existing machine learning algorithms training models.</p>
-<p>The package also compares the accuracy of the prediction model based on the machine learning algorithm which the user can choose from: decision tree, naïve bayes, or random forest. The result is different parameters of the sentiment prediction that is built in a confusion matrix: Accuracy, Precision, Recall, and F1 score. Lastly, these parameters will be visualized as a wordcloud as well as presented in an interactive Shiny app. Overall, this package will put together different algorithms and visualization of a version of natural language processing (NLP) and will allow a broader audience of user to access this tool.</p>
+<p>Penalized matrix decomposition (PMD) has been used as a multivariate analysis tool in many disciplines such as precision medicine, integrative omics data analysis. However, since it is an estimation tool, its accuracy ic not guaranteed. We developed a set of tests so that we can do the post selection inference on the estimation from PMD. In this package TestPMD, we focus on sparse canonical correlation analysis using PMD. This package provides functions for estimation, test of canonical correlations, test of the canonical loadings, visualization using scatter plot, bar plot and fisher exact test for group enrichment analysis. Users can therefore decide the dimension used for downstream analysis, which feature truly contributes to the canonical component and how these results relate to the covariates. For some statisticians, it is not easy to gain biological insights from the identified features due to the complex name of molecules. So, we provide a search tool which can be used to pull the top 5 papers from PubMed by searching the feature names. A shiny app is created to facilitate the use of TestPMD.</p>
 
 
 

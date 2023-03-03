@@ -119,137 +119,151 @@
     "text": "For the final project you are asked to create an R package. You are free to choose package functionality, but there should be\n\na minimum of five functions with a coherent theme,\na shiny app show-casing some of the functionality\na website for the package\na README page with installation instructions and basic demonstration of functionality\nevidence of testing the functionality\n8-10 page report detailing your work. This report should be written as a package vignette, included in your package’s documentation.\n\nYou are asked to present your work as a team in one of the speaking slots during dead week and finals week. Each team member is supposed to present for about 5 mins."
   },
   {
-    "objectID": "projects/2022/Wangqian-Ju-abstract.html",
-    "href": "projects/2022/Wangqian-Ju-abstract.html",
+    "objectID": "projects/project-samples/2022/Wangqian-Ju-abstract.html",
+    "href": "projects/project-samples/2022/Wangqian-Ju-abstract.html",
     "title": "Build modularized shiny app with ggpaintr",
     "section": "",
     "text": "We here introduce an open-source R package ggpaintr, for building a modularized shiny app in the similar grammar of ggplot2. This package provides built-in modules for both ui and server side of a shiny app so that a shiny app with a graphical user interface for ggplot2 can be easily implemented. And users can write and provide their own modules to further extend and customize the package’s functionality. A shiny app called ggpaintr_app is built with the ggpaintr package and included in the package. ggpaintr_app serves as a shiny app for those unfamiliar with the Grammar of Graphics or ggplot2 but want to create a plot using ggplot2. The corresponding ggplot2 R codes will also be provided once a plot has been created. Additionally, another shiny app called ggpaintr_iris_app is included in the package to showcase how to deploy the basic functionality of this package to build other shiny apps or packages."
   },
   {
-    "objectID": "projects/2022/Zirou-Zhou-abstract.html",
-    "href": "projects/2022/Zirou-Zhou-abstract.html",
+    "objectID": "projects/project-samples/2022/Zirou-Zhou-abstract.html",
+    "href": "projects/project-samples/2022/Zirou-Zhou-abstract.html",
     "title": "An R package to visualize US Census data",
     "section": "",
     "text": "The data of unemployment and household income for the U.S. States is publicly available on USDA. We create an R package and a shiny app to visualize unemployed rate and household income spatially and temporally across United States."
   },
   {
-    "objectID": "projects/2022/Eshita-Zaman-abstract.html",
-    "href": "projects/2022/Eshita-Zaman-abstract.html",
+    "objectID": "projects/project-samples/2022/Eshita-Zaman-abstract.html",
+    "href": "projects/project-samples/2022/Eshita-Zaman-abstract.html",
     "title": "woRldnews",
     "section": "",
     "text": "We created an R package that enables the user to query a global API for news articles in a Shiny app. Users can search by country, language, category, and date range. A data frame is generated that includes the headline, a description, date of publication, a clickable hyperlink and the image associated with the article where provided for the top 20 headlines."
   },
   {
-    "objectID": "projects/2022/Saqlain-abstract.html",
-    "href": "projects/2022/Saqlain-abstract.html",
+    "objectID": "projects/project-samples/2022/Saqlain-abstract.html",
+    "href": "projects/project-samples/2022/Saqlain-abstract.html",
     "title": "Exploring 1973 U.S Arrests Data",
     "section": "",
     "text": "The goal of the package ‘aliapp’ is to visualize and explore the 1973 US Arrests data using an interactive dashboard made by R and Shiny. The dataset used here is an in-built dataset in base R. The Shiny app has functionalities to visualize crime rates of different arrests statewise with the help of a bar chart as well as a colour-themed map."
   },
   {
-    "objectID": "projects/2022/Abadi-Ghazal-abstract.html",
-    "href": "projects/2022/Abadi-Ghazal-abstract.html",
+    "objectID": "projects/project-samples/2022/Abadi-Ghazal-abstract.html",
+    "href": "projects/project-samples/2022/Abadi-Ghazal-abstract.html",
     "title": "Stock market prediction",
     "section": "",
     "text": "Stock market is the aggregation of buyers and sellers of stocks, which represent ownership claims on businesses. This might include securities listed on a public stock exchange, as well as stock that is only traded privately, such as shares of private companies. Stock market prediction has always been of great importance. However, predicting has always been challenging. This package helps in predicting stock price movement using sentiment analysis and web scrapping. Team-9 package"
   },
   {
-    "objectID": "projects/2022/Bufei-Guo-abstract.html",
-    "href": "projects/2022/Bufei-Guo-abstract.html",
+    "objectID": "projects/project-samples/2022/Bufei-Guo-abstract.html",
+    "href": "projects/project-samples/2022/Bufei-Guo-abstract.html",
     "title": "BayesAPLM - Bayesian Variable Selection for additive partial linear model",
     "section": "",
     "text": "BayesAPLM provides a variable selection tool in the spirit of the stochastic shotgun search algorithm. By embedding a unique model based screening and using fast Cholesky updates, BayesAPLM produces a highly scalable algorithm to explore gigantic model spaces and rapidly identify the regions of high posterior probabilities. It outputs the log (unnormalized) posterior probability of a set of best (highest probability) models."
   },
   {
-    "objectID": "projects/2022/Danyang-Zhang-abstract.html",
-    "href": "projects/2022/Danyang-Zhang-abstract.html",
+    "objectID": "projects/project-samples/2022/Danyang-Zhang-abstract.html",
+    "href": "projects/project-samples/2022/Danyang-Zhang-abstract.html",
     "title": "What People Talk About When they Talk About Professors",
     "section": "",
     "text": "We aim to analyze information of professors on ratemyprofessors.com. We extracted information such as ratings, comments, tags, etc. from the website. We also did a sentiment analysis on comments and visualized different types of word to give a direct impression in a shiny app."
   },
   {
-    "objectID": "projects/2022/Kieran-Liming-abstract.html",
-    "href": "projects/2022/Kieran-Liming-abstract.html",
+    "objectID": "projects/project-samples/2022/Kieran-Liming-abstract.html",
+    "href": "projects/project-samples/2022/Kieran-Liming-abstract.html",
     "title": "pitcheR",
     "section": "",
     "text": "pitcheR is a package designed to take Statcast data (detailed pitch by pitch data from MLB games) and easily visualize it in graphics that are interpretable and useful for anyone looking into big league pitchers. The package can also find trends over time, either game to game or over certain dates, for a pitchers descriptive statistics which helps us look deeper into how the pitcher is throwing the ball."
   },
   {
-    "objectID": "projects/2022/Lin-Quan-abstract.html",
-    "href": "projects/2022/Lin-Quan-abstract.html",
+    "objectID": "projects/project-samples/2022/Lin-Quan-abstract.html",
+    "href": "projects/project-samples/2022/Lin-Quan-abstract.html",
     "title": "An R package to visualize U.S. Census Data",
     "section": "",
     "text": "The data of unemployment and household income for the U.S. States is publicly available on USDA. We create an R package and a shiny app to visualize unemployed rate and household income spatially and temporally across United States."
   },
   {
-    "objectID": "projects/2022/Yunhui-Qi-abstract.html",
-    "href": "projects/2022/Yunhui-Qi-abstract.html",
+    "objectID": "projects/project-samples/2022/Yunhui-Qi-abstract.html",
+    "href": "projects/project-samples/2022/Yunhui-Qi-abstract.html",
     "title": "Post Selection Inference of Estimation from Penalized Matrix Decomposition",
     "section": "",
     "text": "Penalized matrix decomposition (PMD) has been used as a multivariate analysis tool in many disciplines such as precision medicine, integrative omics data analysis. However, since it is an estimation tool, its accuracy ic not guaranteed. We developed a set of tests so that we can do the post selection inference on the estimation from PMD. In this package TestPMD, we focus on sparse canonical correlation analysis using PMD. This package provides functions for estimation, test of canonical correlations, test of the canonical loadings, visualization using scatter plot, bar plot and fisher exact test for group enrichment analysis. Users can therefore decide the dimension used for downstream analysis, which feature truly contributes to the canonical component and how these results relate to the covariates. For some statisticians, it is not easy to gain biological insights from the identified features due to the complex name of molecules. So, we provide a search tool which can be used to pull the top 5 papers from PubMed by searching the feature names. A shiny app is created to facilitate the use of TestPMD."
   },
   {
-    "objectID": "projects/2019/Earl-Hur-abstract.html",
-    "href": "projects/2019/Earl-Hur-abstract.html",
+    "objectID": "projects/project-samples/2019/Earl-Hur-abstract.html",
+    "href": "projects/project-samples/2019/Earl-Hur-abstract.html",
     "title": "PetFindr - Find pets near me!",
     "section": "",
     "text": "Adopting a pet from an animal shelter is a great idea, but is a stressful process. Our R package petfindr will allow users to make pet searching an easier process.\nOur package is an R client for the Petfinder API which collects pet data from petfinder.com. We have written functions to allow R users to access the Petfinder API and provide useful tools to users to find their new furry friends that fit the user’s preferences (e.g., dogs or cats, breeds, age, gender, etc.) from the user’s accessible location. We have also built a Shiny application for visualization, such as creating an interactive map of animal shelters (to show where the pets are located) with pictures of the pets and descriptions of the pets (with pop-up text)."
   },
   {
-    "objectID": "projects/2019/Qing-He-abstract.html",
-    "href": "projects/2019/Qing-He-abstract.html",
+    "objectID": "projects/project-samples/2019/Qing-He-abstract.html",
+    "href": "projects/project-samples/2019/Qing-He-abstract.html",
     "title": "Dealing with the current weather data",
     "section": "",
     "text": "It is important to get current weather data of the airports in time. Our package collects the information of the current weather (XML) data from the website of NOAA’s National Weather Service and show it on appropriate plots. Our Shiny app shows the plots with the chosen weather elements and the chosen airports by the user."
   },
   {
-    "objectID": "projects/2019/Zahra-Khoshmanesh-abstract.html",
-    "href": "projects/2019/Zahra-Khoshmanesh-abstract.html",
+    "objectID": "projects/project-samples/2019/Zahra-Khoshmanesh-abstract.html",
+    "href": "projects/project-samples/2019/Zahra-Khoshmanesh-abstract.html",
     "title": "SentiAnalyzer - Sentiment analysis for consumer review",
     "section": "",
     "text": "Consumer reviews are very instrumental in projecting the development and direction of businesses. The wealth of information provided with online reviews can be analyzed to access the general sentiment of the consumer towards the product/service. This sentiment analysis will provide general idea and quantitative measure of the consumer’s sentiment.\nThe required data set, in .tsv format, consist of a text review and a binary input of 0 or 1 indicating whether the consumer liked the item or not. These will be balanced using “ROSE” package, which attempts to generate synthetic data by randomly over-sampling examples in case of imbalance data.\nThen using a text mining package “tm”, it will mine for the words/word base of interest such as keywords that conveys sentiment based on dictionary list provided by the package. This “stream-lined” tokens that were independent variables on the raw dataset is then joined in a matrix through either of the three algorithms of the user’s choice such as Bag of Words, Tfdfi, or Bigram and will be analyzed based on its sentiment. Next, using “caTools” package, we split the data set to 0.2 data and 0.8 training set split ratio to be fed to different classification models of provided by the existing machine learning algorithms training models.\nThe package also compares the accuracy of the prediction model based on the machine learning algorithm which the user can choose from: decision tree, naïve bayes, or random forest. The result is different parameters of the sentiment prediction that is built in a confusion matrix: Accuracy, Precision, Recall, and F1 score. Lastly, these parameters will be visualized as a wordcloud as well as presented in an interactive Shiny app. Overall, this package will put together different algorithms and visualization of a version of natural language processing (NLP) and will allow a broader audience of user to access this tool."
   },
   {
-    "objectID": "projects/2019/Dapeng-Hu-abstract.html",
-    "href": "projects/2019/Dapeng-Hu-abstract.html",
+    "objectID": "projects/project-samples/2019/Dapeng-Hu-abstract.html",
+    "href": "projects/project-samples/2019/Dapeng-Hu-abstract.html",
     "title": "Find Your Flight with R",
     "section": "",
     "text": "Finding the cheapest flight from point A to point B can be a headache for most of us, especially with other multiple constraints, such as duration, departure and arrival time, layover, etc. The flight searching engines do not provide detailed enough filters for those “picky” customers, and it’s also time consuming to constantly check the flight information. Our project (R package) allows us to scrape information from Skyscanner API, and keep track of that per unit time. The functions in our package also enable us to filter and sort the available flights based on customized constraints. Outcomes are presented with both text and user-friendly figures. Finally, we build a Shiny web page to make flight searching process easy and fun."
   },
   {
-    "objectID": "projects/2019/Zhenzhen-Chen-abstract.html",
-    "href": "projects/2019/Zhenzhen-Chen-abstract.html",
+    "objectID": "projects/project-samples/2019/Zhenzhen-Chen-abstract.html",
+    "href": "projects/project-samples/2019/Zhenzhen-Chen-abstract.html",
     "title": "The ggfun package",
     "section": "",
     "text": "The ggfun package wants to expand some of the existing ggplot2 functionalities by wrapping up some new layer functions and existing methods.\nThe current functionalities including creating arrow map for US election, adding new objects in the existing layers, achieving some complicated data transformation and visualization etc."
   },
   {
-    "objectID": "projects/2019/Xiyuan-Sun-abstract.html",
-    "href": "projects/2019/Xiyuan-Sun-abstract.html",
+    "objectID": "projects/project-samples/2019/Xiyuan-Sun-abstract.html",
+    "href": "projects/project-samples/2019/Xiyuan-Sun-abstract.html",
     "title": "Real Estate Marketing Analysis",
     "section": "",
     "text": "We wrote an R package ‘realEstAnalytics’, which provides an R function for each Zillow API service, making it easy to make API calls and process the response into convenient, R-friendly data structures.\nWe will also build a Shiny app, which allows users to choose parameters they care about, then score and rank US counties to buy a house. We would set parameter bars such as Air Quality, Income, Living Cost, Income/Cost ratio, crime rate, the population in our shiny app. We would need multiple data sources for this purpose."
   },
   {
-    "objectID": "projects/2019/Katherine-Goode-abstract.html",
-    "href": "projects/2019/Katherine-Goode-abstract.html",
+    "objectID": "projects/project-samples/2019/Katherine-Goode-abstract.html",
+    "href": "projects/project-samples/2019/Katherine-Goode-abstract.html",
     "title": "redres - Redress Your Mixed Model Assumptions",
     "section": "",
     "text": "We have created a package that takes random effect, or mixed, models fitted using lmer from the lme4 package and returns residual diagnostics. There are functions for calculating the marginal standardized residuals, conditional residuals, and generalized residuals. The user can look at residual plots for these residuals or any of the residuals also provided by lme4. In the Shiny app, the user can interact with the residual plots to identify outliers or other problematic observations and potential exploratory variables."
   },
   {
-    "objectID": "projects/2019/Joe-Zemmels-abstract.html",
-    "href": "projects/2019/Joe-Zemmels-abstract.html",
+    "objectID": "projects/project-samples/2019/Joe-Zemmels-abstract.html",
+    "href": "projects/project-samples/2019/Joe-Zemmels-abstract.html",
     "title": "statfoRdummies",
     "section": "",
     "text": "Intro stats classes can be rough for some people, even more so for others. As instructors and TA’s for intro statistics classes we see what students struggle with the most. In order to help our students, we have taken 4 often confusing topic and visualized them, hoping that with use of these visualizations these topics become a little less confusing. Let’s hope that our students think so too."
   },
   {
-    "objectID": "projects/2019/Brianna-Lawton-abstract.html",
-    "href": "projects/2019/Brianna-Lawton-abstract.html",
+    "objectID": "projects/project-samples/2019/Brianna-Lawton-abstract.html",
+    "href": "projects/project-samples/2019/Brianna-Lawton-abstract.html",
     "title": "CyChecks - Examining Pay Patterns Across Iowa State University",
     "section": "",
     "text": "Salary data for Iowa State University employees is publicly available through the state government. We’ve developed Cychecks, an R package, for the purpose of examining and interpreting this dataset. This package will allow users to compare pay between genders, positions, and departments, for instance, and display the results in a dynamic interface. While this data is publicly available, we also understand that salaries are sensitive, personal information and therefore we will be anonymizing all names. We hope Cychecks will provide useful fodder for discussing pay patterns within a publicly funded university."
+  },
+  {
+    "objectID": "projects/projects-2022.html",
+    "href": "projects/projects-2022.html",
+    "title": "2022 Project Abstracts",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nExploring 1973 U.S Arrests Data\n\n\nAli Sk Saqlain\n\n\n\n\nBayesAPLM - Bayesian Variable Selection for additive partial linear model\n\n\nBufei Guo\n\n\n\n\nWhat People Talk About When they Talk About Professors\n\n\nDanyang Zhang, Yuhang Lin, Mohammad Fili\n\n\n\n\nwoRldnews\n\n\nEshita Zaman, Coskun Erden, Alex Cleveringa\n\n\n\n\nStock market prediction\n\n\nGhazal Shah Abadi, Parastoo Akbari,\n\n\n\n\npitcheR\n\n\nKieran Liming, Robert Castaneda, Gabrielle Collins, Abigail Collins, Abraham Adokwei\n\n\n\n\nAn R package to visualize U.S. Census Data\n\n\nLin Quan, Zirou Zhou, Xiaolan Wan\n\n\n\n\nBuild modularized shiny app with ggpaintr\n\n\nWangqian Ju, Zhili Qiao, Jinji Pang\n\n\n\n\nPost Selection Inference of Estimation from Penalized Matrix Decomposition\n\n\nYunhui Qi\n\n\n\n\nAn R package to visualize US Census data\n\n\nZirou Zhou, Lin Quan, Xiaolan Wan\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects/projects-2019.html",
+    "href": "projects/projects-2019.html",
+    "title": "2019 Project Abstracts",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nCyChecks - Examining Pay Patterns Across Iowa State University\n\n\nBrianna Lawton, Virginia Nichols, Lydia English, Yones Khaledian, Stephanie Reinders\n\n\n\n\nFind Your Flight with R\n\n\nDapeng Hu, Yang Qiao, Min Zhang, Xin Zhang, Zerui Zhang\n\n\n\n\nPetFindr - Find pets near me!\n\n\nEarl Hur, Jessica Kueon, Hana Lee, Amin Shirazi, Miranda Tilton\n\n\n\n\nstatfoRdummies\n\n\nJoe Zemmels, Charlotte Roiger, Eryn Blagg, Gulzina Kuttubekova\n\n\n\n\nredres - Redress Your Mixed Model Assumptions\n\n\nKatherine Goode, Yonghui Huo, Jing Zhao, Kellie McClernon, Yudi Zhang\n\n\n\n\nDealing with the current weather data\n\n\nQing He, Jing Hou, Jing Li, Yuchen Wang, Ying Zheng\n\n\n\n\nReal Estate Marketing Analysis\n\n\nXiyuan Sun, Steven Harms, Oscar Aguilar, Gani Agadilov\n\n\n\n\nSentiAnalyzer - Sentiment analysis for consumer review\n\n\nZahra Khoshmanesh, Atousa Zarindast, Joshua Budi\n\n\n\n\nThe ggfun package\n\n\nZhenzhen Chen, Yawei Ge, Weiquan Luo\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects/project-rubric.html",
@@ -264,20 +278,6 @@
     "title": "Project Rubric",
     "section": "Grading Rubric:",
     "text": "Grading Rubric:\n\nPackage (40 points)\n\n\n\n\n\n\n\n\n\n\n\nCriteria\nPoints\nOutstanding (> 90%)\nGood (70-90%)\nNeeds work (50-70%)\nNeeds a lot of work (< 50%)\n\n\n\n\nPackage Topic\n10\nPackage is useful and coherent, addressing a well-defined problem.\nPackage is useful, but may have some implementation gaps or lack a coherent solution to the main problem the package addresses\nPackage is incoherent, including functions not aimed at addressing the stated issue\nPackage does not address a single problem or consists of seemingly random functions\n\n\nBuilds and Installs\n5\nPackage builds and installs correctly.\nPackage builds and installs correctly with only minor modifications.\nPackage builds and installs correctly with major modifications.\nPackage does not build and install correctly during the grading process.\n\n\nDocumentation\n5\nEach exported function is well documented, with examples detailing its use. Package uses pkgdown to present documentation to the reader.\nMost functions are well documented, but gaps in examples or full documentation exist. Documentation on pkgdown exists, but may have some deficiencies or be slightly out of date.\nSome functions are documented, but large gaps in documentation and examples exist, making it difficult to understand how to use the package functions. Package documentation may exist, but pkgdown is not used to make the documentation easily available on the web.\nThe package is poorly documented, or existing documentation is not easy to read and understand. No attempt to use pkgdown to make documentation available online.\n\n\nTesting\n5\nPackage has over 90% test coverage with meaningful tests. Functions are structured to do only one thing to make testing efficient. Package integrated with TravisCI and Codecov.io, and test coverage and status are reported in the package README.\nPackage has over 80% test coverage. Tests cover some important functionality but unnecessary tests exist and/or tests miss important areas of coverage. Functions may not be written to perform only one task. Travis integration and Codecov.io integration are set up but may not be working consistently.\nPackage has less than 80% test coverage with meaningful tests. Functions are not well structured for testing. Travis CI or Codecov.io integration is not working.\nPackage has minimal or no useful testing. No attempt to make use of Travis CI or Codecov.io to show package testing status.\n\n\nPackage Data\n5\nPackage includes some data which is useful for demonstrating the package functions. Data is well documented and used in the examples and the package vignette.\nPackage includes data used to demonstrate the package, but documentation is lacking and/or the data is not integrated into examples and the package vignette. Package may include some data which is not properly documented or necessary to the package’s functions\nPackage includes data but it is not well documented. Examples and vignettes may use data which is not included in the package and is also not explained or documented well.\nPackage does not include data or includes data with no documentation or explanation\n\n\nSpelling\n5\nPackage and documentation is spell-checked\nSome spelling errors are present but writing is mostly coherent\nPackage documentation and function comments have noticable lapses in spelling and/or grammar.\nPackage documentation is poorly spell-checked, has incomprehensible grammar, or is non-existent\n\n\nDependencies/Imports\n3\nPackage has dependencies and imports that make sense\nPackage has a few extra imported packages, or packages which are listed as dependencies that could be imported instead\nPackage is missing imports or dependencies\nNo attempt has been made to list imports and dependencies in a coherent fashion\n\n\nExported functions\n2\nOnly functions which are intended to be shown to the user are exported; all exported functions have examples and supporting documentation\nSome attention has been given to only exporting functions intended for user use, but there are some issues with the implementation\nAll functions are exported, or functions that are intended for user use have not been exported\nNo attention has been paid to which functions should be imported or exported\n\n\n\n\n\nShiny App (30 Points)\n\n\n\n\n\n\n\n\n\n\n\nCriteria\nPoints\nOutstanding (> 90%)\nGood (70-90%)\nNeeds work (50-70%)\nNeeds a lot of work (< 50%)\n\n\n\n\nInstallation\n10\nInstallation instructions are complete, shinyApp loads and runs without problems\nminor things have to be taken care of before the app runs or installation instructions are missing crucial information\nminor things have to be taken care of before the app runs and installation instructions are missing crucial information\nmajor steps need to be taken to ensure that the app runs, installation instructions are missing or not helpful\n\n\nFunctionality\n10\nThe shiny app provides access to an important piece of the package and works smoothly.\nThe app demonstrates a minor aspect of the package. The app stops working intermittently.\n\n\n\n\nComplexity\n10\nMultiple interactive UI elements are implemented\n\n\nThe app is quite simplistic.\n\n\n\n\n\nVignette (30 Points)\n\n\n\n\n\n\n\n\n\n\n\nCriteria\nPoints\nOutstanding (> 90%)\nGood (70-90%)\nNeeds work (50-70%)\nNeeds a lot of work (< 50%)\n\n\n\n\nUses pkgdown and github /docs\n8\nReport is formatted as a vignette using pkgdown and integrated into the github repository using the /docs folder.\nReport can be generated reproducibly and is located in the /docs folder, but does not use pkgdown or is not connected to the package’s github.io site\nReport is not reproducible or not located in the correct location\nReport consists of loosely connected pieces\n\n\nContent\n7\nReport describes the use of the package and package functions, unifying the separate functions included in the package to solve a single problem or task. Each major function is included in the vignette, with substantial additional text explaining the use of the function to solve a real-world problem.\nReport describes the use of the package and package functions, but does not present the package as a unified entity aimed at a specific single task. Some descriptions are sparse; the vignette may leave the reader with additional questions that are not completely answered. Code examples may only cover specific use cases instead of a more general approach\nVignette does not include all major functions, examples do not demonstrate major package functionality, and additional textual descriptions may be sparse or absent in places.\nVignette does not demonstrate major package functionality, and only includes minimal text description of the package’s capabilities.\n\n\nGraphs and Tables\n10\nGraphs and tables included in the package vignette are designed for a specific purpose and are carefully constructed to communicate with the reader. Each graph or table illustrates one point or package feature. Formatting and styling show that some optimization and care went into the creation of the table or graph\nGraphs and tables are well constructed but may have minor flaws or poor labeling decisions.\nMany graphs or tables have minor problems, or may be poorly chosen or redundant.\nGraphs and tables do not support questions and findings. Major problems with presentation - graphs may be missing or fail to generate.\n\n\nText\n5\nEnglish is polished, concise, and clear. No grammar or spelling mistakes\nClear and concise, but not elegant. Some spelling/grammar errors\nReadable, but unnecessarily verbose or lacking in detail. Many errors that compromise readability.\nBarely readable, with many spelling and grammar errors. No evidence of any proof-reading."
-  },
-  {
-    "objectID": "projects/2022.html",
-    "href": "projects/2022.html",
-    "title": "2022 Project Abstracts",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nExploring 1973 U.S Arrests Data\n\n\nAli Sk Saqlain\n\n\n\n\nBayesAPLM - Bayesian Variable Selection for additive partial linear model\n\n\nBufei Guo\n\n\n\n\nWhat People Talk About When they Talk About Professors\n\n\nDanyang Zhang, Yuhang Lin, Mohammad Fili\n\n\n\n\nwoRldnews\n\n\nEshita Zaman, Coskun Erden, Alex Cleveringa\n\n\n\n\nStock market prediction\n\n\nGhazal Shah Abadi, Parastoo Akbari,\n\n\n\n\npitcheR\n\n\nKieran Liming, Robert Castaneda, Gabrielle Collins, Abigail Collins, Abraham Adokwei\n\n\n\n\nAn R package to visualize U.S. Census Data\n\n\nLin Quan, Zirou Zhou, Xiaolan Wan\n\n\n\n\nBuild modularized shiny app with ggpaintr\n\n\nWangqian Ju, Zhili Qiao, Jinji Pang\n\n\n\n\nPost Selection Inference of Estimation from Penalized Matrix Decomposition\n\n\nYunhui Qi\n\n\n\n\nAn R package to visualize US Census data\n\n\nZirou Zhou, Lin Quan, Xiaolan Wan\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "projects/2019.html",
-    "href": "projects/2019.html",
-    "title": "2019 Project Abstracts",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nCyChecks - Examining Pay Patterns Across Iowa State University\n\n\nBrianna Lawton, Virginia Nichols, Lydia English, Yones Khaledian, Stephanie Reinders\n\n\n\n\nFind Your Flight with R\n\n\nDapeng Hu, Yang Qiao, Min Zhang, Xin Zhang, Zerui Zhang\n\n\n\n\nPetFindr - Find pets near me!\n\n\nEarl Hur, Jessica Kueon, Hana Lee, Amin Shirazi, Miranda Tilton\n\n\n\n\nstatfoRdummies\n\n\nJoe Zemmels, Charlotte Roiger, Eryn Blagg, Gulzina Kuttubekova\n\n\n\n\nredres - Redress Your Mixed Model Assumptions\n\n\nKatherine Goode, Yonghui Huo, Jing Zhao, Kellie McClernon, Yudi Zhang\n\n\n\n\nDealing with the current weather data\n\n\nQing He, Jing Hou, Jing Li, Yuchen Wang, Ying Zheng\n\n\n\n\nReal Estate Marketing Analysis\n\n\nXiyuan Sun, Steven Harms, Oscar Aguilar, Gani Agadilov\n\n\n\n\nSentiAnalyzer - Sentiment analysis for consumer review\n\n\nZahra Khoshmanesh, Atousa Zarindast, Joshua Budi\n\n\n\n\nThe ggfun package\n\n\nZhenzhen Chen, Yawei Ge, Weiquan Luo\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "labs.html",
