@@ -18,6 +18,8 @@ website:
         text: Labs
       - href: projects.qmd
         text: Projects
+      - href: projects/index.qmd
+        text: Samples
       - href: https://canvas.iastate.edu/courses/98137
         text: Canvas (ISU)
       - href: https://canvas.unl.edu/courses/150086
