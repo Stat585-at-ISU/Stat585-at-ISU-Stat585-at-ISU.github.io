@@ -1,9 +1,0 @@
----
-title: "2022 Project Abstracts"
-listing:
-  contents: "2022"
-  sort: "author"
-  type: table
-  categories: true
----
-

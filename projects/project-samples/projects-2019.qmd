@@ -1,9 +1,0 @@
----
-title: "2019 Project Abstracts"
-listing:
-  contents: 
-    - "2019/*.md"
-  sort: "author"
-  type: table
----
-

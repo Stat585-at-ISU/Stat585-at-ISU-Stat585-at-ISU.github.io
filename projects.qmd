@@ -2,7 +2,7 @@
 title: "Projects"
 ---
 
-You can have a look at the scope of some projects from [2019](projects/project-samples/projects-2019.html) and [2022](projects/project-samples/projects-2022.html)
+You can have a look at the scope of some projects from [2019](projects/projectSamples/projects-2019.html) and [2022](projects/projectSamples/projects-2022.html)
 
 This class requires a presentation and a report for a final project. Final projects are team-based with teams consisting of 3 to 5 members.
 
