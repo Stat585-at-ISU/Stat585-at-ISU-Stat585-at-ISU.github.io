@@ -1,0 +1,57 @@
+---
+author: "Valerie Han"
+title: "renv"
+categories: "More on reproducibility..."
+date: "2023-03-02"
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+[![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)
+[![Render rmarkdown](../../actions/workflows/render-rmarkdown.yaml/badge.svg)](../../actions/workflows/render-rmarkdown.yaml)
+<!-- badges: end -->
+
+What happens when we change the Rmd file and commit?
+
+In Blog 5 you had the first exposure to Github Actions. 
+We just checked frontmatter compliance (as we do for this round).
+You see that we have added a second action - here, we are converting the Rmarkdown document to a markdown file by running `render_rmarkdown` on Github. This action passes successfully for this document. We want to do something similar for blog #4.
+
+
+Now start reading ...
+
+
+Read the vignette [Introduction to renv](https://rstudio.github.io/renv/articles/renv.html) for the `renv` R package by Kevin Ushey.
+
+Then do:
+
+1. **Install the R package `renv` on your local machine.**
+
+1b. **Go to your blog 4 repo, and run the command** `usethis::use_github_action("render-rmarkdown.yaml")` This creates the file `render-rmarkdown.yaml` inside the folder `.github/workflows` in your repo. Add it to the repository and push it.
+
+
+1c. **Optional - but maybe educational:** make a change to your Rmd file with the blog post (just a small change), and push it. Then go to your github site and watch the render-rmarkdown action fail.
+
+2. **In the project for blog 4, initialize the workflow used by the `renv` package.**
+
+3. **Add all dependencies to the environment (implicitly by installing all the depepndencies or explicilty by listing dependencies in a DESCRIPTION file).**
+
+4. **Add the `renv` folder to your blog 4 repository, and push the changes.**
+
+5. **Is the github action working? Read any potential error messages in the workflow and try to fix things. Make sure to check stackoverflow for help, don't forget our Discussion board!**
+
+
+Write a blog post addressing the following questions: 
+
+1. **What is the idea of the renv package?**
+
+The `renv` package helps with one piece of reproducibility by recording the versions of R and packages that our project is running on. It also can make it easier to reinstall the version of those packages for a specific project that has had its versions recorded using `renv`.
+
+2. **In 50 to 100 words describe your experience working with `renv`. What went well? What did not go so well?**
+ 
+It was really cool to be able to run just a couple functions to record version numbers of R and the packages my project was dependent on. There were a lot of debugging along the way, though. Lessons learned: make sure to add `renv.lock` to the git repo, and try a newer version of a package if you get an error like `Error: install of package 'stringi' failed [error code 1]`. In general, the downside of using `renv` was that the error messages were not as informative as I would've liked, there weren't really stackoverflow posts addressing my errors, and the vignette for the package could've been more informative about troubleshooting/error messages. 
+
+
+Submit this blog post to your blog-6 repo. 
+

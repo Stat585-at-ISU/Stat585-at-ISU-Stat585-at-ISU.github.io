@@ -1,0 +1,85 @@
+Badge is Coool!
+================
+Motina
+2023-03-02
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+
+[![Frontmatter
+check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)
+[![Render
+rmarkdown](../../actions/workflows/render-rmarkdown.yaml/badge.svg)](../../actions/workflows/render-rmarkdown.yaml)
+<!-- badges: end -->
+
+What happens when we change the Rmd file and commit?
+
+In Blog 5 you had the first exposure to Github Actions. We just checked
+frontmatter compliance (as we do for this round). You see that we have
+added a second action - here, we are converting the Rmarkdown document
+to a markdown file by running `render_rmarkdown` on Github. This action
+passes successfully for this document. We want to do something similar
+for blog \#4.
+
+Now start reading …
+
+Read the vignette [Introduction to
+renv](https://rstudio.github.io/renv/articles/renv.html) for the `renv`
+R package by Kevin Ushey.
+
+Then do:
+
+1.  **Install the R package `renv` on your local machine.**
+
+2.  **In the project for blog 4, initialize the workflow used by the
+    `renv` package.**
+
+3.  **Add all dependencies to the environment (implicitly by installing
+    all the depepndencies or explicilty by listing dependencies in a
+    DESCRIPTION file).**
+
+4.  **Add the `renv` folder to your blog 4 repository, and push the
+    changes.**
+
+5.  **Is the github action working? Read any potential error messages in
+    the workflow and try to fix things. Make sure to check stackoverflow
+    for help, don’t forget our Discussion board!**
+
+Yes! It’s working :)
+
+Write a blog post addressing the following questions:
+
+1.  **What is the idea of the renv package?**
+
+R package dependencies are easier to manage and reproducible
+environments are easier to create with the `renv` package. The use of
+renv means you will spend less time worrying about package version
+mismatches and more time developing or analyzing.
+
+2.  **In 50 to 100 words describe your experience working with `renv`.
+    What went well? What did not go so well?**
+
+Before I pushed the changes to my blog4 repo, I did a few things to make
+sure everything was in order.
+
+First, I hit up “renv::init()” to get my R environment all set up for
+this project.
+
+Then I called “renv::dependencies” to make sure all my package
+dependencies were good to go.
+
+After that, I hit up “renv::snapshot()” to save my project library in
+case I needed to roll back my updates.
+
+Next, I added “check-yaml.yaml” to my workflow folder because the badge
+code shows the status of the workflow defined in my “.github/workflows”
+directory. I also added “schema.json” and “schema.yaml” to my “.github”
+folder and copied and pasted the ymal and json code from blog 5.
+
+That’s when I spotted a problem: the ymal in the read.rmd file for blog
+4 was messed up. The dates weren’t in quotation marks ““, and the
+categories were spelled like”category.” So, I fixed those issues and
+pushed everything up to my repo. Easy peasy! I followed the same process
+for blog 6, and now both badges are showing “passing.”
+
+Submit this blog post to your blog-6 repo.

@@ -1,0 +1,74 @@
+Working with ‘renv’ package
+================
+Atefeh Anisi
+2023-03-02
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+
+[![Frontmatter
+check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)
+[![Render
+rmarkdown](../../actions/workflows/render-rmarkdown.yaml/badge.svg)](../../actions/workflows/render-rmarkdown.yaml)
+<!-- badges: end -->
+
+What happens when we change the Rmd file and commit?
+
+In Blog 5 you had the first exposure to Github Actions. We just checked
+frontmatter compliance (as we do for this round). You see that we have
+added a second action - here, we are converting the Rmarkdown document
+to a markdown file by running `render_rmarkdown` on Github. This action
+passes successfully for this document. We want to do something similar
+for blog \#4.
+
+Now start reading …
+
+Read the vignette [Introduction to
+renv](https://rstudio.github.io/renv/articles/renv.html) for the `renv`
+R package by Kevin Ushey.
+
+Then do:
+
+1.  **Install the R package `renv` on your local machine.**
+
+2.  **In the project for blog 4, initialize the workflow used by the
+    `renv` package.**
+
+3.  **Add all dependencies to the environment (implicitly by installing
+    all the depepndencies or explicilty by listing dependencies in a
+    DESCRIPTION file).**
+
+4.  **Add the `renv` folder to your blog 4 repository, and push the
+    changes.**
+
+5.  **Is the github action working? Read any potential error messages in
+    the workflow and try to fix things. Make sure to check stackoverflow
+    for help, don’t forget our Discussion board!**
+
+Write a blog post addressing the following questions:
+
+1.  **What is the idea of the renv package?**
+
+The “renv” package, in my opinion, makes it easier for us to handle our
+projects. Each project’s specific details and packages will be managed
+individually by it. Using the “init()” function, which will make a copy
+of the local project with all the packages, we must first initialize a
+workflow. Then, “hydrate()” and “dependency()” functions can find and
+install all additional requirements. We will have a project-local
+environment with a private R library once we have completed these tasks.
+Anytime we wish to leave, we can take snapshots of the project and store
+its current condition together with all of its packages. In other words,
+“renv” package is a robust way that makes our projects reproducible.
+
+2.  **In 50 to 100 words describe your experience working with `renv`.
+    What went well? What did not go so well?**
+
+After a few tries, I succeeded in completing the stages. Initially,
+because I didn’t utilize the hydrate function to install the
+dependencies, the GitHub action wasn’t working. As I returned to the
+manual, I discovered my error. The GitHub activity worked for me after
+running the hydrate function, and everything was in place. It appears
+that my project is now available on GitHub in a version that has all
+necessary dependencies and packages and can be restored by other users.
+
+Submit this blog post to your blog-6 repo.

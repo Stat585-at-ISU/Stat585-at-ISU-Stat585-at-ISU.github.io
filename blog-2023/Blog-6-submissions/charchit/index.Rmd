@@ -1,0 +1,51 @@
+---
+{output: github_document,
+author: "Charch",
+title: "Renv",
+date: "2023-03-02",
+categories: "More on reproducibility..."}
+---
+
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+[![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)
+[![Render rmarkdown](../../actions/workflows/render-rmarkdown.yaml/badge.svg)](../../actions/workflows/render-rmarkdown.yaml)
+<!-- badges: end -->
+
+What happens when we change the Rmd file and commit?
+
+In Blog 5 you had the first exposure to Github Actions. 
+We just checked frontmatter compliance (as we do for this round).
+You see that we have added a second action - here, we are converting the Rmarkdown document to a markdown file by running `render_rmarkdown` on Github. This action passes successfully for this document. We want to do something similar for blog #4.
+
+
+Now start reading ...
+
+
+Read the vignette [Introduction to renv](https://rstudio.github.io/renv/articles/renv.html) for the `renv` R package by Kevin Ushey.
+
+Then do:
+
+1. **Install the R package `renv` on your local machine.**
+
+2. **In the project for blog 4, initialize the workflow used by the `renv` package.**
+
+3. **Add all dependencies to the environment (implicitly by installing all the depepndencies or explicilty by listing dependencies in a DESCRIPTION file).**
+
+4. **Add the `renv` folder to your blog 4 repository, and push the changes.**
+
+5. **Is the github action working? Read any potential error messages in the workflow and try to fix things. Make sure to check stackoverflow for help, don't forget our Discussion board!**
+
+
+Write a blog post addressing the following questions: 
+
+1. **What is the idea of the renv package?**
+
+Renv package help to create, manage, and share environments in R. In python programming environments were always hard to create in my experience. I need to set a path and every time if there is a new project I usually create another environment. Renv seems pretty useful in reproducing the the environment for the R projects.It could help in collaborating very well. In one of my project in python I need to transfer all of my files and code at the end of the project to the company who is funding my project. Package like renv can help me do it better. I will look for it in python so I can share my environment with the company's computer.
+
+2. **In 50 to 100 words describe your experience working with `renv`. What went well? What did not go so well?**
+I could not try this blog as much as I wanted to. My time and health constraints were not really favorable but I will try it during the weekend. Even though the Renv package is designed to offer collaboration tool it took me a while to get familiar with it and setup on my computer. I will try to use on my lab computer and laptop to see if I can reproduce my env...
+
+Submit this blog post to your blog-6 repo. 
+

@@ -1,0 +1,95 @@
+---
+author: "Sudesh Bhagat"
+title: "Github Actions"
+date: "2023-03-02"
+categories: "Github Actions"
+output: html_document
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+
+```
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+[![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)
+[![Render rmarkdown](../../actions/workflows/render-rmarkdown.yaml/badge.svg)](../../actions/workflows/render-rmarkdown.yaml)
+
+
+What happens when we change the Rmd file and commit?
+
+In Blog 5 you had the first exposure to Github Actions. 
+We just checked frontmatter compliance (as we do for this round).
+You see that we have added a second action - here, we are converting the Rmarkdown document to a markdown file by running `render_rmarkdown` on Github. This action passes successfully for this document. We want to do something similar for blog #4.
+
+
+Now start reading ...
+
+
+Read the vignette [Introduction to renv](https://rstudio.github.io/renv/articles/renv.html) for the `renv` R package by Kevin Ushey.
+
+Then do:
+
+1. **Install the R package `renv` on your local machine.**
+```{r}
+##install.packages("renv")
+
+```
+2. **In the project for blog 4, initialize the workflow used by the `renv` package.**
+```{r}
+##work flow initialization 
+#library(renv)
+#renv::init()
+
+```
+
+
+
+3. **Add all dependencies to the environment (implicitly by installing all the depepndencies or explicilty by listing dependencies in a DESCRIPTION file).**
+```{r}
+##Necessary package for blog 4
+#renv::install("plyr")
+#renv::install("dplyr")
+```
+
+
+4. **Add the `renv` folder to your blog 4 repository, and push the changes.**
+```{r}
+#Add the renv folder to blog four git 
+```
+
+
+5. **Is the github action working? Read any potential error messages in the workflow and try to fix things. Make sure to check stackoverflow for help, don't forget our Discussion board!**
+
+
+Write a blog post addressing the following questions: 
+
+1. **What is the idea of the renv package?**
+
+The renv package for R is a package management tool that aids in the reproducibility of R projects. Renv's goal is to provide an isolated environment for each R project with all the required R packages and their dependencies. This helps to ensure that the R code in the project executes consistently regardless of the machine or the environment in which it is run.renv has various features that can assist in reaching this goal. It enables the construction of a project-specific R package library separate from the global R library. This ensures that the packages used in one project do not conflict with those used in another. It also tracks and manages the versions of packages used in each project. This is significant because different versions of a package can behave differently, and knowing which version was used to get a specific result is critical. Project collaboration is easier with renv as it enables the building of a lock file with the precise versions of all the packages used in the project. The renv package aims to create a uniform, reproducible environment for R projects that simplifies managing dependencies and sharing code with others.
+As a package management tool, renv is a package that helps reproduce R projects. With this package, each R project and its associated constituents operate in seclusion, ensuring consistency across machines and environments. This is achieved through the characteristic features of renv. This package creates a library that is specific to the project, which is different from the global R library. In addition, renv also tracks and manages the versions of the different packages. Project collaboration is easier with renv as it enables the building of a lock file with the precise versions of all the packages used in the project.
+
+2. **In 50 to 100 words describe your experience working with `renv`. What went well? What did not go so well?**
+
+
+Working with the renv package was a smooth experience as I only installed the necessary packages in my environment before creating the renv folder. These necessary packages were  installed while the rmakrdown was rendering. I made sure that I was able to knit the document in my local machine before I rendered it on the git. I did not receive any errors. 
+
+Submit this blog post to your blog-6 repo. 
+
+[![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)
+[![Render rmarkdown](../../actions/workflows/render-rmarkdown.yaml/badge.svg)](../../actions/workflows/render-rmarkdown.yaml)
+
+<!-- badges: end -->
+
+```
+---
+author: "Sudesh Bhagat"
+title: "Github Actions"
+date: "2023-03-02"
+categories:"Github Actions"
+---
+```

@@ -1,0 +1,60 @@
+---
+title: "Split-Apply-Combine Post"
+author: "Harun Celik"
+date: "2023-03-02"
+categories: "More on reproducibility..."
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+[![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)
+[![Render rmarkdown](../../actions/workflows/render-rmarkdown.yaml/badge.svg)](../../actions/workflows/render-rmarkdown.yaml)
+<!-- badges: end -->
+
+What happens when we change the Rmd file and commit?
+
+In Blog 5 you had the first exposure to Github Actions. 
+We just checked frontmatter compliance (as we do for this round).
+You see that we have added a second action - here, we are converting the Rmarkdown document to a markdown file by running `render_rmarkdown` on Github. This action passes successfully for this document. We want to do something similar for blog #4.
+
+
+Now start reading ...
+
+
+Read the vignette [Introduction to renv](https://rstudio.github.io/renv/articles/renv.html) for the `renv` R package by Kevin Ushey.
+
+Then do:
+
+1. **Install the R package `renv` on your local machine.**
+
+2. **In the project for blog 4, initialize the workflow used by the `renv` package.**
+
+3. **Add all dependencies to the environment (implicitly by installing all the depepndencies or explicilty by listing dependencies in a DESCRIPTION file).**
+
+4. **Add the `renv` folder to your blog 4 repository, and push the changes.**
+
+5. **Is the github action working? Read any potential error messages in the workflow and try to fix things. Make sure to check stackoverflow for help, don't forget our Discussion board!**
+
+
+Write a blog post addressing the following questions: 
+
+1. **What is the idea of the renv package?**
+
+The `renv` package is used in R to manage the dependencies a project will have during its development
+and operation. `renv` essentially works as a way to support the reproducibility of projects by tracking
+version control histories for the packages used in an R project. What I found to be the most useful in
+the documentation was how R libraries worked without `renv` and with `renv`. Based on this information
+it makes sense to use `renv` in every R project that has a longtitudinal lifespan since tracking packages
+and errors often associated with older versions of packages is an important element to debugging. 
+
+2. **In 50 to 100 words describe your experience working with `renv`. What went well? What did not go so well?**
+
+Initializing with `renv` was not very difficult. I think the real trouble for me is that I don't find the 
+layout of what renv produces to be very intuitive so I had difficulties with adding all the dependencies to
+the environment. I first called a `renv::snapshot()` and followed that with `renv::dependencies()` but I'm not
+entirely sure that it did what I expected it to, I don't have a solid enough understanding to even be able to verify
+in all honesty.
+
+Submit this blog post to your blog-6 repo. 
+

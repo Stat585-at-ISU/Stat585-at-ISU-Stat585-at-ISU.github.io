@@ -1,0 +1,50 @@
+---
+author: "Parvin Mohammadiarvejeh"
+title: "More on reproducibility..."
+categories: "More on reproducibility..."
+date: "2023-03-02"
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+[![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)
+[![Render rmarkdown](../../actions/workflows/render-rmarkdown.yaml/badge.svg)](../../actions/workflows/render-rmarkdown.yaml)
+<!-- badges: end -->
+
+What happens when we change the Rmd file and commit?
+
+In Blog 5 you had the first exposure to Github Actions. 
+We just checked frontmatter compliance (as we do for this round).
+You see that we have added a second action - here, we are converting the Rmarkdown document to a markdown file by running `render_rmarkdown` on Github. This action passes successfully for this document. We want to do something similar for blog #4.
+
+
+Now start reading ...
+
+
+Read the vignette [Introduction to renv](https://rstudio.github.io/renv/articles/renv.html) for the `renv` R package by Kevin Ushey.
+
+Then do:
+
+1. **Install the R package `renv` on your local machine.**
+
+2. **In the project for blog 4, initialize the workflow used by the `renv` package.**
+
+3. **Add all dependencies to the environment (implicitly by installing all the depepndencies or explicilty by listing dependencies in a DESCRIPTION file).**
+
+4. **Add the `renv` folder to your blog 4 repository, and push the changes.**
+
+5. **Is the github action working? Read any potential error messages in the workflow and try to fix things. Make sure to check stackoverflow for help, don't forget our Discussion board!**
+
+
+Write a blog post addressing the following questions: 
+
+1. **What is the idea of the renv package?**
+Parvin's answer: renv package is an useful package to install, update and manage packages in various projects in a more robust way. In the other words, using renv, we can update/install packages in a specific project without any changes in the packages in the other projects. This advantage is useful to prevent conflicts when we work on the other projects;it means that other projects do not break (it is like a private library and environment). Furthermore, renv provides the ability to reproduce the previous versions of our work. In summary, renv provides a better management in projects individually. 
+
+2. **In 50 to 100 words describe your experience working with `renv`. What went well? What did not go so well?**
+Parvin's answer: My experience with renv package was smooth, fortunately. Using the instruction in the "Introduction to renv" I could get it done with a few number of committing. In the first rounds, I forgot to use "hydrate()" function and it did not work, but when I read the instruction again, I did the process again, step by step and I called the hydrate and it worked!
+
+
+Submit this blog post to your blog-6 repo. 
+

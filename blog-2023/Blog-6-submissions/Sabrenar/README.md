@@ -1,0 +1,68 @@
+Reproducibility
+================
+Sabrena Rutledge
+2023-03-02
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+
+[![Frontmatter
+check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)
+[![Render
+rmarkdown](../../actions/workflows/render-rmarkdown.yaml/badge.svg)](../../actions/workflows/render-rmarkdown.yaml)
+<!-- badges: end -->
+
+What happens when we change the Rmd file and commit?
+
+In Blog 5 you had the first exposure to Github Actions. We just checked
+frontmatter compliance (as we do for this round). You see that we have
+added a second action - here, we are converting the Rmarkdown document
+to a markdown file by running `render_rmarkdown` on Github. This action
+passes successfully for this document. We want to do something similar
+for blog \#4.
+
+Now start reading …
+
+Read the vignette [Introduction to
+renv](https://rstudio.github.io/renv/articles/renv.html) for the `renv`
+R package by Kevin Ushey.
+
+Then do:
+
+1.  **Install the R package `renv` on your local machine.**
+
+2.  **In the project for blog 4, initialize the workflow used by the
+    `renv` package.**
+
+3.  **Add all dependencies to the environment (implicitly by installing
+    all the depepndencies or explicilty by listing dependencies in a
+    DESCRIPTION file).**
+
+4.  **Add the `renv` folder to your blog 4 repository, and push the
+    changes.**
+
+5.  **Is the github action working? Read any potential error messages in
+    the workflow and try to fix things. Make sure to check stackoverflow
+    for help, don’t forget our Discussion board!**
+
+Write a blog post addressing the following questions:
+
+1.  **What is the idea of the renv package?**
+
+The renv package is designed to store library paths to all of a
+projects’ necessary R packages and their dependencies. As such, it saves
+a list of all R packages’ versions being used in a project. Having all
+version numbers for a project’s required packages and dependencies is
+extremely helpful for reproducibility.
+
+2.  **In 50 to 100 words describe your experience working with `renv`.
+    What went well? What did not go so well?**
+
+I have used renv in my personal projects and have not had an issue with
+it before. However, when trying to use renv and github together, I have
+not been successful. Within Rstudio, renv installed correctly and
+initialized correctly. Yet, the renv directory does not appear to push
+correctly to the global Github repo. As such, when trying to render the
+Rmarkdown, it fails when loading the first package.
+
+Submit this blog post to your blog-6 repo.

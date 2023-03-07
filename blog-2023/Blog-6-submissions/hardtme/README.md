@@ -1,0 +1,70 @@
+Exploring renv
+================
+Marie Hardt
+2023-03-02
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+
+[![Frontmatter
+check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)
+[![Render
+rmarkdown](../../actions/workflows/render-rmarkdown.yaml/badge.svg)](../../actions/workflows/render-rmarkdown.yaml)
+<!-- badges: end -->
+
+What happens when we change the Rmd file and commit?
+
+In Blog 5 you had the first exposure to Github Actions. We just checked
+frontmatter compliance (as we do for this round). You see that we have
+added a second action - here, we are converting the Rmarkdown document
+to a markdown file by running `render_rmarkdown` on Github. This action
+passes successfully for this document. We want to do something similar
+for blog \#4.
+
+Now start reading …
+
+Read the vignette [Introduction to
+renv](https://rstudio.github.io/renv/articles/renv.html) for the `renv`
+R package by Kevin Ushey.
+
+Then do:
+
+1.  **Install the R package `renv` on your local machine.**
+
+2.  **In the project for blog 4, initialize the workflow used by the
+    `renv` package.**
+
+3.  **Add all dependencies to the environment (implicitly by installing
+    all the dependencies or explicitly by listing dependencies in a
+    DESCRIPTION file).**
+
+4.  **Add the `renv` folder to your blog 4 repository, and push the
+    changes.**
+
+5.  **Is the github action working? Read any potential error messages in
+    the workflow and try to fix things. Make sure to check stackoverflow
+    for help, don’t forget our Discussion board!**
+
+Write a blog post addressing the following questions:
+
+1.  **What is the idea of the renv package?**
+
+The idea of the `renv` package is to help with reproducibility by
+keeping track of what your `R` environment looks like as you work. The
+`renv` package saves all of the packages you install within your `R`
+project along with their versions. This means that you can be sure that
+if you leave your work and come back to it later, you can recreate an
+identical `R` environment to the one you were using before. This helps
+to ensure that you can reproduce your results as they were previously.
+
+2.  **In 50 to 100 words describe your experience working with `renv`.
+    What went well? What did not go so well?**
+
+I was initially confused about whether the R code for implementing renv
+should be included in my RMarkdown. After learning the code was not
+needed, the next hurdle for me was which renv files should be committed
+to GitHub. Then I learned I needed to commit the renv folder and the
+lockfile. The last hurdle to be overcome was the R version in the
+lockfile. I use R 4.1.2, but GitHub uses R 4.2.2. I changed the R
+version in the lockfile to 4.2.2, and after not rendering at first, the
+RMarkdown file then rendered properly after another commit later.
