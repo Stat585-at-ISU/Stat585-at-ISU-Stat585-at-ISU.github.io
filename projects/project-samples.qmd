@@ -2,7 +2,7 @@
 title: "Project Samples"
 listing:
   contents: 
-    - /projects/projectSamples/**
+    - projectSamples/**
   sort: "author"
   type: table
 ---

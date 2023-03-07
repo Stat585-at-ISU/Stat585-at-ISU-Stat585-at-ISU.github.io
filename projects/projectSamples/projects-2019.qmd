@@ -2,7 +2,7 @@
 title: "2019 Project Abstracts"
 listing:
   contents: 
-    - "/projects/projectSamples/2019/*.md"
+    - "2019"
   sort: "author"
   type: table
 ---
