@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -241,13 +241,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>It seemed like the Stack Overflow user <a href="https://stackoverflow.com/users/20152268/jamie">Jamie</a> was having some trouble calculating the distance between a hospital in Fresno, CA (119.85 °W, 36.84° N) and the home location of several patients.</p>
 <p>Jamie had a data frame with the geographical coordinates of city in which the hospital patients lived and wanted to calculate the geographical distance that each patient traveled.</p>
 <p>Jamie provided the geographical coordinates of the hospital</p>
-<div class="cell">
+<div class="cell" data-hash="dosSantosCaio_cache/html/unnamed-chunk-1_f7d2a921933b4b74458a7ce71f754497">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Latitude<span class="sc">:</span> <span class="fl">36.840</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Longitude<span class="sc">:</span> <span class="sc">-</span><span class="fl">119.850</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In addition, Jamie also provided the an example data frame</p>
-<div class="cell">
+<div class="cell" data-hash="dosSantosCaio_cache/html/unnamed-chunk-2_7cc81015d6ccfde00a23289f4209a96e">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">structure</span>(<span class="fu">list</span>(<span class="at">major_city =</span> <span class="fu">c</span>(<span class="st">"Mountain View"</span>, <span class="st">"Watsonville"</span>, <span class="st">"Honolulu"</span>, <span class="st">"Los Altos"</span>, <span class="st">"Morgan Hill"</span>, <span class="st">"Fulton"</span>, <span class="st">"Oak Grove"</span>, <span class="st">"Port Kent"</span>, <span class="st">"Bedford"</span>, <span class="st">"San Jose"</span>), </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">latitude =</span> <span class="fu">c</span>(<span class="fl">37.39</span>, <span class="fl">36.9</span>, <span class="fl">21.31</span>, <span class="fl">37.36</span>, <span class="fl">37.1</span>, <span class="fl">43.3</span>, <span class="fl">36.69</span>, <span class="fl">44.526</span>, <span class="cn">NA</span>, <span class="fl">37.27</span>),</span>
@@ -257,7 +257,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="at">.internal.selfref =</span> <span class="sc">&lt;</span>pointer<span class="sc">:</span> <span class="dv">0x7f98af80bae0</span><span class="sc">&gt;</span>, <span class="at">index =</span> <span class="fu">integer</span>(<span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>I provided an answer using the <em>apply</em> function. The idea was to apply a function rowwise which returned the distance from the hospital to the home location of each patient.</p>
-<div class="cell">
+<div class="cell" data-hash="dosSantosCaio_cache/html/unnamed-chunk-3_5e43833d9b50dac4323857ab1f4c75ec">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">major_city =</span> <span class="fu">c</span>(<span class="st">"Mountain View"</span>,<span class="st">"Watsonville"</span>, <span class="st">"Honolulu"</span>, <span class="st">"Los Altos"</span>, <span class="st">"Morgan Hill"</span>, <span class="st">"Fulton"</span>, <span class="st">"Oak Grove"</span>, <span class="st">"Port Kent"</span>, <span class="st">"Bedford"</span>, <span class="st">"San Jose"</span>),</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">latitude =</span> <span class="fu">c</span>(<span class="fl">37.39</span>, <span class="fl">36.9</span>, <span class="fl">21.31</span>, <span class="fl">37.36</span>, <span class="fl">37.1</span>, <span class="fl">43.3</span>, <span class="fl">36.69</span>, <span class="fl">44.526</span>, <span class="cn">NA</span>, <span class="fl">37.27</span>),</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">longitude =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">122.07</span>, <span class="sc">-</span><span class="fl">121.7</span>, <span class="sc">-</span><span class="fl">157.85</span>, <span class="sc">-</span><span class="fl">122.15</span>, <span class="sc">-</span><span class="fl">121.7</span>, <span class="sc">-</span><span class="fl">76.4</span>, <span class="sc">-</span><span class="fl">87.44</span>, <span class="sc">-</span><span class="fl">73.409</span>, <span class="cn">NA</span>, <span class="sc">-</span><span class="fl">121.84</span>))</span>
@@ -270,7 +270,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>distance_km <span class="ot">&lt;-</span> df<span class="sc">$</span>distance_m <span class="sc">/</span> <span class="dv">1000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The ouput provided the distance for all rows in the data frame</p>
-<div class="cell">
+<div class="cell" data-hash="dosSantosCaio_cache/html/unnamed-chunk-4_900d87ca6d26c456ea639d08b21d85d7">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>      major_city latitude longitude distance_m distance_km</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>  Mountain View   <span class="fl">37.390</span>  <span class="sc">-</span><span class="fl">122.070</span>   <span class="fl">206527.4</span>    <span class="fl">206.5274</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>    Watsonville   <span class="fl">36.900</span>  <span class="sc">-</span><span class="fl">121.700</span>   <span class="fl">165083.2</span>    <span class="fl">165.0832</span></span>
