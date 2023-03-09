@@ -1,0 +1,66 @@
+---
+author: "Kelly Nascimento Thompson"
+title: "Rules for Research Reproducibility"
+date: "2023-02-23"
+categories: "Ethics and Reproducibility..."
+output: github_document
+---
+
+![Frontmatter check](https://github.com/Stat585-at-ISU/blog-5-kellynay/actions/workflows/check-yaml.yaml/badge.svg)
+
+
+## Prompt:
+
+In May 2015 Science retracted - without consent of the lead author - a paper on  how canvassers can sway people's opinions about gay marriage, 
+see also: http://www.sciencemag.org/news/2015/05/science-retracts-gay-marriage-paper-without-agreement-lead-author-lacour
+The Science Editor-in-Chief cited as reasons for the retraction that the original survey data was not made available for independent reproduction of results, that survey incentives were misrepresented and that statements made about sponsorships turned out to be incorrect.<br>
+The investigation resulting in the retraction was triggered by two  Berkeley grad students who attempted to replicate the study and discovered that the data must have been faked.
+ 
+[FiveThirtyEight](https://fivethirtyeight.com/features/how-two-grad-students-uncovered-michael-lacour-fraud-and-a-way-to-change-opinions-on-transgender-rights/) has published an article with more details on the two Berkeley students' work.
+
+Malicious changes to the data such as in the LaCour case are hard to prevent, but more rigorous checks should be built into the scientific publishing system. All too often papers have to be retracted for unintended reasons. [Retraction Watch](https://retractionwatch.com/) is a data base that keeps track of retracted papers (see the related [Science magazine](https://www.sciencemag.org/news/2018/10/what-massive-database-retracted-papers-reveals-about-science-publishing-s-death-penalty) publication). 
+
+Read the paper [Ten Simple Rules for Reproducible Computational Research](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285) by Sandve et al.
+
+
+Write a blog post addressing the questions: 
+
+1. Pick one of the papers from Retraction Watch that were retracted because of errors in the paper (you might want to pick a paper from the set of featured papers, because there are usually more details available). Describe what went wrong. Would any of the rules by Sandve et al. have helped in this situation?
+
+My search in The Retraction Watch Database was a result of the following criteria: Subject (Environmental Science - ENV); Country (United States); Article Type (Research Article); Date (From 01/01/2020 to 01/01/2023).
+
+I selected the paper "Resilience Enhancing Characteristics of Land Eviction-Displaced Communities in Uganda's Oil Exploration Areas," published on 09/01/2017 (10.4236/ojapps.2017.79033). Retraction notice link: https://www.scirp.org/pdf/OJAppS_2017090815165454.pdf
+
+The reasons for retraction include errors in analyses, data errors, and errors in results and/or conclusions. The retraction notice released by the publisher said the publication results were invalid overall.
+
+Rule 1  by Sandve et al. - For every result, keep track of how it was produced - would be helpful in this situation because authors would have documented an analysis workflow that keeps track of all steps from getting the raw data up until reaching the results. The workflow analysis should include, at minimum, details on programs used, parameters investigated, and manual procedures, allowing the work to be reproduced in the future.
+
+2. After reading the paper by Sandve et al. describe which rule you are most likely to follow and why, and which rule you find the hardest to follow and will likely not (be able to) follow in your future projects.
+
+Rule 1 is the one I most likely can follow because keeping track of how results are produced is a common practice for researchers working with federal grants, for instance, as these results are usually published in quarterly reports to the funding agency while the project is progressing towards the final deliverables.
+
+Rule 10 is the hardest to follow in my research area because I work with geospatial data from private properties (farmers in the STRIPS project). I would be partially able to provide public access to scripts, runs, and results from my research data in field sites owned by Iowa State University; however, for the privacy protection of landowners, I could not release all of my data and results.
+
+
+## Submission
+
+1. Push your changes to your repository. 
+
+2. You are ready to call it good, once all your github actions pass without an error. You can check on that by selecting 'Actions' on the menu and ensure that the last item has a green checkmark. The action for this repository checks the yaml of your contribution for the existence of the author name, a title, date and categories. Don't forget the space after the colon!
+Once the action passes, the badge along the top will also change its color accordingly. 
+As of right now, the status for the YAML front matter is:
+
+![Frontmatter check](https://github.com/Stat585-at-ISU/blog-5-kellynay/actions/workflows/check-yaml.yaml/badge.svg)
+
+
+```
+---
+author: "Kelly Nascimento Thompson"
+title: "Rules for Research Reproducibility"
+date: "2023-02-23"
+categories: "Ethics and Reproducibility..."
+---
+```
+
+
+
