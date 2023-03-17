@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Who wrote this">
-<meta name="dcterms.date" content="2023-03-23">
+<meta name="author" content="Muxin Hua">
+<meta name="dcterms.date" content="2023-02-23">
 
-<title>Stat 585 - Make your own website – Prompt 8</title>
+<title>Stat 585 - Retraction</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -129,11 +129,6 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#prompt" id="toc-prompt" class="nav-link active" data-scroll-target="#prompt">Prompt:</a></li>
-  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions:</a>
-  <ul class="collapse">
-  <li><a href="#simple-rmarkdown-site" id="toc-simple-rmarkdown-site" class="nav-link" data-scroll-target="#simple-rmarkdown-site">Simple RMarkdown Site</a></li>
-  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a></li>
-  </ul></li>
   <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
   </ul>
 </nav>
@@ -143,10 +138,9 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Make your own website – Prompt 8</h1>
+<h1 class="title">Retraction</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">My professional self</div>
-    <div class="quarto-category">Prompt</div>
+    <div class="quarto-category">Ethics and Reproducibility…</div>
   </div>
   </div>
 
@@ -157,14 +151,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Who wrote this </p>
+             <p>Muxin Hua </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 23, 2023</p>
+      <p class="date">February 23, 2023</p>
     </div>
   </div>
   
@@ -174,71 +168,50 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/Stat585-at-ISU/blog-5-Hiiiua/actions/workflows/check-yaml.yaml/badge.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Frontmatter check</figcaption><p></p>
+</figure>
+</div>
 <section id="prompt" class="level2">
 <h2 class="anchored" data-anchor-id="prompt">Prompt:</h2>
-<p>GitHub is an incredibly useful tool for project management and collaboration. It also has several useful features for professional promotion: you can host your own site on github using <a href="https://pages.github.com/">GitHub pages</a>, describe yourself using a GitHub developer profile, and even use <a href="http://resume.github.io/">resume.github.io</a> to generate a resume summary of your activity on GitHub (you must opt-in by <a href="https://github.com/resume/resume.github.com">starring the project page</a>).</p>
-<p>posit and the associated package infrastructure provide multiple ways to generate websites using Quarto (or Rmarkdown). You can complete this assignment using one of two options:</p>
-<ul>
-<li><p>Simple RMarkdown websites<br>
-For more information about simple R Markdown websites, please read the documentation at https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html. Simple R Markdown sites are <em>not</em> based on <strong>blogdown</strong>. They are probably good for websites with only a few Rmd documents.</p></li>
-<li><p><a href="https://quarto.org/docs/websites/">Quarto</a><br>
-For larger-scale and more sophisticated websites (such as blogs), you may want to use <strong>Quarto</strong> instead: https://quarto.org/docs/websites/.</p></li>
-</ul>
-</section>
-<section id="instructions" class="level2">
-<h2 class="anchored" data-anchor-id="instructions">Instructions:</h2>
+<p>In May 2015 Science retracted - without consent of the lead author - a paper on how canvassers can sway people’s opinions about gay marriage, see also: http://www.sciencemag.org/news/2015/05/science-retracts-gay-marriage-paper-without-agreement-lead-author-lacour The Science Editor-in-Chief cited as reasons for the retraction that the original survey data was not made available for independent reproduction of results, that survey incentives were misrepresented and that statements made about sponsorships turned out to be incorrect.<br> The investigation resulting in the retraction was triggered by two Berkeley grad students who attempted to replicate the study and discovered that the data must have been faked.</p>
+<p><a href="https://fivethirtyeight.com/features/how-two-grad-students-uncovered-michael-lacour-fraud-and-a-way-to-change-opinions-on-transgender-rights/">FiveThirtyEight</a> has published an article with more details on the two Berkeley students’ work.</p>
+<p>Malicious changes to the data such as in the LaCour case are hard to prevent, but more rigorous checks should be built into the scientific publishing system. All too often papers have to be retracted for unintended reasons. <a href="https://retractionwatch.com/">Retraction Watch</a> is a data base that keeps track of retracted papers (see the related <a href="https://www.sciencemag.org/news/2018/10/what-massive-database-retracted-papers-reveals-about-science-publishing-s-death-penalty">Science magazine</a> publication).</p>
+<p>Read the paper <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285">Ten Simple Rules for Reproducible Computational Research</a> by Sandve et al.</p>
+<p>Write a blog post addressing the questions:</p>
 <ol type="1">
-<li><p>Create a new GitHub repository named <code>&lt;your-username&gt;.github.io</code> (replacing “<your-username>” with your GitHub username). Initialize this repo with a readme.</your-username></p></li>
-<li><p>Set up your website using either the Simple Markdown Site or the Quarto instructions below. If you would like to use this repository to host a blog, you may find Quarto to be a more convenient option, however, it is (just a bit) more complicated than the simple Rmarkdown site.</p></li>
-<li><p>Write about you experience – and link to your new website!</p></li>
+<li>Pick one of the papers from Retraction Watch that were retracted because of errors in the paper (you might want to pick a paper from the set of featured papers, because there are usually more details available). Describe what went wrong. Would any of the rules by Sandve et al.&nbsp;have helped in this situation?<br>
+The article <a href="https://link.springer.com/article/10.1007/s13311-020-00878-7">The Antidiabetic Metformin as an Adjunct to Antidepressants in Patients with Major Depressive Disorder: A Proof-of-Concept, Randomized, Double-Blind, Placebo-Controlled Trial</a> has been distracted. Data in this article have oddities, like uncommon exactly differed by one of the numbers of patients experienced adverse event. The data is also suspicious in the way of glaring similarity to the numbers in a clinic trial of another add-on drug published by the same author.</li>
 </ol>
-<p>To get full marks for this blog post, you should modify your site beyond the default template files, adding at least some content that is unique to you - packages you find interesting, sites you enjoy, projects you have worked on, a page with your CV, etc.</p>
-<section id="simple-rmarkdown-site" class="level3">
-<h3 class="anchored" data-anchor-id="simple-rmarkdown-site">Simple RMarkdown Site</h3>
-<ol type="1">
-<li><p>Use RStudio and set up a new project on your machine linked to the GitHub repository you just created.</p></li>
-<li><p>Create two files in your project folder:</p>
-<ul>
-<li><p><code>_site.yml</code>:</p>
-<pre><code>name: "my-website"
-output_dir: "."
-navbar:
-  title: "My Website"
-  left:
-    - text: "Home"
-      href: index.html</code></pre></li>
-<li><p><code>index.Rmd</code></p>
-<pre><code>---
-title: "My Website"
----
-
-Hello, Website!</code></pre></li>
-</ul></li>
-<li><p>Use the commmand <code>rmarkdown::render_site()</code> to build your website (Or click the “Build Website” button under the Build tab in RStudio). This command will compile any R markdown document in the main project directory to HTML (even if it is not mentioned in <code>_site.yml</code>).</p></li>
-<li><p>Push your site to GitHub. In this instance, you want to include the HTML files that were rendered, the <code>site_libs</code> directory, the <code>_site.yml</code> file used to configure the build process, and the Rmd files used to render the HTML files.</p></li>
-<li><p>Customize your site. Remember to use the command <code>rmarkdown::render_site()</code> before you push your changes so that the HTML is updated!</p>
-<ul>
-<li>Modify <code>_site.yml</code> to update the header structure, add links to other files, etc.</li>
-<li>Modify <code>index.Rmd</code> to add content to the landing page of your site. You might think about including a link to your CV on this page.</li>
-<li>Add new Rmd files to add new pages to your site. Consider adding a page describing your favorite packages, or pages for different projects you’ve worked on.</li>
-</ul></li>
+<p>I think the first two basic rules from Sandve et al might help.<br>
+<em>Rule 1: For every result, keep track of how it was produced</em>. and <em>Rule 2: Avoid manual data manipulation steps</em>.<br>
+For the author of the retracted article, being honest about the source of the data is the key of avoiding such situation. Even though the data looked like highly impossible and coincidental, it still validate the experiment if it’s not fallacy in how it’s produced. If the real data is not idea, stay away from manipulation and reporting what they have.</p>
+<ol start="2" type="1">
+<li>After reading the paper by Sandve et al.&nbsp;describe which rule you are most likely to follow and why, and which rule you find the hardest to follow and will likely not (be able to) follow in your future projects.<br>
+Rule 1 and 2 are the most likely to follow rules for me, because they are the foundations of data analysis. I would also follow rule 4. I find tracking version by Git is easy and helps reducing time if I need to look back to whatever I did previously. Rule 7 and 10 are also important: including raw data with plots and open source to public, getting ready to be inspected are important for result reproduction.</li>
 </ol>
-</section>
-<section id="quarto" class="level3">
-<h3 class="anchored" data-anchor-id="quarto">Quarto</h3>
-<ol type="1">
-<li><p>Install/Update the <code>quarto</code> package (<code>install.packages("quarto")</code>)</p></li>
-<li><p>Create a new folder where you will store your blog and the rendered site.</p></li>
-<li><p>Use RStudio to create a new project inside the folder you created in step 2. Select either the Option “Quarto Website” or “Quarto Blog” as the project type.</p></li>
-<li><p>Follow the Quick Start instructions on https://quarto.org/docs/websites/ or https://quarto.org/docs/websites/website-blog.html to create your website.</p></li>
-<li><p>For publishing your website, follow the steps described under <a href="https://quarto.org/docs/publishing/github-pages.html">Github Pages</a>. You can try to build the site automatically, but fair warning: I went back to build to docs and render the site myself.</p></li>
-<li><p>VERY IMPORTANT. Open the “username.github.io” project. Add a text file named “.nojekyll” (the file should be empty). This tells GitHub not to build the pages with Jekyll (another rendering engine) and instead render pages built with Quarto.</p></li>
-</ol>
-</section>
+<p>I do find rule 5 hard to follow. Recording all the intermediate results and possible in standardized formats are time costly and storage costly, especially there are times finding intermediate results are flaw and deficient. Rule 6 is hard to follow in terms of habit. In a consistent analysis, it’s a normal and necessary to set random seed to keep track of the results and to make sure they are done in the correct way. So it is hard to remember all the steps with randomness, but this is a good reminder. Rule 9 is hard to follow because it’s an advance rule of rule 5.If I can follow rule 5 strictly, I would like to take some notes of textual interpretation, but details would be too time consuming.</p>
 </section>
 <section id="submission" class="level2">
 <h2 class="anchored" data-anchor-id="submission">Submission</h2>
-<p>Describe your experience the <code>README.Rmd</code> of the blog-8 repo. Don’t forget to link to your website! Push the blog post to your blog-8 repo. Make sure that all of the checks are passing.</p>
+<ol type="1">
+<li><p>Push your changes to your repository.</p></li>
+<li><p>You are ready to call it good, once all your github actions pass without an error. You can check on that by selecting ‘Actions’ on the menu and ensure that the last item has a green checkmark. The action for this repository checks the yaml of your contribution for the existence of the author name, a title, date and categories. Don’t forget the space after the colon! Once the action passes, the badge along the top will also change its color accordingly. As of right now, the status for the YAML front matter is:</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/Stat585-at-ISU/Blog-5/actions/workflows/check-yaml.yaml/badge.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Frontmatter check</figcaption><p></p>
+</figure>
+</div>
+<pre><code>---
+author: "Your Name"
+title: "Specify your title"
+date: "2023-02-23"
+categories: "Ethics and Reproducibility..."
+---</code></pre>
 
 
 </section>

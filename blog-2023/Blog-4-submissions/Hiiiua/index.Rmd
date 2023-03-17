@@ -1,8 +1,8 @@
 ---
-author: "Firstname Lastname"
-title: "Title of your post"
-categories: Split-apply-combine
-date: 2023-02-16
+author: "Muxin Hua"
+title: "Split Apply Combine"
+category: Split-apply-combine
+date: 2022-02-16
 output: github_document
 ---
 
@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-## Prompt:
+## Prompt: 
 
 The `plyr` package has by now been replaced by other, even faster
 packages, but the idea of *Split, apply, combine* is as relevant as
@@ -32,10 +32,27 @@ Write a blog post addressing the following questions:
     (such as `dlply` or `ddply`, ...) and rewrite the example using
     functionality from the package `dplyr`. Make sure that your example
     works and the results are identical.
+```{r}
+library(plyr)
+baseball <- baseball
+baseball1 <- ddply(baseball, .(id), transform, cyear = year - min(year) + 1)
+head(baseball1, 10)
+```
+
+```{r}
+options(dplyr.width = Inf)
+library(dplyr)
+basketball2 <- baseball %>% group_by(id) %>% mutate(cyear = year-min(year)+1) %>% arrange(id)
+head(basketball2, 10)
+```
 
 2.  Which (base R) functions do you know that support the
     split-apply-combine strategy? In your opinion, are these sufficient?
-    State why or why not?
+    State why or why not?       
+    The first function came into my mind is `apply`, because I can always write a function to fulfill the requirement. In terms of writing functions to complete tasks, `apply` is sufficient, but it's time consuming and low efficient. It has to apply the function many times, store the result before writing it into the dataframe. Besides, users have to write function on their own, which also increases the time cost and risk of raising bugs.        
+     
+     Operations in **dplyr** have different ways of completing tasks in terms of different objects (array, vector, list ect.). These nicely designed data structure save both time and space, which makes the split-apply-combine strategy efficiently implemented.
+     
 
 3. The ChatGPT response to the prompt "Describe the split-apply-combine paradigm" is given below. Generally, the chatbot's answers are decent. ChatGPT does have problems getting details right. Which details would you change in the response? 
 
@@ -48,10 +65,11 @@ Write a blog post addressing the following questions:
 >
 > Combine: The results of the operation applied to each group are then combined and returned as a single output.
 >
-> The split-apply-combine paradigm is particularly useful in cases where the data cannot be analyzed as a whole and instead must be analyzed in smaller, more manageable chunks. This allows for more efficient data processing and improved scalability. The paradigm is commonly implemented using tools such as the "groupby" function in the R and Python programming languages, and the "dplyr" library in R.
-
+> The split-apply-combine paradigm is particularly useful in cases where the data cannot be analyzed as a whole and instead must be analyzed in smaller, more manageable chunks. This allows for more efficient data processing and improved scalability. The paradigm is commonly implemented using tools such as the "groupby" function in the R and Python programming languages, and the "dplyr" library in R.    
+    
+I think chatGPD got most of the part right except `groupby` is a function in Python does the grouping work, `group_by` is the function in R does the same work.
 
 You can write your answers directly the `README.Rmd` file. 
 Make sure that the file knits (you will need to activate any packages your use in your code chunks with a call to `library(xxx)`, where xxx is the name of the package, such as `plyr` ).
-Commit your changes and push to your repo;  add any files in the `README_files` directory to your repository. 
+Commit your changes and push to your repo;  add any files in the `README_files` directory to your repository.  
 
