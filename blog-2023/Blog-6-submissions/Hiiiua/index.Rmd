@@ -1,4 +1,8 @@
 ---
+author: "Muxin Hua"
+title: "More on reproducibility"
+categories: "More on reproducibility..."
+date: "2023-03-02"
 output: github_document
 ---
 
@@ -12,7 +16,7 @@ What happens when we change the Rmd file and commit?
 
 In Blog 5 you had the first exposure to Github Actions. 
 We just checked frontmatter compliance (as we do for this round).
-You see that we have added a second action - here, we are converting the Rmarkdown document to a markdown file by running `render_rmarkdown` on Github. This action passes successfully for this document. We want to do something similar for blog #4.
+You see that we have added a second action - here, we are converting the Rmarkdown document to a markdown file by running `render_rmarkdown` on Github. This action passes successfully for this document. We want to do something similar for blog #4. 
 
 
 Now start reading ...
@@ -36,8 +40,10 @@ Then do:
 Write a blog post addressing the following questions: 
 
 1. **What is the idea of the renv package?**
+`renv` package is an effort to manage R dependency in terms of project. It creates project specific R dependencies by initializing command and keeps track of version upgrades and new installations by snapshot. In such a way, it is easier for developer to trace and reset if needed. It's also easier for anyone accesses the code to reproduce.
 
 2. **In 50 to 100 words describe your experience working with `renv`. What went well? What did not go so well?**
+Installing `renv` was smooth and initializing was convenient to keep track of all the dependencies, except the `render-rmarkdown` kept complaining about `there is no package called rmarkdown`. I searched stackflow, one of the answers mentioned "making sure rmarkdown is included in .lock file'. I went to the lock file but couldn't find `rmarkdown`, which I'm sure I have installed it and took a snapshot. I check the status by `renv::status()` finding there were packages upgraded haven't been recorded, one of them was `rmarkdown`, so I did snapshot again, touched little on `README.Rmd` to trigger github action and pushed it with updated `.lock` file, passed the action eventually. 
  
 
 Submit this blog post to your blog-6 repo. 

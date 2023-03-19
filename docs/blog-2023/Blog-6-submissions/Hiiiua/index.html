@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Muxin Hua">
+<meta name="dcterms.date" content="2023-03-02">
 
-<title>Stat 585 – index</title>
+<title>Stat 585 - More on reproducibility</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -127,7 +129,37 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">More on reproducibility</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">More on reproducibility…</div>
+  </div>
+  </div>
 
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Muxin Hua </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 2, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <!-- badges: start -->
@@ -146,8 +178,8 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <p>Write a blog post addressing the following questions:</p>
 <ol type="1">
-<li><p><strong>What is the idea of the renv package?</strong></p></li>
-<li><p><strong>In 50 to 100 words describe your experience working with <code>renv</code>. What went well? What did not go so well?</strong></p></li>
+<li><p><strong>What is the idea of the renv package?</strong> <code>renv</code> package is an effort to manage R dependency in terms of project. It creates project specific R dependencies by initializing command and keeps track of version upgrades and new installations by snapshot. In such a way, it is easier for developer to trace and reset if needed. It’s also easier for anyone accesses the code to reproduce.</p></li>
+<li><p><strong>In 50 to 100 words describe your experience working with <code>renv</code>. What went well? What did not go so well?</strong> Installing <code>renv</code> was smooth and initializing was convenient to keep track of all the dependencies, except the <code>render-rmarkdown</code> kept complaining about <code>there is no package called rmarkdown</code>. I searched stackflow, one of the answers mentioned “making sure rmarkdown is included in .lock file’. I went to the lock file but couldn’t find <code>rmarkdown</code>, which I’m sure I have installed it and took a snapshot. I check the status by <code>renv::status()</code> finding there were packages upgraded haven’t been recorded, one of them was <code>rmarkdown</code>, so I did snapshot again, touched little on <code>README.Rmd</code> to trigger github action and pushed it with updated <code>.lock</code> file, passed the action eventually.</p></li>
 </ol>
 <p>Submit this blog post to your blog-6 repo.</p>
 

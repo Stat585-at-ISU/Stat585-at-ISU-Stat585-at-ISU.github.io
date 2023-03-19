@@ -1,8 +1,5 @@
 ---
-author: "Denise Bradford"
-title: "Reproducibility2"
-date: "2023-03-02"
-categories: "More on reproducibility..."
+output: github_document
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -60,3 +57,4 @@ If we wanted to reproduce the same actions in Python, one will need to have a Li
  
 
 Submit this blog post to your blog-6 repo. 
+

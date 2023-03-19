@@ -45,7 +45,34 @@ Write a blog post addressing the following questions:
 
 1.  **What is the idea of the renv package?**
 
+Denise’s Answer:
+
+The idea of the `renv` package is a tool for managing packages in R that
+helps with managing dependencies, making projects repeatable, and
+working together on R projects. It lets users set up and manage separate
+environments for each project. These environments have all the R
+packages and versions needed to run the project. This keeps packages and
+versions from getting in the way of each other, which can lead to
+errors.
+
 2.  **In 50 to 100 words describe your experience working with `renv`.
     What went well? What did not go so well?**
+
+Denise’s Answer:
+
+- The Good:
+
+Since I will be working more in Python during the class, it may be
+useful to show that `renv` in R works with Python environments
+(<https://cran.r-project.org/web/packages/renv/vignettes/python.html>).
+It’s great to know that we can do this when completing a project that
+may need both Python and R elements.
+
+- The Bad:
+
+If we wanted to reproduce the same actions in Python, one will need to
+have a Linux computer. The following is from a beta package
+(<https://pypi.org/project/renv/>) that may be used for a similiar
+outcome in R. I can’t be completely sure since I work with a Mac.
 
 Submit this blog post to your blog-6 repo.

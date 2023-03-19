@@ -1,3 +1,7 @@
+More on reproducibility
+================
+Muxin Hua
+2023-03-02
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <!-- badges: start -->
@@ -43,9 +47,24 @@ Then do:
 
 Write a blog post addressing the following questions:
 
-1.  **What is the idea of the renv package?**
+1.  **What is the idea of the renv package?** `renv` package is an
+    effort to manage R dependency in terms of project. It creates
+    project specific R dependencies by initializing command and keeps
+    track of version upgrades and new installations by snapshot. In such
+    a way, it is easier for developer to trace and reset if needed. It’s
+    also easier for anyone accesses the code to reproduce.
 
 2.  **In 50 to 100 words describe your experience working with `renv`.
-    What went well? What did not go so well?**
+    What went well? What did not go so well?** Installing `renv` was
+    smooth and initializing was convenient to keep track of all the
+    dependencies, except the `render-rmarkdown` kept complaining about
+    `there is no package called rmarkdown`. I searched stackflow, one of
+    the answers mentioned “making sure rmarkdown is included in .lock
+    file’. I went to the lock file but couldn’t find `rmarkdown`, which
+    I’m sure I have installed it and took a snapshot. I check the status
+    by `renv::status()` finding there were packages upgraded haven’t
+    been recorded, one of them was `rmarkdown`, so I did snapshot again,
+    touched little on `README.Rmd` to trigger github action and pushed
+    it with updated `.lock` file, passed the action eventually.
 
 Submit this blog post to your blog-6 repo.
