@@ -1,0 +1,9 @@
+Type: project
+Description: STAT585_blog-7-anphan0828
+Depends:
+  rmarkdown,
+  desc,
+  dplyr,
+  pkgnet,
+  renv,
+  usethis

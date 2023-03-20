@@ -1,0 +1,64 @@
+---
+title: "Licensing Blog"
+author:  "AR"
+date: "2023-03-09"
+categories: "All that legal stuff..."
+---
+
+
+
+---
+output:
+  html_document: default
+  github_document: default
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+[![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)
+[![Render rmarkdown](../../actions/workflows/render-rmarkdown.yaml/badge.svg)](../../actions/workflows/render-rmarkdown.yaml)
+<!-- badges: end -->
+  
+
+## Prompt:
+
+The `DESCRIPTION` file of a package contains the package's meta information. Most of the fields in this file are quite straight forward: author, version number, and a short package description. When you call `library(help="<package name>")` for  package `<package name>` you can see the contents of the `DESCRIPTION` file for that package (and some parts of the `NAMESPACE` file).
+
+Read through Colin Fay's (short) book on [Licensing R](https://thinkr-open.github.io/licensing-r/)
+
+Write a blog post addressing the following questions: 
+
+### Under what license does R operate? What is the license for ggplot2?
+
+R is licensed as GNU General Public License. R as a package is licensed under GPL-2 | GPL-3. The ggplot2 license is MIT + file LICENSE. 
+
+
+### What are the dependencies of the package you made?
+
+library(lubridate, quietly = TRUE)   GPL (>= 2)
+library(tabulizer)    MIT + file LICENSE
+library(tidyverse, quietly = TRUE)   MIT + file LICENSE
+library(stringr)  MIT + file LICENSE
+
+Are packages we used. 
+
+Under which license should this blog post be published? Make sure that you are using an appropriate license. 
+I would use MIT + file LICENSE because it does not matter if someone modifies anything. 
+
+### Can I publish an R package on CRAN under an MIT license when I have a dependency on a package that is licensed under GPL-3?
+
+I would say yes you can publish a package on CRAN under an MIT license but it might not be technically following the rules. 
+
+The 'harping' questions:
+
+- Is it legal to publish an R package on CRAN under an MIT license when I have a dependency on a package that is licensed under GPL-3?
+No?
+- Is it illegal to publish an R package on CRAN under an MIT license when I have a dependency on a package that is licensed under GPL-3?
+No?
+- Is it a copyright infringement to publish an R package on CRAN under an MIT license when I have a dependency on a package that is licensed under GPL-3?
+Yes
+- Can I publish an R package on CRAN under an MIT license when I have a dependency on a package that is licensed under GPL-3 without infringing copyright?
+No
+
+The licensing was a little confusing. It almost sounds like it isn't very explicitly defined so it isn't legal, but also not illegal. I'm not sure I understood the licensing very well. 
+

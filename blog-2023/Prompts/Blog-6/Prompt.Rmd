@@ -53,3 +53,5 @@ Write a blog post addressing the following questions:
 
 Submit this blog post to your blog-6 repo. 
 
+Additional resources in case you get stuck: 
+https://www.youtube.com/watch?v=GwVx_pf2uz4&ab_channel=PositPBC

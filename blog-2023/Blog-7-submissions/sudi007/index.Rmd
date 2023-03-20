@@ -1,0 +1,187 @@
+---
+author: "Sudesh Bhagat"
+title: "All that legal stuff"
+date: "2023-03-09"
+categories: "All that legal stuff..."
+output:
+  github_document: default
+  html_document: default
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+[![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)
+[![Render rmarkdown](../../actions/workflows/render-rmarkdown.yaml/badge.svg)](../../actions/workflows/render-rmarkdown.yaml)
+<!-- badges: end -->
+  
+
+## Prompt:
+
+The `DESCRIPTION` file of a package contains the package's meta information. Most of the fields in this file are quite straight forward: author, version number, and a short package description. When you call `library(help="<package name>")` for  package `<package name>` you can see the contents of the `DESCRIPTION` file for that package (and some parts of the `NAMESPACE` file).
+
+Read through Colin Fay's (short) book on [Licensing R](https://thinkr-open.github.io/licensing-r/)
+
+```{r}
+#library(devtools)
+#library(tools)
+#library(pkgnet)
+#library(ggplot2)
+```
+
+
+Write a blog post addressing the following questions: 
+
+### Under what license does R operate? What is the license for ggplot2?
+R operates under the GNU General Public License, either Version 2, June 1991, or Version 3, June 2007. The GNU General Public License is a free-for-all license for software and other creative work. Under this license, users can not only use the software but also modify and distribute it as long as all the changes are made as part of the same license. The R-package, ggplot2, also operates under the GNU General Public License version 2.
+
+### What are the dependencies of the package you made?
+The dependencies of the the package that was made for lab 3 are 
+tabulizer, tidyr, dplyr, tibble, lubridate, RCurl
+
+
+The following is the package description
+This is the description file for the lab 3 our group created 
+Package: Team3
+Title: Reading Ames Police Presslogs
+Version: 0.0.0.9000
+Authors@R: 
+    person("Sabrena", "Rutledge", , "sabrenar@iastate.edu", role = c("aut", "cre"))
+Description: Convert Ames Police Presslogs from pdf to dataframes.  It
+    could also have some functions, but for now all it has is some data.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Depends: 
+    R (>= 2.10)
+Import: tabulizer, tidyr, dplyr, tibble, lubridate, RCurl
+Remotes: 
+    github::ropensci/tabulizer
+LazyData: true
+LitrVersionUsed: 0.8.0
+LitrId: b446015960e43bc7c5ae99da41fc132b
+
+
+Read through [chapter 5.2 of Licensing R](https://thinkr-open.github.io/licensing-r/practical.html#dependencies-exploration). Combine and adjust the code pieces to create the dependencies for a package that is on github rather than CRAN. (Don't forget about the package `desc`.) 
+#installing a github package
+```{r}
+# Install devtools package if not installed
+#install.packages("devtools")
+#devtools::install_github("tidyverse/ggplot2",force = TRUE)
+#remotes::install_github("tidyverse/ggplot2",force = TRUE)
+
+```
+
+
+
+
+```{r,eval=FALSE}
+# Get dependencies of ggplot2
+package_dependencies("ggplot2", which = "all")
+#devtools::session_info("ggplot2")
+```
+ggplot2
+
+ [1] "cli"           "glue"          "grDevices"     "grid"          "gtable"        "isoband"      
+ 
+ [7] "lifecycle"     "MASS"          "mgcv"          "rlang"         "scales"        "stats"        
+
+[13] "tibble"        "vctrs"         "withr"         "covr"          "dplyr"         "ggplot2movies"
+
+[19] "hexbin"        "Hmisc"         "knitr"         "lattice"       "mapproj"       "maps"         
+
+[25] "maptools"      "multcomp"      "munsell"       "nlme"          "profvis"       "quantreg"     
+
+[31] "ragg"          "RColorBrewer"  "rgeos"         "rmarkdown"     "rpart"         "sf"           
+
+[37] "svglite"       "testthat"      "vdiffr"        "xml2"          "sp"
+
+```{r}
+desc <- packageDescription("ggplot2")
+desc
+```
+
+#What dependencies does the package have that you created for Lab-3? 
+
+The dependencies the package that was created in lab 3 is tabulizer, tidyr, dplyr, tibble, lubridate, and  RCurl package
+
+#Which licenses are involved? 
+
+#for the package
+
+for the package created in lab 3  MIT + file license
+
+#for the dependencies 
+
+Information for tabulizer package:"MIT + file LICENSE"
+
+Information for tidyr package:"MIT + file LICENSE"
+
+Information for dplyr package:"MIT + file LICENSE"
+
+Information for tibble package:"MIT + file LICENSE"
+
+Information for lubridate package:"GPL (>= 2)"
+
+Information for RCurl package:"BSD_3_clause + file LICENSE"
+
+#Are all of these dependencies required? Elaborate.
+
+yes all of these dependencies are required as they are the part of the analysis and the functions that are created within the package requires these dependencies 
+
+#Under which license should this blog post be published?
+
+This blog should be published under the CC0 (Creative Commons Zero) license. CC0 ensures open access to all the creative work such as written pieces, painting, and music, among others. Open access means that the creator has waived all copyright on their work, allowing users to modify, re-create and distribute it without any restriction. However, as CC0 is termed as a public domain dedication, it is outside the purview of the regular open-source licenses such as GPL and MIT.
+
+Make sure that you are using an appropriate license. (You can change the current licenses with the help of commands from the `use_license_XXX` family in the `usethis` package)
+
+### Can I publish an R package on CRAN under an MIT license when I have a dependency on a package that is licensed under GPL-3?
+
+When confronted with the above question, ChatGPT gave two -- quite different -- responses, as shown below. 
+The main point in both responses is 'your package may be considered  derivative work'. At the specific problem of the package developed for Lab 3, what is your opinion about potential copyright infringements when releasing the package with an MIT license? Make sure to take the relevant passage in Colin Fay's book under consideration.
+
+```
+The legal implications of publishing an R package on CRAN under an MIT license while having a dependency on a package that is licensed under GPL-3 are complex and can vary depending on the specific circumstances. It is always advisable to seek legal advice from a licensed attorney if you have any doubts or concerns about licensing issues.
+
+However, in general, it is possible to publish an R package on CRAN under an MIT license when you have a dependency on a package that is licensed under GPL-3. This is because the MIT license is a permissive open-source license that allows for more flexibility in how the software can be used and distributed, and it is generally considered compatible with the GPL-3 license.
+
+That being said, if your package depends on a GPL-3-licensed package, your package may be considered a derivative work and therefore subject to the terms of the GPL-3 license. This means that if you distribute your package, you may need to also distribute the source code for your package under the GPL-3 license or a compatible license, and you may need to ensure that the requirements of the GPL-3 license are met for the entire distribution, including any dependencies.
+
+It is also worth noting that the R community has its own guidelines and recommendations for package licensing, and it is important to comply with these guidelines if you want to publish your package on CRAN. The CRAN Repository Policy states that packages should have a "permissive" or "GPL-compatible" license, but does not explicitly require that packages use the GPL license or any other specific license.
+
+In summary, while it is possible to publish an R package on CRAN under an MIT license while having a dependency on a package that is licensed under GPL-3, it is important to understand the implications of the different licenses and to ensure that you comply with any applicable guidelines and recommendations from the R community.
+```
+
+After harping a bit on copyright infringement in general, ChatGPT changed its response to
+
+```
+Technically, you can publish an R package on CRAN under an MIT license when you have a dependency on a package that is licensed under GPL-3, but doing so would not be compliant with the terms of the GPL-3 license.
+
+The GPL-3 license is a strong copyleft license that requires derivative works to be released under the same license. If your package depends on a GPL-3-licensed package, your package may be considered a derivative work and therefore must be licensed under the GPL-3 license or a compatible license.
+
+The MIT license, on the other hand, is a permissive license that allows for more flexibility in how the software is used and distributed. However, it is not compatible with the GPL-3 license, and therefore cannot be used for derivative works of GPL-3-licensed software.
+
+Publishing an R package on CRAN under an MIT license when you have a dependency on a package that is licensed under GPL-3 would be a licensing violation, and could potentially result in legal action or other consequences. It is important to comply with the licensing requirements of all dependencies in your package to avoid any legal issues.
+```
+
+The 'harping' questions:
+
+- Is it legal to publish an R package on CRAN under an MIT license when I have a dependency on a package that is licensed under GPL-3?
+
+- Is it illegal to publish an R package on CRAN under an MIT license when I have a dependency on a package that is licensed under GPL-3?
+
+- Is it a copyright infringement to publish an R package on CRAN under an MIT license when I have a dependency on a package that is licensed under GPL-3?
+
+- Can I publish an R package on CRAN under an MIT license when I have a dependency on a package that is licensed under GPL-3 without infringing copyright?
+
+#summary of all the above  questions
+
+
+Here’s a common answer to all the “harping” questions. According to the book, it is legal to publish an R package on CRAN under an MIT license when I have a dependency on a package that is licensed under GPL-3. However, there are certain considerations that one needs to be aware of. First of all, the MIT license is permissible license, which means that it has no restrictions on the use, modification, and distribution of the software. On the other hand, the GPT-3 license is a copyleft license which requires that any software distributed is also licensed under GPT-3.Considering these requirements, even if a code under a permissible license such as MIT combined with one that uses a GPT-3 license, it must meet the requisites of the stricter GPT-3 license. 
+
+
+
+## Submission
+
+Write answers to the questions directly into the file `README.Rmd`. Push the blog post to your blog-7 repo. Make sure that all of the checks are passing.
+
