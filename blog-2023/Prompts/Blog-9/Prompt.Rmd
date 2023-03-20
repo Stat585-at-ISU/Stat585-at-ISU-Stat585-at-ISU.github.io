@@ -1,0 +1,22 @@
+---
+author: "Who wrote this"
+title: "Fix a thing -- Prompt 8"
+categories: 
+  - "Errors and warnings in packages"
+  - Prompt
+date: 2023-03-30
+---
+
+## Prompt:
+
+This blog prompt is extremely simple: fix one of the problems in one of our community packages at `https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all`, and write about it. 
+
+## Instructions:
+
+What we want to know is the **exact** warning or error message of the item you fixed, and a description of what you did, also as specific as possible. 
+
+
+## Submission
+
+Push the blog post to your blog-9 repo. Make sure that the yaml-front-matter check passes.
+
