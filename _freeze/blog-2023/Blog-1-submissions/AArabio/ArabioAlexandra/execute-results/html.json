@@ -1,0 +1,14 @@
+{
+  "hash": "2bcb3eb08d92ea16c18a0219917bddc6",
+  "result": {
+    "markdown": "---\nauthor: Alexandra Arabio\ndate: 2023-01-26\ncategories: \"Asking Good Questions\"\ntitle: Asking Good Questions\n---\n\n\n## Prompt:\n\nAsking good questions is a valuable skill to have - asking questions in an online setting is both easier and harder than asking questions in person: we can prepare to ask a question but we are also expected to prepare.\nThe links posted here give some advice on how to ask good questions:\n\n- stackoverflow's [Asking a good question](http://stackoverflow.com/help/how-to-ask)\n\n- R's [Posting guidelines](https://www.r-project.org/posting-guide.html)\n\n- [minimal complete verifiable example](https://stackoverflow.com/help/mcve), [minimal reproducible example](https://www.tidyverse.org/help/)\n\nFollow these links and read through the advice given, then\n\n1. **Pick at least one question from stackoverflow or the R help and answer it.**\n\nWrite a blog post answering the following questions: \n\n2. **Document which question you answered (link to your answer).**\n\n[Link to question](https://stackoverflow.com/questions/2564258/plot-two-graphs-in-same-plot-in-r)\n\nAnswer: Once using the plot function you are building the base for your figure. To be able to add to that initial figure you can use the lines() function or the points() to add any addition data information to that plot.\n\nGiven your data, you could use the following code to accomplish your task.\n\n`{r}\nx  <- seq(-2, 2, 0.05)\ny1 <- pnorm(x)\ny2 <- pnorm(x, 1, 1)\nplot(x, y1, type = \"l\", col = \"red\")\nplot(x, y2, type = \"l\", col = \"green\")\n\n\nplot(x, y1, type = \"l\", col = \"red\") +\nlines(x, y2, type = \"l\", col = \"green\")\n```\nThis will produce the following figure. \n\n<img width=\"1031\" alt=\"Solution\" src=\"https://user-images.githubusercontent.com/100876336/214467489-4c7af004-e517-4576-84ee-10448abe476f.png\">\n\n3. **Relate your experience of answering the question to your reading. **\n\nFrom the Stack Overflow 'How do I ask a good question?', it discussed how it is easier to provide answers to questions when they are summarized, specific, and reproducible. Because of this, I kpet these in mind when searching for questions to answer. I found a question that was to the point in what they needed to accomplish and provided simple data to work with as an example. Following the advice from Stack overflow 'How to create a Minimal, Reproducible Example' I started from scratch on my own device and broke the question into simple, traceable steps. \n\n<!--Go to [https://github.com/Stat585-at-ISU/blog](https://github.com/Stat585-at-ISU/blog) for instructions about how to prepare and submit your blog post.-->\nInstructions to follow.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

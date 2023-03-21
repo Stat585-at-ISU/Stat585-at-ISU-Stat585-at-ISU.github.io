@@ -1,0 +1,14 @@
+{
+  "hash": "6edd2020a7be40a4dddbd89e7b7cce31",
+  "result": {
+    "markdown": "---\nauthor: \"Landon Getting\"\ntitle: \"Exploring renv\"\ncategories: \"More on reproducibility...\"\ndate: \"2023-03-02\"\noutput: github_document\n---\n\n\n<!-- README.md is generated from README.Rmd. Please edit that file -->\n\n<!-- badges: start -->\n\n[![Frontmatter check](https://github.com/Stat585-at-ISU/blog-6-Landon-Getting/actions/workflows/check-yaml.yaml/badge.svg)](https://github.com/Stat585-at-ISU/blog-5/actions/workflows/check-yaml.yaml)\n[![Render rmarkdown](https://github.com/Stat585-at-ISU/blog-6-Landon-Getting/actions/workflows/render-rmarkdown.yaml/badge.svg)](https://github.com/Stat585-at-ISU/blog-5/actions/workflows/render-rmarkdown.yaml)\n\n<!-- badges: end -->\n\n## What is the idea of the renv package?\n\nThe renv package helps to alleviate pain with package management. Prior to renv, I just relied on my globally installed packages in every project, script, and .Rmd file via library(). This left me prone to package verison conflicts and reproducibility issues. With renv, I can create separate project libraries that contain the correct versions and packages for that specific project. These package libraries are shared along with the project so that other users are explicitly informed of the necessary dependencies. This is especially useful when combined with package development and distribution.\n\n## What is your experience with renv? What went well? What did not go so well?\n\nI had an overall positive experience with renv. I installed the package without any issues and the general workflow commands (renv::init() and renv:snapchat()) worked as well. Prior to utilizing the package, I watched [this short video](https://www.youtube.com/watch?v=GwVx_pf2uz4&ab_channel=PositPBC) from one of the package maintainers at Posit (RStudio at the time). It helped explain the motivations for renv and an overview of the usual workflow for the package. I would recommend watching!\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

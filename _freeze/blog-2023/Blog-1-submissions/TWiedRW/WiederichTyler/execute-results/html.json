@@ -1,0 +1,14 @@
+{
+  "hash": "ea6d31d7d9044c962c3d889649e61006",
+  "result": {
+    "markdown": "---\nauthor: Tyler Wiederich\ndate: 2023-01-26\ncategories: \"Asking Good Questions\"\ntitle: Asking Good Questions\n---\n\n\n## Prompt:\n\nAsking good questions is a valuable skill to have - asking questions in an online setting is both easier and harder than asking questions in person: we can prepare to ask a question but we are also expected to prepare.\nThe links posted here give some advice on how to ask good questions:\n\n- stackoverflow's [Asking a good question](http://stackoverflow.com/help/how-to-ask)\n\n- R's [Posting guidelines](https://www.r-project.org/posting-guide.html)\n\n- [minimal complete verifiable example](https://stackoverflow.com/help/mcve), [minimal reproducible example](https://www.tidyverse.org/help/)\n\nFollow these links and read through the advice given, then\n\n1. **Pick at least one question from stackoverflow or the R help and answer it.**\n\nWrite a blog post answering the following questions: \n\n2. **Document which question you answered (link to your answer).**\n\n[https://stackoverflow.com/questions/75197974/got-stuck-while-changing-data-format-from-wide-to-long/75242594#75242594](https://stackoverflow.com/questions/75197974/got-stuck-while-changing-data-format-from-wide-to-long/75242594#75242594)\n\n3. **Relate your experience of answering the question to your reading. **\n\nThe problem I submitted an answer for ended up being a lot easier than what everybody else was thinking. In this case, the author needed to get data from a wide format into a long format. The author provided code for the process, but did not include code for a sample dataset. This did not allow me to fully test to see if my solution worked, but the problem was within the syntax. The author was inputting a list of countries to melt with reshape2 and was missing a couple of commas. The error could be reproduced with `c(\"Var1\" \"Var2)`. I also provided a recommendation to use the `pivot_longer()` function to simplify the amount of typing (and potential typing errors).\n\n- Minimal: the code provide was quite basic, but included all columns necessary for their particular problem. However, this was actually needed in this case to solve their problem.\n\n- Complete: author did not provide the dataset, so I could not reproduce the problem directly\n\n- Reproducible: a similar syntax error gave the same result on my computer, so the problem was reproducible with my suspicion of the problem.\n \n\n<!--Go to [https://github.com/Stat585-at-ISU/blog](https://github.com/Stat585-at-ISU/blog) for instructions about how to prepare and submit your blog post.-->\nInstructions to follow.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "hash": "2428b701f97bfd7ae38c26323bac5fa9",
+  "result": {
+    "markdown": "---\nauthor: Motahareh Kashanian\ndate: 2023-01-26\ncategories: \"Asking Good Questions\"\ntitle: Asking Good Questions\n---\n\n\n## Prompt:\n\nAsking good questions is a valuable skill to have - asking questions in an online setting is both easier and harder than asking questions in person: we can prepare to ask a question but we are also expected to prepare.\nThe links posted here give some advice on how to ask good questions:\n\n- stackoverflow's [Asking a good question](http://stackoverflow.com/help/how-to-ask)\n\n- R's [Posting guidelines](https://www.r-project.org/posting-guide.html)\n\n- [minimal complete verifiable example](https://stackoverflow.com/help/mcve), [minimal reproducible example](https://www.tidyverse.org/help/)\n\nFollow these links and read through the advice given, then\n\n1. **Pick at least one question from stackoverflow or the R help and answer it.**\n\nWrite a blog post answering the following questions: \n\n2. **Document which question you answered (link to your answer).**\n\nBelow is the link to one of the questions I answered on StackOverflow\n(https://stackoverflow.com/questions/74797820/find-value-in-matrix-starting-from-two-columns-value/75253008#75253008)\n\n3. **Relate your experience of answering the question to your reading. **\n \n My attempt was to answer a question to which I knew the answer. To be honest, finding a question that I can answer has been challenging! It took me most of my time to find a question :)\n\nIn answering the question, I tried to be clear, concise, and complete. According to StackOverflow's structure, I provided reproducible code and a formatted answer.\n\n\n<!--Go to [https://github.com/Stat585-at-ISU/blog](https://github.com/Stat585-at-ISU/blog) for instructions about how to prepare and submit your blog post.-->\nInstructions to follow.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

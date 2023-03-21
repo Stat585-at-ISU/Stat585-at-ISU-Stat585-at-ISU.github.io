@@ -1,0 +1,14 @@
+{
+  "hash": "258bcf510d22eb467085191b6fe61813",
+  "result": {
+    "markdown": "---\nauthor: \"Who wrote this\"\ntitle: \"Fix a thing -- Prompt 9\"\ncategories: \n  - \"Errors and warnings in packages\"\n  - Prompt\ndate: 2023-03-30\n---\n\n\n## Prompt:\n\nThis blog prompt is extremely simple: fix one of the problems in one of our community packages at `https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all`, and write about it. \n\n## Instructions:\n\nWhat we want to know is the **exact** warning or error message of the item you fixed, and a description of what you did, also as specific as possible. \n\n\n## Submission\n\nPush the blog post to your blog-9 repo. Make sure that the yaml-front-matter check passes.\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

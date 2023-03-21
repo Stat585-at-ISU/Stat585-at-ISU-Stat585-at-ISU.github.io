@@ -1,0 +1,16 @@
+{
+  "hash": "5610896fff54b65643a461b65df140fc",
+  "result": {
+    "markdown": "---\nauthor: Your Name\ndate: 2023-02-02\ncategories: \"Happy Git with R\"\ntitle: Happy Git with R\n---\n\n\n## Prompt:\n\ngit and Github are tools for helping with versioning of files in collaborative efforts as well as archiving entries for your future self. \nUnfortunately working with git isn't always completely straightforward. \nJenny Bryan's book \"Happy git and github with R\" helps with that. The book is available from [http://happygitwithr.com/](http://happygitwithr.com/). Have a look over the index and pick one of the chapters for a more in-depth read.\n\nWrite a blog post answering the following questions: \n\n1. **Write a short (100-150 words) summary of the chapter you read in-depth.**\n2. **Looking back at all of the team projects you have been involved in, describe the biggest mishap you had. Could that have been avoided using git? How?**. \n3. **Give an example of one new git feature that you learned about from Jenny Bryan's book.**.\n\n1.\tWrite a short (100-150 words) summary of the chapter you read in-depth.\nI read chapter 9 about the person access tokens for HTTPS. GitHub requires a personal access token so that they know the person who is trying to make changes is the correct user. The password we use to login is not sufficient to verify credentials which is why we need this specific personal access token. All you have to do is generate a token and then enter it when you set up credentials. You can set a time for expiration, and once the token expires you have to regenerate a new one. This chapter also details the difference between HTTPS and SSH. HTTPS is strongly recommended over SSH because it is easier to work with and can be used with GitHub’s API which is called in some R packages. \n\n2.\tLooking back at all of the team projects you have been involved in, describe the biggest mishap you had. Could that have been avoided using git? How?\nA big problem working on a group project is sharing code. Often we can split up the work so we don’t need to share code, but if we do we often email files back and forth which can be tedious and sometimes not the most up to date. Using GitHub would solve this problem and branching could ensure we can work parallelly. \n\n3.\tGive an example of one new git feature that you learned about from Jenny Bryan’s book.\nI also read the chapter on branches. I have never used branches before. This seems important because you can work on stuff without messing with the main branch. \n\n\n\n",
+    "supporting": [
+      "RayAnyesha_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

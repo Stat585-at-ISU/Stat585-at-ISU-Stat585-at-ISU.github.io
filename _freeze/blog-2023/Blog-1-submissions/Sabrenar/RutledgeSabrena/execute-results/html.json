@@ -1,0 +1,14 @@
+{
+  "hash": "75eb0f572608450cdc9e33de622d7f90",
+  "result": {
+    "markdown": "---\nauthor: Sabrena Rutledge\ndate: 2023-01-26\ncategories: \"Asking Good Questions\"\ntitle: Asking Good Questions\n---\n\n\n## Prompt:\n\nAsking good questions is a valuable skill to have - asking questions in an online setting is both easier and harder than asking questions in person: we can prepare to ask a question but we are also expected to prepare.\nThe links posted here give some advice on how to ask good questions:\n\n- stackoverflow's [Asking a good question](http://stackoverflow.com/help/how-to-ask)\n\n- R's [Posting guidelines](https://www.r-project.org/posting-guide.html)\n\n- [minimal complete verifiable example](https://stackoverflow.com/help/mcve), [minimal reproducible example](https://www.tidyverse.org/help/)\n\nFollow these links and read through the advice given, then\n\n1. **Pick at least one question from stackoverflow or the R help and answer it.**\n\nWrite a blog post answering the following questions: \n\n2. **Document which question you answered (link to your answer).**\nI answered the question linked below:\n(https://stackoverflow.com/questions/75248261/cant-install-packages-in-r)\nhttps://stackoverflow.com/questions/75248261/cant-install-packages-in-r/75251062#75251062\n\n3. **Relate your experience of answering the question to your reading. **\n \nI chose an installation issue question, where the person asking was having issues installing a specific package. Answering the question I chose was rather straight-forward, since the answer to their question was hidden in the midst of their error message. \nAccording to stackoverflow's Asking a good question page, authors should \"explain how [they] encountered the problem [they are] trying to solve, and any difficulties that have prevented [them] from solving it [themselves].\" Yet, the author of this particular question appears to only have attemptted installing twice before giving up. They go on to say \"Any package I try to install raises the same issue,\" which cannot be true since the error message is specific to the package and its dependencies. \nAs such, I'm not sure if their question was helpful to resolving their issue, since there seemed to issues with not having admin rights that was complicating the installation process. In conclusion, I don't think this question should have been posted on StackOverflow and should have been directed to the author's IT department.\n\n\n\n<!--Go to [https://github.com/Stat585-at-ISU/blog](https://github.com/Stat585-at-ISU/blog) for instructions about how to prepare and submit your blog post.-->\nInstructions to follow.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

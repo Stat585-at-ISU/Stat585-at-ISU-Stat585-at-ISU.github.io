@@ -1,0 +1,16 @@
+{
+  "hash": "fc4772986947e7a20be766d533287841",
+  "result": {
+    "markdown": "---\nauthor: Sabrena Rutledge\ntitle: Happy Git with R\ncategories: \"Happy Git with R\"\ndate: 2023-02-02\n---\n\n\n## Prompt:\n\ngit and Github are tools for helping with versioning of files in collaborative efforts as well as archiving entries for your future self. \nUnfortunately working with git isn't always completely straightforward. \nJenny Bryan's book \"Happy git and github with R\" helps with that. The book is available from [http://happygitwithr.com/](http://happygitwithr.com/). Have a look over the index and pick one of the chapters for a more in-depth read.\n\nWrite a blog post answering the following questions: \n\n1. **Write a short (100-150 words) summary of the chapter you read in-depth.**\n \n I read chapter 27 titled \"The Repeated Amend.\" It detailed a method to save several incremental changes to a Git repo in only one commit instead of several commits. This method is analogous to working on a word document and saving a new version after a larger change versus after only a few small changes.  \nThe author outlines a workflow for the method then provides a couple work-arounds for common problems. The author’s method is to have several amended commits on the local repo then push a “finalized” commit to the Github repo. \nThe biggest point of this chapter is to NOT push the local repo to the Github repo frequently. \n \n2. **Looking back at all of the team projects you have been involved in, describe the biggest mishap you had. Could that have been avoided using git? How?**. \n\nThe biggest mishap I’ve had in team project is updated scripts for the project not being in the same location as the data. Frequently, the data has been in one server, and the finalized data analysis scripts have been on a Github repo. \nThis could have been avoided if there was a some sort of readme file directing readers to the Github in the directory with the data.\n\n3. **Give an example of one new git feature that you learned about from Jenny Bryan's book.**.\n\nI learned about Git commands from “Happy Git and Github for the useR.” I have only accessed Github repos from their respective Github websites.\n",
+    "supporting": [
+      "RutledgeSabrena_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

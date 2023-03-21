@@ -1,0 +1,14 @@
+{
+  "hash": "a383ae9f68d26eeaad8df34a37742d22",
+  "result": {
+    "markdown": "---\nauthor: Valerie Han\ndate: 2023-01-26\ncategories: \"Asking Good Questions\"\ntitle: Asking Good Questions\n---\n\n\n## Prompt:\n\nAsking good questions is a valuable skill to have - asking questions in an online setting is both easier and harder than asking questions in person: we can prepare to ask a question but we are also expected to prepare.\nThe links posted here give some advice on how to ask good questions:\n\n- stackoverflow's [Asking a good question](http://stackoverflow.com/help/how-to-ask)\n\n- R's [Posting guidelines](https://www.r-project.org/posting-guide.html)\n\n- [minimal complete verifiable example](https://stackoverflow.com/help/mcve), [minimal reproducible example](https://www.tidyverse.org/help/)\n\nFollow these links and read through the advice given, then\n\n1. **Pick at least one question from stackoverflow or the R help and answer it.**\n\nWrite a blog post answering the following questions: \n\n2. **Document which question you answered (link to your answer).**\n\nhttps://stackoverflow.com/questions/75241167/looping-through-r-dataframe-columns/75241265#75241265\n\n3. **Relate your experience of answering the question to your reading. **\n \nChoosing a question to answer and actually trying to answer it helped me understand how important a minimal reproducible example is. I also appreciated the informative titles of questions. Both helped me quickly assess if a question was something I could solve using my own experience and made me want to answer their questions more, making clear to me why the readings have such guidelines for posting questions.\n\nThe question I chose to answer was relatively simple with only 6 lines of code.  However, when trying to answer their question, I realized that their example was not reproducible for others because they didn't include a dataset that corresponded to their variable in the code. I ended up creating my own little example to try to understand what their issue was. In doing so, I also realized that, as the readings said, making a minimal reproducible example isn't always that hard and that trying to make one can help you think through your bug as well.\n\n\n\n<!--Go to [https://github.com/Stat585-at-ISU/blog](https://github.com/Stat585-at-ISU/blog) for instructions about how to prepare and submit your blog post.-->\nInstructions to follow.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

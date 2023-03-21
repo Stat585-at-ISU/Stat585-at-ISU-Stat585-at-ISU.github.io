@@ -1,0 +1,16 @@
+{
+  "hash": "34b43c1d888e55a7321fcd2ff1cdc4cb",
+  "result": {
+    "markdown": "---\nauthor: \"Who wrote this\"\ntitle: \"More on reproducibility... -- Prompt 6\"\ncategories: \n  - \"More on reproducibility...\"\n  - Prompt\ndate: 2023-03-02\n---\n\n\n## Prompt:\n\n<!-- README.md is generated from README.Rmd. Please edit that file -->\n<!-- badges: start -->\n[![Frontmatter check](https://github.com/Stat585-at-ISU/Blog-5/actions/workflows/check-yaml.yaml/badge.svg)](https://github.com/Stat585-at-ISU/Blog-5/actions/workflows/check-yaml.yaml)\n[![Render rmarkdown](https://github.com/Stat585-at-ISU/Blog-6/actions/workflows/render-rmarkdown.yaml/badge.svg)](https://github.com/Stat585-at-ISU/Blog-6/actions/workflows/render-rmarkdown.yaml)\n  <!-- badges: end -->\n\nIn Blog 5 you had the first exposure to Github Actions. \nWe just checked frontmatter compliance (as we do for this round).\nYou see that we have added a second action - here, we are converting the Rmarkdown document to a markdown file by running `render_rmarkdown` on Github. This action passes successfully for this document. We want to do something similar for blog #4.\n\n\nNow start reading ...\n\n\nRead the vignette [Introduction to renv](https://rstudio.github.io/renv/articles/renv.html) for the `renv` R package by Kevin Ushey.\n\nThen do:\n\n1. **Install the R package `renv` on your local machine.**\n\n1b. **Go to your blog 4 repo, and run the command `usethis::use_github_action(\"render-rmarkdown.yaml\")`**\nThis creates the file `render-rmarkdown.yaml` inside the folder `.github/workflows` in your repo. \nAdd it to the repository and push it. \n\n1c. **Optional - but maybe educational**: make a change to your Rmd file with the blog post (just a small change), and push it. Then go to your github site and watch the render-rmarkdown action fail. \n\n2. **In the project for blog 4, initialize the workflow used by the `renv` package.**\n\n3. **Add all dependencies to the environment (implicitly by installing all the dependencies or explicitly by listing dependencies in a DESCRIPTION file).**\n\n4. **Add the `renv` folder to your blog 4 repository, and push the changes.**\n\n5. **Is the github action working? Read any potential error messages in the workflow and try to fix things. Make sure to check stackoverflow for help, don't forget our Discussion board!**\n\n\nWrite a blog post addressing the following questions: \n\n1. **What is the idea of the renv package?**\n\n2. **In 50 to 100 words describe your experience working with `renv`. What went well? What did not go so well?**\n \n\nSubmit this blog post to your blog-6 repo. \n\nAdditional resources in case you get stuck: \nhttps://www.youtube.com/watch?v=GwVx_pf2uz4&ab_channel=PositPBC",
+    "supporting": [
+      "Prompt_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

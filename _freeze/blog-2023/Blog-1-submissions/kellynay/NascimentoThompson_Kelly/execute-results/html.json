@@ -1,0 +1,14 @@
+{
+  "hash": "b9cc28c45e75e33d8a7874537d421958",
+  "result": {
+    "markdown": "---\nauthor: Kelly Nascimento Thompson\ndate: 2023-01-26\ncategories: \"Asking Good Questions\"\ntitle: Asking Good Questions\n---\n\n\n## Prompt:\n\nAsking good questions is a valuable skill to have - asking questions in an online setting is both easier and harder than asking questions in person: we can prepare to ask a question but we are also expected to prepare.\nThe links posted here give some advice on how to ask good questions:\n\n- stackoverflow's [Asking a good question](http://stackoverflow.com/help/how-to-ask)\n\n- R's [Posting guidelines](https://www.r-project.org/posting-guide.html)\n\n- [minimal complete verifiable example](https://stackoverflow.com/help/mcve), [minimal reproducible example](https://www.tidyverse.org/help/)\n\nFollow these links and read through the advice given, then\n\n1. **Pick at least one question from stackoverflow or the R help and answer it.**\n\nWrite a blog post answering the following questions: \n\n2. **Document which question you answered (link to your answer).**\n\nQuestion: Cannot plot a histogram from a Pandas data frame\n\nAnswer: First, you need to import the Histogram class from the Matplotlib library.\n\nimport matplotlib.pyplot as plt\n\nThen, you can use the plot() method which will accept a dataframe column as an argument.\n\nplt.hist(df['column'], color='blue', edgecolor='black', bins=int(45/1))\n\nSource: https://vitalflux.com/histogram-plots-using-matplotlib-pandas-python/ \n\nLink: (https://stackoverflow.com/a/75250948/21082634)\n\n3. **Relate your experience of answering the question to your reading. **\n \n The reading \"Asking Good Questions\" from the stack overflow platform outlined the\n importance of summarizing the problem in the title, writing some introductory text\n before posting code, and helping others reproduce the problem by posting reprex, mcve,\n and mwe codes.\n \n The question I answered to on stack overflow had a good title \"Cannot plot a histogram \n from a Pandas data frame\", but the user did not provide example code to reproduce the \n problem. He provided some ways he tried to solve the problem with methods applied, but \n I can not tell if he imported the correct packages to run the code or what the output \n would of his problem will look like due to the lack of example code.\n \n His question seemed easy to find an answer online, thus, some \"Search and Research\"could\n have easily solved his problem. I found an article discussing his problem and linked it\n in my answer.\n\n<!--Go to [https://github.com/Stat585-at-ISU/blog](https://github.com/Stat585-at-ISU/blog) for instructions about how to prepare and submit your blog post.-->\n<!--Instructions to follow.-->\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

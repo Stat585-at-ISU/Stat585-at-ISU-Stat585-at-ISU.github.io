@@ -1,0 +1,14 @@
+{
+  "hash": "12cb62b4f4f9e5cc5e1bbfbc9f18d1f6",
+  "result": {
+    "markdown": "---\ntitle: \"Retraction Watch -- Reliability and Sensitivity of Neuromuscular and Perceptual Fatigue Measures in Collegiate Men's Basketball\"\nauthor: \"Denise Bradford\"\ndate: '2023-02-23'\noutput: pdf_document\ncategories: Ethics and Reproducibility...\n---\n\n\n\\textbf{Title:} Reliability and Sensitivity of Neuromuscular and Perceptual Fatigue Measures in Collegiate Men's Basketball\n\n\\textbf{Author:} Edwards, T., Spiteri, T., Piggott, B., Bonhotal, J., Haff, G. G., & Joyce, C.\n\n\\textbf{DOI:} 10.1519/JSC.0000000000002517\n\n\n\n\\textbf{Pick one of the papers from Retraction Watch that were retracted because of errors in the paper (you might want to pick a paper from the set of featured papers, because there are usually more details available). Describe what went wrong. Would any of the rules by Sandve et al. have helped in this situation?}\n\nThe following reasons from the retraction watch database cite the following:\n\n+ Error in Analyses\n\n+ Error in Methods\n\n+ Error in Results and/or Conclusions\n\n\nIf the authors, would've taken the advice of Sandve, the following rules would have been helpful in making sure that the article was not retracted:\n\n- Rule 1: For Every Result, Keep Track of How It Was Produced\n\n- Rule 5: Record All Intermediate Results, When Possible in Standardized Formats\n\n\nIt appears in the article that the sample size of the group was 12 Men's basketball players, the researchers used 90% confidence intervals without adjusting for the limited sample size. The researchers did not describe any methods that were used statistically to determine the table outcomes. \n\n\n\\textbf{After reading the paper by Sandve et al. describe which rule you are most likely to follow and why, and which rule you find the hardest to follow and will likely not (be able to) follow in your future projects.}\n\n\\textit{Rule most likely to follow:}\n\nRule 4: Version Control All Custom Scripts and Rule 10: Provide Public Access to Scripts, Runs, and Results will be the rule that I'm most likely to follow. At this point between the advancement of technologies, like Github and Rstudio, when programming for a project we can easily add the availability to the public easily.\n\n\\textit{Rule hard to follow:}\n\nRule 3: Archive the Exact Versions of All External Programs Used will be the hardest to follow when I tend to keep my local environment behind to maintain consistency and limited hurdles when making sure that things work to move forward. Package dependencies tend to be hard to keep up to date with versions. ",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

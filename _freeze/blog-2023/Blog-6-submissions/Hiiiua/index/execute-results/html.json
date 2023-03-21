@@ -1,0 +1,16 @@
+{
+  "hash": "f7d05ff64762f63e4c138338af1148a8",
+  "result": {
+    "markdown": "---\nauthor: \"Muxin Hua\"\ntitle: \"More on reproducibility\"\ncategories: \"More on reproducibility...\"\ndate: \"2023-03-02\"\noutput: github_document\n---\n\n\n<!-- README.md is generated from README.Rmd. Please edit that file -->\n<!-- badges: start -->\n[![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)\n[![Render rmarkdown](../../actions/workflows/render-rmarkdown.yaml/badge.svg)](../../actions/workflows/render-rmarkdown.yaml)\n<!-- badges: end -->\n\nWhat happens when we change the Rmd file and commit?\n\nIn Blog 5 you had the first exposure to Github Actions. \nWe just checked frontmatter compliance (as we do for this round).\nYou see that we have added a second action - here, we are converting the Rmarkdown document to a markdown file by running `render_rmarkdown` on Github. This action passes successfully for this document. We want to do something similar for blog #4. \n\n\nNow start reading ...\n\n\nRead the vignette [Introduction to renv](https://rstudio.github.io/renv/articles/renv.html) for the `renv` R package by Kevin Ushey.\n\nThen do:\n\n1. **Install the R package `renv` on your local machine.**\n\n2. **In the project for blog 4, initialize the workflow used by the `renv` package.**\n\n3. **Add all dependencies to the environment (implicitly by installing all the depepndencies or explicilty by listing dependencies in a DESCRIPTION file).**\n\n4. **Add the `renv` folder to your blog 4 repository, and push the changes.**\n\n5. **Is the github action working? Read any potential error messages in the workflow and try to fix things. Make sure to check stackoverflow for help, don't forget our Discussion board!**\n\n\nWrite a blog post addressing the following questions: \n\n1. **What is the idea of the renv package?**\n`renv` package is an effort to manage R dependency in terms of project. It creates project specific R dependencies by initializing command and keeps track of version upgrades and new installations by snapshot. In such a way, it is easier for developer to trace and reset if needed. It's also easier for anyone accesses the code to reproduce.\n\n2. **In 50 to 100 words describe your experience working with `renv`. What went well? What did not go so well?**\nInstalling `renv` was smooth and initializing was convenient to keep track of all the dependencies, except the `render-rmarkdown` kept complaining about `there is no package called rmarkdown`. I searched stackflow, one of the answers mentioned \"making sure rmarkdown is included in .lock file'. I went to the lock file but couldn't find `rmarkdown`, which I'm sure I have installed it and took a snapshot. I check the status by `renv::status()` finding there were packages upgraded haven't been recorded, one of them was `rmarkdown`, so I did snapshot again, touched little on `README.Rmd` to trigger github action and pushed it with updated `.lock` file, passed the action eventually. \n \n\nSubmit this blog post to your blog-6 repo. \n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

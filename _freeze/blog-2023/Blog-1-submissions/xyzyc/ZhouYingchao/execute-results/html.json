@@ -1,0 +1,14 @@
+{
+  "hash": "be8b51bf2c4d65cca7f3d0739247eb43",
+  "result": {
+    "markdown": "---\nauthor: Yingchao Zhou\ndate: 2023-01-26\ncategories: \"Asking Good Questions\"\ntitle: Asking Good Questions\n---\n\n\n## Prompt:\n\nAsking good questions is a valuable skill to have - asking questions in an online setting is both easier and harder than asking questions in person: we can prepare to ask a question but we are also expected to prepare.\nThe links posted here give some advice on how to ask good questions:\n\n- stackoverflow's [Asking a good question](http://stackoverflow.com/help/how-to-ask)\n\n- R's [Posting guidelines](https://www.r-project.org/posting-guide.html)\n\n- [minimal complete verifiable example](https://stackoverflow.com/help/mcve), [minimal reproducible example](https://www.tidyverse.org/help/)\n\nFollow these links and read through the advice given, then\n\n1. **Pick at least one question from stackoverflow or the R help and answer it.**\n\nWrite a blog post answering the following questions: \n\n2. **Document which question you answered (link to your answer).**  \n\nI answered one question from stackoverflow about plotting data with longitude and latitude on a map. Here is the link: [https://stackoverflow.com/questions/75228497/how-can-i-plot-a-map-using-ggplot2-that-includes-the-latitude-and-longitude-of-t/75229784#75229784](https://stackoverflow.com/questions/75228497/how-can-i-plot-a-map-using-ggplot2-that-includes-the-latitude-and-longitude-of-t/75229784#75229784)\n\n3. **Relate your experience of answering the question to your reading. **  \n\nome questions I see on stackoverflow are long and messy, with many code chunks and I feel hard to read and understand them. Although the titles seem not too difficult, after clicking in, I gave up reading them. Giving a minimal reproducible example can really make it much easier for answerers.  \n\n\n<!--Go to [https://github.com/Stat585-at-ISU/blog](https://github.com/Stat585-at-ISU/blog) for instructions about how to prepare and submit your blog post.-->\nInstructions to follow.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

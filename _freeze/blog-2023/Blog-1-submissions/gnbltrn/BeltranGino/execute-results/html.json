@@ -1,0 +1,14 @@
+{
+  "hash": "15c0202bff362fed36f234e112978407",
+  "result": {
+    "markdown": "---\nauthor: Gino Beltran\ndate: 2023-01-26\ncategories: \"Asking Good Questions\"\ntitle: Asking Good Questions\n---\n\n\nAnswering a question was hard for me, given my limited experience with R and programing.  Instead, I focused on evaluating the quality of the question and found one that needed some guidance--based on the materials we read in class about asking good questions.  A student had copied and pasted a homework, which contained multiple questions about a data set.  My response was aimed at suggesting the question needed to be more specific to get the help needed. \nLink to my response\nhttps://stackoverflow.com/questions/75254300/uic-assignment-need-help-please-let-me-know-how-to-do-them/75254399#75254399\n\nSome else had just answered the same question, and included a link with specific guidance for students seeking help for homework (see link below).  I read this resource and found it very informative, which made me contemplate the other side of every question... the answer.  I realized my answer was perhaps too simple.  I also realized that a good answer can be recycled and used many times and it becomes a guideline.  \nAsking about homework link\nhttps://meta.stackoverflow.com/questions/334822/how-do-i-ask-and-answer-homework-questions\n\nThanks,\nGino\n\n\n\n\n## Prompt:\n\nAsking good questions is a valuable skill to have - asking questions in an online setting is both easier and harder than asking questions in person: we can prepare to ask a question but we are also expected to prepare.\nThe links posted here give some advice on how to ask good questions:\n\n- stackoverflow's [Asking a good question](http://stackoverflow.com/help/how-to-ask)\n\n- R's [Posting guidelines](https://www.r-project.org/posting-guide.html)\n\n- [minimal complete verifiable example](https://stackoverflow.com/help/mcve), [minimal reproducible example](https://www.tidyverse.org/help/)\n\nFollow these links and read through the advice given, then\n\n1. **Pick at least one question from stackoverflow or the R help and answer it.**\n\nWrite a blog post answering the following questions: \n\n2. **Document which question you answered (link to your answer).**\n\n3. **Relate your experience of answering the question to your reading. **\n \n\n<!--Go to [https://github.com/Stat585-at-ISU/blog](https://github.com/Stat585-at-ISU/blog) for instructions about how to prepare and submit your blog post.-->\nInstructions to follow.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

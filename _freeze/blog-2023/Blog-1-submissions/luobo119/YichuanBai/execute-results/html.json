@@ -1,0 +1,14 @@
+{
+  "hash": "21e311c9749d1516392a5710ba79c3cf",
+  "result": {
+    "markdown": "---\nauthor: Yichuan Bai\ndate: 2023-01-26\ncategories: \"Asking Good Questions\"\ntitle: Asking Good Questions\n---\n\n\n## Prompt:\n\nAsking good questions is a valuable skill to have - asking questions in an online setting is both easier and harder than asking questions in person: we can prepare to ask a question but we are also expected to prepare.\nThe links posted here give some advice on how to ask good questions:\n\n- stackoverflow's [Asking a good question](http://stackoverflow.com/help/how-to-ask)\n\n- R's [Posting guidelines](https://www.r-project.org/posting-guide.html)\n\n- [minimal complete verifiable example](https://stackoverflow.com/help/mcve), [minimal reproducible example](https://www.tidyverse.org/help/)\n\nFollow these links and read through the advice given, then\n\n1. **Pick at least one question from stackoverflow or the R help and answer it.**\n\nWrite a blog post answering the following questions: \n\n2. **Document which question you answered (link to your answer).**\n\n3. **Relate your experience of answering the question to your reading. **\n\n# Questions Answered\n- https://stackoverflow.com/questions/74867143/subset-the-datatable-by-multiple-user-input-filter-separated-by-comma/75226388#75226388\n- https://stackoverflow.com/questions/75248893/widen-r-datatable-column/75251791#75251791\n\n# Answering Experience\n- It's important to let other people be able to reproduce your question. In the first question I answered, the code included in the question is reproducible, which make it easier for me to find out the solution. In the second question, there isn't an example dataset in the question. Though I am able to reproduce his shiny app, but I need to generate a dataset myself.\n- You may able to solve your problem by some searchings. One question I answered is how to change the column width of table in shiny app. Similar questions have been answered before. But there are multiple issues needed to be fixed. So the question may not be fixed by one searching. Actually several different related questions need to be searched to solve the problem.\n- The questions I answered both have a clear title and a clear description about their problems. It's easy for me to determine whether I could help by looking at the title and glancing at the first few lines of the questions.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

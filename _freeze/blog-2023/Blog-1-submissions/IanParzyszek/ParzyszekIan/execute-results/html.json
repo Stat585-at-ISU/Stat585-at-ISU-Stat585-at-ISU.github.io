@@ -1,0 +1,14 @@
+{
+  "hash": "5e66d2d0c4b70232184d96b08f7f846e",
+  "result": {
+    "markdown": "---\nauthor: Ian Parzyszek\ndate: 2023-01-26\ncategories: \"Asking Good Questions\"\ntitle: Asking Good Questions\n---\n\n\nhttps://stackoverflow.com/questions/75254510/using-dplyr-correctly-to-combine-shared-values-of-a-row-to-a-new-column-of-a-tab/75254534#75254534\n\nIt would have been nice if this individual had included some code or an example they wanted to have answered. I was not 100% confident on what this person was asking, but if I interpreted it correctly it should give them a good start. \n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

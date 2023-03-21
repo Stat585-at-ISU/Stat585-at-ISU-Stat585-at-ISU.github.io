@@ -1,0 +1,14 @@
+{
+  "hash": "5463f0a668b754a95540e0365249d260",
+  "result": {
+    "markdown": "---\nauthor: \"The Prompt for Blog 2\"\ndate: 2023-02-02\ncategories: \n  - \"Happy Git with R\"\n  - Prompt\ntitle: Happy Git with R\n---\n\n\n## Prompt:\n\ngit and Github are tools for helping with versioning of files in collaborative efforts as well as archiving entries for your future self. \nUnfortunately working with git isn't always completely straightforward. \nJenny Bryan's book \"Happy git and github with R\" helps with that. The book is available from [http://happygitwithr.com/](http://happygitwithr.com/). Have a look over the index and pick one of the chapters for a more in-depth read.\n\nWrite a blog post answering the following questions: \n\n1. **Write a short (100-150 words) summary of the chapter you read in-depth.**\n\n\n\n2. **Looking back at all of the team projects you have been involved in, describe the biggest mishap you had. Could that have been avoided using git? How?**. \n\n\n3. **Give an example of one new git feature that you learned about from Jenny Bryan's book.**.\n\n\nTo make your blog post show up properly on this site, you have to\n\n1. change the name of the file LastnameFirstname.Rmd to something else,\n2. change the yaml in your Rmd file to:\n\n```\n---\nauthor: Your Name\ndate: 2023-02-02\ncategories: \"Happy Git with R\"\ntitle: Happy Git with R\n---\n```\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

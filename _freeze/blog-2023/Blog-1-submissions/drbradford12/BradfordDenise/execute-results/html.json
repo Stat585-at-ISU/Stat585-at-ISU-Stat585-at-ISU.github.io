@@ -1,0 +1,14 @@
+{
+  "hash": "bf7f5220195c8cdb63c818406c4e6673",
+  "result": {
+    "markdown": "---\nauthor: Denise Bradford\ndate: 2023-01-26\ncategories: \"Asking Good Questions\"\ntitle: Asking Good Questions\n---\n\n\n[R Help Community Question]( https://community.rstudio.com/t/make-ui-inputs-that-dynamically-update-with-each-other/158270?u=drb1112)\n\n**The actual question from R Help Community:**\nMake dynamic inputs related to each other?\n\nIm trying to make an application, and one functionality I would like is to have inputs that dynamically update each other!\n\nto explain this a bit further, I would like to have a functionality where you can have a raw value, a percentile, and a letter grade, and that all 3 show up on the original page of inputs!\n\nso when you put in the input for the raw value, it will show the letter grade and the percentile on that same page dynamically, and when you put in the percentile it will update the raw value and letter grade on that page\n\nideally I could do this with the grade as well (so an A will correspond to a 93rd percentile value, an A- to a 90th percentile value, and putting that in, in a dropdown sense, would update the Raw value and letter grade on the same page to those corresponding values)\n\njust wondering how I could go about this?!\n\n\n**My answer**\nMy response could be much clearer if I made an example for every possible outcome of using the UI Dynamically but the previous response linked to the Mastering Shiny R book, chapter 10. As chapter 10 may have been the starting place, suggesting Chapter 15 was at an attempt to allow the user to understand more about the UI being reactive when changed. Or in the event that the UI is not what they were actually looking for in their response to their question.\n\nPros:\n- The person asked a question that was important and specific to Shiny. \n- The person knows enough to be detailed in the outcome\n\nCons:\n- The person who posted the question failed to ask a question that was specific with an example. As a result, it would be hard to make the best recommendation.\n- We don't know what the data look like\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

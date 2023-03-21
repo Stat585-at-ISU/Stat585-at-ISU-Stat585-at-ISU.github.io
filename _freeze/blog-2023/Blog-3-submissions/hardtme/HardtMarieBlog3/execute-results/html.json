@@ -1,0 +1,14 @@
+{
+  "hash": "51d608f782ff6d45c701ea5ffbc7f69c",
+  "result": {
+    "markdown": "---\nauthor: \"Marie Hardt\"\ntitle: \"Adventures in Book Building\"\ncategories: \"Building a Book\"\ndate: 2023-02-09\noutput: github_document\n---\n\n\n<!-- README.md is generated from README.Rmd. Please edit that file -->\n\n\n\n\n\n## Prompt:\n\n\nThe goal of this  week's blog is to document what you are doing when things do not go according to plan. \n\nSimilar to previous exercises, we have a specific use case in mind: we want to build a book from a github repository. \n\nWhat happens in practice usually, is that we run into some problems. \nSo your real task turns into that of a bug-hunter and fixer. Luckily, you have a community (the class discussion board) who might be able to help you. \n\n\n\n### What we want: build a book\n\nBuild the html version of the 2nd edition for Hadley Wickham's book `Advanced R Programming` from a github repository.\n\nSteps:\n\n1. Clone the repository `https://github.com/hadley/adv-r`.\n2. Open the R project in the repository in RStudio.\n3. Activate the `Build` tab (by default in the top right panel). Click on the `Build Book` button.\n4. The book will be available in html format as index.html\n\n**Deliverable (1):** what is the last word in chapter 15? - You don't have to answer this question, if things don't work. \n\nIf we don't count the exercises, the last word in chapter 15 is \"packages.\" If we do count the exercises, the last word is \"class.\"\n\n**Deliverable (2):** Write a paragraph on the biggest problem you encountered when you were building the book, (and how you managed to solve it.)\n\nMy journey to building the book started with installing the `bookdown` and `downlist` packages. The biggest problem I encountered was the following error message soon after initiating the build: `Error in get(genname, envir = envir) : object 'wrap' not found`. Luckily for me, a classmate experienced the same issue and posted a solution on the Questions and Answers discussion board for STAT 585. I implemented my classmate's solution (`registerS3method(\"sew\", ...)` instead of `registerS3method(\"wrap\", ...` on line 45 of the `common.R` file), and the error went away. After fixing this error, the only problems I had involved installing some more necessary packages to build the book. These packages included: `lobstr`, `emo` (from Hadley Wickham's GitHub via `devtools`), `sloop`, `RSQLite`, `zeallot`, `bench`, and `beeswarm`. \n\n\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "hash": "7d39e25199633825b37ec31e1b73ff53",
+  "result": {
+    "markdown": "---\nauthor: \"Landon Getting\"\ntitle: \"Book Building is Backbreaking\"\ncategories: Building a Book\ndate: 2023-02-09\noutput: github_document\n---\n\n\n<!-- README.md is generated from README.Rmd. Please edit that file -->\n\n\n\n\n\n## Deliverable 1 - Last Word:\n\nThe last word in Chapter 15 is '**class**'!\n\n## Deliverable 2 - Biggest Problem:\n\nAlthough I encountered many issues in building Hadley's book, the biggest problem was getting the .pdf file to build. I received the following error after successfully building the .html file and attempting to build the .pdf file:\n\n`LaTeX failed to compile _main.tex`\n\nI read the post by Motahareh Kashanian in the class Canvas forum and determined that my installation of MiKTeX may not be helpful in solving the error. I uninstalled MiKTeX and utilized the following commands from [tinytex website](https://yihui.org/tinytex/) to install tinytex:\n\n`install.packages('tinytex')`\n\n`tinytex::install_tinytex()`\n\nNext, I experienced the most frustrating error of the entire build process; font failure. I received a variety of errors indicating that the inconsolata font could not be found. One of my Lab #1 group members (shoutout Logan) suggested installing the font via [Google Fonts](https://fonts.google.com/specimen/Inconsolata?query=inconsolata). After the font was installed, I found [this article](https://tex.stackexchange.com/questions/484876/tex-live-2018-not-finding-font-inconsolata) which stated that the preamble.tex document needed 'inconsolata' to be lowercase rather than 'Inconsolata' to be found. Finally, I changed the fallback font to Arial since I could not find a free install for Andale Mono. After these changes, the book built correctly into a .pdf file! Best feeling ever!\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

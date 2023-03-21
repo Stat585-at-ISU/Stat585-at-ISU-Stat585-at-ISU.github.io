@@ -1,0 +1,14 @@
+{
+  "hash": "5a0590f0fcab4ceaf29e6ace906d1399",
+  "result": {
+    "markdown": "---\nauthor: \"Ian Parzyszek\"\ntitle: \"Replication of Data Presentation\"\ndate: \"2023-02-23\"\ncategories: \"Ethics and Reproducibility...\"\noutput: github_document\n---\n\n\n\n1. I found this retracted paper, “Synthetic lethality of combined glutaminase and Hsp90 inhibition in mTORC1-driven tumor cells\" (https://retractionwatch.com/2023/02/01/former-harvard-researchers-lose-pnas-paper-for-reusing-data/). \n\nIn this paper there was several instances of duplicated figures and reused data. However, after it was retraced the author said that this error did/would not change their conclusions.\n\nI believe that this error could have been avoided if they adhered to \"Rule 7: Always Store Raw Data behind Plots\" and maybe if they would have tried to replicate their results themselves. Rule 7 could have helped by making sure that these figures and plots corresponded to the correct data. Or if they would have just tried to repeat their results they might have also caught the mistake of duplicating the figures.\n\n2. I think the hardest thing for me to follow will be \"Rule 2: Avoid Manual Data\nManipulation Steps\". This is because my data cleaning and manipulation skills are not that developed, well not yet:). I tend to not know the best way to manipulate data, so I usually have to go through things line by line in not the most efficient, robust, and repeatable way.\n\n\n```\n\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

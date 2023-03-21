@@ -1,0 +1,14 @@
+{
+  "hash": "1638141ce1718972293634af3805b07d",
+  "result": {
+    "markdown": "---\nauthor: \"Kundan Kumar\"\ndate: 2023-01-26\ncategories: \"Asking Good Questions\"\ntitle: Asking Good Questions\n---\n\n\n## Prompt:\n\n\n1. **Pick at least one question from stackoverflow or the R help and answer it.**\n\nWrite a blog post answering the following questions: \n\nI have asked a question about how to detect objects in a video using python. Please find the [Link](https://stackoverflow.com/questions/75253102/detect-objects-in-a-video) \n\nMoreover, I have answered on question in R, in which i plotted a pie chart.Please find the  [Link](https://stackoverflow.com/questions/75178249/pie-chart-legend-with-multiple-lines-of-text-in-r/75178711#75178711)\n\n\n2. **Document which question you answered (link to your answer).**\n\nI have answered a question how to create Pie chart legend with multiple lines of text in R. User is facing an issue that multiple lines of text will out of legend. Please find the [Link](https://stackoverflow.com/questions/75178249/pie-chart-legend-with-multiple-lines-of-text-in-r/75178711#75178711)\n\nI have explored the the package 'ggplot2' and 'ggrepel' and finally plotted the pie chart in which multiple lines of text are within the legend.\n\n\n3. **Relate your experience of answering the question to your reading. **\n \nAs the start, i was just plotting it seems fine to me, but seems i didn't understand the problem well.\nI was only using the basic R functionality for plotting the pie chart and i literally struggle alot.\n \nAfter understanding the problem well, i explored the R packages and implemented the code successfully and plotted the pie chart along the legend precisely. It is a great learning curve for me and hopefully enhanced my skill a bit.\n \n \n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

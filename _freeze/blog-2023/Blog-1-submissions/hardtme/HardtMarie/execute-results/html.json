@@ -1,0 +1,14 @@
+{
+  "hash": "076f05116cb7c66a422d61d1c1caee07",
+  "result": {
+    "markdown": "---\nauthor: Marie Hardt\ndate: 2023-01-26\ncategories: \"Asking Good Questions\"\ntitle: Asking Good Questions\n---\n\n\n## Prompt:\n\nAsking good questions is a valuable skill to have - asking questions in an online setting is both easier and harder than asking questions in person: we can prepare to ask a question but we are also expected to prepare.\nThe links posted here give some advice on how to ask good questions:\n\n- stackoverflow's [Asking a good question](http://stackoverflow.com/help/how-to-ask)\n\n- R's [Posting guidelines](https://www.r-project.org/posting-guide.html)\n\n- [minimal complete verifiable example](https://stackoverflow.com/help/mcve), [minimal reproducible example](https://www.tidyverse.org/help/)\n\nFollow these links and read through the advice given, then\n\n1. **Pick at least one question from stackoverflow or the R help and answer it.**\n\nWrite a blog post answering the following questions: \n\n2. **Document which question you answered (link to your answer).**\n\n3. **Relate your experience of answering the question to your reading. **\n \n\n<!--Go to [https://github.com/Stat585-at-ISU/blog](https://github.com/Stat585-at-ISU/blog) for instructions about how to prepare and submit your blog post.-->\nInstructions to follow.\n\nI answered this question from stackoverflow: https://stackoverflow.com/questions/75245310/change-colors-in-bar-chart-in-r-to-other-colors/75250501#75250501\n\nThe original poster (OP) of the question I answered was having trouble getting a bar plot created using `ggplot2` to look the way they wanted. It was very helpful that the OP provided their code with the question. However, the OP's code used a dataset that was not built into R and the OP did not include code to create the dataset for the plot. This broke one of the guidelines for minimal reproducible examples. Fortunately, the requested plot was simple enough that I could recreate the issue using the built-in `iris` dataset in R. The problem turned out to be that the OP wanted to use the `fill` aesthetic to change the color of the bars on the plot via `scale_fill_manual` but did not have anything mapped to the `fill` aesthetic. In my answer, I provided an example very similar to the OP's code, except I used the `iris` dataset with the variable `Species` mapped to the `x` aesthetic to define the bars and also mapped `Species` to the `fill` aesthetic so I could use `scale_fill_manual` to change the colors of the bars.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

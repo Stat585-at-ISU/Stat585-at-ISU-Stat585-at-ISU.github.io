@@ -1,0 +1,14 @@
+{
+  "hash": "3dc04c6ad39f5fbea43fc466301d06e8",
+  "result": {
+    "markdown": "---\ntitle: \"Untitled\"\nbibliography: \"zotero.bib\"\n---\n\n\n@breviaryVisionaryScoundrel2006; @spenceWhoWasPlayfair1997\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

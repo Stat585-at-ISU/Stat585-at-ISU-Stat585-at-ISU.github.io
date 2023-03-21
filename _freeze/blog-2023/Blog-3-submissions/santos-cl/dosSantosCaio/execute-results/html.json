@@ -1,0 +1,14 @@
+{
+  "hash": "5ede7a1ec14e313fff7cd95a92678dab",
+  "result": {
+    "markdown": "---\nauthor: Caio dos Santos\ndate: 2023-02-09\ncategories: \"Building a Book\"\ntitle: Building a Book\n---\n\n\n## Last word on chapter 15\n\nThe last word on chapter 15 was: ***Class***\n\n## Biggest problems I had while building the book\n\nI thought the biggest problems I would have would be related to installing several libraries. Then, I kept track of all the libraries that R asked me to install in order to knit the book: *bookdown, htmltools, lobstr, emo, sloop, zeallot, bench, ggbeeswarm, and tinyTex*. However, I had the biggest problem with a self-brought upon complication of storing my scripts in Box. I usually do this as an extra layer of protection against losing my code. The bookdown package was not able to find some of the files every now and then. In special, bookdown had a problem with *ga_script.html*. It was as if the existed and not at the same time. Eventually, I fixed it by cloning the repository straight to my machine instead of the cloud.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

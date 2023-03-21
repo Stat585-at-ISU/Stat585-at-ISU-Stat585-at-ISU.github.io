@@ -1,0 +1,16 @@
+{
+  "hash": "f5ff65082f4346aca25d345ff0c95ff1",
+  "result": {
+    "markdown": "---\nauthor: Harun Celik\ndate: 2023-02-05\ncategories: \"Happy Git with R\"\ntitle: Happy Git with R\n---\n\n\n## Prompt:\n\ngit and Github are tools for helping with versioning of files in collaborative efforts as well as archiving entries for your future self. \nUnfortunately working with git isn't always completely straightforward. \nJenny Bryan's book \"Happy git and github with R\" helps with that. The book is available from [http://happygitwithr.com/](http://happygitwithr.com/). Have a look over the index and pick one of the chapters for a more in-depth read.\n\nMy answers: \n\n1. While I learned new things from all the chapters I had an interest in checking, I especially found the \"Resetting\" chapter to be resourceful. Simply, there are three methods for resetting a commit. The ```git reset ---hard HEAD^``` will undo everything, losing all changes. The ```git reset HEAD^``` will only undo the commit and clear the stage but your files stay the same. Finally ```git reset --soft HEAD^``` will undo the commit and restore the staged changes. If the intention is to change the earlier message, there is also a possibility to amend recent commit messages by using ```git commit --amend -m \"New commit message\"```. Resetting is an important component to commit's because we all make committing mistakes in our projects and these offer an alternative to \"burning it all down.\"\n\n2. I think the biggest mishap has always been not taking enough time to properly design the workflow that we wanted to use as a team. We would have one directory in Box, another in Github and people would start using their own local files for work without committing and since some branched and others didn't, Git would have a difficult time understanding our project. An effort I want to make moving forward is really detailing exactly how we want to move forward with workflow and incorporating everyone's ideas on workflow flexibility as projects evolves.\n \n3. I did not know about the ```--amend``` command. I also only recently learned about the different ```reset``` options after I made mistakes to a repository that I burned down (but didn't have to had I known about these commands ahead of time).\n\n",
+    "supporting": [
+      "CelikHarun_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

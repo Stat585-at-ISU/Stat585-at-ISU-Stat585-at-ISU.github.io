@@ -1,0 +1,16 @@
+{
+  "hash": "04c90fe9481bbe9e3cfbc9527531b067",
+  "result": {
+    "markdown": "---\nlayout: blog\nauthor: Yingchao Zhou\ndate: 2023-02-02\ncategories: \"Happy Git with R\"\ntitle: Happy Git with R\nroot: ../../\n---\n\n\n## Prompt:\n\ngit and Github are tools for helping with versioning of files in collaborative efforts as well as archiving entries for your future self. \nUnfortunately working with git isn't always completely straightforward. \nJenny Bryan's book \"Happy git and github with R\" helps with that. The book is available from [http://happygitwithr.com/](http://happygitwithr.com/). Have a look over the index and pick one of the chapters for a more in-depth read.\n\nWrite a blog post answering the following questions: \n\n1. **Write a short (100-150 words) summary of the chapter you read in-depth.**\n\nI read the chapter \"9. Personal access token for HTTPS\".\n\nThis chapter mainly teaches us how to set up a personal access token (PAT) to allow the local computer talk to the GitHub. Note the password for login on GitHub is not an acceptable credential. \n\nThe whole generating and storing process may be done through R package usethis. Commands `usethis::create_github_token()` will generate the PAT and `gitcreds::gitcreds_set()` can store the credential.\n\nYou may also generate the PAT on [https://github.com/settings/tokens]( https://github.com/settings/tokens) and store the token generated at a secure place. \n\nBu default, the APT will expire in 30 days. And you need to re-generate and re-store the APT in the same steps.\n\n2. **Looking back at all of the team projects you have been involved in, describe the biggest mishap you had. Could that have been avoided using git? How?**. \n\nIt was a mess...  \n\nI once worked with a classmate. We had a Github repository but I didn't know how to push the changes from Rstudio or terminal, so every time I actually only committed the changes without pushing them to Github. I also occasionally uploaded my R script to Github page.  \n\nHowever, once after I made a major change, I didn't upload my file in a timely manner and my classmate worked with the wrong code for a day. When they taught me how to push to Github after this, the main branch was several steps ahead due to me uploading .R file. We had to force the push and lost some commits.    \nUnfortunately, it turned out that we needed some old code that we lost in that force push... And we had to take some trouble to recover the commits.  \n\nIf I had learned how to push from Rstudio (or just terminal) and only updated the code through push, we would have a clean record of the code. \n\n\n3. **Give an example of one new git feature that you learned about from Jenny Bryan's book.**.\n\nYou may use `git remote set-url` to change between  https://github.com/usr/project.git and git@github.com:usr/project.git and switch between HTTPS and SSH credentials. (I currently use SSH. It's good to know I can switch freely.)\n",
+    "supporting": [
+      "ZhouYingchao_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

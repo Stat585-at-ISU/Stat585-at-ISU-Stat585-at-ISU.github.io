@@ -1,0 +1,14 @@
+{
+  "hash": "af7b8ff3c466748abb86069fd4845a75",
+  "result": {
+    "markdown": "---\nauthor: Charchit Shukla\ndate: 2023-01-26\ncategories: \"Asking Good Questions\"\ntitle: Asking Good Questions\n---\n\n\n## Prompt:\n\nAsking good questions is a valuable skill to have - asking questions in an online setting is both easier and harder than asking questions in person: we can prepare to ask a question but we are also expected to prepare.\nThe links posted here give some advice on how to ask good questions:\n\n- stackoverflow's [Asking a good question](http://stackoverflow.com/help/how-to-ask)\n\n- R's [Posting guidelines](https://www.r-project.org/posting-guide.html)\n\n- [minimal complete verifiable example](https://stackoverflow.com/help/mcve), [minimal reproducible example](https://www.tidyverse.org/help/)\n\nFollow these links and read through the advice given, then\n\n1. **Pick at least one question from stackoverflow or the R help and answer it.**\n\nWrite a blog post answering the following questions: \n\nHow to install rstudio with conda\n\nConvert NumPy array to Python list\n\n2. **Document which question you answered (link to your answer).**\n\nhttps://stackoverflow.com/questions/75228559/how-to-install-rstudio-with-conda/75254070#75254070\n\nhttps://stackoverflow.com/questions/1966207/convert-numpy-array-to-python-list/75254352#75254352\n\n3. **Relate your experience of answering the question to your reading. **\n\nI picked the newest questions people were asking on the stackoverflow to check my knowledge and try to answer them. A lot of the people were following the rules as described in the reading. However, there were some which were not following and posting the minimal reproducible example or researching the questions if they were already answered.\n\nI learned another thing during this assignment. I created the account recently and I was not allowed to comment if I do not have more than 50 reputation on the stackoverflow. Which seems like a good system for preventing the new fake/spam accounts. Stackoverflow seems like a helpful community to ask questions. There were other highly active questions which I was not allowed to answer due to similar reason as having a low reputation.\n\nThe second question I answered was on python as we discussed in the class. Python community seems way larger than the R community and more developed. However, the questions seemed more organized and following the guidelines of the stackoverflow to ask a good question.\n \n\n<!--Go to [https://github.com/Stat585-at-ISU/blog](https://github.com/Stat585-at-ISU/blog) for instructions about how to prepare and submit your blog post.-->\nInstructions to follow.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

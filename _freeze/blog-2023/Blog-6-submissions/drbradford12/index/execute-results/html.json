@@ -1,0 +1,16 @@
+{
+  "hash": "5e6d9c480d980ea64073ef532f6672c5",
+  "result": {
+    "markdown": "---\noutput: github_document\n---\n\n\n<!-- README.md is generated from README.Rmd. Please edit that file -->\n<!-- badges: start -->\n[![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)\n[![Render rmarkdown](../../actions/workflows/render-rmarkdown.yaml/badge.svg)](../../actions/workflows/render-rmarkdown.yaml)\n<!-- badges: end -->\n\nWhat happens when we change the Rmd file and commit?\n\nIn Blog 5 you had the first exposure to Github Actions. \nWe just checked frontmatter compliance (as we do for this round).\nYou see that we have added a second action - here, we are converting the Rmarkdown document to a markdown file by running `render_rmarkdown` on Github. This action passes successfully for this document. We want to do something similar for blog #4.\n\n\nNow start reading ...\n\n\nRead the vignette [Introduction to renv](https://rstudio.github.io/renv/articles/renv.html) for the `renv` R package by Kevin Ushey.\n\nThen do:\n\n1. **Install the R package `renv` on your local machine.**\n\n2. **In the project for blog 4, initialize the workflow used by the `renv` package.**\n\n3. **Add all dependencies to the environment (implicitly by installing all the depepndencies or explicilty by listing dependencies in a DESCRIPTION file).**\n\n4. **Add the `renv` folder to your blog 4 repository, and push the changes.**\n\n5. **Is the github action working? Read any potential error messages in the workflow and try to fix things. Make sure to check stackoverflow for help, don't forget our Discussion board!**\n\n\nWrite a blog post addressing the following questions: \n\n1. **What is the idea of the renv package?**\n\n\nDenise's Answer:\n\nThe idea of the `renv` package is a tool for managing packages in R that helps with managing dependencies, making projects repeatable, and working together on R projects. It lets users set up and manage separate environments for each project. These environments have all the R packages and versions needed to run the project. This keeps packages and versions from getting in the way of each other, which can lead to errors.\n\n\n2. **In 50 to 100 words describe your experience working with `renv`. What went well? What did not go so well?**\n\nDenise's Answer:\n\n+ The Good:\n\nSince I will be working more in Python during the class, it may be useful to show that `renv` in R works with Python environments (https://cran.r-project.org/web/packages/renv/vignettes/python.html). It's great to know that we can do this when completing a project that may need both Python and R elements.\n\n+ The Bad:\n\nIf we wanted to reproduce the same actions in Python, one will need to have a Linux computer. The following is from a beta package (https://pypi.org/project/renv/) that may be used for a similiar outcome in R. I can't be completely sure since I work with a Mac.\n \n\nSubmit this blog post to your blog-6 repo. \n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
