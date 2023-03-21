@@ -24,7 +24,7 @@ Week | Topic | Notes
 &nbsp;    | &nbsp;                                                       | **Mar 2** [Lab #3](labs/03-lab-slides.qmd)
 &nbsp;    | &nbsp;                                                       | **Mar 7** [Data in packages](../materials-2023/09_packages/02_r-packages-data.html), [Package dependencies](../materials-2023/09_packages/01_r-packages.html#11)
 &nbsp;    | &nbsp;                                                       | **Mar 9** [Logistics](../materials-2023/news/news-2023-03-09.html), [Package dependencies](../materials-2023/09_packages/01_r-packages-data.html#11), [The error fixing cycle](../materials-2023/09_packages/02_r-packages-data.html)
-&nbsp;    | &nbsp;                                                       | **Mar 21** [Let's do that again: Packages in R](../materials-2023/09_packages/01_r-packages.html#5) | [Data in packages; ](../materials-2023/09_packages/02_r-packages-data-no-turns.html)
+&nbsp;    | &nbsp;                                                       | **Mar 21** [Let's do that again: Packages in R](../materials-2023/09_packages/01_r-packages.html#5), [Data in packages](../materials-2023/09_packages/02_r-packages-data-no-turns.html)
 9-10      | Testing code & Critical analysis of code                     | **Mar 23** 
 &nbsp;    | &nbsp;                                                       | **Mar 28**
 11        | Web scraping, working with text: awk and grep (lab week)     | **Mar 30** 
