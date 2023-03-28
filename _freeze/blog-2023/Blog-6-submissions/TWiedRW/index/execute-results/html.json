@@ -1,0 +1,14 @@
+{
+  "hash": "6b079c5cecaeb78e0300f139f54f16fa",
+  "result": {
+    "markdown": "---\nauthor: \"Tyler Wiederich\"\ntitle: \"Blog 6\"\ncategories: More on reproducibility...\ndate: \"2023-03-02\"\noutput: github_document\n---\n\n\n<!-- README.md is generated from README.Rmd. Please edit that file -->\n\n<!-- badges: start -->\n\n[![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml) [![Render rmarkdown](../../actions/workflows/render-rmarkdown.yaml/badge.svg)](../../actions/workflows/render-rmarkdown.yaml)\n\n<!-- badges: end -->\n\nThe idea behind `renv` is to save the dependencies in R projects. \nThis includes the packages, versions, and package sources (CRAN or other) to help make research more reproducible. \nFor example, I know that `stats::aggregate()` function had a recent syntax update that caused instructional notes for STAT 801A to be outdated. \nIf this function was used in a project before, there is a chance that it would now give errors. \n`renv` allows the capability to save the state of the packages used, so it would be easier for others to see and use the same versions of the packages when others look at the project and not have to worry about incompatible versions of package dependencies. \n\nWhen working with `renv` for Blog 4, I did not encounter any issues. \nInitializing and saving the state was easy with the necessary functions.\nThe only surprising thing was how many dependencies were in my blog post, but I do suppose that packages in the tidyverse have a number of dependencies.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

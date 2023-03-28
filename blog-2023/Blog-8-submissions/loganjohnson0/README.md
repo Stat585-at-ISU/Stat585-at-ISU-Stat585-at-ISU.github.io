@@ -1,0 +1,68 @@
+Building my own website
+================
+Logan Johnson
+2023-03-23
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+
+[![Frontmatter
+check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)
+<!-- badges: end -->
+
+## Prompt:
+
+GitHub is an incredibly useful tool for project management and
+collaboration. It also has several useful features for professional
+promotion: you can host your own site on github using [GitHub
+pages](https://pages.github.com/), describe yourself using a GitHub
+developer profile, and even use
+[resume.github.io](http://resume.github.io/) to generate a resume
+summary of your activity on GitHub (you must opt-in by [starring the
+project page](https://github.com/resume/resume.github.com)).
+
+posit and the associated package infrastructure provide multiple ways to
+generate websites using Quarto (or Rmarkdown). You can complete this
+assignment using one of the two options detailed in [Prompt
+8](https://stat585-at-isu.github.io/blog-2023/Prompts/Blog-8/Prompt.html)
+
+Describe your experience creating your website below. Don’t forget to
+link to your website! Push this blog post to your blog-8 repo. Make sure
+that all of the checks are passing.
+
+**How did building your own website go?**
+
+I genuinely found this activity to be very exciting. I have always
+wanted to have my own website but I have never fully understood all of
+the behind the scenes type work that has to go into it. I also thought
+that in order to have a website that I would have to pay for a domain
+name or pay for the service of hosting the website. Blog 8 gave me the
+information needed to begin to develop my own website. I was able to use
+the Quarto documents online to help guide me through the process of
+hosting a website, some of the modifications I could make to my website,
+and connecting the Quarto project to GitHub pages. It was all a very
+easy process.
+
+I also took to the [Quarto
+Gallery](https://quarto.org/docs/gallery/#websites) to see some example
+websites. From these examples, I was able to identify some of the
+structure that I was looking to incorporate into my website. I also
+modified some of the color of my page using a .scss file. I’m not
+certain if I used that file correctly or not because according to
+GitHub, 98% of my website is coded in SCSS. I’m still learning more
+about the different styling and language of HTML and CSS, so maybe in
+the future I can modify those files better than incorporating the SCSS
+file. Maybe it doesn’t matter either way, but I’m hoping to learn more
+about the styling.
+
+Overall, I was impressed with the ease of use of creating the website.
+There are many different ways to modify the website and make it unique
+to each use case that a user might have. I think it also has a nice
+standard format that makes it consistent. I imagine it is easy to really
+add even more customization into the website beyond my current knowledge
+of the system. Some goals I have for my website would be to include an
+additional section for potentially a blog, an area for packages or other
+relevant things related to my research, and adjusting the styling and
+being more creative with that. I also aim to incorporate different
+pictures into the website or a page showcasing tweets or retweets of
+mine (I am working on being active on academic twitter).

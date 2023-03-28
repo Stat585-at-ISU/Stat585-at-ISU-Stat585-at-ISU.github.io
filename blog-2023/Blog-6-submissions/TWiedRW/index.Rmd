@@ -1,0 +1,25 @@
+---
+author: "Tyler Wiederich"
+title: "Blog 6"
+categories: More on reproducibility...
+date: "2023-03-02"
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+<!-- badges: start -->
+
+[![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml) [![Render rmarkdown](../../actions/workflows/render-rmarkdown.yaml/badge.svg)](../../actions/workflows/render-rmarkdown.yaml)
+
+<!-- badges: end -->
+
+The idea behind `renv` is to save the dependencies in R projects. 
+This includes the packages, versions, and package sources (CRAN or other) to help make research more reproducible. 
+For example, I know that `stats::aggregate()` function had a recent syntax update that caused instructional notes for STAT 801A to be outdated. 
+If this function was used in a project before, there is a chance that it would now give errors. 
+`renv` allows the capability to save the state of the packages used, so it would be easier for others to see and use the same versions of the packages when others look at the project and not have to worry about incompatible versions of package dependencies. 
+
+When working with `renv` for Blog 4, I did not encounter any issues. 
+Initializing and saving the state was easy with the necessary functions.
+The only surprising thing was how many dependencies were in my blog post, but I do suppose that packages in the tidyverse have a number of dependencies.

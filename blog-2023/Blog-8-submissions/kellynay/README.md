@@ -1,0 +1,56 @@
+Building a Website
+================
+Kelly Nascimento Thompson
+2023-03-23
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+
+[![Frontmatter
+check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)
+<!-- badges: end -->
+
+## Prompt:
+
+GitHub is an incredibly useful tool for project management and
+collaboration. It also has several useful features for professional
+promotion: you can host your own site on github using [GitHub
+pages](https://pages.github.com/), describe yourself using a GitHub
+developer profile, and even use
+[resume.github.io](http://resume.github.io/) to generate a resume
+summary of your activity on GitHub (you must opt-in by [starring the
+project page](https://github.com/resume/resume.github.com)).
+
+posit and the associated package infrastructure provide multiple ways to
+generate websites using Quarto (or Rmarkdown). You can complete this
+assignment using one of the two options detailed in [Prompt
+8](https://stat585-at-isu.github.io/blog-2023/Prompts/Blog-8/Prompt.html)
+
+Describe your experience creating your website below. Don’t forget to
+link to your website! Push this blog post to your blog-8 repo. Make sure
+that all of the checks are passing.
+
+**How did building your own website go?**
+
+Building the website was fun and quite easy until I had to commit and
+push all the files required. There was a yellow question mark beside the
+site_libs folder and I tried clicking on it to get the check mark, so I
+could commit and push.
+
+I kept getting the following error message:
+
+Another git process seems to be running in this repository, e.g. an
+editor opened by ‘git commit’. Please make sure all processes are
+terminated then try again. If it still fails, a git process may have
+crashed in this repository earlier: remove the file manually to
+continue. Updating 8130468..b4ecf64
+
+So I went on my repo and added the files via upload. My website has
+three pages: Home, Volunteering Experiences, R Favorite Packages.
+
+In these pages I linked my student bios in different research and
+professional development projects that I am involved. I also mentioned
+Volunteer Experience and packages that I have enjoyed working with or
+packages that I see value for future work.
+
+Here is the link: <https://github.com/kellynay/kellynay.github.io>

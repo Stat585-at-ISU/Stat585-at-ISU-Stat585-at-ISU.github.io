@@ -1,0 +1,31 @@
+Becoming a Website Engineer
+================
+Landon Getting
+2023-03-23
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+
+[![Frontmatter
+check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)
+<!-- badges: end -->
+
+**How did building your own website go?**
+
+[View my website!](https://landon-getting.github.io/)
+
+Building the website went relatively smoothly! However, I had a few
+minor issues.
+
+First, I had trouble staging my files to be committed. I originally
+thought this was due to the new RStudio update. However, I reinstalled
+the latest RStudio version, restarted my computer, restarted my RStudio
+several times, and finally found success. I cannot replicate the problem
+so it may be tough to solve.
+
+I also had an issue where a page was not building the correctly named
+.html file. I developed a page called shiny.Rmd to display a Shiny App
+project. A file called “Shiny.html” is generated when the website it
+built. It is not recognized by the \_site.yml file since it is expecting
+“shiny.html”. I manually changed the file name after building to achieve
+success. I could not determine why this problem was occurring.
