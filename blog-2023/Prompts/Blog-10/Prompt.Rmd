@@ -1,10 +1,10 @@
 ---
 author: "Who wrote this"
-title: "Web scraping etiquette ..."
+title: "Web scraping etiquette ... -- Prompt 10"
 categories: 
   - "Web scraping etiquette ..."
   - Prompt
-date: "2022-04-06"
+date: "2023-04-06"
 output: github_document
 ---
  
