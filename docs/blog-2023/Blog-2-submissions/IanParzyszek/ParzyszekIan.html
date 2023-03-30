@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.2.313">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -120,48 +120,46 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Happy Git with R</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">Happy Git with R</div>
-              </div>
-                  </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Ian Parzyszek </p>
-            </div>
-    </div>
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">February 2, 2023</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Happy Git with R</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Happy Git with R</div>
+  </div>
+  </div>
 
 
 
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ian Parzyszek </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 2, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
 
 <p>Chapter 27: The Repeated Amend: Ian Parzyszek 1)</p>
 <p>In this chapter we focused on situations where you are making continual changes and updates to a project, but you don’t want to continually have a lot of commits. This could look sloppy and not as useful. However, you also do not want to have very few commits and not have a lot to fall back on. They gave an example of a rock climber and you want to have enough ankers to protect you, but too many can slow you down. They introduced the idea of adding the idea of “WIP” amendments. This is used when you made some changes and you may be in the middle of something and it will signal to other people that more commits may be coming. It seemed to me that ideally you want to have “WIP<em>” comments which denotes that these changes only exist in your local repo, yet on git. Then you can continue to finish what you are working on. And on your end you may see a history that looks like this: A – B –C – WIP</em>–D But once you finish what you have done push it only once you have finished D…then your repository commit history will look like this: A—B—C—D (much nicer) The Chapter went on to talk about what if you did push this intermediate step of WIP what do you do? Should you go back and change it so it looks nicer, should you not? And it all depends on the collaborators you have and if you believe that may have pulled from Git.</p>

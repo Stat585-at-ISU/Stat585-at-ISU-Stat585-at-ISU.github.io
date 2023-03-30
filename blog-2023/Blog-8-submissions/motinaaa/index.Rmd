@@ -1,0 +1,34 @@
+---
+title: "Welcome to the Club!"
+author: "Motina"
+date: "2023-03-23"
+categories: "My professional self"
+output:
+  html_document: default
+  github_document: default
+---
+
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+[![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)
+<!-- badges: end -->
+
+## Prompt:
+
+GitHub is an incredibly useful tool for project management and collaboration. It also has several useful features for professional promotion: you can host your own site on github using [GitHub pages](https://pages.github.com/), describe yourself using a GitHub developer profile, and even use [resume.github.io](http://resume.github.io/) to generate a resume summary of your activity on GitHub (you must opt-in by [starring the project page](https://github.com/resume/resume.github.com)). 
+
+posit and the associated package infrastructure provide multiple ways to generate websites using Quarto (or Rmarkdown). You can complete this assignment using one of the two options detailed in [Prompt 8](https://stat585-at-isu.github.io/blog-2023/Prompts/Blog-8/Prompt.html)
+
+Describe your experience creating your website below. Don't forget to link to your website! Push this blog post to your blog-8 repo. Make sure that all of the checks are passing.
+
+**How did building your own website go?**
+
+creating my website with Quarto in R was actually pretty sweet! I had a lot of fun with it, and it was a smooth ride for the most part. Although, I gotta admit, I did run into some trouble with this `ERROR: YAMLException: bad indentation of a mapping entry`. But, hey, I figured it out and moved on!
+
+The toughest part for me was figuring out what to write about myself. It's not easy to talk about yourself, you know what I mean? I spent a lot of time trying to come up with the right words, and I still don't know if I got it exactly right.
+
+I'm also obsessed with design and colors and themes, so that part was a blast. I spent way too much time trying to decide on the right colors and themes. And even then, I'm still not sure if I made the right choice! I just can't help myself.
+
+Overall, though, I really enjoyed creating my website with Quarto in R. I was so into it that I didn't even realize how much time had passed. It was a rewarding and engaging experience, and I'm thrilled with how my website turned out :)
+Here is the link: [https://motinaaa.github.io]

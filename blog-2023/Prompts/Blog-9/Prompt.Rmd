@@ -4,7 +4,7 @@ title: "Fix a thing -- Prompt 9"
 categories: 
   - "Errors and warnings in packages"
   - Prompt
-date: 2023-03-30
+date: "2023-03-30"
 ---
 
 ## Prompt:

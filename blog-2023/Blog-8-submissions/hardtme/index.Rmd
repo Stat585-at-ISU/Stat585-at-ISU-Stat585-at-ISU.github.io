@@ -1,0 +1,24 @@
+---
+author: "Marie Hardt"
+title: "Adventures in Website Building"
+categories: "My professional self"
+date: "2023-03-23"
+output:
+  html_document: default
+  github_document: default
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+[![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)
+<!-- badges: end -->
+
+**How did building your own website go?**
+
+I made my website using a simple RMarkdown site. Since I intend this website to be a professional website, I added pages about my research interests, teaching experiences, and working experiences. The biggest surprise I had during the website process was that changes to the website were not immediately visible after committing and pushing them to the repository. I refreshed my website multiple times, and the changes eventually appeared. It turned out that a GitHub action needed to run in order for the changes to be visible, and this took a few moments after each commit. In retrospect, this makes sense, but it was surprising for me after I added the first additional page to my website. 
+
+For me, the most time-consuming part of the process was choosing the theme for my website since RMarkdown includes multiple themes for HTML documents. I started out changing the theme in the `_site.yml` file, committing and pushing to the repository, and waiting for the changes to be applied so I could see if I liked how the theme looked. I later figured out that I could change the theme in the `_site.yml` file and then locally knit one of the RMarkdown documents to see what the resulting webpage would look like. This sped things up, and I settled on the `cerulean` theme because I liked that it incorporated color, unlike most of the other themes.
+
+Here is a link to my website: [hardtme.github.io](hardtme.github.io).
+
+

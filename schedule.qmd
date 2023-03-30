@@ -26,8 +26,8 @@ Week | Topic | Notes
 &nbsp;    | &nbsp;                                                       | **Mar 9** [Logistics](../materials-2023/news/news-2023-03-09.html), [Package dependencies](../materials-2023/09_packages/01_r-packages-data.html#11), [The error fixing cycle](../materials-2023/09_packages/02_r-packages-data.html)
 &nbsp;    | &nbsp;                                                       | **Mar 21** [Let's do that again: Packages in R](../materials-2023/09_packages/01_r-packages.html#5), [Data in packages](../materials-2023/09_packages/02_r-packages-data-no-turns.html)
 9-10      | Testing code & Critical analysis of code                     | **Mar 23** [Connecting a package to Github](https://stat585-at-isu.github.io/materials-2023/09_packages/02_r-packages-data-no-turns.html#15), [Continuous Integration](https://stat585-at-isu.github.io/materials-2023/09_packages/02_r-packages-data-no-turns.html#14), [Unit testing](../materials-2023/08_testing-code/02_testing-code.html)
-&nbsp;    | &nbsp;                                                       | **Mar 28** [The one where Austria was abducted ...](../materials-2023/08_testing-code/02_testing-code.html#15), [Intro to web-scraping](../materials-2023/11_web-scraping/01_web-scraping.html)
-11        | Web scraping, working with text: awk and grep (lab week)     | **Mar 30** 
+&nbsp;    | &nbsp;                                                       | **Mar 28** [The one where Austria was abducted ...](../materials-2023/08_testing-code/02_testing-code.html#15)
+11        | Web scraping, working with text: awk and grep (lab week)     | **Mar 30** [One more set of tests](https://stat585-at-isu.github.io/materials-2023/08_testing-code/02_testing-code.html#32), [Intro to web-scraping](../materials-2023/11_web-scraping/01_web-scraping.html)
 &nbsp;    | &nbsp;                                                       | **Apr 4**
 12        | Event driven programming                                     | **Apr 6**
 &nbsp;    | &nbsp;                                                       | **Apr 11**

@@ -1,0 +1,49 @@
+Harun’s Quarto Blog Page
+================
+Harun Celik
+2023-03-23
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+
+[![Frontmatter
+check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)
+<!-- badges: end -->
+
+## Prompt:
+
+GitHub is an incredibly useful tool for project management and
+collaboration. It also has several useful features for professional
+promotion: you can host your own site on github using [GitHub
+pages](https://pages.github.com/), describe yourself using a GitHub
+developer profile, and even use
+[resume.github.io](http://resume.github.io/) to generate a resume
+summary of your activity on GitHub (you must opt-in by [starring the
+project page](https://github.com/resume/resume.github.com)).
+
+posit and the associated package infrastructure provide multiple ways to
+generate websites using Quarto (or Rmarkdown). You can complete this
+assignment using one of the two options detailed in [Prompt
+8](https://stat585-at-isu.github.io/blog-2023/Prompts/Blog-8/Prompt.html)
+
+Describe your experience creating your website below. Don’t forget to
+link to your website! Push this blog post to your blog-8 repo. Make sure
+that all of the checks are passing.
+
+**How did building your own website go?**
+
+[Historical Mapping](https://haruncelikotto.github.io/)
+
+I decided to build a Quarto Blog to document the work that I want to do
+for the projects related to historical maps. Quarto’s layout is pretty
+straight-forward so I didn’t run into any problems with creating the
+posts that are on the webpage. I did try to change the css styling of
+the page a little bit with a new navbar but definitely struggled with
+trying to find the right place to put in the new html styles. In
+publishing to the Github Pages, I first decided I would try to work with
+the `quarto publish` command but didn’t really understand what the
+purpose of change the source branch to the `gh-pages` was so I opted for
+the docs method instead which was quite easy. It is still a little scary
+that you could accidentally push the rest of your code with your docs to
+the repository by accident but I suppose there are .gitignore files for
+a reason.
