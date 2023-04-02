@@ -1,0 +1,14 @@
+{
+  "hash": "a7d523729be7c60f441deb608286a7d7",
+  "result": {
+    "markdown": "---\noutput: github_document\ntitle: \"The painful green ticks\"\nauthor: An Phan\ndate: \"2023-03-30\"\ncategories: \"Errors and warnings in packages\"\n---\n\n\n<!-- README.md is generated from README.Rmd. Please edit that file -->\n<!-- badges: start -->\n[![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)\n<!-- badges: end -->\n\n## Prompt:\n\nFix one of the problems in one of our community packages at `https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all`, and write about it. \n\n**Which error or warning did you fix? ... and how?**\n\nI chose Team2's package to fix and enjoyed the pain. I used `devtools` to install, load, document, check, and repeated all over again.\n\nFirst try, 2 notes (seems easy to solve!):\n\n- Non-standard file/directory found at top level: easy, put the `.pdf` extension in .Rbuildignore\n- Undefined global functions or variables: `%>% . download.file presslog_ames write.csv`. I went to each R source file and added `@importFrom` (e.g., purrr %>%, utils download.file, utils write.csv), then rerun `devtools::document()` to update the `NAMESPACE` file. For the dot (\".\"), I could not figure out which package it came from, so I had to edit the code to not use \".\" within an lapply function. For the `presslog_ames` dataset, it was not loaded into the environment before using, so I declared it.\n\nSecond try, 1 error (that is worse than 2 notes!):\n\n- Namespace dependency missing from DESCRIPTION Imports/Depends entries: purrr. So, it gets imported previously, but the `DESCRIPTION` file did not have that information (I felt weird that `devtools::document()` only updates `NAMESPACE`, not `DESCRIPTION`. I went ahead and manually added `purrr` under **Imports**.\n\nThird try, 1 warning (I'm getting there!!):\n\n- Documented arguments not in \\usage in documentation object 'get\\_presslog': ‘df’. I wasn't sure about the @usage tag, so I just override the argument `df` passed into the function with the `presslog_ames` data (not the best way, but it works)\n\nFourth try (I lied, it took me way many more times to reach here but I only describe the main problems): SUCCESS!! 0 errors, 0 warnings, 0 notes!\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

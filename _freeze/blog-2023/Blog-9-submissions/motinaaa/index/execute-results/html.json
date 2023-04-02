@@ -1,0 +1,14 @@
+{
+  "hash": "5efe4ba5a245910e6d22dab6fb2f717e",
+  "result": {
+    "markdown": "---\ntitle: \"Green is the new Black\"\nauthor: \"Motina\"\ndate: \"2023-03-30\"\ncategories: \"Errors and warnings in packages\"\noutput: github_document\n---\n\n\n<!-- README.md is generated from README.Rmd. Please edit that file -->\n<!-- badges: start -->\n[![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)\n<!-- badges: end -->\n\n## Prompt:\n\nFix one of the problems in one of our community packages at `https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all`, and write about it. \n\n## Instructions:\n\nWhat we want to know is the **exact** warning or error message of the item you fixed, and a description of what you did, also as specific as possible. \n\nDescribe your experience  below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\n\n**Which error or warning did you fix? ... and how?**\n\nFirstly, I did eeny meeny miny moe to pick a number, got 5, so I checked Team5 package:))\n\nI ran the `check()`, No warnings or errors, just some notes I saw.\nFirst note said `all declared imports should be used`.\nSo I went to the description file and removed the mentioned packages from imports. Easy-peasy, fixed that note.\n\nNext note was about `missing dependencies to other packages`.\nChecked the .R code, and I added the dependencies in the description file under imports. Sorted!\n\nAnother note was about considering adding `importFrom(\"stats\",\"filter\")`.\nAddressed this by going to the .R file and adding `dplyr::` before `filter` function.\nThen added `@importFrom dplyr filter` in the beginning of the file.\nAfter that, ran `document()` to build them in the `NAMESPACE` file and then ran `check()`.\nFixed a bunch of these notes too!\n\nThen I tackled the `global bindings` and added `\"Variable_Name\" <- \"Variable_Name\" <- NULL` to the addressed functions.\nTadaaaaa, green checkmarks all around for Team 5! Woohoo!\n\nI think I was supposed to fix just one of these notes, but my OCD kicked in and I ended up fixing them all. Just wanted to see those green marks! 😅\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

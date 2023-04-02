@@ -1,0 +1,14 @@
+{
+  "hash": "5f6c3e1e487389280848a4b1f8b1a2a3",
+  "result": {
+    "markdown": "---\ntitle: \"Fix a warning in CMD check\"\nauthor: \"Muxin Hua\"\ndate: \"2023-03-30\"\ncategories: \"Errors and warnings in packages\"\noutput: github_document\n---\n\n\n<!-- README.md is generated from README.Rmd. Please edit that file -->\n\n<!-- badges: start -->\n\n[![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)\n\n<!-- badges: end -->\n\n## Prompt:\n\nFix one of the problems in one of our community packages at `https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all`, and write about it.\n\n## Instructions:\n\nWhat we want to know is the **exact** warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\n\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\n\n**Which error or warning did you fix? ... and how?**\n\n*my answer*\n\nThe warning message from the item I fixed is  \n`❯ checking dependencies in R code ... WARNING   '::' or ':::' import not declared from: ‘purrr’`\n\nThis must results from using a function from \\`purrr\\` package with import missing, so I went to the R code, spotted the function with code `purrr::` . In the function defined there, I added one line with `#' @import purrr`, ran the function `devtool::document` to make sure \\`NAMESPACE\\` is properly updated, I also update `Imports` in `DESCRIPTION`.\n\nThis is an easy warning to fixed as long as familiarizing with the documentation process in R package and being able to find the function loaded the package.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

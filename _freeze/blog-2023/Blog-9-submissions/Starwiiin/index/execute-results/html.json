@@ -1,0 +1,14 @@
+{
+  "hash": "5a9e7cf76ea293679a773cdae033e022",
+  "result": {
+    "markdown": "---\ntitle: \"Errors and warnings in packages\"\nauthor: \"Parvin Mohammadiarvejeh\"\ndate: \"2023-03-30\"\ncategories: \"Errors and warnings in packages\"\noutput: github_document\n---\n\n\n<!-- README.md is generated from README.Rmd. Please edit that file -->\n<!-- badges: start -->\n[![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)\n<!-- badges: end -->\n\n## Prompt:\n\nFix one of the problems in one of our community packages at `https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all`, and write about it. \n\n## Instructions:\n\nWhat we want to know is the **exact** warning or error message of the item you fixed, and a description of what you did, also as specific as possible. \n\nDescribe your experience  below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\n\n**Which error or warning did you fix? ... and how?**\n\nParvin's answer: I have been working on \"Team6\" package for this blog.\nErrors that I could address are as follows:\n\nget_pd_presslog: no visible global function definition for 'download.file'\npd_to_tbl: no visible global function definition for 'extract_tables'\npd_to_tbl: no visible binding for global variable 'one_page'\npd_to_tbl: no visible global function definition for 'write_csv'\npd_to_tbl: no visible global function definition for 'year'\npd_to_tbl: no visible global function definition for 'month'\npd_to_tbl: no visible global function definition for 'mday'\n\n\n\n\nI added \"ImportFrom utils download.file\", \"ImportFrom readr write_csv\", \"ImportFrom tabulizer extract_tables\", \"ImportFrom lubridate year mday month\" to the \"get_pd_presslog\" and \"pd_to_tbl\" and also to the description file. I used the \"document()\" and \"check()\" to fix the problems and check if the error is gone. In this way, I could solve the above errors. For the error related to the 'one_page', I added the \"one_page = NULL\" and it helped to address the error. \n\n\n\n\n\n  \n  \n  \n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

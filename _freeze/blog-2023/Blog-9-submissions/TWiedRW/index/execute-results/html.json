@@ -1,0 +1,14 @@
+{
+  "hash": "1992d726b73dfb70ca3ed02f29651896",
+  "result": {
+    "markdown": "---\ntitle: Errors and warnings in packages\nauthor: Tyler Wiederich\ndate: \"2023-03-30\"\ncategories: \"Errors and warnings in packages\"\noutput: github_document\n---\n\n\n<!-- README.md is generated from README.Rmd. Please edit that file -->\n<!-- badges: start -->\n[![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)\n<!-- badges: end -->\n\n## Prompt:\n\nFix one of the problems in one of our community packages at `https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all`, and write about it. \n\n\n\nThe error that I fixed is not actually one that R detected. \nWhen I was finding errors in the various packages, I noticed that the file names when downloading the pdf file from Team6 attached \"NULL\" to the end of the file name. \nThe output came from the `get_pd_presslog` function.\nThis was easily fixed by changing the `cat` function into `paste`. \n\n\n::: {.cell hash='index_cache/html/unnamed-chunk-1_39fb8490f11f0d6aab424f90effa25d8'}\n\n```{.r .cell-code}\n#Original line\nprint(cat('Some text:', 'user input'))\n```\n\n::: {.cell-output .cell-output-stdout}\n```\nSome text: user inputNULL\n```\n:::\n\n```{.r .cell-code}\n#New line\nprint(paste('Some text:', 'user input'))\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] \"Some text: user input\"\n```\n:::\n:::\n\n\nThe problem with these types of errors is that they can sometimes go unnoticed when writing code. \n\nThere was one other error that I fixed. \nThe function arguments for the url and save locations were assigned immediately inside the function, so any user input for these arguments would be ignored.\n\n\n::: {.cell hash='index_cache/html/unnamed-chunk-2_c1c49dbf254058099f7b7e4106edbc0c'}\n\n```{.r .cell-code}\n#Original format\nfunction(arg1, arg2){\n  arg1 <- 'Some default url'\n  arg2 <- 'Some default save location'\n  #Rest of function here\n}\n\n#New format\nfunction(arg1 = 'Some default url', arg2 = 'Some default save location'){\n  #Rest of function here\n}\n```\n:::\n\n\nAgain, this is an error that R would not alert users of since it computationally does not produce any warnings or errors. \nIn this case, the danger would be old files with the same name would be replaced when running the function again. \nThe url for the source would not change, but it is better to put the default into the function argument rather than writing over the argument in the code.\n\n\n\n\n\n\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

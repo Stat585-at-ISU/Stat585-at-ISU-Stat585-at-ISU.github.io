@@ -1,0 +1,14 @@
+{
+  "hash": "d30b66d6961d5c276bb0798c3e7a5484",
+  "result": {
+    "markdown": "---\n  title: \"all-for-one\"\n  author: \"Charch\"\n  date: \"2023-03-30\"\n  categories: \"Errors and warnings in packages\"\n  output: github_document\n---\n\n\n<!-- README.md is generated from README.Rmd. Please edit that file -->\n<!-- badges: start -->\n[![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)\n<!-- badges: end -->\n\n## Prompt:\n\nFix one of the problems in one of our community packages at `https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all`, and write about it. \n\n## Instructions:\n\nWhat we want to know is the **exact** warning or error message of the item you fixed, and a description of what you did, also as specific as possible. \n\nDescribe your experience  below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\n\n**Which error or warning did you fix? ... and how?**\nFixed\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

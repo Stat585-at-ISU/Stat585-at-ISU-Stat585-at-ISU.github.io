@@ -1,0 +1,14 @@
+{
+  "hash": "89b9c2da00e2928aeb7d040eb19e54a7",
+  "result": {
+    "markdown": "---\nauthor: \"Valerie Han\"\ntitle: \"Fixing a note\"\ncategories: \"Errors and warnings in packages\"\ndate: \"2023-03-30\"\noutput:\n  github_document: default\n---\n\n\n<!-- README.md is generated from README.Rmd. Please edit that file -->\n<!-- badges: start -->\n[![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)\n<!-- badges: end -->\n\n## Prompt:\n\nFix one of the problems in one of our community packages at `https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all`, and write about it. \n\n## Instructions:\n\nWhat we want to know is the **exact** warning or error message of the item you fixed, and a description of what you did, also as specific as possible. \n\nDescribe your experience  below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\n\n**Which error or warning did you fix? ... and how?**\n\nI fixed a note in Team 2's package. The note was\n\n```\nchecking top-level files ... NOTE\n  Non-standard file/directory found at top level:\n    ‘presslog_amespd_2023-03-07.pdf’\n```\n\nI looked up the note on Google and found a [Stack Overflow post](https://stackoverflow.com/questions/48955103/non-standard-file-directory-found-at-top-level-readme-rmd-persists-even-after) describing a similar issue. I then resolved the note by adding `^presslog_amespd_2023-03-07\\.pdf$` to the `.Rbuildignore` file.\n\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
