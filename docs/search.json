@@ -833,6 +833,342 @@
     "text": "Submission\n\nPush your changes to your repository.\nYou are ready to call it good, once all your github actions pass without an error. You can check on that by selecting ‘Actions’ on the menu and ensure that the last item has a green checkmark. The action for this repository checks the yaml of your contribution for the existence of the author name, a title, date and categories. Don’t forget the space after the colon! Once the action passes, the badge along the top will also change its color accordingly. As of right now, the status for the YAML front matter is:\n\n\n\n\nFrontmatter check\n\n\n---\nauthor: \"Your Name\"\ntitle: \"Specify your title\"\ndate: \"2023-02-23\"\ncategories: \"Ethics and Reproducibility...\"\n---"
   },
   {
+    "objectID": "blog-2023/Blog-9-submissions/xyzyc/index.html#prompt",
+    "href": "blog-2023/Blog-9-submissions/xyzyc/index.html#prompt",
+    "title": "Fix TeamUNL",
+    "section": "Prompt:",
+    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/xyzyc/index.html#instructions",
+    "href": "blog-2023/Blog-9-submissions/xyzyc/index.html#instructions",
+    "title": "Fix TeamUNL",
+    "section": "Instructions:",
+    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how?\nBefore the spring break, I fixed several things for TeamUNL:\n\nBy adding ^presslog.*\\.pdf$ to the .RBuildignore file, the check function will ignore the pdf files in the R package folder.\nI created a global.R file in the R folder inside the package, and write a line utils::globalVariables(c(\"presslog_ames\")) to avoid the global variable binding problem. The package passed the check with no problems. In this blog, I switched to the method used in class, i.e., add presslog_ames <- NULL and data(presslog_ames, envir  = enviroment()) to the function, and specify importFrom utils data.\nFix the dependencies by writing appropriate importFrom argument in front of the functions.\n\nIn this blog, when I try function call get_presslog (\"2023-02-14\", to = \"2023-02-14\"), I get error “character string is not in a standard unambiguous format”. The function get_presslog is written for presslog_ames.rda where the Call Received Date/Time is a date object. However, the Call Received Date/Time in the current file is character. So I updated the dataset."
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/kundan7kumar/index.html#prompt",
+    "href": "blog-2023/Blog-9-submissions/kundan7kumar/index.html#prompt",
+    "title": "Error Fixing for the package",
+    "section": "Prompt:",
+    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/kundan7kumar/index.html#instructions",
+    "href": "blog-2023/Blog-9-submissions/kundan7kumar/index.html#instructions",
+    "title": "Error Fixing for the package",
+    "section": "Instructions:",
+    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nSolution:\nThe error, i am getting Error in purrr::map(): ℹ In index: 1. Caused by error: ! HTTP error 401. Bad credentials\nRate limit remaining: 59/60 Rate limit reset at: 2023-03-29 03:21:47 UTC\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how? I tried fixing the error by setting the key the github but it is not working. I am not sure what causing the error.I have key set up earlier,it is working fine for others.\nError: Consider adding importFrom(“utils”, “download.file”, “write.csv”) to your NAMESPACE file.\nFinally, I fixed the error and able to fix few warning and notes check for Team3.\n\nI have changed separate(Call_Received_Date_Time) function to separate(‘Call_Received_Date_Time’) as it is unable to recognize the variable globally.\nI have included the few imports and param in the R file like #’ @importFrom utils download.file\n\n#’ @importFrom magrittr %>%\n#’ @importFrom lubridate ymd_hms\n#’ @importFrom pdftools pdf_text\n#’ @importFrom stringr str_replace_all\n#’ @param pdf name of pdf with data\n#’ @param save_as optional for saving a csv file\nThis helps to fix the 2 notes to 0 notes , but unable to fix the 2 warning."
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/anyeshar/index.html",
+    "href": "blog-2023/Blog-9-submissions/anyeshar/index.html",
+    "title": "Fixing thing from Lab 2",
+    "section": "",
+    "text": "Fix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/anyeshar/index.html#instructions",
+    "href": "blog-2023/Blog-9-submissions/anyeshar/index.html#instructions",
+    "title": "Fixing thing from Lab 2",
+    "section": "Instructions:",
+    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how? Warning: cannot open file ‘presslog-20230306.csv’: No such file or directoryError in file(file, “rt”) : cannot open the connection\nThis was due to the fact that we updated the presslog date to the current day we were working on it. That means if we used it a different day, it would be outdated. I changed the file it was looking for to be a general press log file. It did not have a specific date attatched.\nget_presslog <- function(from, to) { df <- utils::read.csv(“presslog-%s%02d%02d.csv”) # Change the date to be today’s date df[c(‘Date’, ‘Time’)] <- stringr::str_split_fixed(df\\(Call.Received.Date.Time, ' ', 2)  calls <- df[df\\)Date >= from & df$Date <= to, ] print(calls)\nWhile this isn’t an absolute solution because it depends on the previous function to save as presslog-%s%02d%02d.csv. This does work for any date and we will not have to change the date every time."
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/Landon-Getting/index.html",
+    "href": "blog-2023/Blog-9-submissions/Landon-Getting/index.html",
+    "title": "Solving package problems!",
+    "section": "",
+    "text": "Frontmatter check\n\n\n\nWhich error or warning did you fix? … and how?\nAfter running devtools::check() for Team 3, I received several errors regarding a lack of visible bindings or variable definitions. I decided to focus on the errors regarding the get_presslog function:\n\nget_presslog: no visible binding for global variable ‘presslog_ames’\nget_presslog: no visible global function definition for ‘ymd’\nget_presslog: no visible global function definition for ‘%>%’\nget_presslog: no visible binding for global variable ‘Call_Received_Date’`\n\nI fixed the first error by specifically referencing the package of origin for the presslog_ames data object.\nTeam3::presslog_ames rather than presslog_ames.\nNext, I added similar references for all instances of the ymd() function.\nlubridate::ymd() rather than ymd().\nWhile attempting to solve the final warning for the get_presslog function, I ran into a plethora of issues. I added the prefix .data$ to eliminate the visible binding problem, but then I needed to add @importFrom rlang .data to the roxygen comments.\n.data$Call_Received_Date rather than Call_Received_Date\nOnce I added the @importFrom tag, ran devtools::document(), and added rlang to the description file, I thought I was in the clear. However, I received the following error when performing the check:\nNo root directory found in C:/Users/[my directories]/lab-3-all-all-for-one-and-one-for-all oits parent     directories. Root criterion: contains a file \"DESCRIPTION\" with contents matching \"^Package:\nI struggled with this problem but figured out that the description file had a small error in it. Instead of imports:, the description file had import: which caused not to recognize the following packages to import.\nAfter fixing this error, I ran devtools::check() and the get_presslog binding or definition issues were resolved."
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/Hiiiua/index.html",
+    "href": "blog-2023/Blog-9-submissions/Hiiiua/index.html",
+    "title": "Fix a warning in CMD check",
+    "section": "",
+    "text": "Frontmatter check"
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/Hiiiua/index.html#prompt",
+    "href": "blog-2023/Blog-9-submissions/Hiiiua/index.html#prompt",
+    "title": "Fix a warning in CMD check",
+    "section": "Prompt:",
+    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/Hiiiua/index.html#instructions",
+    "href": "blog-2023/Blog-9-submissions/Hiiiua/index.html#instructions",
+    "title": "Fix a warning in CMD check",
+    "section": "Instructions:",
+    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how?\nmy answer\nThe warning message from the item I fixed is\n❯ checking dependencies in R code ... WARNING   '::' or ':::' import not declared from: ‘purrr’\nThis must results from using a function from `purrr` package with import missing, so I went to the R code, spotted the function with code purrr:: . In the function defined there, I added one line with #' @import purrr, ran the function devtool::document to make sure `NAMESPACE` is properly updated, I also update Imports in DESCRIPTION.\nThis is an easy warning to fixed as long as familiarizing with the documentation process in R package and being able to find the function loaded the package."
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/charlestbonk/index.html#prompt",
+    "href": "blog-2023/Blog-9-submissions/charlestbonk/index.html#prompt",
+    "title": "Stat 585",
+    "section": "Prompt:",
+    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/charlestbonk/index.html#instructions",
+    "href": "blog-2023/Blog-9-submissions/charlestbonk/index.html#instructions",
+    "title": "Stat 585",
+    "section": "Instructions:",
+    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how?"
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/TWiedRW/index.html#prompt",
+    "href": "blog-2023/Blog-9-submissions/TWiedRW/index.html#prompt",
+    "title": "Errors and warnings in packages",
+    "section": "Prompt:",
+    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it.\nThe error that I fixed is not actually one that R detected. When I was finding errors in the various packages, I noticed that the file names when downloading the pdf file from Team6 attached “NULL” to the end of the file name. The output came from the get_pd_presslog function. This was easily fixed by changing the cat function into paste.\n\n#Original line\nprint(cat('Some text:', 'user input'))\n\nSome text: user inputNULL\n\n#New line\nprint(paste('Some text:', 'user input'))\n\n[1] \"Some text: user input\"\n\n\nThe problem with these types of errors is that they can sometimes go unnoticed when writing code.\nThere was one other error that I fixed. The function arguments for the url and save locations were assigned immediately inside the function, so any user input for these arguments would be ignored.\n\n#Original format\nfunction(arg1, arg2){\n  arg1 <- 'Some default url'\n  arg2 <- 'Some default save location'\n  #Rest of function here\n}\n\n#New format\nfunction(arg1 = 'Some default url', arg2 = 'Some default save location'){\n  #Rest of function here\n}\n\nAgain, this is an error that R would not alert users of since it computationally does not produce any warnings or errors. In this case, the danger would be old files with the same name would be replaced when running the function again. The url for the source would not change, but it is better to put the default into the function argument rather than writing over the argument in the code."
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/charchit/index.html#prompt",
+    "href": "blog-2023/Blog-9-submissions/charchit/index.html#prompt",
+    "title": "all-for-one",
+    "section": "Prompt:",
+    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/charchit/index.html#instructions",
+    "href": "blog-2023/Blog-9-submissions/charchit/index.html#instructions",
+    "title": "all-for-one",
+    "section": "Instructions:",
+    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how? Fixed"
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/kellynay/index.html#prompt",
+    "href": "blog-2023/Blog-9-submissions/kellynay/index.html#prompt",
+    "title": "Fixing Package Errors",
+    "section": "Prompt:",
+    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/kellynay/index.html#instructions",
+    "href": "blog-2023/Blog-9-submissions/kellynay/index.html#instructions",
+    "title": "Fixing Package Errors",
+    "section": "Instructions:",
+    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how?\nI worked with my Lab3 - Team 3 colleagues to fix some of the issues highlighted by Ganesh when he graded our lab assignment.\nExact warning message: Warning: replacing previous import ‘dplyr::filter’ by ‘stats::filter’ when loading ‘Team3’ ** testing if installed package can be loaded from final location Warning: replacing previous import ‘dplyr::filter’ by ‘stats::filter’ when loading ‘Team3’ ** testing if installed package keeps a record of temporary installation path\nThe get_presslog function was throwing a warning due to the following (Line 19 in get_presslog.R):\n\ndata_subset <- data %>% filter(Call_Received_Date >= from2) %>% filter(Call_Received_Date <= to2)\n\nWe fixed the error by doing:\n\ndata_subset <- data %>% dplyr::filter(Call_Received_Date >= from2) %>% dplyr::filter(Call_Received_Date <= to2)\n\nIn summary, we replaced ‘stats::filter’ by ‘dplyr::filter’.\nWe also addressed this issue in the NAMESPACE file by writing on Line 12: importFrom(“stats”, “filter”)"
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/drbradford12/index.html#prompt",
+    "href": "blog-2023/Blog-9-submissions/drbradford12/index.html#prompt",
+    "title": "Stat 585",
+    "section": "Prompt:",
+    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/drbradford12/index.html#instructions",
+    "href": "blog-2023/Blog-9-submissions/drbradford12/index.html#instructions",
+    "title": "Stat 585",
+    "section": "Instructions:",
+    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how?"
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/HarunCelikOtto/index.html",
+    "href": "blog-2023/Blog-9-submissions/HarunCelikOtto/index.html",
+    "title": "Undefined Object Error",
+    "section": "",
+    "text": "Frontmatter check"
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/HarunCelikOtto/index.html#prompt",
+    "href": "blog-2023/Blog-9-submissions/HarunCelikOtto/index.html#prompt",
+    "title": "Undefined Object Error",
+    "section": "Prompt:",
+    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/HarunCelikOtto/index.html#instructions",
+    "href": "blog-2023/Blog-9-submissions/HarunCelikOtto/index.html#instructions",
+    "title": "Undefined Object Error",
+    "section": "Instructions:",
+    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nMy search for an error was to try and load all of the packages to then run checks on them to see which ones I could immediately jump into. I definitely didn’t go in numerical order but I did find that I got an error after trying devtools::load_all(\"Team6/\"). The exact message can be seen from the screenshot below.\n\n\n\nFirst Error on `load_all()`\n\n\nI could see from the console that the error was in the get_pd_presslog() function of the package. Running rlang::last_trace() and opening up the get_pd_presslog() function document I found the following.\n\n\n\nTraceback Error and Function\n\n\nThe Traceback mentioned that the error was in an object called “link”. Checking the function file, I found that there was an instance where the function was called with a variable called “link” which was supposed to supply the {url} argument to the function.\nThe first problem is that the variable “link” is assigned after the function is called so download.file() doesn’t have a {url} argument supplied to it. This causes the function to fail and therefore load_all() fails to run.\nThe second problem is that there is no need to call the get_pd_presslog() function in the function documentation. That is better reserved for a testing environment set up with usethis::use_testthat().\nMy goal was only to have the package load properly so removing those two lines allowed me to load the package and run a devtools::check() without any problems. Here are the results.\n\n\n\nPackage loaded and check() output"
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/valeriehan6/index.html#prompt",
+    "href": "blog-2023/Blog-9-submissions/valeriehan6/index.html#prompt",
+    "title": "Fixing a note",
+    "section": "Prompt:",
+    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/valeriehan6/index.html#instructions",
+    "href": "blog-2023/Blog-9-submissions/valeriehan6/index.html#instructions",
+    "title": "Fixing a note",
+    "section": "Instructions:",
+    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how?\nI fixed a note in Team 2’s package. The note was\nchecking top-level files ... NOTE\n  Non-standard file/directory found at top level:\n    ‘presslog_amespd_2023-03-07.pdf’\nI looked up the note on Google and found a Stack Overflow post describing a similar issue. I then resolved the note by adding ^presslog_amespd_2023-03-07\\.pdf$ to the .Rbuildignore file."
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/IanParzyszek/index.html#prompt",
+    "href": "blog-2023/Blog-9-submissions/IanParzyszek/index.html#prompt",
+    "title": "Stat 585",
+    "section": "Prompt:",
+    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/IanParzyszek/index.html#instructions",
+    "href": "blog-2023/Blog-9-submissions/IanParzyszek/index.html#instructions",
+    "title": "Stat 585",
+    "section": "Instructions:",
+    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how?"
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/loganjohnson0/index.html#prompt",
+    "href": "blog-2023/Blog-9-submissions/loganjohnson0/index.html#prompt",
+    "title": "Stat 585",
+    "section": "Prompt:",
+    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/loganjohnson0/index.html#instructions",
+    "href": "blog-2023/Blog-9-submissions/loganjohnson0/index.html#instructions",
+    "title": "Stat 585",
+    "section": "Instructions:",
+    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how?"
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/Atefeha1995/index.html#prompt",
+    "href": "blog-2023/Blog-9-submissions/Atefeha1995/index.html#prompt",
+    "title": "Errors and warnings in packages",
+    "section": "Prompt:",
+    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/Atefeha1995/index.html#instructions",
+    "href": "blog-2023/Blog-9-submissions/Atefeha1995/index.html#instructions",
+    "title": "Errors and warnings in packages",
+    "section": "Instructions:",
+    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how?\nFor team 4, I ran check(“Team4”), and this was the result:\n❯ checking dependencies in R code ... NOTE Namespaces in Imports field not imported from:   'readr' 'stringr' All declared Imports should be used.\n0 errors ✔ | 0 warnings ✔ | 1 note ✖\nSo, I changed the Imports set in Description file, and omitted ‘readr’ and ‘stringr’. It seems that these packages were not required. Here is the new result for check(“Team4”) command:\n0 errors ✔ | 0 warnings ✔ | 0 notes ✔\nFor Team6, When I ran document(“Team6”), I got this error message:\n> document(\"Team6\") ℹ Updating Team6 documentation ℹ Loading Team6 Warning message: [press_log_data.R:15] @source requires a value\nThen I went to press_log_data.R file, and I checked row number 15. It seems that they forgot to add an appropriate source there. So, I added the source of the data there. Then, I ran the command one more time and the problem has been solved.\n> document(\"Team6\") ℹ Updating Team6 documentation ℹ Loading Team6 Writing press_log_data.Rd\nThis was the note when I ran check(“Team6”):\n❯ checking top-level files ... NOTE Non-standard files/directories found at top level:  'presslog-20230306.csv' 'presslog_amespd_2023-03-06.pdf'\n0 errors ✔ | 1 warning ✖ | 1 note ✖\nI deleted those two extra files (presslog-20230306.csv and presslog_amespd_2023-03-06.pdf), and the note has been removed.\n0 errors ✔ | 1 warning ✖ | 0 notes ✔\nFor Team2, when I ran check(“Team2”), I got this error:\n> check(\"Team2\") ℹ Updating Team2 documentation ℹ Loading Team2 Error: 'ames_presslog' is not an exported object from 'namespace:Team2'\nI checked and found that ‘ames_presslog’ is not exported in namespace, and it is not in man files. So, I deleted the ‘ames_presslog.R’ from the R folder, and it’s data from the Data folder. Then, I ran check() command again, and this was the result:\n0 errors ✔ | 4 warnings ✖ | 2 notes ✖\nthis was one of the warning messages:\n❯ checking Rd \\usage sections ... WARNING Undocumented arguments in documentation object 'get_presslog' 'date.column' Functions with \\usage entries need to have the appropriate \\alias entries, and all their arguments documented. The \\usage entries must correspond to syntactically valid R code. See chapter 'Writing R documentation files' in the 'Writing R  Extensions' manual.\nconsidering the message I went to the get_presslog.R file in the R folder of the Team2 package, and I added the date.column which is one of the inputs for the get_presslog function, as a parameter using the command line below.\n#' @param date.column The column which contains the Date and time\nI saved the changes, and checked it again. The number of warnings was reduced to 3.\n0 errors ✔ | 3 warnings ✖ | 2 notes ✖"
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/anphan0828/index.html#prompt",
+    "href": "blog-2023/Blog-9-submissions/anphan0828/index.html#prompt",
+    "title": "The painful green ticks",
+    "section": "Prompt:",
+    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it.\nWhich error or warning did you fix? … and how?\nI chose Team2’s package to fix and enjoyed the pain. I used devtools to install, load, document, check, and repeated all over again.\nFirst try, 2 notes (seems easy to solve!):\n\nNon-standard file/directory found at top level: easy, put the .pdf extension in .Rbuildignore\nUndefined global functions or variables: %>% . download.file presslog_ames write.csv. I went to each R source file and added @importFrom (e.g., purrr %>%, utils download.file, utils write.csv), then rerun devtools::document() to update the NAMESPACE file. For the dot (“.”), I could not figure out which package it came from, so I had to edit the code to not use “.” within an lapply function. For the presslog_ames dataset, it was not loaded into the environment before using, so I declared it.\n\nSecond try, 1 error (that is worse than 2 notes!):\n\nNamespace dependency missing from DESCRIPTION Imports/Depends entries: purrr. So, it gets imported previously, but the DESCRIPTION file did not have that information (I felt weird that devtools::document() only updates NAMESPACE, not DESCRIPTION. I went ahead and manually added purrr under Imports.\n\nThird try, 1 warning (I’m getting there!!):\n\nDocumented arguments not in in documentation object ‘get_presslog’: ‘df’. I wasn’t sure about the @usage tag, so I just override the argument df passed into the function with the presslog_ames data (not the best way, but it works)\n\nFourth try (I lied, it took me way many more times to reach here but I only describe the main problems): SUCCESS!! 0 errors, 0 warnings, 0 notes!"
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/hardtme/index.html#prompt",
+    "href": "blog-2023/Blog-9-submissions/hardtme/index.html#prompt",
+    "title": "I Fixed It!",
+    "section": "Prompt:",
+    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/hardtme/index.html#instructions",
+    "href": "blog-2023/Blog-9-submissions/hardtme/index.html#instructions",
+    "title": "I Fixed It!",
+    "section": "Instructions:",
+    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how?\nI fixed the following note from my lab 3 group’s TwoTeam4 package (This package was so named because it was my group’s second attempt at a package, and was an improvement over the first version, Team4):\n> checking R code for possible problems ... NOTE\n  get_pd_presslog: no visible global function definition for\n    ‘download.file’\n  get_presslog: no visible binding for global variable ‘plog_df’\n  get_presslog: no visible binding for global variable ‘Call Received\n    Date/Time’\n  get_presslog: no visible binding for global variable ‘NewDate’\n  pdf_to_tbl: no visible binding for global variable ‘tail’\n  pdf_to_tbl: no visible global function definition for ‘write.csv’\n  Undefined global functions or variables:\n    Call Received Date/Time NewDate download.file plog_df tail write.csv\n  Consider adding\n    importFrom(\"utils\", \"download.file\", \"tail\", \"write.csv\")\n  to your NAMESPACE file.\nMy first step was to go into the get_pd_presslog and get_presslog functions and add utils:: in front of the functions that were mentioned in the note. For example, instead of download.file, the get_pd_presslog function now includes utils::download.file. Since the functions were short, I preferred to account for each manually instead of using an importFrom() statement in the NAMESPACE file.\nAfter completing the first step, my note was reduced to\nchecking R code for possible problems ... NOTE\n  get_presslog: no visible binding for global variable ‘plog_df’\n  get_presslog: no visible binding for global variable ‘Call Received\n    Date/Time’\n  get_presslog: no visible binding for global variable ‘NewDate’\n  Undefined global functions or variables:\n    Call Received Date/Time NewDate plog_df\nI next wanted to remove the “no visible binding for global variable” notes. These notes of this type referring to “Call Received Date/Time” and “NewDate” were coming from code using tidyverse functions, so I followed the suggestion at this link to include the .data pronoun from rlang. This produced an error since rlang was not listed as a dependency in the DESCRIPTION file for the package. I added rlang as an import and the error went away.\nAfter adding the .data pronoun to the get_presslog function, the note was reduced to\n> checking R code for possible problems ... NOTE\n  get_presslog: no visible binding for global variable ‘plog_df’\n  Undefined global functions or variables:\n    plog_df\nTo solve the last part of the note, I added the line of code plog_df <- TwoTeam4::plog_df to the get_presslog function. This tells R that we want the TwoTeam4 version of plog_df.\nAfter all these fixes, R CMD Check finished with 0 errors, 0 warnings, and 0 notes. Yay!"
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/santos-cl/index.html#prompt",
+    "href": "blog-2023/Blog-9-submissions/santos-cl/index.html#prompt",
+    "title": "Fixing a thing",
+    "section": "Prompt:",
+    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/santos-cl/index.html#instructions",
+    "href": "blog-2023/Blog-9-submissions/santos-cl/index.html#instructions",
+    "title": "Fixing a thing",
+    "section": "Instructions:",
+    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how?\nFor this week’s blog, I decided to keep working on the Team2 package. The warning I identified dealt with us forgetting to include a library in the Imports section of the description, and using library within the functions. The error would be similar to the following message:\n checking dependencies in R code ... WARNING\n  'library' or 'require' calls not declared from:\n    'tabulizer' 'tidyverse'\n  'library' or 'require' calls in package code:\n    'tabulizer' 'tidyverse'\n    Please use :: or requireNamespace() instead.\n    See section 'Suggested packages' in the 'Writing R Extensions' manual.\nThe reason for this was that within the function pdf_to_table we were importing the library, like this:\npdf_to_tbl <- function(pdf, save_as = NULL) {\n\n  library(tidyverse)       <--------- This command was problematic\n  library(tabulizer)       <--------- This command was problematic\n \n  plog <- tabulizer::extract_tables(file = pdf, method = \"lattice\")\n  df <- lapply(plog, extract_data_frame_page)\n\n  # identify the numeric columns, since some pages miss all \"Report Number Assigned to Event\"\n  n <- length(df)\n  numeric_columns <- df %>% lapply(., function(x)sapply(x, class)) %>%\n    lapply(., function(x)which(x == \"numeric\")) %>%\n    unlist %>% unique\n\n  ## Combining the different pages\n  df <- do.call(rbind, df)\n  df[numeric_columns] <- suppressWarnings(lapply(df[numeric_columns], function(x)as.numeric(x)))\n\n  if (!is.null(save_as) && dir.exists(dirname(save_as))){\n    utils::write.csv(df, save_as, row.names = FALSE)\n  }\n\n  return(df)\n\n}\n\n\nI did three things to clear this warning: - Substitute the tidyverse call for the magrittr - Check if the name spaces “magrittr” and “tabulize” were available - In case they were, load the name space - Add magrittr and tabulizer to the Imports seciton of the description file\nThe updated function is as it follows:\npdf_to_tbl <- function(pdf, save_as = NULL) {\n\n  \n  if(!requireNamespace(\"tabulizer\", quietly = TRUE)){\n    warning(\"The tabulizer package is required for this function\")\n    return(NULL)\n  }\n  \n  if(!requireNamespace(\"magrittr\", quietly = TRUE)){\n    warning(\"The magrittr package is required for this function\")\n    return(NULL)\n  }\n  \n  \n  loadNamespace('magrittr')\n \n  \n  \n  plog <- tabulizer::extract_tables(file = pdf, method = \"lattice\")\n  df <- lapply(plog, extract_data_frame_page)\n\n  # identify the numeric columns, since some pages miss all \"Report Number Assigned to Event\"\n  n <- length(df)\n  numeric_columns <- df %>% lapply(., function(x)sapply(x, class)) %>%\n    lapply(., function(x)which(x == \"numeric\")) %>%\n    unlist %>% unique\n\n  ## Combining the different pages\n  df <- do.call(rbind, df)\n  df[numeric_columns] <- suppressWarnings(lapply(df[numeric_columns], function(x)as.numeric(x)))\n\n  if (!is.null(save_as) && dir.exists(dirname(save_as))){\n    utils::write.csv(df, save_as, row.names = FALSE)\n  }\n\n  return(df)\n\n}\n\nThe description file now also contains the updated Imports section\nPackage: Team2\nTitle: Get police presslogs\nVersion: 0.0.0.9000\nAuthors@R: c(\n    person(\"Caio\", \"dos Santos\", , \"clsantos@iastate.edu\", role = c(\"aut\", \"cre\")),\n    person(\"Alexandrea\", \"Arabio\", , \"aarabio@iastate.edu\", role = \"aut\"),\n    person(\"Maxwell\", \"Skinner\", , \"mskinn25@iastate.edu\", role = \"aut\")\n  )\nDescription: This package contains 3 functions to download, extract, and\n    filter presslog data. Also, it contains a sample data set.\nLicense: MIT + file LICENSE\nEncoding: UTF-8\nRoxygen: list(markdown = TRUE)\nRoxygenNote: 7.2.3\nImports: \n    lubridate,\n    tabulizer,\n    magrittr\nDepends: \n    R (>= 2.10)\nLazyData: true\nLitrVersionUsed: 0.7.0\nLitrId: afd1fe153acf34706b65fe5d2dcc1315"
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/sudi007/index.html#prompt",
+    "href": "blog-2023/Blog-9-submissions/sudi007/index.html#prompt",
+    "title": "Errors and warnings in packages",
+    "section": "Prompt:",
+    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/sudi007/index.html#instructions",
+    "href": "blog-2023/Blog-9-submissions/sudi007/index.html#instructions",
+    "title": "Errors and warnings in packages",
+    "section": "Instructions:",
+    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible. The following was the warning i got\nget_pd_presslog: no visible global function definition for ‘download.file’ get_presslog: no visible binding for global variable ‘presslog_ames’ get_presslog: no visible global function definition for ‘ymd’ get_presslog: no visible global function definition for ‘%>%’ get_presslog: no visible global function definition for ‘filter’ get_presslog: no visible binding for global variable ‘Call_Received_Date’ pdf_to_tbl: no visible global function definition for ‘extract_tables’ pdf_to_tbl: no visible global function definition for ‘%>%’ pdf_to_tbl: no visible global function definition for ‘separate’ pdf_to_tbl: no visible binding for global variable ‘Call_Received_Date_Time’ pdf_to_tbl: no visible global function definition for ‘write.csv’ pdf_to_tbl: no visible global function definition for ‘as_tibble’ Undefined global functions or variables: %>% Call_Received_Date Call_Received_Date_Time as_tibble download.file extract_tables filter presslog_ames separate write.csv ymd Consider adding importFrom(“stats”, “filter”) importFrom(“utils”, “download.file”, “write.csv”) to your NAMESPACE file.\nThe way i fixed the error was to add the following to Namespace file importFrom(“stats”, “filter”) importFrom(“utils”, “download.file”, “write.csv”)\nI fixed the error in the following manner:\n1) I ran series of checks on the Team3 package using the devtools::check() to produce the error. \n\n2) Once the issue was identified, I observed that it was missing some import function on the name space file.\n\n3) To fix this warning message, I added importFrom() statements to the NAMESPACE file. These statements tell R which functions and variables from other packages are needed. In my case, I added importFrom() statements for the filter, download.file, and write.csv functions from the stats and utils packages.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes\nAlthough fixing the namespace issues can be challenging in R, it is an important step in developing a well-functioning and properly organized package. The goal of namespace management is to ensure that each function in your package can access the functions and the variables it needs from other packages, without polluting the global environment or causing conflicts with other packages. A key challenge I faced was to ensure that all the packages were correctly imported and defined. It was helpful that after making all the changes, there was a tool to recheck if there were any errors.\nWhich error or warning did you fix? … and how?"
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/motinaaa/index.html#prompt",
+    "href": "blog-2023/Blog-9-submissions/motinaaa/index.html#prompt",
+    "title": "Green is the new Black",
+    "section": "Prompt:",
+    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/motinaaa/index.html#instructions",
+    "href": "blog-2023/Blog-9-submissions/motinaaa/index.html#instructions",
+    "title": "Green is the new Black",
+    "section": "Instructions:",
+    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how?\nFirstly, I did eeny meeny miny moe to pick a number, got 5, so I checked Team5 package:))\nI ran the check(), No warnings or errors, just some notes I saw. First note said all declared imports should be used. So I went to the description file and removed the mentioned packages from imports. Easy-peasy, fixed that note.\nNext note was about missing dependencies to other packages. Checked the .R code, and I added the dependencies in the description file under imports. Sorted!\nAnother note was about considering adding importFrom(\"stats\",\"filter\"). Addressed this by going to the .R file and adding dplyr:: before filter function. Then added @importFrom dplyr filter in the beginning of the file. After that, ran document() to build them in the NAMESPACE file and then ran check(). Fixed a bunch of these notes too!\nThen I tackled the global bindings and added \"Variable_Name\" <- \"Variable_Name\" <- NULL to the addressed functions. Tadaaaaa, green checkmarks all around for Team 5! Woohoo!\nI think I was supposed to fix just one of these notes, but my OCD kicked in and I ended up fixing them all. Just wanted to see those green marks! 😅"
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/Sabrenar/index.html#prompt",
+    "href": "blog-2023/Blog-9-submissions/Sabrenar/index.html#prompt",
+    "title": "Package Errors and Warnings",
+    "section": "Prompt:",
+    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/Sabrenar/index.html#instructions",
+    "href": "blog-2023/Blog-9-submissions/Sabrenar/index.html#instructions",
+    "title": "Package Errors and Warnings",
+    "section": "Instructions:",
+    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nThe exact warning message: Warning message: Expected 2 pieces. Missing pieces filled with NA in 50 rows [1, 2, 3, 4, 5, 32, 33, 34, 35, 36, 63, 64, 65, 66, 67, 94, 95, 96, 97, 98, …]. I referenced the separate function’s documentation. Since the warning from a result from not finding 2 pieces for the separate function, I found the parameter that controls what the function does if it does not find the expected number of pieces. I then edited the line using the separate function such that the function now has a fill parameter that does not give a warning on default.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nFixing these errors was straight-forward since I knew where the errors were coming from. I have used the separate function frequently so I recognized the warning message.\nWhich error or warning did you fix? … and how?\nPlease see the above answer."
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/luobo119/index.html#prompt",
+    "href": "blog-2023/Blog-9-submissions/luobo119/index.html#prompt",
+    "title": "Problems in Building the R Package",
+    "section": "Prompt:",
+    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/luobo119/index.html#instructions",
+    "href": "blog-2023/Blog-9-submissions/luobo119/index.html#instructions",
+    "title": "Problems in Building the R Package",
+    "section": "Instructions:",
+    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how?\nWarning from Team2:\n\nchecking Rd files … WARNING\nprepare_Rd: ./man/presslog_ames.Rd:18: unexpected section header ‘\\source’\nprepare_Rd: ./man/presslog_ames.Rd:21: unexpected section header ‘\\usage’\nprepare_Rd: ./man/presslog_ames.Rd:24: unexpected section header ‘\\description’\nprepare_Rd: ./man/presslog_ames.Rd:27: unexpected section header ‘\\keyword’\nprepare_Rd: ./man/presslog_ames.Rd:28: unexpected END_OF_INPUT ’ ’ checkRd: (5) presslog_ames.Rd:0-29: Must have a \\description\n\nThis warning can be fixed by adding ‘}’ in presslog_ames.R. There is one ‘}’ missing for ‘\\describe’.\n\nchecking dependencies in R code … WARNING\n‘library’ or ‘require’ calls not declared from:\n‘tabulizer’ ‘tidyverse’\n‘library’ or ‘require’ calls in package code:\n‘tabulizer’ ‘tidyverse’\nPlease use :: or requireNamespace() instead.\nSee section ‘Suggested packages’ in the ‘Writing R Extensions’ manual.\n\nAdding ‘@importFrom tabulizer extract_tables’ and deleting ‘library(’tidyverse’)’ and ‘library(’tabulizer’)’ in the function in pdf_to_tbl.R."
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/AArabio/index.html",
+    "href": "blog-2023/Blog-9-submissions/AArabio/index.html",
+    "title": "Fun with errors",
+    "section": "",
+    "text": "I was having a difficult time reconfigurating/rebuilding the all in this together - for some reason the project that I cloned stopped communicating with github and I have been working to reclone it but unfortunately it was not working … will continue to try tomorrow -"
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/AArabio/index.html#prompt",
+    "href": "blog-2023/Blog-9-submissions/AArabio/index.html#prompt",
+    "title": "Fun with errors",
+    "section": "Prompt:",
+    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/AArabio/index.html#instructions",
+    "href": "blog-2023/Blog-9-submissions/AArabio/index.html#instructions",
+    "title": "Fun with errors",
+    "section": "Instructions:",
+    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how?"
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/Starwiiin/index.html#prompt",
+    "href": "blog-2023/Blog-9-submissions/Starwiiin/index.html#prompt",
+    "title": "Errors and warnings in packages",
+    "section": "Prompt:",
+    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
+  },
+  {
+    "objectID": "blog-2023/Blog-9-submissions/Starwiiin/index.html#instructions",
+    "href": "blog-2023/Blog-9-submissions/Starwiiin/index.html#instructions",
+    "title": "Errors and warnings in packages",
+    "section": "Instructions:",
+    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how?\nParvin’s answer: I have been working on “Team6” package for this blog. Errors that I could address are as follows:\nget_pd_presslog: no visible global function definition for ‘download.file’ pd_to_tbl: no visible global function definition for ‘extract_tables’ pd_to_tbl: no visible binding for global variable ‘one_page’ pd_to_tbl: no visible global function definition for ‘write_csv’ pd_to_tbl: no visible global function definition for ‘year’ pd_to_tbl: no visible global function definition for ‘month’ pd_to_tbl: no visible global function definition for ‘mday’\nI added “ImportFrom utils download.file”, “ImportFrom readr write_csv”, “ImportFrom tabulizer extract_tables”, “ImportFrom lubridate year mday month” to the “get_pd_presslog” and “pd_to_tbl” and also to the description file. I used the “document()” and “check()” to fix the problems and check if the error is gone. In this way, I could solve the above errors. For the error related to the ‘one_page’, I added the “one_page = NULL” and it helped to address the error."
+  },
+  {
     "objectID": "blog-2023/Blog-3-submissions/xyzyc/ZhouYingchao.html",
     "href": "blog-2023/Blog-3-submissions/xyzyc/ZhouYingchao.html",
     "title": "Building a Book",
@@ -2476,341 +2812,5 @@
     "title": "Blog",
     "section": "",
     "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\n\n\nPrompt:\n\n\n\n\n\n\n\n\nPrompt:\n\n\n\n\n\n\n\n\nPrompt:\n\n\n\n\n\n\n\n\nPrompt:\n\n\n\n\n\n\n\n\nPrompt:\n\n\n\n\n\n\n\n\nPrompt:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPrompt:\n\n\n\n\n\n\n\n\nPrompt:\n\n\n\n\n\n\n\n\nPrompt:\n\n\n\n\n\n\nApr 6, 2023\n\n\nWeb scraping etiquette … – Prompt 10\n\n\nWho wrote this\n\n\n\n\nMar 30, 2023\n\n\nFix TeamUNL\n\n\nYingchao Zhou\n\n\n\n\nMar 30, 2023\n\n\nError Fixing for the package\n\n\nKundan Kumar\n\n\n\n\nMar 30, 2023\n\n\nFixing thing from Lab 2\n\n\nAR\n\n\n\n\nMar 30, 2023\n\n\nSolving package problems!\n\n\nLandon Getting\n\n\n\n\nMar 30, 2023\n\n\nFix a warning in CMD check\n\n\nMuxin Hua\n\n\n\n\nMar 30, 2023\n\n\nErrors and warnings in packages\n\n\nTyler Wiederich\n\n\n\n\nMar 30, 2023\n\n\nall-for-one\n\n\nCharch\n\n\n\n\nMar 30, 2023\n\n\nFixing Package Errors\n\n\nKelly Nascimento Thompson\n\n\n\n\nMar 30, 2023\n\n\nUndefined Object Error\n\n\nHarun Celik\n\n\n\n\nMar 30, 2023\n\n\nFixing a note\n\n\nValerie Han\n\n\n\n\nMar 30, 2023\n\n\nErrors and warnings in packages\n\n\nAtefeh Anisi\n\n\n\n\nMar 30, 2023\n\n\nThe painful green ticks\n\n\nAn Phan\n\n\n\n\nMar 30, 2023\n\n\nI Fixed It!\n\n\nMarie Hardt\n\n\n\n\nMar 30, 2023\n\n\nFixing a thing\n\n\nCdS\n\n\n\n\nMar 30, 2023\n\n\nErrors and warnings in packages\n\n\nsudesh_Bhagat\n\n\n\n\nMar 30, 2023\n\n\nGreen is the new Black\n\n\nMotina\n\n\n\n\nMar 30, 2023\n\n\nPackage Errors and Warnings\n\n\nSabrena Rutledge\n\n\n\n\nMar 30, 2023\n\n\nProblems in Building the R Package\n\n\nycb\n\n\n\n\nMar 30, 2023\n\n\nFun with errors\n\n\nAlexandra Arabio\n\n\n\n\nMar 30, 2023\n\n\nErrors and warnings in packages\n\n\nParvin Mohammadiarvejeh\n\n\n\n\nMar 30, 2023\n\n\nFix a thing – Prompt 9\n\n\nWho wrote this\n\n\n\n\nMar 23, 2023\n\n\nSimple personal website\n\n\nYingchao Zhou\n\n\n\n\nMar 23, 2023\n\n\nPersonal Website\n\n\nKundan Kumar\n\n\n\n\nMar 23, 2023\n\n\nWebsite Blog\n\n\nAR\n\n\n\n\nMar 23, 2023\n\n\nBecoming a Website Engineer\n\n\nLandon Getting\n\n\n\n\nMar 23, 2023\n\n\nGithub Page\n\n\nMuxin Hua\n\n\n\n\nMar 23, 2023\n\n\nBuilding website\n\n\nCharch\n\n\n\n\nMar 23, 2023\n\n\nBuilding a Website\n\n\nKelly Nascimento Thompson\n\n\n\n\nMar 23, 2023\n\n\nMy professional self\n\n\nDenise Bradford\n\n\n\n\nMar 23, 2023\n\n\nHarun’s Quarto Blog Page\n\n\nHarun Celik\n\n\n\n\nMar 23, 2023\n\n\nBuilding a website\n\n\nValerie Han\n\n\n\n\nMar 23, 2023\n\n\nIan and Remmys Website\n\n\nIan Parzyszek\n\n\n\n\nMar 23, 2023\n\n\nBuilding my own website\n\n\nLogan Johnson\n\n\n\n\nMar 23, 2023\n\n\nMy professional self\n\n\nAtefeh Anisi\n\n\n\n\nMar 23, 2023\n\n\nLet’s RMarkdown that Site\n\n\nAn Phan\n\n\n\n\nMar 23, 2023\n\n\nAdventures in Website Building\n\n\nMarie Hardt\n\n\n\n\nMar 23, 2023\n\n\nWhat should I include? What should I not?\n\n\nCdS\n\n\n\n\nMar 23, 2023\n\n\nMy professional self\n\n\nsudesh_Bhagat\n\n\n\n\nMar 23, 2023\n\n\nWelcome to the Club!\n\n\nMotina\n\n\n\n\nMar 23, 2023\n\n\nCreating a Website\n\n\nSabrena Rutledge\n\n\n\n\nMar 23, 2023\n\n\nWebsite Generation\n\n\nycb\n\n\n\n\nMar 23, 2023\n\n\nAll About Ally\n\n\nAlexandra Arabio\n\n\n\n\nMar 23, 2023\n\n\nMy Website\n\n\nParvin Mohammadiarvejeh\n\n\n\n\nMar 23, 2023\n\n\nMake your own website – Prompt 8\n\n\nWho wrote this\n\n\n\n\nMar 9, 2023\n\n\nAll that legal stuff… – Prompt 7\n\n\nWho wrote this\n\n\n\n\nMar 9, 2023\n\n\nLicense\n\n\nYingchao Zhou\n\n\n\n\nMar 9, 2023\n\n\nR licensing\n\n\nKundan Kumar\n\n\n\n\nMar 9, 2023\n\n\nLicensing Blog\n\n\nAR\n\n\n\n\nMar 9, 2023\n\n\nLearning Licensing\n\n\nLandon Getting\n\n\n\n\nMar 9, 2023\n\n\nLicenses\n\n\nMuxin Hua\n\n\n\n\nMar 9, 2023\n\n\nR Licensing and Package Dependencies\n\n\nKelly Nascimento Thompson\n\n\n\n\nMar 9, 2023\n\n\nSplit-Apply-Combine Post\n\n\nHarun Celik\n\n\n\n\nMar 9, 2023\n\n\nLicenses\n\n\nValerie Han\n\n\n\n\nMar 9, 2023\n\n\nWhat License when?\n\n\nIan Parzyszek\n\n\n\n\nMar 9, 2023\n\n\nLegal Stuff\n\n\nLogan Johnson\n\n\n\n\nMar 9, 2023\n\n\nAll that legal stuff…\n\n\nAtefeh Anisi\n\n\n\n\nMar 9, 2023\n\n\nIt’s not the end…\n\n\nAn Phan\n\n\n\n\nMar 9, 2023\n\n\nLegal Details of Licenses\n\n\nMarie Hardt\n\n\n\n\nMar 9, 2023\n\n\nDependencies\n\n\nCDS\n\n\n\n\nMar 9, 2023\n\n\nAll that legal stuff\n\n\nSudesh Bhagat\n\n\n\n\nMar 9, 2023\n\n\nLicenses and Packages\n\n\nSabrena Rutledge\n\n\n\n\nMar 9, 2023\n\n\nLicense\n\n\nyc bai\n\n\n\n\nMar 9, 2023\n\n\nLicense Fun\n\n\nAlexandra Arabio\n\n\n\n\nMar 9, 2023\n\n\nAll that legal stuff…\n\n\nParvin Mohammadiarvejeh\n\n\n\n\nMar 2, 2023\n\n\nrenv package\n\n\nYingchao Zhou\n\n\n\n\nMar 2, 2023\n\n\nrenv R package\n\n\nKundan Kumar\n\n\n\n\nMar 2, 2023\n\n\nrenv blog\n\n\nAR\n\n\n\n\nMar 2, 2023\n\n\nExploring renv\n\n\nLandon Getting\n\n\n\n\nMar 2, 2023\n\n\nMore on reproducibility\n\n\nMuxin Hua\n\n\n\n\nMar 2, 2023\n\n\nBlog 6\n\n\nTyler Wiederich\n\n\n\n\nMar 2, 2023\n\n\nRenv\n\n\nCharch\n\n\n\n\nMar 2, 2023\n\n\nRenv package overview\n\n\nKelly Nascimento Thompson\n\n\n\n\nMar 2, 2023\n\n\nSplit-Apply-Combine Post\n\n\nHarun Celik\n\n\n\n\nMar 2, 2023\n\n\nrenv\n\n\nValerie Han\n\n\n\n\nMar 2, 2023\n\n\nLearning Renv\n\n\nIan Parzyszek\n\n\n\n\nMar 2, 2023\n\n\n‘renv’ Package and Data Reproducibility\n\n\nLogan Johnson\n\n\n\n\nMar 2, 2023\n\n\nWorking with ‘renv’ package\n\n\nAtefeh Anisi\n\n\n\n\nMar 2, 2023\n\n\nExploring renv\n\n\nMarie Hardt\n\n\n\n\nMar 2, 2023\n\n\nR env\n\n\nCaio dos Santos\n\n\n\n\nMar 2, 2023\n\n\nGithub Actions\n\n\nSudesh Bhagat\n\n\n\n\nMar 2, 2023\n\n\nBadge is Coool!\n\n\nMotina\n\n\n\n\nMar 2, 2023\n\n\nReproducibility\n\n\nSabrena Rutledge\n\n\n\n\nMar 2, 2023\n\n\nrenv package\n\n\nyc bai\n\n\n\n\nMar 2, 2023\n\n\ntitle :)\n\n\nAlexandra Arabio\n\n\n\n\nMar 2, 2023\n\n\nMore on reproducibility…\n\n\nParvin Mohammadiarvejeh\n\n\n\n\nMar 2, 2023\n\n\nMore on reproducibility… – Prompt 6\n\n\nWho wrote this\n\n\n\n\nFeb 23, 2023\n\n\nKeep track of results and data\n\n\nYingchao Zhou\n\n\n\n\nFeb 23, 2023\n\n\nEthics and Reproducibility\n\n\nKundan Kumar\n\n\n\n\nFeb 23, 2023\n\n\nReading about COVID Calculators\n\n\nAR\n\n\n\n\nFeb 23, 2023\n\n\nTREEFINDER - Leveraging Research Software for Political Agendas\n\n\nLandon Getting\n\n\n\n\nFeb 23, 2023\n\n\nRetraction\n\n\nMuxin Hua\n\n\n\n\nFeb 23, 2023\n\n\nUC Berkeley’s Ninov 2.0\n\n\nNot Charlie\n\n\n\n\nFeb 23, 2023\n\n\nRetraction\n\n\nCharch\n\n\n\n\nFeb 23, 2023\n\n\nRules for Research Reproducibility\n\n\nKelly Nascimento Thompson\n\n\n\n\nFeb 23, 2023\n\n\nRetraction Watch – Reliability and Sensitivity of Neuromuscular and Perceptual Fatigue Measures in Collegiate Men’s Basketball\n\n\nDenise Bradford\n\n\n\n\nFeb 23, 2023\n\n\nBlog Five\n\n\nHarun Celik\n\n\n\n\nFeb 23, 2023\n\n\nReproducibility\n\n\nValerie Han\n\n\n\n\nFeb 23, 2023\n\n\nReplication of Data Presentation\n\n\nIan Parzyszek\n\n\n\n\nFeb 23, 2023\n\n\nImportance of Data Reproducibility\n\n\nLogan Johnson\n\n\n\n\nFeb 23, 2023\n\n\nHow to make our research reproducible\n\n\nAtefeh Anisi\n\n\n\n\nFeb 23, 2023\n\n\nPaper retracted alert!\n\n\nAn Phan\n\n\n\n\nFeb 23, 2023\n\n\nEthics in Reproducible Research\n\n\nMarie Hardt\n\n\n\n\nFeb 23, 2023\n\n\nDotting I’s and crossing T’s…\n\n\nCaio dos Santos\n\n\n\n\nFeb 23, 2023\n\n\nEthics and Reproducibility\n\n\nSudesh Bhagat\n\n\n\n\nFeb 23, 2023\n\n\nThe One Where Ethics Meet Reproducibility\n\n\nMotina\n\n\n\n\nFeb 23, 2023\n\n\nReproducing Randomness\n\n\nMaxwell Skinner\n\n\n\n\nFeb 23, 2023\n\n\nEthically Managing Data\n\n\nSabrena Rutledge\n\n\n\n\nFeb 23, 2023\n\n\nReproducible Computational Research\n\n\nyc bai\n\n\n\n\nFeb 23, 2023\n\n\nNumber 10\n\n\nAlexandra Arabio\n\n\n\n\nFeb 23, 2023\n\n\nEthics and Reproducibility…\n\n\nParvin Mohammadiarvejeh\n\n\n\n\nFeb 23, 2023\n\n\nEthics and Reproducibility… – Prompt 5\n\n\nWho wrote this\n\n\n\n\nFeb 16, 2023\n\n\nThe Split-Apply-Combine paradigm - Prompt 4\n\n\nWho wrote this\n\n\n\n\nFeb 16, 2023\n\n\nSplit, apply, combine\n\n\nYingchao Zhou\n\n\n\n\nFeb 16, 2023\n\n\nThe Split-Apply-Combine Strategy for Data Analysis\n\n\nKundan Kumar\n\n\n\n\nFeb 16, 2023\n\n\ndplyr vs plyr\n\n\nLandon Getting\n\n\n\n\nFeb 16, 2023\n\n\nTitle of your post\n\n\nNot Charlie\n\n\n\n\nFeb 16, 2023\n\n\nSplit-apply-combine\n\n\nTyler Wiederich\n\n\n\n\nFeb 16, 2023\n\n\nplyr and dplyr\n\n\nCharchit Shukla\n\n\n\n\nFeb 16, 2023\n\n\nTesting the ‘dplyr’ functionality\n\n\nKelly Nascimento Thompson\n\n\n\n\nFeb 16, 2023\n\n\nTitle of your post\n\n\nFirstname Lastname\n\n\n\n\nFeb 16, 2023\n\n\nSplit-Apply-Combine Post\n\n\nHarun Celik\n\n\n\n\nFeb 16, 2023\n\n\nThe Split-Apply-Combine Strategy\n\n\nValerie Han\n\n\n\n\nFeb 16, 2023\n\n\nGetting familiar with dpylr\n\n\nIan Parzyszek\n\n\n\n\nFeb 16, 2023\n\n\n‘plyr’ to d’plyr’\n\n\nLogan Johnson\n\n\n\n\nFeb 16, 2023\n\n\nSplit-apply-combine\n\n\nAn Phan\n\n\n\n\nFeb 16, 2023\n\n\nSplit-Apply-Combine\n\n\nMarie Hardt\n\n\n\n\nFeb 16, 2023\n\n\nplyr-dplyr-baseR\n\n\nCaio dos Santos\n\n\n\n\nFeb 16, 2023\n\n\nSplit-apply-combine\n\n\nSudesh Bhagat\n\n\n\n\nFeb 16, 2023\n\n\nTitle of your post\n\n\nMaxwell Skinner\n\n\n\n\nFeb 16, 2023\n\n\nSplit-apply-combine\n\n\nyc bai\n\n\n\n\nFeb 16, 2023\n\n\nSplit, Apply, Combine - Relevancy\n\n\nAlexandra Arabio\n\n\n\n\nFeb 16, 2023\n\n\nSplit-apply-combine\n\n\nParvin Mohammadiarvejeh\n\n\n\n\nFeb 9, 2023\n\n\nBuilding a Book\n\n\nYingchao Zhou\n\n\n\n\nFeb 9, 2023\n\n\nBuilding a Book\n\n\nKundan Kummar\n\n\n\n\nFeb 9, 2023\n\n\nBuilding a Book\n\n\nar\n\n\n\n\nFeb 9, 2023\n\n\nBook Building is Backbreaking\n\n\nLandon Getting\n\n\n\n\nFeb 9, 2023\n\n\nBuilding a Book\n\n\nMuxin Hua\n\n\n\n\nFeb 9, 2023\n\n\nBuilding a Book\n\n\nMatt Kavanaugh\n\n\n\n\nFeb 9, 2023\n\n\nBipity-Bopity-Book?\n\n\nNot Charlie\n\n\n\n\nFeb 9, 2023\n\n\nBuilding a book\n\n\nTyler Wiederich\n\n\n\n\nFeb 9, 2023\n\n\nBuilding a Book\n\n\nCharch\n\n\n\n\nFeb 9, 2023\n\n\nRendering a book using ‘bookdown’\n\n\nKelly Nascimento Thompson\n\n\n\n\nFeb 9, 2023\n\n\nError Fixing Process\n\n\nHarun Celik\n\n\n\n\nFeb 9, 2023\n\n\nBuilding a Book\n\n\nJust Testing\n\n\n\n\nFeb 9, 2023\n\n\nTitle of your post\n\n\nFirstname Lastname\n\n\n\n\nFeb 9, 2023\n\n\nBuilding a Book\n\n\nLogan Johnson\n\n\n\n\nFeb 9, 2023\n\n\nI finally built a book\n\n\nAtefeh Anisi\n\n\n\n\nFeb 9, 2023\n\n\nBuilding a Book\n\n\nAn Phan\n\n\n\n\nFeb 9, 2023\n\n\nAdventures in Book Building\n\n\nMarie Hardt\n\n\n\n\nFeb 9, 2023\n\n\nBuilding a Book\n\n\nCaio dos Santos\n\n\n\n\nFeb 9, 2023\n\n\nBuilding a Book\n\n\nSudesh Bhagat\n\n\n\n\nFeb 9, 2023\n\n\nDrawning in ERRORS\n\n\nMotina\n\n\n\n\nFeb 9, 2023\n\n\nTitle of your post\n\n\nFirstname Lastname\n\n\n\n\nFeb 9, 2023\n\n\nBuilding a book with R’s bookdown\n\n\nSabrena Rutledge\n\n\n\n\nFeb 9, 2023\n\n\nExperience of building a book\n\n\nYCB\n\n\n\n\nFeb 9, 2023\n\n\nBuilding a Book\n\n\nAA\n\n\n\n\nFeb 9, 2023\n\n\nBuilding a book\n\n\nParvin Mohammadiarvejeh\n\n\n\n\nFeb 9, 2023\n\n\nBuilding a book – Prompt 3\n\n\nWho wrote this\n\n\n\n\nFeb 5, 2023\n\n\nHappy Git with R\n\n\nHarun Celik\n\n\n\n\nFeb 3, 2023\n\n\nHappy Git with R\n\n\nSudesh Bhagat\n\n\n\n\nFeb 2, 2023\n\n\nHappy Git with R\n\n\nThe Prompt for Blog 2\n\n\n\n\nFeb 2, 2023\n\n\nHappy Git with R\n\n\nYingchao Zhou\n\n\n\n\nFeb 2, 2023\n\n\nHappy Git with R\n\n\nKundan Kumar\n\n\n\n\nFeb 2, 2023\n\n\nHappy Git with R\n\n\nYour Name\n\n\n\n\nFeb 2, 2023\n\n\nHappy Git with R\n\n\nLandon Getting\n\n\n\n\nFeb 2, 2023\n\n\nHappy Git with R\n\n\nMuxin Hua\n\n\n\n\nFeb 2, 2023\n\n\nHappy Git with R\n\n\nNot Charlie\n\n\n\n\nFeb 2, 2023\n\n\nHappy Git with R\n\n\nTyler Wiederich\n\n\n\n\nFeb 2, 2023\n\n\nHappy Git with R\n\n\nCharch\n\n\n\n\nFeb 2, 2023\n\n\nHappy Git with R\n\n\nKelly Nascimento Thompson\n\n\n\n\nFeb 2, 2023\n\n\nHappy Git with R\n\n\nMatt Kavanaugh\n\n\n\n\nFeb 2, 2023\n\n\nHappy Git with R\n\n\nHaoming Wang\n\n\n\n\nFeb 2, 2023\n\n\nHappy Git with R\n\n\nValerie Han\n\n\n\n\nFeb 2, 2023\n\n\nHappy Git with R\n\n\nIan Parzyszek\n\n\n\n\nFeb 2, 2023\n\n\nHappy Git with R\n\n\nLogan Johnson\n\n\n\n\nFeb 2, 2023\n\n\nHappy Git with R\n\n\nAtefeh Anisi\n\n\n\n\nFeb 2, 2023\n\n\nHappy Git with R\n\n\nAn Phan\n\n\n\n\nFeb 2, 2023\n\n\nHappy Git with R\n\n\nMarie Hardt\n\n\n\n\nFeb 2, 2023\n\n\nHappy Git with R\n\n\nSomebody\n\n\n\n\nFeb 2, 2023\n\n\nHappy Git with R\n\n\nGino Beltran\n\n\n\n\nFeb 2, 2023\n\n\nHappy Git with R\n\n\nMotina\n\n\n\n\nFeb 2, 2023\n\n\nHappy Git with R\n\n\nMaxwell Skinner\n\n\n\n\nFeb 2, 2023\n\n\nHappy Git with R\n\n\nSabrena Rutledge\n\n\n\n\nFeb 2, 2023\n\n\nHappy Git with R\n\n\nYCB\n\n\n\n\nFeb 2, 2023\n\n\nHappy Git with R\n\n\nAlexadra Arabio\n\n\n\n\nFeb 2, 2023\n\n\nHappy Git with R\n\n\nParvin Mohammadiarvejeh\n\n\n\n\nJan 26, 2023\n\n\nAsking Good Questions\n\n\nYingchao Zhou\n\n\n\n\nJan 26, 2023\n\n\nAsking Good Questions\n\n\nKundan Kumar\n\n\n\n\nJan 26, 2023\n\n\nAsking Good Questions\n\n\nAnyesha Ray\n\n\n\n\nJan 26, 2023\n\n\nAsking Good Questions\n\n\nLandon Getting\n\n\n\n\nJan 26, 2023\n\n\nAsking Good Questions\n\n\nMuxin Hua\n\n\n\n\nJan 26, 2023\n\n\nAsking Good Questions\n\n\nMatt Kavanaugh\n\n\n\n\nJan 26, 2023\n\n\nAsking Good Questions\n\n\nCharlie Bonk\n\n\n\n\nJan 26, 2023\n\n\nAsking Good Questions\n\n\nTyler Wiederich\n\n\n\n\nJan 26, 2023\n\n\nAsking Good Questions\n\n\nCharchit Shukla\n\n\n\n\nJan 26, 2023\n\n\nAsking Good Questions\n\n\nKelly Nascimento Thompson\n\n\n\n\nJan 26, 2023\n\n\nAsking Good Questions\n\n\nDenise Bradford\n\n\n\n\nJan 26, 2023\n\n\nAsking Good Questions\n\n\nCelik Harun\n\n\n\n\nJan 26, 2023\n\n\nAsking Good Questions\n\n\nHaoming Wang\n\n\n\n\nJan 26, 2023\n\n\nAsking Good Questions\n\n\nValerie Han\n\n\n\n\nJan 26, 2023\n\n\nAsking Good Questions\n\n\nIan Parzyszek\n\n\n\n\nJan 26, 2023\n\n\nAsking Good Questions\n\n\nLogan Johnson\n\n\n\n\nJan 26, 2023\n\n\nAsking Good Questions\n\n\nAnisi Atefeh\n\n\n\n\nJan 26, 2023\n\n\nAsking Good Questions\n\n\nAn Pham\n\n\n\n\nJan 26, 2023\n\n\nAsking Good Questions\n\n\nMarie Hardt\n\n\n\n\nJan 26, 2023\n\n\nAsking Good Questions\n\n\nCaio dos Santos\n\n\n\n\nJan 26, 2023\n\n\nAsking Good Questions\n\n\nBhagat Sudesh\n\n\n\n\nJan 26, 2023\n\n\nAsking Good Questions\n\n\nGino Beltran\n\n\n\n\nJan 26, 2023\n\n\nAsking Good Questions\n\n\nMotahareh Kashanian\n\n\n\n\nJan 26, 2023\n\n\nAsking Good Questions\n\n\nSabrena Rutledge\n\n\n\n\nJan 26, 2023\n\n\nAsking Good Questions\n\n\nYichuan Bai\n\n\n\n\nJan 26, 2023\n\n\nAsking Good Questions\n\n\nAlexandra Arabio\n\n\n\n\nJan 26, 2023\n\n\nAsking Good Questions\n\n\nParvin Mohammadiarvejeh\n\n\n\n\nMar 9, 2022\n\n\nI’m not a lawyer\n\n\nNot Charlie\n\n\n\n\nFeb 16, 2022\n\n\nplyr to dplyr\n\n\nAR\n\n\n\n\nFeb 16, 2022\n\n\nSplit Apply Combine\n\n\nMuxin Hua\n\n\n\n\nFeb 16, 2022\n\n\nBlog post 4 - Split-Apply-Combine\n\n\nDenise Bradford\n\n\n\n\nFeb 16, 2022\n\n\nWorking with ‘Plyr’ package\n\n\nAtefeh Anisi\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/xyzyc/index.html#prompt",
-    "href": "blog-2023/Blog-9-submissions/xyzyc/index.html#prompt",
-    "title": "Fix TeamUNL",
-    "section": "Prompt:",
-    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/xyzyc/index.html#instructions",
-    "href": "blog-2023/Blog-9-submissions/xyzyc/index.html#instructions",
-    "title": "Fix TeamUNL",
-    "section": "Instructions:",
-    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how?\nBefore the spring break, I fixed several things for TeamUNL:\n\nBy adding ^presslog.*\\.pdf$ to the .RBuildignore file, the check function will ignore the pdf files in the R package folder.\nI created a global.R file in the R folder inside the package, and write a line utils::globalVariables(c(\"presslog_ames\")) to avoid the global variable binding problem. The package passed the check with no problems. In this blog, I switched to the method used in class, i.e., add presslog_ames <- NULL and data(presslog_ames, envir  = enviroment()) to the function, and specify importFrom utils data.\nFix the dependencies by writing appropriate importFrom argument in front of the functions.\n\nIn this blog, when I try function call get_presslog (\"2023-02-14\", to = \"2023-02-14\"), I get error “character string is not in a standard unambiguous format”. The function get_presslog is written for presslog_ames.rda where the Call Received Date/Time is a date object. However, the Call Received Date/Time in the current file is character. So I updated the dataset."
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/kundan7kumar/index.html#prompt",
-    "href": "blog-2023/Blog-9-submissions/kundan7kumar/index.html#prompt",
-    "title": "Error Fixing for the package",
-    "section": "Prompt:",
-    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/kundan7kumar/index.html#instructions",
-    "href": "blog-2023/Blog-9-submissions/kundan7kumar/index.html#instructions",
-    "title": "Error Fixing for the package",
-    "section": "Instructions:",
-    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nSolution:\nThe error, i am getting Error in purrr::map(): ℹ In index: 1. Caused by error: ! HTTP error 401. Bad credentials\nRate limit remaining: 59/60 Rate limit reset at: 2023-03-29 03:21:47 UTC\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how? I tried fixing the error by setting the key the github but it is not working. I am not sure what causing the error.I have key set up earlier,it is working fine for others.\nError: Consider adding importFrom(“utils”, “download.file”, “write.csv”) to your NAMESPACE file.\nFinally, I fixed the error and able to fix few warning and notes check for Team3.\n\nI have changed separate(Call_Received_Date_Time) function to separate(‘Call_Received_Date_Time’) as it is unable to recognize the variable globally.\nI have included the few imports and param in the R file like #’ @importFrom utils download.file\n\n#’ @importFrom magrittr %>%\n#’ @importFrom lubridate ymd_hms\n#’ @importFrom pdftools pdf_text\n#’ @importFrom stringr str_replace_all\n#’ @param pdf name of pdf with data\n#’ @param save_as optional for saving a csv file\nThis helps to fix the 2 notes to 0 notes , but unable to fix the 2 warning."
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/anyeshar/index.html",
-    "href": "blog-2023/Blog-9-submissions/anyeshar/index.html",
-    "title": "Fixing thing from Lab 2",
-    "section": "",
-    "text": "Fix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/anyeshar/index.html#instructions",
-    "href": "blog-2023/Blog-9-submissions/anyeshar/index.html#instructions",
-    "title": "Fixing thing from Lab 2",
-    "section": "Instructions:",
-    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how? Warning: cannot open file ‘presslog-20230306.csv’: No such file or directoryError in file(file, “rt”) : cannot open the connection\nThis was due to the fact that we updated the presslog date to the current day we were working on it. That means if we used it a different day, it would be outdated. I changed the file it was looking for to be a general press log file. It did not have a specific date attatched.\nget_presslog <- function(from, to) { df <- utils::read.csv(“presslog-%s%02d%02d.csv”) # Change the date to be today’s date df[c(‘Date’, ‘Time’)] <- stringr::str_split_fixed(df\\(Call.Received.Date.Time, ' ', 2)  calls <- df[df\\)Date >= from & df$Date <= to, ] print(calls)\nWhile this isn’t an absolute solution because it depends on the previous function to save as presslog-%s%02d%02d.csv. This does work for any date and we will not have to change the date every time."
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/Landon-Getting/index.html",
-    "href": "blog-2023/Blog-9-submissions/Landon-Getting/index.html",
-    "title": "Solving package problems!",
-    "section": "",
-    "text": "Frontmatter check\n\n\n\nWhich error or warning did you fix? … and how?\nAfter running devtools::check() for Team 3, I received several errors regarding a lack of visible bindings or variable definitions. I decided to focus on the errors regarding the get_presslog function:\n\nget_presslog: no visible binding for global variable ‘presslog_ames’\nget_presslog: no visible global function definition for ‘ymd’\nget_presslog: no visible global function definition for ‘%>%’\nget_presslog: no visible binding for global variable ‘Call_Received_Date’`\n\nI fixed the first error by specifically referencing the package of origin for the presslog_ames data object.\nTeam3::presslog_ames rather than presslog_ames.\nNext, I added similar references for all instances of the ymd() function.\nlubridate::ymd() rather than ymd().\nWhile attempting to solve the final warning for the get_presslog function, I ran into a plethora of issues. I added the prefix .data$ to eliminate the visible binding problem, but then I needed to add @importFrom rlang .data to the roxygen comments.\n.data$Call_Received_Date rather than Call_Received_Date\nOnce I added the @importFrom tag, ran devtools::document(), and added rlang to the description file, I thought I was in the clear. However, I received the following error when performing the check:\nNo root directory found in C:/Users/[my directories]/lab-3-all-all-for-one-and-one-for-all oits parent     directories. Root criterion: contains a file \"DESCRIPTION\" with contents matching \"^Package:\nI struggled with this problem but figured out that the description file had a small error in it. Instead of imports:, the description file had import: which caused not to recognize the following packages to import.\nAfter fixing this error, I ran devtools::check() and the get_presslog binding or definition issues were resolved."
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/Hiiiua/index.html",
-    "href": "blog-2023/Blog-9-submissions/Hiiiua/index.html",
-    "title": "Fix a warning in CMD check",
-    "section": "",
-    "text": "Frontmatter check"
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/Hiiiua/index.html#prompt",
-    "href": "blog-2023/Blog-9-submissions/Hiiiua/index.html#prompt",
-    "title": "Fix a warning in CMD check",
-    "section": "Prompt:",
-    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/Hiiiua/index.html#instructions",
-    "href": "blog-2023/Blog-9-submissions/Hiiiua/index.html#instructions",
-    "title": "Fix a warning in CMD check",
-    "section": "Instructions:",
-    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how?\nmy answer\nThe warning message from the item I fixed is\n❯ checking dependencies in R code ... WARNING   '::' or ':::' import not declared from: ‘purrr’\nThis must results from using a function from `purrr` package with import missing, so I went to the R code, spotted the function with code purrr:: . In the function defined there, I added one line with #' @import purrr, ran the function devtool::document to make sure `NAMESPACE` is properly updated, I also update Imports in DESCRIPTION.\nThis is an easy warning to fixed as long as familiarizing with the documentation process in R package and being able to find the function loaded the package."
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/charlestbonk/index.html#prompt",
-    "href": "blog-2023/Blog-9-submissions/charlestbonk/index.html#prompt",
-    "title": "Stat 585",
-    "section": "Prompt:",
-    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/charlestbonk/index.html#instructions",
-    "href": "blog-2023/Blog-9-submissions/charlestbonk/index.html#instructions",
-    "title": "Stat 585",
-    "section": "Instructions:",
-    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how?"
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/TWiedRW/index.html#prompt",
-    "href": "blog-2023/Blog-9-submissions/TWiedRW/index.html#prompt",
-    "title": "Errors and warnings in packages",
-    "section": "Prompt:",
-    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it.\nThe error that I fixed is not actually one that R detected. When I was finding errors in the various packages, I noticed that the file names when downloading the pdf file from Team6 attached “NULL” to the end of the file name. The output came from the get_pd_presslog function. This was easily fixed by changing the cat function into paste.\n\n#Original line\nprint(cat('Some text:', 'user input'))\n\nSome text: user inputNULL\n\n#New line\nprint(paste('Some text:', 'user input'))\n\n[1] \"Some text: user input\"\n\n\nThe problem with these types of errors is that they can sometimes go unnoticed when writing code.\nThere was one other error that I fixed. The function arguments for the url and save locations were assigned immediately inside the function, so any user input for these arguments would be ignored.\n\n#Original format\nfunction(arg1, arg2){\n  arg1 <- 'Some default url'\n  arg2 <- 'Some default save location'\n  #Rest of function here\n}\n\n#New format\nfunction(arg1 = 'Some default url', arg2 = 'Some default save location'){\n  #Rest of function here\n}\n\nAgain, this is an error that R would not alert users of since it computationally does not produce any warnings or errors. In this case, the danger would be old files with the same name would be replaced when running the function again. The url for the source would not change, but it is better to put the default into the function argument rather than writing over the argument in the code."
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/charchit/index.html#prompt",
-    "href": "blog-2023/Blog-9-submissions/charchit/index.html#prompt",
-    "title": "all-for-one",
-    "section": "Prompt:",
-    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/charchit/index.html#instructions",
-    "href": "blog-2023/Blog-9-submissions/charchit/index.html#instructions",
-    "title": "all-for-one",
-    "section": "Instructions:",
-    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how? Fixed"
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/kellynay/index.html#prompt",
-    "href": "blog-2023/Blog-9-submissions/kellynay/index.html#prompt",
-    "title": "Fixing Package Errors",
-    "section": "Prompt:",
-    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/kellynay/index.html#instructions",
-    "href": "blog-2023/Blog-9-submissions/kellynay/index.html#instructions",
-    "title": "Fixing Package Errors",
-    "section": "Instructions:",
-    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how?\nI worked with my Lab3 - Team 3 colleagues to fix some of the issues highlighted by Ganesh when he graded our lab assignment.\nExact warning message: Warning: replacing previous import ‘dplyr::filter’ by ‘stats::filter’ when loading ‘Team3’ ** testing if installed package can be loaded from final location Warning: replacing previous import ‘dplyr::filter’ by ‘stats::filter’ when loading ‘Team3’ ** testing if installed package keeps a record of temporary installation path\nThe get_presslog function was throwing a warning due to the following (Line 19 in get_presslog.R):\n\ndata_subset <- data %>% filter(Call_Received_Date >= from2) %>% filter(Call_Received_Date <= to2)\n\nWe fixed the error by doing:\n\ndata_subset <- data %>% dplyr::filter(Call_Received_Date >= from2) %>% dplyr::filter(Call_Received_Date <= to2)\n\nIn summary, we replaced ‘stats::filter’ by ‘dplyr::filter’.\nWe also addressed this issue in the NAMESPACE file by writing on Line 12: importFrom(“stats”, “filter”)"
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/drbradford12/index.html#prompt",
-    "href": "blog-2023/Blog-9-submissions/drbradford12/index.html#prompt",
-    "title": "Stat 585",
-    "section": "Prompt:",
-    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/drbradford12/index.html#instructions",
-    "href": "blog-2023/Blog-9-submissions/drbradford12/index.html#instructions",
-    "title": "Stat 585",
-    "section": "Instructions:",
-    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how?"
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/HarunCelikOtto/index.html",
-    "href": "blog-2023/Blog-9-submissions/HarunCelikOtto/index.html",
-    "title": "Undefined Object Error",
-    "section": "",
-    "text": "Frontmatter check"
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/HarunCelikOtto/index.html#prompt",
-    "href": "blog-2023/Blog-9-submissions/HarunCelikOtto/index.html#prompt",
-    "title": "Undefined Object Error",
-    "section": "Prompt:",
-    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/HarunCelikOtto/index.html#instructions",
-    "href": "blog-2023/Blog-9-submissions/HarunCelikOtto/index.html#instructions",
-    "title": "Undefined Object Error",
-    "section": "Instructions:",
-    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nMy search for an error was to try and load all of the packages to then run checks on them to see which ones I could immediately jump into. I definitely didn’t go in numerical order but I did find that I got an error after trying devtools::load_all(\"Team6/\"). The exact message can be seen from the screenshot below.\n\n\n\nFirst Error on `load_all()`\n\n\nI could see from the console that the error was in the get_pd_presslog() function of the package. Running rlang::last_trace() and opening up the get_pd_presslog() function document I found the following.\n\n\n\nTraceback Error and Function\n\n\nThe Traceback mentioned that the error was in an object called “link”. Checking the function file, I found that there was an instance where the function was called with a variable called “link” which was supposed to supply the {url} argument to the function.\nThe first problem is that the variable “link” is assigned after the function is called so download.file() doesn’t have a {url} argument supplied to it. This causes the function to fail and therefore load_all() fails to run.\nThe second problem is that there is no need to call the get_pd_presslog() function in the function documentation. That is better reserved for a testing environment set up with usethis::use_testthat().\nMy goal was only to have the package load properly so removing those two lines allowed me to load the package and run a devtools::check() without any problems. Here are the results.\n\n\n\nPackage loaded and check() output"
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/valeriehan6/index.html#prompt",
-    "href": "blog-2023/Blog-9-submissions/valeriehan6/index.html#prompt",
-    "title": "Fixing a note",
-    "section": "Prompt:",
-    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/valeriehan6/index.html#instructions",
-    "href": "blog-2023/Blog-9-submissions/valeriehan6/index.html#instructions",
-    "title": "Fixing a note",
-    "section": "Instructions:",
-    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how?\nI fixed a note in Team 2’s package. The note was\nchecking top-level files ... NOTE\n  Non-standard file/directory found at top level:\n    ‘presslog_amespd_2023-03-07.pdf’\nI looked up the note on Google and found a Stack Overflow post describing a similar issue. I then resolved the note by adding ^presslog_amespd_2023-03-07\\.pdf$ to the .Rbuildignore file."
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/IanParzyszek/index.html#prompt",
-    "href": "blog-2023/Blog-9-submissions/IanParzyszek/index.html#prompt",
-    "title": "Stat 585",
-    "section": "Prompt:",
-    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/IanParzyszek/index.html#instructions",
-    "href": "blog-2023/Blog-9-submissions/IanParzyszek/index.html#instructions",
-    "title": "Stat 585",
-    "section": "Instructions:",
-    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how?"
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/loganjohnson0/index.html#prompt",
-    "href": "blog-2023/Blog-9-submissions/loganjohnson0/index.html#prompt",
-    "title": "Stat 585",
-    "section": "Prompt:",
-    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/loganjohnson0/index.html#instructions",
-    "href": "blog-2023/Blog-9-submissions/loganjohnson0/index.html#instructions",
-    "title": "Stat 585",
-    "section": "Instructions:",
-    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how?"
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/Atefeha1995/index.html#prompt",
-    "href": "blog-2023/Blog-9-submissions/Atefeha1995/index.html#prompt",
-    "title": "Errors and warnings in packages",
-    "section": "Prompt:",
-    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/Atefeha1995/index.html#instructions",
-    "href": "blog-2023/Blog-9-submissions/Atefeha1995/index.html#instructions",
-    "title": "Errors and warnings in packages",
-    "section": "Instructions:",
-    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how?\nFor team 4, I ran check(“Team4”), and this was the result:\n❯ checking dependencies in R code ... NOTE Namespaces in Imports field not imported from:   'readr' 'stringr' All declared Imports should be used.\n0 errors ✔ | 0 warnings ✔ | 1 note ✖\nSo, I changed the Imports set in Description file, and omitted ‘readr’ and ‘stringr’. It seems that these packages were not required. Here is the new result for check(“Team4”) command:\n0 errors ✔ | 0 warnings ✔ | 0 notes ✔\nFor Team6, When I ran document(“Team6”), I got this error message:\n> document(\"Team6\") ℹ Updating Team6 documentation ℹ Loading Team6 Warning message: [press_log_data.R:15] @source requires a value\nThen I went to press_log_data.R file, and I checked row number 15. It seems that they forgot to add an appropriate source there. So, I added the source of the data there. Then, I ran the command one more time and the problem has been solved.\n> document(\"Team6\") ℹ Updating Team6 documentation ℹ Loading Team6 Writing press_log_data.Rd\nThis was the note when I ran check(“Team6”):\n❯ checking top-level files ... NOTE Non-standard files/directories found at top level:  'presslog-20230306.csv' 'presslog_amespd_2023-03-06.pdf'\n0 errors ✔ | 1 warning ✖ | 1 note ✖\nI deleted those two extra files (presslog-20230306.csv and presslog_amespd_2023-03-06.pdf), and the note has been removed.\n0 errors ✔ | 1 warning ✖ | 0 notes ✔\nFor Team2, when I ran check(“Team2”), I got this error:\n> check(\"Team2\") ℹ Updating Team2 documentation ℹ Loading Team2 Error: 'ames_presslog' is not an exported object from 'namespace:Team2'\nI checked and found that ‘ames_presslog’ is not exported in namespace, and it is not in man files. So, I deleted the ‘ames_presslog.R’ from the R folder, and it’s data from the Data folder. Then, I ran check() command again, and this was the result:\n0 errors ✔ | 4 warnings ✖ | 2 notes ✖\nthis was one of the warning messages:\n❯ checking Rd \\usage sections ... WARNING Undocumented arguments in documentation object 'get_presslog' 'date.column' Functions with \\usage entries need to have the appropriate \\alias entries, and all their arguments documented. The \\usage entries must correspond to syntactically valid R code. See chapter 'Writing R documentation files' in the 'Writing R  Extensions' manual.\nconsidering the message I went to the get_presslog.R file in the R folder of the Team2 package, and I added the date.column which is one of the inputs for the get_presslog function, as a parameter using the command line below.\n#' @param date.column The column which contains the Date and time\nI saved the changes, and checked it again. The number of warnings was reduced to 3.\n0 errors ✔ | 3 warnings ✖ | 2 notes ✖"
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/anphan0828/index.html#prompt",
-    "href": "blog-2023/Blog-9-submissions/anphan0828/index.html#prompt",
-    "title": "The painful green ticks",
-    "section": "Prompt:",
-    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it.\nWhich error or warning did you fix? … and how?\nI chose Team2’s package to fix and enjoyed the pain. I used devtools to install, load, document, check, and repeated all over again.\nFirst try, 2 notes (seems easy to solve!):\n\nNon-standard file/directory found at top level: easy, put the .pdf extension in .Rbuildignore\nUndefined global functions or variables: %>% . download.file presslog_ames write.csv. I went to each R source file and added @importFrom (e.g., purrr %>%, utils download.file, utils write.csv), then rerun devtools::document() to update the NAMESPACE file. For the dot (“.”), I could not figure out which package it came from, so I had to edit the code to not use “.” within an lapply function. For the presslog_ames dataset, it was not loaded into the environment before using, so I declared it.\n\nSecond try, 1 error (that is worse than 2 notes!):\n\nNamespace dependency missing from DESCRIPTION Imports/Depends entries: purrr. So, it gets imported previously, but the DESCRIPTION file did not have that information (I felt weird that devtools::document() only updates NAMESPACE, not DESCRIPTION. I went ahead and manually added purrr under Imports.\n\nThird try, 1 warning (I’m getting there!!):\n\nDocumented arguments not in in documentation object ‘get_presslog’: ‘df’. I wasn’t sure about the @usage tag, so I just override the argument df passed into the function with the presslog_ames data (not the best way, but it works)\n\nFourth try (I lied, it took me way many more times to reach here but I only describe the main problems): SUCCESS!! 0 errors, 0 warnings, 0 notes!"
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/hardtme/index.html#prompt",
-    "href": "blog-2023/Blog-9-submissions/hardtme/index.html#prompt",
-    "title": "I Fixed It!",
-    "section": "Prompt:",
-    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/hardtme/index.html#instructions",
-    "href": "blog-2023/Blog-9-submissions/hardtme/index.html#instructions",
-    "title": "I Fixed It!",
-    "section": "Instructions:",
-    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how?\nI fixed the following note from my lab 3 group’s TwoTeam4 package (This package was so named because it was my group’s second attempt at a package, and was an improvement over the first version, Team4):\n> checking R code for possible problems ... NOTE\n  get_pd_presslog: no visible global function definition for\n    ‘download.file’\n  get_presslog: no visible binding for global variable ‘plog_df’\n  get_presslog: no visible binding for global variable ‘Call Received\n    Date/Time’\n  get_presslog: no visible binding for global variable ‘NewDate’\n  pdf_to_tbl: no visible binding for global variable ‘tail’\n  pdf_to_tbl: no visible global function definition for ‘write.csv’\n  Undefined global functions or variables:\n    Call Received Date/Time NewDate download.file plog_df tail write.csv\n  Consider adding\n    importFrom(\"utils\", \"download.file\", \"tail\", \"write.csv\")\n  to your NAMESPACE file.\nMy first step was to go into the get_pd_presslog and get_presslog functions and add utils:: in front of the functions that were mentioned in the note. For example, instead of download.file, the get_pd_presslog function now includes utils::download.file. Since the functions were short, I preferred to account for each manually instead of using an importFrom() statement in the NAMESPACE file.\nAfter completing the first step, my note was reduced to\nchecking R code for possible problems ... NOTE\n  get_presslog: no visible binding for global variable ‘plog_df’\n  get_presslog: no visible binding for global variable ‘Call Received\n    Date/Time’\n  get_presslog: no visible binding for global variable ‘NewDate’\n  Undefined global functions or variables:\n    Call Received Date/Time NewDate plog_df\nI next wanted to remove the “no visible binding for global variable” notes. These notes of this type referring to “Call Received Date/Time” and “NewDate” were coming from code using tidyverse functions, so I followed the suggestion at this link to include the .data pronoun from rlang. This produced an error since rlang was not listed as a dependency in the DESCRIPTION file for the package. I added rlang as an import and the error went away.\nAfter adding the .data pronoun to the get_presslog function, the note was reduced to\n> checking R code for possible problems ... NOTE\n  get_presslog: no visible binding for global variable ‘plog_df’\n  Undefined global functions or variables:\n    plog_df\nTo solve the last part of the note, I added the line of code plog_df <- TwoTeam4::plog_df to the get_presslog function. This tells R that we want the TwoTeam4 version of plog_df.\nAfter all these fixes, R CMD Check finished with 0 errors, 0 warnings, and 0 notes. Yay!"
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/santos-cl/index.html#prompt",
-    "href": "blog-2023/Blog-9-submissions/santos-cl/index.html#prompt",
-    "title": "Fixing a thing",
-    "section": "Prompt:",
-    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/santos-cl/index.html#instructions",
-    "href": "blog-2023/Blog-9-submissions/santos-cl/index.html#instructions",
-    "title": "Fixing a thing",
-    "section": "Instructions:",
-    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how?\nFor this week’s blog, I decided to keep working on the Team2 package. The warning I identified dealt with us forgetting to include a library in the Imports section of the description, and using library within the functions. The error would be similar to the following message:\n checking dependencies in R code ... WARNING\n  'library' or 'require' calls not declared from:\n    'tabulizer' 'tidyverse'\n  'library' or 'require' calls in package code:\n    'tabulizer' 'tidyverse'\n    Please use :: or requireNamespace() instead.\n    See section 'Suggested packages' in the 'Writing R Extensions' manual.\nThe reason for this was that within the function pdf_to_table we were importing the library, like this:\npdf_to_tbl <- function(pdf, save_as = NULL) {\n\n  library(tidyverse)       <--------- This command was problematic\n  library(tabulizer)       <--------- This command was problematic\n \n  plog <- tabulizer::extract_tables(file = pdf, method = \"lattice\")\n  df <- lapply(plog, extract_data_frame_page)\n\n  # identify the numeric columns, since some pages miss all \"Report Number Assigned to Event\"\n  n <- length(df)\n  numeric_columns <- df %>% lapply(., function(x)sapply(x, class)) %>%\n    lapply(., function(x)which(x == \"numeric\")) %>%\n    unlist %>% unique\n\n  ## Combining the different pages\n  df <- do.call(rbind, df)\n  df[numeric_columns] <- suppressWarnings(lapply(df[numeric_columns], function(x)as.numeric(x)))\n\n  if (!is.null(save_as) && dir.exists(dirname(save_as))){\n    utils::write.csv(df, save_as, row.names = FALSE)\n  }\n\n  return(df)\n\n}\n\n\nI did three things to clear this warning: - Substitute the tidyverse call for the magrittr - Check if the name spaces “magrittr” and “tabulize” were available - In case they were, load the name space - Add magrittr and tabulizer to the Imports seciton of the description file\nThe updated function is as it follows:\npdf_to_tbl <- function(pdf, save_as = NULL) {\n\n  \n  if(!requireNamespace(\"tabulizer\", quietly = TRUE)){\n    warning(\"The tabulizer package is required for this function\")\n    return(NULL)\n  }\n  \n  if(!requireNamespace(\"magrittr\", quietly = TRUE)){\n    warning(\"The magrittr package is required for this function\")\n    return(NULL)\n  }\n  \n  \n  loadNamespace('magrittr')\n \n  \n  \n  plog <- tabulizer::extract_tables(file = pdf, method = \"lattice\")\n  df <- lapply(plog, extract_data_frame_page)\n\n  # identify the numeric columns, since some pages miss all \"Report Number Assigned to Event\"\n  n <- length(df)\n  numeric_columns <- df %>% lapply(., function(x)sapply(x, class)) %>%\n    lapply(., function(x)which(x == \"numeric\")) %>%\n    unlist %>% unique\n\n  ## Combining the different pages\n  df <- do.call(rbind, df)\n  df[numeric_columns] <- suppressWarnings(lapply(df[numeric_columns], function(x)as.numeric(x)))\n\n  if (!is.null(save_as) && dir.exists(dirname(save_as))){\n    utils::write.csv(df, save_as, row.names = FALSE)\n  }\n\n  return(df)\n\n}\n\nThe description file now also contains the updated Imports section\nPackage: Team2\nTitle: Get police presslogs\nVersion: 0.0.0.9000\nAuthors@R: c(\n    person(\"Caio\", \"dos Santos\", , \"clsantos@iastate.edu\", role = c(\"aut\", \"cre\")),\n    person(\"Alexandrea\", \"Arabio\", , \"aarabio@iastate.edu\", role = \"aut\"),\n    person(\"Maxwell\", \"Skinner\", , \"mskinn25@iastate.edu\", role = \"aut\")\n  )\nDescription: This package contains 3 functions to download, extract, and\n    filter presslog data. Also, it contains a sample data set.\nLicense: MIT + file LICENSE\nEncoding: UTF-8\nRoxygen: list(markdown = TRUE)\nRoxygenNote: 7.2.3\nImports: \n    lubridate,\n    tabulizer,\n    magrittr\nDepends: \n    R (>= 2.10)\nLazyData: true\nLitrVersionUsed: 0.7.0\nLitrId: afd1fe153acf34706b65fe5d2dcc1315"
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/sudi007/index.html#prompt",
-    "href": "blog-2023/Blog-9-submissions/sudi007/index.html#prompt",
-    "title": "Errors and warnings in packages",
-    "section": "Prompt:",
-    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/sudi007/index.html#instructions",
-    "href": "blog-2023/Blog-9-submissions/sudi007/index.html#instructions",
-    "title": "Errors and warnings in packages",
-    "section": "Instructions:",
-    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible. The following was the warning i got\nget_pd_presslog: no visible global function definition for ‘download.file’ get_presslog: no visible binding for global variable ‘presslog_ames’ get_presslog: no visible global function definition for ‘ymd’ get_presslog: no visible global function definition for ‘%>%’ get_presslog: no visible global function definition for ‘filter’ get_presslog: no visible binding for global variable ‘Call_Received_Date’ pdf_to_tbl: no visible global function definition for ‘extract_tables’ pdf_to_tbl: no visible global function definition for ‘%>%’ pdf_to_tbl: no visible global function definition for ‘separate’ pdf_to_tbl: no visible binding for global variable ‘Call_Received_Date_Time’ pdf_to_tbl: no visible global function definition for ‘write.csv’ pdf_to_tbl: no visible global function definition for ‘as_tibble’ Undefined global functions or variables: %>% Call_Received_Date Call_Received_Date_Time as_tibble download.file extract_tables filter presslog_ames separate write.csv ymd Consider adding importFrom(“stats”, “filter”) importFrom(“utils”, “download.file”, “write.csv”) to your NAMESPACE file.\nThe way i fixed the error was to add the following to Namespace file importFrom(“stats”, “filter”) importFrom(“utils”, “download.file”, “write.csv”)\nI fixed the error in the following manner:\n1) I ran series of checks on the Team3 package using the devtools::check() to produce the error. \n\n2) Once the issue was identified, I observed that it was missing some import function on the name space file.\n\n3) To fix this warning message, I added importFrom() statements to the NAMESPACE file. These statements tell R which functions and variables from other packages are needed. In my case, I added importFrom() statements for the filter, download.file, and write.csv functions from the stats and utils packages.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes\nAlthough fixing the namespace issues can be challenging in R, it is an important step in developing a well-functioning and properly organized package. The goal of namespace management is to ensure that each function in your package can access the functions and the variables it needs from other packages, without polluting the global environment or causing conflicts with other packages. A key challenge I faced was to ensure that all the packages were correctly imported and defined. It was helpful that after making all the changes, there was a tool to recheck if there were any errors.\nWhich error or warning did you fix? … and how?"
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/motinaaa/index.html#prompt",
-    "href": "blog-2023/Blog-9-submissions/motinaaa/index.html#prompt",
-    "title": "Green is the new Black",
-    "section": "Prompt:",
-    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/motinaaa/index.html#instructions",
-    "href": "blog-2023/Blog-9-submissions/motinaaa/index.html#instructions",
-    "title": "Green is the new Black",
-    "section": "Instructions:",
-    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how?\nFirstly, I did eeny meeny miny moe to pick a number, got 5, so I checked Team5 package:))\nI ran the check(), No warnings or errors, just some notes I saw. First note said all declared imports should be used. So I went to the description file and removed the mentioned packages from imports. Easy-peasy, fixed that note.\nNext note was about missing dependencies to other packages. Checked the .R code, and I added the dependencies in the description file under imports. Sorted!\nAnother note was about considering adding importFrom(\"stats\",\"filter\"). Addressed this by going to the .R file and adding dplyr:: before filter function. Then added @importFrom dplyr filter in the beginning of the file. After that, ran document() to build them in the NAMESPACE file and then ran check(). Fixed a bunch of these notes too!\nThen I tackled the global bindings and added \"Variable_Name\" <- \"Variable_Name\" <- NULL to the addressed functions. Tadaaaaa, green checkmarks all around for Team 5! Woohoo!\nI think I was supposed to fix just one of these notes, but my OCD kicked in and I ended up fixing them all. Just wanted to see those green marks! 😅"
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/Sabrenar/index.html#prompt",
-    "href": "blog-2023/Blog-9-submissions/Sabrenar/index.html#prompt",
-    "title": "Package Errors and Warnings",
-    "section": "Prompt:",
-    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/Sabrenar/index.html#instructions",
-    "href": "blog-2023/Blog-9-submissions/Sabrenar/index.html#instructions",
-    "title": "Package Errors and Warnings",
-    "section": "Instructions:",
-    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nThe exact warning message: Warning message: Expected 2 pieces. Missing pieces filled with NA in 50 rows [1, 2, 3, 4, 5, 32, 33, 34, 35, 36, 63, 64, 65, 66, 67, 94, 95, 96, 97, 98, …]. I referenced the separate function’s documentation. Since the warning from a result from not finding 2 pieces for the separate function, I found the parameter that controls what the function does if it does not find the expected number of pieces. I then edited the line using the separate function such that the function now has a fill parameter that does not give a warning on default.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nFixing these errors was straight-forward since I knew where the errors were coming from. I have used the separate function frequently so I recognized the warning message.\nWhich error or warning did you fix? … and how?\nPlease see the above answer."
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/luobo119/index.html#prompt",
-    "href": "blog-2023/Blog-9-submissions/luobo119/index.html#prompt",
-    "title": "Problems in Building the R Package",
-    "section": "Prompt:",
-    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/luobo119/index.html#instructions",
-    "href": "blog-2023/Blog-9-submissions/luobo119/index.html#instructions",
-    "title": "Problems in Building the R Package",
-    "section": "Instructions:",
-    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how?\nWarning from Team2:\n\nchecking Rd files … WARNING\nprepare_Rd: ./man/presslog_ames.Rd:18: unexpected section header ‘\\source’\nprepare_Rd: ./man/presslog_ames.Rd:21: unexpected section header ‘\\usage’\nprepare_Rd: ./man/presslog_ames.Rd:24: unexpected section header ‘\\description’\nprepare_Rd: ./man/presslog_ames.Rd:27: unexpected section header ‘\\keyword’\nprepare_Rd: ./man/presslog_ames.Rd:28: unexpected END_OF_INPUT ’ ’ checkRd: (5) presslog_ames.Rd:0-29: Must have a \\description\n\nThis warning can be fixed by adding ‘}’ in presslog_ames.R. There is one ‘}’ missing for ‘\\describe’.\n\nchecking dependencies in R code … WARNING\n‘library’ or ‘require’ calls not declared from:\n‘tabulizer’ ‘tidyverse’\n‘library’ or ‘require’ calls in package code:\n‘tabulizer’ ‘tidyverse’\nPlease use :: or requireNamespace() instead.\nSee section ‘Suggested packages’ in the ‘Writing R Extensions’ manual.\n\nAdding ‘@importFrom tabulizer extract_tables’ and deleting ‘library(’tidyverse’)’ and ‘library(’tabulizer’)’ in the function in pdf_to_tbl.R."
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/AArabio/index.html",
-    "href": "blog-2023/Blog-9-submissions/AArabio/index.html",
-    "title": "Fun with errors",
-    "section": "",
-    "text": "I was having a difficult time reconfigurating/rebuilding the all in this together - for some reason the project that I cloned stopped communicating with github and I have been working to reclone it but unfortunately it was not working … will continue to try tomorrow -"
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/AArabio/index.html#prompt",
-    "href": "blog-2023/Blog-9-submissions/AArabio/index.html#prompt",
-    "title": "Fun with errors",
-    "section": "Prompt:",
-    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/AArabio/index.html#instructions",
-    "href": "blog-2023/Blog-9-submissions/AArabio/index.html#instructions",
-    "title": "Fun with errors",
-    "section": "Instructions:",
-    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how?"
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/Starwiiin/index.html#prompt",
-    "href": "blog-2023/Blog-9-submissions/Starwiiin/index.html#prompt",
-    "title": "Errors and warnings in packages",
-    "section": "Prompt:",
-    "text": "Prompt:\nFix one of the problems in one of our community packages at https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all, and write about it."
-  },
-  {
-    "objectID": "blog-2023/Blog-9-submissions/Starwiiin/index.html#instructions",
-    "href": "blog-2023/Blog-9-submissions/Starwiiin/index.html#instructions",
-    "title": "Errors and warnings in packages",
-    "section": "Instructions:",
-    "text": "Instructions:\nWhat we want to know is the exact warning or error message of the item you fixed, and a description of what you did, also as specific as possible.\nDescribe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.\nWhich error or warning did you fix? … and how?\nParvin’s answer: I have been working on “Team6” package for this blog. Errors that I could address are as follows:\nget_pd_presslog: no visible global function definition for ‘download.file’ pd_to_tbl: no visible global function definition for ‘extract_tables’ pd_to_tbl: no visible binding for global variable ‘one_page’ pd_to_tbl: no visible global function definition for ‘write_csv’ pd_to_tbl: no visible global function definition for ‘year’ pd_to_tbl: no visible global function definition for ‘month’ pd_to_tbl: no visible global function definition for ‘mday’\nI added “ImportFrom utils download.file”, “ImportFrom readr write_csv”, “ImportFrom tabulizer extract_tables”, “ImportFrom lubridate year mday month” to the “get_pd_presslog” and “pd_to_tbl” and also to the description file. I used the “document()” and “check()” to fix the problems and check if the error is gone. In this way, I could solve the above errors. For the error related to the ‘one_page’, I added the “one_page = NULL” and it helped to address the error."
   }
 ]
