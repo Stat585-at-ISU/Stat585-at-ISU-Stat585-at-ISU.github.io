@@ -1,6 +1,6 @@
 ---
 title: "Reading about COVID Calculators"
-author:  "AR"
+author: "AR"
 date: "2023-02-23"
 categories: "Ethics and Reproducibility..."
 ---

@@ -1,9 +1,8 @@
 ---
 author: "Yingchao Zhou"
-title: "Keep track of results and data"
 date: "2023-02-23"
+title: "Keep track of results and data"
 categories: "Ethics and Reproducibility..."
-output: md_document
 ---
 
 ![Frontmatter check](https://github.com/Stat585-at-ISU/Blog-5/actions/workflows/check-yaml.yaml/badge.svg)
