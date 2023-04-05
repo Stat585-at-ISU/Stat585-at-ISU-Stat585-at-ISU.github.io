@@ -1,102 +1,11 @@
 [
   {
-    "listing": "/projects/project-samples.html",
-    "items": [
-      "/projects/projectSamples/projects-2019.html",
-      "/projects/projectSamples/projects-2022.html",
-      "/projects/projectSamples/2022/Saqlain-abstract.html",
-      "/projects/projectSamples/2019/Brianna-Lawton-abstract.html",
-      "/projects/projectSamples/2022/Bufei-Guo-abstract.html",
-      "/projects/projectSamples/2022/Danyang-Zhang-abstract.html",
-      "/projects/projectSamples/2019/Dapeng-Hu-abstract.html",
-      "/projects/projectSamples/2019/Earl-Hur-abstract.html",
-      "/projects/projectSamples/2022/Eshita-Zaman-abstract.html",
-      "/projects/projectSamples/2022/Abadi-Ghazal-abstract.html",
-      "/projects/projectSamples/2019/Joe-Zemmels-abstract.html",
-      "/projects/projectSamples/2019/Katherine-Goode-abstract.html",
-      "/projects/projectSamples/2022/Kieran-Liming-abstract.html",
-      "/projects/projectSamples/2022/Lin-Quan-abstract.html",
-      "/projects/projectSamples/2019/Qing-He-abstract.html",
-      "/projects/projectSamples/2022/Wangqian-Ju-abstract.html",
-      "/projects/projectSamples/2019/Xiyuan-Sun-abstract.html",
-      "/projects/projectSamples/2022/Yunhui-Qi-abstract.html",
-      "/projects/projectSamples/2019/Zahra-Khoshmanesh-abstract.html",
-      "/projects/projectSamples/2019/Zhenzhen-Chen-abstract.html",
-      "/projects/projectSamples/2022/Zirou-Zhou-abstract.html"
-    ]
-  },
-  {
-    "listing": "/projects/projectSamples/projects-2022.html",
-    "items": [
-      "/projects/projectSamples/2022/Saqlain-abstract.html",
-      "/projects/projectSamples/2022/Bufei-Guo-abstract.html",
-      "/projects/projectSamples/2022/Danyang-Zhang-abstract.html",
-      "/projects/projectSamples/2022/Eshita-Zaman-abstract.html",
-      "/projects/projectSamples/2022/Abadi-Ghazal-abstract.html",
-      "/projects/projectSamples/2022/Kieran-Liming-abstract.html",
-      "/projects/projectSamples/2022/Lin-Quan-abstract.html",
-      "/projects/projectSamples/2022/Wangqian-Ju-abstract.html",
-      "/projects/projectSamples/2022/Yunhui-Qi-abstract.html",
-      "/projects/projectSamples/2022/Zirou-Zhou-abstract.html"
-    ]
-  },
-  {
-    "listing": "/projects/projectSamples/projects-2019.html",
-    "items": [
-      "/projects/projectSamples/2019/Brianna-Lawton-abstract.html",
-      "/projects/projectSamples/2019/Dapeng-Hu-abstract.html",
-      "/projects/projectSamples/2019/Earl-Hur-abstract.html",
-      "/projects/projectSamples/2019/Joe-Zemmels-abstract.html",
-      "/projects/projectSamples/2019/Katherine-Goode-abstract.html",
-      "/projects/projectSamples/2019/Qing-He-abstract.html",
-      "/projects/projectSamples/2019/Xiyuan-Sun-abstract.html",
-      "/projects/projectSamples/2019/Zahra-Khoshmanesh-abstract.html",
-      "/projects/projectSamples/2019/Zhenzhen-Chen-abstract.html"
-    ]
-  },
-  {
-    "listing": "/projects/index.html",
-    "items": [
-      "/projects/projectSamples/projects-2022.html",
-      "/projects/projectSamples/projects-2019.html",
-      "/projects/projectSamples/2022/Saqlain-abstract.html",
-      "/projects/projectSamples/2019/Brianna-Lawton-abstract.html",
-      "/projects/projectSamples/2022/Bufei-Guo-abstract.html",
-      "/projects/projectSamples/2022/Danyang-Zhang-abstract.html",
-      "/projects/projectSamples/2019/Dapeng-Hu-abstract.html",
-      "/projects/projectSamples/2019/Earl-Hur-abstract.html",
-      "/projects/projectSamples/2022/Eshita-Zaman-abstract.html",
-      "/projects/projectSamples/2022/Abadi-Ghazal-abstract.html",
-      "/projects/projectSamples/2019/Joe-Zemmels-abstract.html",
-      "/projects/projectSamples/2019/Katherine-Goode-abstract.html",
-      "/projects/projectSamples/2022/Kieran-Liming-abstract.html",
-      "/projects/projectSamples/2022/Lin-Quan-abstract.html",
-      "/projects/projectSamples/2019/Qing-He-abstract.html",
-      "/projects/projectSamples/2022/Wangqian-Ju-abstract.html",
-      "/projects/projectSamples/2019/Xiyuan-Sun-abstract.html",
-      "/projects/projectSamples/2022/Yunhui-Qi-abstract.html",
-      "/projects/projectSamples/2019/Zahra-Khoshmanesh-abstract.html",
-      "/projects/projectSamples/2019/Zhenzhen-Chen-abstract.html",
-      "/projects/projectSamples/2022/Zirou-Zhou-abstract.html"
-    ]
-  },
-  {
-    "listing": "/labs.html",
-    "items": [
-      "/labs/03-lab-slides.html",
-      "/labs/02_lab_2023.html",
-      "/labs/01-slides.html"
-    ]
-  },
-  {
-    "listing": "/blog-testing.html",
+    "listing": "/blog.html",
     "items": [
       "/blog-2023/Blog-5-submissions/TWiedRW/index.html",
       "/blog-2023/Blog-5-submissions/gnbltrn/index.html",
       "/blog-2023/Blog-9-submissions/charlestbonk/index.html",
       "/blog-2023/Blog-9-submissions/drbradford12/index.html",
-      "/blog-2023/Blog-9-submissions/IanParzyszek/index.html",
-      "/blog-2023/Blog-9-submissions/loganjohnson0/index.html",
       "/blog-2023/Blog-6-submissions/charlestbonk/index.html",
       "/blog-2023/Blog-6-submissions/drbradford12/index.html",
       "/blog-2023/Blog-6-submissions/gnbltrn/index.html",
@@ -115,6 +24,8 @@
       "/blog-2023/Blog-9-submissions/kellynay/index.html",
       "/blog-2023/Blog-9-submissions/HarunCelikOtto/index.html",
       "/blog-2023/Blog-9-submissions/valeriehan6/index.html",
+      "/blog-2023/Blog-9-submissions/IanParzyszek/index.html",
+      "/blog-2023/Blog-9-submissions/loganjohnson0/index.html",
       "/blog-2023/Blog-9-submissions/Atefeha1995/index.html",
       "/blog-2023/Blog-9-submissions/anphan0828/index.html",
       "/blog-2023/Blog-9-submissions/hardtme/index.html",
@@ -326,14 +237,12 @@
     ]
   },
   {
-    "listing": "/blog.html",
+    "listing": "/blog-testing.html",
     "items": [
       "/blog-2023/Blog-5-submissions/TWiedRW/index.html",
       "/blog-2023/Blog-5-submissions/gnbltrn/index.html",
       "/blog-2023/Blog-9-submissions/charlestbonk/index.html",
       "/blog-2023/Blog-9-submissions/drbradford12/index.html",
-      "/blog-2023/Blog-9-submissions/IanParzyszek/index.html",
-      "/blog-2023/Blog-9-submissions/loganjohnson0/index.html",
       "/blog-2023/Blog-6-submissions/charlestbonk/index.html",
       "/blog-2023/Blog-6-submissions/drbradford12/index.html",
       "/blog-2023/Blog-6-submissions/gnbltrn/index.html",
@@ -352,6 +261,8 @@
       "/blog-2023/Blog-9-submissions/kellynay/index.html",
       "/blog-2023/Blog-9-submissions/HarunCelikOtto/index.html",
       "/blog-2023/Blog-9-submissions/valeriehan6/index.html",
+      "/blog-2023/Blog-9-submissions/IanParzyszek/index.html",
+      "/blog-2023/Blog-9-submissions/loganjohnson0/index.html",
       "/blog-2023/Blog-9-submissions/Atefeha1995/index.html",
       "/blog-2023/Blog-9-submissions/anphan0828/index.html",
       "/blog-2023/Blog-9-submissions/hardtme/index.html",
