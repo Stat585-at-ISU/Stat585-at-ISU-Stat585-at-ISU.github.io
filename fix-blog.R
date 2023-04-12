@@ -49,3 +49,5 @@ unlink(lnfn)
 
 # only run some files:
 # quarto::quarto_render("blog-2023/Blog-4-submissions")
+# quarto::quarto_render("blog-2023/Blog-10-submissions")
+

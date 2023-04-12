@@ -1,0 +1,62 @@
+---
+title: Errors and warnings in packages
+author: Tyler Wiederich
+date: "2023-03-30"
+categories: "Errors and warnings in packages"
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+[![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)
+<!-- badges: end -->
+
+## Prompt:
+
+Fix one of the problems in one of our community packages at `https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all`, and write about it. 
+
+
+
+The error that I fixed is not actually one that R detected. 
+When I was finding errors in the various packages, I noticed that the file names when downloading the pdf file from Team6 attached "NULL" to the end of the file name. 
+The output came from the `get_pd_presslog` function.
+This was easily fixed by changing the `cat` function into `paste`. 
+
+```{r}
+#Original line
+print(cat('Some text:', 'user input'))
+
+#New line
+print(paste('Some text:', 'user input'))
+```
+
+The problem with these types of errors is that they can sometimes go unnoticed when writing code. 
+
+There was one other error that I fixed. 
+The function arguments for the url and save locations were assigned immediately inside the function, so any user input for these arguments would be ignored.
+
+```{r, eval=FALSE}
+#Original format
+function(arg1, arg2){
+  arg1 <- 'Some default url'
+  arg2 <- 'Some default save location'
+  #Rest of function here
+}
+
+#New format
+function(arg1 = 'Some default url', arg2 = 'Some default save location'){
+  #Rest of function here
+}
+```
+
+Again, this is an error that R would not alert users of since it computationally does not produce any warnings or errors. 
+In this case, the danger would be old files with the same name would be replaced when running the function again. 
+The url for the source would not change, but it is better to put the default into the function argument rather than writing over the argument in the code.
+
+
+
+
+
+
+
+

@@ -1,0 +1,68 @@
+Errors and warnings in packages
+================
+sudesh_Bhagat
+2023-03-30
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+
+[![Frontmatter
+check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)
+<!-- badges: end -->
+
+## Prompt:
+
+Fix one of the problems in one of our community packages at
+`https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all`,
+and write about it.
+
+## Instructions:
+
+What we want to know is the **exact** warning or error message of the
+item you fixed, and a description of what you did, also as specific as
+possible. The following was the warning i got
+
+get_pd_presslog: no visible global function definition for
+‘download.file’ get_presslog: no visible binding for global variable
+‘presslog_ames’ get_presslog: no visible global function definition for
+‘ymd’ get_presslog: no visible global function definition for ‘%\>%’
+get_presslog: no visible global function definition for ‘filter’
+get_presslog: no visible binding for global variable
+‘Call_Received_Date’ pdf_to_tbl: no visible global function definition
+for ‘extract_tables’ pdf_to_tbl: no visible global function definition
+for ‘%\>%’ pdf_to_tbl: no visible global function definition for
+‘separate’ pdf_to_tbl: no visible binding for global variable
+‘Call_Received_Date_Time’ pdf_to_tbl: no visible global function
+definition for ‘write.csv’ pdf_to_tbl: no visible global function
+definition for ‘as_tibble’ Undefined global functions or variables: %\>%
+Call_Received_Date Call_Received_Date_Time as_tibble download.file
+extract_tables filter presslog_ames separate write.csv ymd Consider
+adding importFrom(“stats”, “filter”) importFrom(“utils”,
+“download.file”, “write.csv”) to your NAMESPACE file.
+
+The way i fixed the error was to add the following to Namespace file
+importFrom(“stats”, “filter”) importFrom(“utils”, “download.file”,
+“write.csv”)
+
+I fixed the error in the following manner:
+
+    1) I ran series of checks on the Team3 package using the devtools::check() to produce the error. 
+
+    2) Once the issue was identified, I observed that it was missing some import function on the name space file.
+
+    3) To fix this warning message, I added importFrom() statements to the NAMESPACE file. These statements tell R which functions and variables from other packages are needed. In my case, I added importFrom() statements for the filter, download.file, and write.csv functions from the stats and utils packages.
+
+Describe your experience below. Push this blog post to your blog-9 repo.
+Make sure the front matter check passes
+
+Although fixing the namespace issues can be challenging in R, it is an
+important step in developing a well-functioning and properly organized
+package. The goal of namespace management is to ensure that each
+function in your package can access the functions and the variables it
+needs from other packages, without polluting the global environment or
+causing conflicts with other packages. A key challenge I faced was to
+ensure that all the packages were correctly imported and defined. It was
+helpful that after making all the changes, there was a tool to recheck
+if there were any errors.
+
+**Which error or warning did you fix? … and how?**

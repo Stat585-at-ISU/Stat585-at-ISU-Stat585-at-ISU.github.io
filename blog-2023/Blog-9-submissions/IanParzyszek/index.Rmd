@@ -1,0 +1,39 @@
+---
+title: "Trying to Make the World a Better Place"
+author: "Ian Parzyszek"
+date: "2023-03-30"
+categories: "Errors and warnings in packages"
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+[![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)
+<!-- badges: end -->
+
+## Prompt:
+
+Fix one of the problems in one of our community packages at `https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all`, and write about it. 
+
+## Instructions:
+
+What we want to know is the **exact** warning or error message of the item you fixed, and a description of what you did, also as specific as possible. 
+
+Describe your experience  below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.
+
+**Which error or warning did you fix? ... and how?**
+
+For team number 1 when I ran the devtools::check() I recieved this error message: 
+
+ Running the tests in ‘tests/testthat.R’ failed.
+   Last 13 lines of output:
+     > # * https://r-pkgs.org/tests.html
+     > # * https://testthat.r-lib.org/reference/test_package.html#special-files
+     > 
+     > library(testthat)
+     > library(Team1)
+     > 
+     > test_check("Team1")
+     Error in `test_dir()`:
+     ! No test files found
+
+I then did some googling and found that Hadly had tried to answer this question for someone on github in 2015, and mentioned that there may be something wrong with the directory. Still not having any luck, I decided to look at Team2, lucky enough theirs ran without error. The only major difference that I saw at the surface was that Team1 had a testfile and Team2 did not. The only thing was that Team1 did not have any test in the test file. My solution was simply removing the "test" folder from the directory, I reran it, and received no errors.

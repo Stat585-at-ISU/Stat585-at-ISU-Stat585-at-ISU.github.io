@@ -1,0 +1,102 @@
+---
+title: "Errors and warnings in packages"
+author: "Atefeh Anisi"
+date: "2023-03-30"
+categories: "Errors and warnings in packages"
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+[![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)
+<!-- badges: end -->
+
+## Prompt:
+
+Fix one of the problems in one of our community packages at `https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all`, and write about it. 
+
+## Instructions:
+
+What we want to know is the **exact** warning or error message of the item you fixed, and a description of what you did, also as specific as possible. 
+
+Describe your experience  below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.
+
+**Which error or warning did you fix? ... and how?**
+
+**For team 4**, I ran check("Team4"), and this was the result:
+
+`❯ checking dependencies in R code ... NOTE
+Namespaces in Imports field not imported from:
+  'readr' 'stringr'
+All declared Imports should be used.`
+
+0 errors ✔ | 0 warnings ✔ | 1 note ✖
+
+
+So, I changed the Imports set in Description file, and omitted 'readr' and 'stringr'.
+It seems that these packages were not required. Here is the new result for check("Team4") command:
+
+0 errors ✔ | 0 warnings ✔ | 0 notes ✔
+
+
+**For Team6**, When I ran document("Team6"), I got this error message:
+
+`> document("Team6")
+ℹ Updating Team6 documentation
+ℹ Loading Team6
+Warning message:
+[press_log_data.R:15] @source requires a value `
+
+Then I went to press_log_data.R file, and I checked row number 15.
+It seems that they forgot to add an appropriate source there. So, I added the source of the data there. Then, I ran the command one more time and the problem has been solved.
+
+`> document("Team6")
+ℹ Updating Team6 documentation
+ℹ Loading Team6
+Writing press_log_data.Rd`
+
+
+This was the note when I ran check("Team6"):
+
+`❯ checking top-level files ... NOTE
+Non-standard files/directories found at top level:
+ 'presslog-20230306.csv' 'presslog_amespd_2023-03-06.pdf'`
+
+0 errors ✔ | 1 warning ✖ | 1 note ✖
+
+
+I deleted those two extra files (presslog-20230306.csv and presslog_amespd_2023-03-06.pdf), and the note has been removed.
+
+0 errors ✔ | 1 warning ✖ | 0 notes ✔
+
+
+**For Team2**, when I ran check("Team2"), I got this error:
+
+`> check("Team2")
+ℹ Updating Team2 documentation
+ℹ Loading Team2
+Error: 'ames_presslog' is not an exported object from 'namespace:Team2'`
+
+I checked and found that 'ames_presslog' is not exported in namespace, and it is not in man files. So, I deleted the 'ames_presslog.R' from the R folder, and it's data from the Data folder. Then, I ran check() command again, and this was the result:
+
+ 0 errors ✔ | 4 warnings ✖ | 2 notes ✖  
+  
+this was one of the warning messages:
+
+`❯ checking Rd \usage sections ... WARNING
+Undocumented arguments in documentation object 'get_presslog'
+'date.column'
+Functions with \usage entries need to have the appropriate \alias
+entries, and all their arguments documented.
+The \usage entries must correspond to syntactically valid R code.
+See chapter 'Writing R documentation files' in the 'Writing R
+ Extensions' manual.`
+
+
+considering the message I went to the get_presslog.R file in the R folder of the Team2 package, and I added the date.column which is one of the inputs for the get_presslog function, as a parameter using the command line below.
+
+`#' @param date.column The column which contains the Date and time`
+
+I saved the changes, and checked it again. The number of warnings was reduced to 3.
+
+0 errors ✔ | 3 warnings ✖ | 2 notes ✖

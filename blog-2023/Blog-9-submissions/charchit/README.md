@@ -1,0 +1,49 @@
+all-for-one
+================
+Charch
+2023-03-30
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+
+[![Frontmatter
+check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)
+<!-- badges: end -->
+
+## Prompt:
+
+Fix one of the problems in one of our community packages at
+`https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all`,
+and write about it.
+
+## Instructions:
+
+What we want to know is the **exact** warning or error message of the
+item you fixed, and a description of what you did, also as specific as
+possible.
+
+Describe your experience below. Push this blog post to your blog-9 repo.
+Make sure the front matter check passes.
+
+**Which error or warning did you fix? … and how?** Fixed the warning for
+Team 3. While installing the team 3 package, it was giving warning for
+Rcurl function we used to read the URL, when we first started working on
+“lab-3-all-all-for-one-and-one-for-all”. So after adding the @import
+packages in description file, and importing all and updates in the
+namespace file the warnings were eliminated. Then later on while
+installing the package, it was giving warning that stat::filter was
+replacing the dplyr::filter. So we used dplyr::filter instead of
+“filter” to remove the stat::filter warning when installing the package.
+
+Experience: Fixing this was more frustrating than writing the code the
+first time. Specially when we wrote the code as a team. I forgot a lot
+of the things we did when building the package first time.
+Reproducibility seems very important even when working on a small
+project like this. I watched the lectures again to recall what we did
+and how Dr. Hofmann fixed some things in the class. The challenge is, it
+takes more time to document all the things we have done. It is a
+combination of laziness and calling some things just “good enough” and
+move on, instead of willing to sit down and write the documentation. I
+definitely think it is more important to document and write the things
+we have done during the code, hopefully I can change my habit of
+documenting as I go along in my research. Thanks for introducing this.

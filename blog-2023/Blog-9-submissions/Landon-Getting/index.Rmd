@@ -1,0 +1,44 @@
+---
+title: "Solving package problems!"
+author: "Landon Getting"
+date: "2023-03-30"
+categories: "Errors and warnings in packages"
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+<!-- badges: start -->
+
+[![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)
+
+<!-- badges: end -->
+
+**Which error or warning did you fix? ... and how?**
+
+After running `devtools::check()` for Team 3, I received several errors regarding a lack of visible bindings or variable definitions. I decided to focus on the errors regarding the get_presslog function:
+
+-   get_presslog: no visible binding for global variable 'presslog_ames'
+-   get_presslog: no visible global function definition for 'ymd'
+-   get_presslog: no visible global function definition for '%\>%'
+-   get_presslog: no visible binding for global variable 'Call_Received_Date'\`
+
+I fixed the first error by specifically referencing the package of origin for the presslog_ames data object.
+
+| `Team3::presslog_ames` rather than `presslog_ames`.
+
+Next, I added similar references for all instances of the `ymd()` function.
+
+| `lubridate::ymd()` rather than `ymd()`.
+
+While attempting to solve the final warning for the get_presslog function, I ran into a plethora of issues. I added the prefix `.data$` to eliminate the visible binding problem, but then I needed to add `@importFrom rlang .data` to the roxygen comments.
+
+| `.data$Call_Received_Date` rather than `Call_Received_Date`
+
+Once I added the `@importFrom` tag, ran `devtools::document()`, and added `rlang` to the description file, I thought I was in the clear. However, I received the following error when performing the check:
+
+| `No root directory found in C:/Users/[my directories]/lab-3-all-all-for-one-and-one-for-all oits parent     directories. Root criterion: contains a file "DESCRIPTION" with contents matching "^Package:`
+
+I struggled with this problem but figured out that the description file had a small error in it. Instead of `imports:`, the description file had `import:` which caused not to recognize the following packages to import.
+
+After fixing this error, I ran `devtools::check()` and the get_presslog binding or definition issues were resolved.

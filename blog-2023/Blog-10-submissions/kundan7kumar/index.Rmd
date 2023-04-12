@@ -1,0 +1,124 @@
+---
+author: "Kundan Kumar"
+title: "Web scraping"
+categories: "Errors and warnings in packages"
+date: "2023-04-06"
+output: github_document
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+## Prompt:
+
+With great power comes great responsibility - a large part of the web is
+based on data and services that scrape those data. Now that we start to
+apply scraping mechanisms, we need to think about how to apply those
+skills without becoming a burden to the internet society.
+
+Find sources on ethical web scraping - some readings that might help you
+get started with that are:
+
+-   [James
+    Densmore](https://towardsdatascience.com/ethics-in-web-scraping-b96b18136f01)
+
+-   R package [polite](https://github.com/dmi3kno/polite)
+
+-   [JAMI \@
+    EMPIRICAL](https://www.empiricaldata.org/dataladyblog/a-guide-to-ethical-web-scraping)
+
+After reading through some of the ethics essays write a blog post
+addressing the following questions:
+
+1.  **What are your main three takeaways for ethical web scraping? -
+    Give examples, or cite your sources.**
+
+**Solution:** The major takeaway for ethical web scraping :
+
+-   Before any web-Scarping, it is important to check the website's
+    terms of use and robots.txt file to ensure you are not violating any
+    rules.
+
+-   Web-Scarping should not collect sensitive or private information
+    without the consent of the website owner or the individuals
+    concerned. It should follow data privacy and intellectual property
+    like copyrighted material rights.
+
+-   Web-scraping should not cause undue load on the website's server or
+    disrupt its performance. It limits the rate at which requests are
+    made to the website's server.
+
+**References:**
+
+-   website's terms of use and robots.txt:
+    <https://developers.google.com/search/docs/crawling-indexing/robots/intro>
+    and
+    <https://techcrunch.com/2022/04/18/web-scraping-legal-court/?guccounter=1>
+-   Data privacy laws and web scraping:
+    <https://www.fieldfisher.com/en/services/privacy-security-and-information/privacy-security-and-information-law-blog/data-scraping-considering-the-privacy-issues>
+-   Limit request rate:
+    <https://blog.cloudflare.com/advanced-rate-limiting/>
+
+2.  **What is a ROBOTS.TXT file? Identify one instance and explain what
+    it allows/prevents.**
+
+**Solution:** A robots.txt file is placed on a website's server,
+instructing web crawlers how to crawl and index its pages. It is a plain
+text file specifying which parts of the website the web crawlers are
+allowed or not to access.
+
+An example of a robots.txt file looks like this:
+
+    User-agent: *
+    Disallow: /wp-admin/
+    Allow: /wp-admin/admin-ajax.php
+
+**References:** Check for the complete robots.txt:
+<https://kinsta.com/robots.txt>
+
+The `User-agent: *` line indicates what rules apply to all web-crawler.
+The Disallow lines specify directories or pages not to be accessed by
+the bots, while Allow lines allow the bot to access pages or directories
+by it.
+
+This `Disallow` help to prevent the bot from crawling a page with
+sensitive information.
+
+3.  **Identify a website that you would like to scrape (or one an
+    example from class) and implement a scrape using the `polite`
+    package.**
+
+**Solution:**
+We are doing web-scrape for Active Civil Service List data, which consists of all candidate which passed the exam.
+
+https://data.cityofnewyork.us/City-Government/Civil-Service-List-Active-/vx8i-nprf
+
+```{r}
+library(polite)
+library(rvest)
+library(httr)
+library(dplyr)
+library(ggplot2)
+
+polite_GET <- politely(httr::GET,verbose = TRUE)
+res <- polite_GET("https://data.cityofnewyork.us/resource/vx8i-nprf.json")
+#res
+df <- jsonlite::fromJSON(rawToChar(res$content))
+head(df)
+```
+
+Total Candidate passed for different agency
+
+```{r}
+df_grouped <- df %>%
+  group_by(list_agency_desc) %>%
+  summarize(total_person = n())
+
+df_grouped
+```
+
+
+Instructions:
+
+Submit to your repo. Make sure that all of the github actions pass
+(check menu item Actions - all of the actions should have green checks)

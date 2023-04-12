@@ -1,0 +1,94 @@
+Reflections on Ethical Web Scraping
+================
+Kelly Nascimento Thompson
+2023-04-06
+
+## Prompt:
+
+With great power comes great responsibility - a large part of the web is
+based on data and services that scrape those data. Now that we start to
+apply scraping mechanisms, we need to think about how to apply those
+skills without becoming a burden to the internet society.
+
+Find sources on ethical web scraping - some readings that might help you
+get started with that are:
+
+- [James
+  Densmore](https://towardsdatascience.com/ethics-in-web-scraping-b96b18136f01)
+
+- R package [polite](https://github.com/dmi3kno/polite)
+
+- [JAMI @
+  EMPIRICAL](https://www.empiricaldata.org/dataladyblog/a-guide-to-ethical-web-scraping)
+
+After reading through some of the ethics essays write a blog post
+addressing the following questions:
+
+1.  **What are your main three takeaways for ethical web scraping? -
+    Give examples, or cite your sources.**
+
+- Ethics and law regarding web data scraping are not same thing and each
+  of them have their own complexity and level of importance as stated by
+  James Densmore, 2017.Another important point brought up is that people
+  scraping data and those providing data have not agreed on basic
+  principles of ethical web scrapping.
+
+- A common point on both articles from James Densmore and JAMI @
+  EMPIRICAL is that if a data source has an API, we should definitely
+  use it because then we will avoid scraping and will gather the data
+  according to the publisher’s rules.
+
+- Return value to data owners from where we scrape information from is
+  another ethical principle and we can do so by referencing where the
+  data came from, so their website can receive some traffic. We can also
+  recognize website’s value by citing them in articles or posts.
+
+2.  **What is a ROBOTS.TXT file? Identify one instance and explain what
+    it allows/prevents.**
+
+- They are part of the Robots Exclusion Protocol (REP) and they regulate
+  what is allowed or not when conducting data web scrapping. This text
+  file provides instructions for search engine robots how to scrape and
+  index pages on websites.
+
+- Example: Blocking a folder. In some cases, website owners want to
+  block a certain area of the website and give access to the rest. To do
+  so, website owners create a admin area allowing only admins with a
+  login to make content changes on their page. They do not want bots
+  looking into this admin folder, so they block it by doing:
+
+        User-agent: *
+        Disallow: /admin/
+
+  By doing this, the bots will not access the admin folder.
+
+  Source: <https://pagedart.com/blog/robots-txt-file-example/>
+
+3.  **Identify a website that you would like to scrape (or one an
+    example from class) and implement a scrape using the `polite`
+    package.**
+
+``` r
+# Types of cheese from Brazil
+library(polite)
+```
+
+    ## Warning: package 'polite' was built under R version 4.2.3
+
+``` r
+library(rvest)
+```
+
+    ## Warning: package 'rvest' was built under R version 4.2.3
+
+``` r
+session <- bow("https://www.cheese.com/by_country/?per_page=20&c=BR#top", force = TRUE)
+result <- scrape(session, query=list(t="Brazil", per_page=20)) %>%
+  html_node("#main-body") %>% 
+  html_nodes("h3") %>% 
+  html_text()
+result
+```
+
+    ## [1] "Canastra cheese" "Catupiry"        "Coalho"          "Colony cheese"  
+    ## [5] "Minas cheese"    "Queijo do serro" "Requeson"

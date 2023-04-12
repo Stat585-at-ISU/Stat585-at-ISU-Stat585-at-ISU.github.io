@@ -1,0 +1,48 @@
+---
+title: "Errors and warnings in packages"
+author: "Parvin Mohammadiarvejeh"
+date: "2023-03-30"
+categories: "Errors and warnings in packages"
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+[![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)
+<!-- badges: end -->
+
+## Prompt:
+
+Fix one of the problems in one of our community packages at `https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all`, and write about it. 
+
+## Instructions:
+
+What we want to know is the **exact** warning or error message of the item you fixed, and a description of what you did, also as specific as possible. 
+
+Describe your experience  below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.
+
+**Which error or warning did you fix? ... and how?**
+
+Parvin's answer: I have been working on "Team6" package for this blog.
+Errors that I could address are as follows:
+
+get_pd_presslog: no visible global function definition for 'download.file'
+pd_to_tbl: no visible global function definition for 'extract_tables'
+pd_to_tbl: no visible binding for global variable 'one_page'
+pd_to_tbl: no visible global function definition for 'write_csv'
+pd_to_tbl: no visible global function definition for 'year'
+pd_to_tbl: no visible global function definition for 'month'
+pd_to_tbl: no visible global function definition for 'mday'
+
+
+
+
+I added "ImportFrom utils download.file", "ImportFrom readr write_csv", "ImportFrom tabulizer extract_tables", "ImportFrom lubridate year mday month" to the "get_pd_presslog" and "pd_to_tbl" and also to the description file. I used the "document()" and "check()" to fix the problems and check if the error is gone. In this way, I could solve the above errors. For the error related to the 'one_page', I added the "one_page = NULL" and it helped to address the error. 
+
+
+
+
+
+  
+  
+  

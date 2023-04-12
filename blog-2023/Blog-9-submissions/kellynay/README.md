@@ -1,0 +1,54 @@
+Fixing Package Errors
+================
+Kelly Nascimento Thompson
+2023-03-30
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+
+[![Frontmatter
+check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)
+<!-- badges: end -->
+
+## Prompt:
+
+Fix one of the problems in one of our community packages at
+`https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all`,
+and write about it.
+
+## Instructions:
+
+What we want to know is the **exact** warning or error message of the
+item you fixed, and a description of what you did, also as specific as
+possible.
+
+Describe your experience below. Push this blog post to your blog-9 repo.
+Make sure the front matter check passes.
+
+**Which error or warning did you fix? … and how?**
+
+I worked with my Lab3 - Team 3 colleagues to fix some of the issues
+highlighted by Ganesh when he graded our lab assignment.
+
+Exact warning message: Warning: replacing previous import
+‘dplyr::filter’ by ‘stats::filter’ when loading ‘Team3’ \*\* testing if
+installed package can be loaded from final location Warning: replacing
+previous import ‘dplyr::filter’ by ‘stats::filter’ when loading ‘Team3’
+\*\* testing if installed package keeps a record of temporary
+installation path
+
+The get_presslog function was throwing a warning due to the following
+(Line 19 in get_presslog.R):
+
+- data_subset \<- data %\>% filter(Call_Received_Date \>= from2) %\>%
+  filter(Call_Received_Date \<= to2)
+
+We fixed the error by doing:
+
+- data_subset \<- data %\>% dplyr::filter(Call_Received_Date \>= from2)
+  %\>% dplyr::filter(Call_Received_Date \<= to2)
+
+In summary, we replaced ‘stats::filter’ by ‘dplyr::filter’.
+
+We also addressed this issue in the NAMESPACE file by writing on Line
+12: importFrom(“stats”, “filter”)
