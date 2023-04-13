@@ -1,0 +1,139 @@
+Web Scraping Etiquette …
+================
+Marie Hardt
+2023-04-06
+
+## Prompt:
+
+With great power comes great responsibility - a large part of the web is
+based on data and services that scrape those data. Now that we start to
+apply scraping mechanisms, we need to think about how to apply those
+skills without becoming a burden to the internet society.
+
+Find sources on ethical web scraping - some readings that might help you
+get started with that are:
+
+-   [James
+    Densmore](https://towardsdatascience.com/ethics-in-web-scraping-b96b18136f01)
+
+-   R package [polite](https://github.com/dmi3kno/polite)
+
+-   [JAMI @
+    EMPIRICAL](https://www.empiricaldata.org/dataladyblog/a-guide-to-ethical-web-scraping)
+
+After reading through some of the ethics essays write a blog post
+addressing the following questions:
+
+1.  **What are your main three takeaways for ethical web scraping? -
+    Give examples, or cite your sources.**
+
+My three main ethical web scraping takeaways are:
+
+-   If a website has an API, you should collect data via the API instead
+    of scraping the website ([James
+    Densmore](https://towardsdatascience.com/ethics-in-web-scraping-b96b18136f01)
+    and [JAMI @
+    EMPIRICAL](https://www.empiricaldata.org/dataladyblog/a-guide-to-ethical-web-scraping)).
+
+-   When scraping a website, you should scrape at a rate that doesn’t
+    overload the website’s host servers or get you confused for a DDoS
+    attack on the website ([James
+    Densmore](https://towardsdatascience.com/ethics-in-web-scraping-b96b18136f01)
+    and [JAMI @
+    EMPIRICAL](https://www.empiricaldata.org/dataladyblog/a-guide-to-ethical-web-scraping)).
+
+-   You should only scrape the data that you need and then cite/link
+    back to the website from which you scraped the data ([James
+    Densmore](https://towardsdatascience.com/ethics-in-web-scraping-b96b18136f01)
+    and [JAMI @
+    EMPIRICAL](https://www.empiricaldata.org/dataladyblog/a-guide-to-ethical-web-scraping)).
+
+2.  **What is a ROBOTS.TXT file? Identify one instance and explain what
+    it allows/prevents.**
+
+A ROBOTS.TXT file tells web scrapers what parts of a website they are
+allowed to access, and can disallow access to some (or all) web scrapers
+altogether. The vignette on [polite package
+website](https://dmi3kno.github.io/polite/) links to the ROBOTS.TXT file
+for Bob Rudis’s blog. This [file](https://rud.is/robots.txt) includes a
+crawl delay that ethical web scrapers will observe along with some
+impressive text art images of a Star Trek space station. It seems that
+all scraping of the blog is allowed as long as the crawl delay is
+observed. Conversely, [Wikipedia](https://en.wikipedia.org/robots.txt)
+has an extensive ROBOTS.TXT file that disallows many different web
+crawlers for various reasons, including making too many requests in too
+short a period of time, being associated with advertising, and more.
+
+3.  **Identify a website that you would like to scrape (or an example
+    from class) and implement a scrape using the `polite` package.**
+
+I will revisit an example from class, but implement the web scrape using
+the `polite` package instead of the `rvest` package. I will scrape the
+*New York Times* website to acquire the 2016 election results from
+Oregon. I chose Oregon because I spent the summer of 2019 participating
+in a research experience for undergraduates (REU) program at Oregon
+State University in Corvallis. I will then compare the results to those
+obtained when we scrape the website using the `rvest` package.
+
+First, let’s scrape the Oregon election results using the `polite`
+package.
+
+``` r
+library(tidyverse)
+library(polite)
+library(rvest)
+
+or_url <- "https://www.nytimes.com/elections/2016/results/oregon"
+polite_session <- bow(or_url, force = T)
+or_scrape <- scrape(polite_session)
+
+or_tables <- or_scrape %>% html_table(fill=TRUE)
+or_tables[[2]]
+```
+
+    ## # A tibble: 36 × 3
+    ##    `Vote by county` Clinton Trump 
+    ##    <chr>            <chr>   <chr> 
+    ##  1 Multnomah        292,561 67,954
+    ##  2 Washington       153,251 83,197
+    ##  3 Clackamas        102,095 88,392
+    ##  4 Lane             102,753 67,141
+    ##  5 Marion           57,788  63,377
+    ##  6 Jackson          44,447  53,870
+    ##  7 Deschutes        42,444  45,692
+    ##  8 Linn             17,995  33,488
+    ##  9 Douglas          14,096  34,582
+    ## 10 Benton           29,193  13,445
+    ## # … with 26 more rows
+
+Now let’s compare the results from the `polite` package to those
+obtained using the `rvest` package.
+
+``` r
+or_html <- read_html(or_url)
+or_tables2 <- or_html %>% html_table(fill=TRUE)
+or_tables2[[2]]
+```
+
+    ## # A tibble: 36 × 3
+    ##    `Vote by county` Clinton Trump 
+    ##    <chr>            <chr>   <chr> 
+    ##  1 Multnomah        292,561 67,954
+    ##  2 Washington       153,251 83,197
+    ##  3 Clackamas        102,095 88,392
+    ##  4 Lane             102,753 67,141
+    ##  5 Marion           57,788  63,377
+    ##  6 Jackson          44,447  53,870
+    ##  7 Deschutes        42,444  45,692
+    ##  8 Linn             17,995  33,488
+    ##  9 Douglas          14,096  34,582
+    ## 10 Benton           29,193  13,445
+    ## # … with 26 more rows
+
+``` r
+all.equal(or_tables[[2]], or_tables2[[2]])
+```
+
+    ## [1] TRUE
+
+The results from both scraping methods are the same.

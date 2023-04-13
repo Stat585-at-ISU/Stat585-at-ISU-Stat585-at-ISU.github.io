@@ -182,6 +182,9 @@ ul.task-list li input[type="checkbox"] {
 <p>What we want to know is the <strong>exact</strong> warning or error message of the item you fixed, and a description of what you did, also as specific as possible.</p>
 <p>Describe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.</p>
 <p><strong>Which error or warning did you fix? … and how?</strong></p>
+<p>The error messages that I fixed were within the Team2 package and included various import requirements in NAMESPACE and the DESCRIPTION files. To fix these issues, I added in the “<span class="citation" data-cites="importFrom">@importFrom</span>” component to the function to the pdf_to_tbl package for the utils and magrittr packages for the write.csv and %&gt;% functions, respectively. I also added the libraries to the functions that were called within the R package to make more clear where each function is intended to be pulled from. I then documented these changes and loaded the package again.</p>
+<p>There was also an issue in the pdf_to_tbl function where “.,” as a global variable was not defined. In this instance, I simply removed the “.,” from the pdf_to_tbl function as the data was already being piped from the area above and the “.,” notation was not necessary.</p>
+<p>I also fixed two issues that I found when running the package. I removed the exact url from the input section of the function and instead put it at the top of the area within the section. I also changed the format of the save_as function and instead removed the “./data/” part of the save_as function to improve the saving of the pdf files.</p>
 
 
 </section>

@@ -1,0 +1,68 @@
+Problems in Building the R Package
+================
+ycb
+2023-03-30
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+
+[![Frontmatter
+check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)
+<!-- badges: end -->
+
+## Prompt:
+
+Fix one of the problems in one of our community packages at
+`https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all`,
+and write about it.
+
+## Instructions:
+
+What we want to know is the **exact** warning or error message of the
+item you fixed, and a description of what you did, also as specific as
+possible.
+
+Describe your experience below. Push this blog post to your blog-9 repo.
+Make sure the front matter check passes.
+
+**Which error or warning did you fix? … and how?**
+
+Warning from Team2:
+
+- checking Rd files … WARNING
+
+  prepare_Rd: ./man/presslog_ames.Rd:18: unexpected section header
+  ‘\source’
+
+  prepare_Rd: ./man/presslog_ames.Rd:21: unexpected section header
+  ‘\usage’
+
+  prepare_Rd: ./man/presslog_ames.Rd:24: unexpected section header
+  ‘\description’
+
+  prepare_Rd: ./man/presslog_ames.Rd:27: unexpected section header
+  ‘\keyword’
+
+  prepare_Rd: ./man/presslog_ames.Rd:28: unexpected END_OF_INPUT ’ ’
+  checkRd: (5) presslog_ames.Rd:0-29: Must have a \description
+
+This warning can be fixed by adding ‘}’ in presslog_ames.R. There is one
+‘}’ missing for ‘\describe’.
+
+- checking dependencies in R code … WARNING
+
+  ‘library’ or ‘require’ calls not declared from:
+
+  ‘tabulizer’ ‘tidyverse’
+
+  ‘library’ or ‘require’ calls in package code:
+
+  ‘tabulizer’ ‘tidyverse’
+
+  Please use :: or requireNamespace() instead.
+
+  See section ‘Suggested packages’ in the ‘Writing R Extensions’ manual.
+
+Adding ‘@importFrom tabulizer extract_tables’ and deleting
+‘library(’tidyverse’)’ and ‘library(’tabulizer’)’ in the function in
+pdf_to_tbl.R.

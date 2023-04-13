@@ -182,6 +182,9 @@ ul.task-list li input[type="checkbox"] {
 <p>What we want to know is the <strong>exact</strong> warning or error message of the item you fixed, and a description of what you did, also as specific as possible.</p>
 <p>Describe your experience below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.</p>
 <p><strong>Which error or warning did you fix? … and how?</strong></p>
+<p>For team number 1 when I ran the devtools::check() I recieved this error message:</p>
+<p>Running the tests in ‘tests/testthat.R’ failed. Last 13 lines of output: &gt; # * https://r-pkgs.org/tests.html &gt; # * https://testthat.r-lib.org/reference/test_package.html#special-files &gt; &gt; library(testthat) &gt; library(Team1) &gt; &gt; test_check(“Team1”) Error in <code>test_dir()</code>: ! No test files found</p>
+<p>I then did some googling and found that Hadly had tried to answer this question for someone on github in 2015, and mentioned that there may be something wrong with the directory. Still not having any luck, I decided to look at Team2, lucky enough theirs ran without error. The only major difference that I saw at the surface was that Team1 had a testfile and Team2 did not. The only thing was that Team1 did not have any test in the test file. My solution was simply removing the “test” folder from the directory, I reran it, and received no errors.</p>
 
 
 </section>

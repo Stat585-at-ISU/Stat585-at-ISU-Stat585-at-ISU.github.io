@@ -1,10 +1,10 @@
 ---
-output: github_document
-author: "Denise Bradford"
 title: "My professional self"
+author: DRB
 date: "2023-03-23"
 categories: "My professional self"
 ---
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <!-- badges: start -->
 [![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)
@@ -23,5 +23,7 @@ Describe your experience creating your website below. Don't forget to link to yo
 Denise's Answer:
 
 To be honest, I have had a `github pages` since last year during SDSS presentation. I've made some changes to the webpage like the landing page during this blog post. I wanted to be clear that this was some thing that I was not new to the publishing `github pages`. I would like to make more changes when I have the time.
+
+[Denise's Github Pages](https://drbradford12.github.io/)
 
 To finally answer the question, initially, this process was MUCH EASIER than creating a blogdown website, which I also did last year. Unfortunately, I'm not great with Netlify. As a result, it has not been publicly updated and removed from all of my lines of communication.

@@ -1,0 +1,29 @@
+---
+title: "Fixing thing from Lab 2"
+author:  "AR"
+date: "2023-03-30"
+categories: "Errors and warnings in packages"
+---
+
+## Prompt:
+
+Fix one of the problems in one of our community packages at `https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all`, and write about it. 
+
+## Instructions:
+
+What we want to know is the **exact** warning or error message of the item you fixed, and a description of what you did, also as specific as possible. 
+
+Describe your experience  below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.
+
+**Which error or warning did you fix? ... and how?**
+Warning: cannot open file 'presslog-20230306.csv': No such file or directoryError in file(file, "rt") : cannot open the connection
+
+This was due to the fact that we updated the presslog date to the current day we were working on it. That means if we used it a different day, it would be outdated. I changed the file it was looking for to be a general press log file. It did not have a specific date attatched.
+
+get_presslog <- function(from, to) {
+  df <- utils::read.csv("presslog-%s%02d%02d.csv") # Change the date to be today's date
+  df[c('Date', 'Time')] <- stringr::str_split_fixed(df$Call.Received.Date.Time, ' ', 2)
+  calls <- df[df$Date >= from & df$Date <= to, ]
+  print(calls)
+  
+While this isn't an absolute solution because it depends on the previous function to save as presslog-%s%02d%02d.csv. This does work for any date and we will not have to change the date every time. 

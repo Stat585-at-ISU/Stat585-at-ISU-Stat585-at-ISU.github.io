@@ -257,26 +257,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>There are three main takeaways related to ethical web scraping that caught my attention. The first one is to be respectful to the owner of the data one is scraping. For example, the web scraping operation might be very demanding on the server so trying to execute this operation as smoothly as possible would be my first aim. This can be done by minimizing the amount of requests sent to the server. The second aspect that caught my attention was to be also respectful to the human users of the website one is scraping. For example, the idea of web scraping only outside of peak use hours is fascinating to me. It reduces the traffic on the server and also does not interfere with the user experience. The third and last aspect that I thought was extremely interesting was the idea that, if an Application Programming Interface (API) is provided, to avoid web scraping all together. This API will most likely be more equiped to handle large requests than the website front end.</p>
 <p>An example of how to apply a couple of these principles would be on how to request weather data from <a href="https://power.larc.nasa.gov/">NASA POWER</a>. Often I will have to send multiple requests for weather data but it is important to try and minimize the amount of requests. Let us take a look:</p>
 <p>If we need to iterate over a list of locations for which we need data for multiple years, for example, there are multiple ways to do it, but some of them will be more gentle to the API server. In the following example, we can see how a simple tweak in the code can change the number of requests to the server from 62 to 2.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">init</span>()</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>locations <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">location_name =</span> <span class="fu">c</span>(<span class="st">'Ames, IA'</span>, <span class="st">'Fayetteville, AR'</span>),</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                        <span class="at">latitude =</span> <span class="fu">c</span>(<span class="dv">42</span>, <span class="dv">36</span>),</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>                        <span class="at">longitude =</span> <span class="fu">c</span>(<span class="dv">94</span>, <span class="dv">94</span>))</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>locations <span class="ot">&lt;-</span> <span class="fu">merge</span>(locations, </span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">data.frame</span>(<span class="at">year =</span> <span class="dv">1990</span><span class="sc">:</span><span class="dv">2020</span>))</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(locations)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>##      location_name latitude longitude year
-## 1         Ames, IA       42        94 1990
-## 2 Fayetteville, AR       36        94 1990
-## 3         Ames, IA       42        94 1991
-## 4 Fayetteville, AR       36        94 1991
-## 5         Ames, IA       42        94 1992
-## 6 Fayetteville, AR       36        94 1992</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(locations)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>## [1] 62  4</code></pre>
+<div class="cell" data-hash="index_cache/html/unnamed-chunk-1_6288fb90d46bf415d485b554e4bfb5d1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># renv::init()</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># renv::activate()</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># renv::restore()</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>locations <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">location_name =</span> <span class="fu">c</span>(<span class="st">'Ames, IA'</span>, <span class="st">'Fayetteville, AR'</span>),</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                        <span class="at">latitude =</span> <span class="fu">c</span>(<span class="dv">42</span>, <span class="dv">36</span>),</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                        <span class="at">longitude =</span> <span class="fu">c</span>(<span class="dv">94</span>, <span class="dv">94</span>))</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>locations <span class="ot">&lt;-</span> <span class="fu">merge</span>(locations, </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">data.frame</span>(<span class="at">year =</span> <span class="dv">1990</span><span class="sc">:</span><span class="dv">2020</span>))</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(locations)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     location_name latitude longitude year
+1         Ames, IA       42        94 1990
+2 Fayetteville, AR       36        94 1990
+3         Ames, IA       42        94 1991
+4 Fayetteville, AR       36        94 1991
+5         Ames, IA       42        94 1992
+6 Fayetteville, AR       36        94 1992</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(locations)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 62  4</code></pre>
+</div>
+</div>
 <p>If we need the data for each of these locations at each one of these years, one might be inclined to do the following loop:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>weather_all <span class="ot">&lt;-</span> <span class="fu">data.frame</span>()</span>
+<div class="cell" data-hash="index_cache/html/unnamed-chunk-2_de2b464e434116206e53f70b21e67b13">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>weather_all <span class="ot">&lt;-</span> <span class="fu">data.frame</span>()</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>time.start <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">dim</span>(locations)[<span class="dv">1</span>]) {</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  </span>
@@ -295,9 +304,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>time.end <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
 <span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(time.end <span class="sc">-</span> time.start)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>## Time difference of 3.099758 mins</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code>Time difference of 3.012721 mins</code></pre>
+</div>
+</div>
 <p>The previous code would have sent 62 separate requests to the NASA POWER server. The following loop will retrieve the same information but with only 3% of the requests. This example uses an API but the same principle can be applied to the front face of a website.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>search_parameters <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind, </span>
+<div class="cell" data-hash="index_cache/html/unnamed-chunk-3_cd79c9895e0350d7a0e64f599c5abd46">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>search_parameters <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind, </span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                            <span class="fu">by</span>(locations, locations<span class="sc">$</span>location_name, </span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                               <span class="cf">function</span>(df) <span class="fu">data.frame</span>(df[<span class="dv">1</span>, <span class="fu">c</span>(<span class="st">'location_name'</span>, <span class="st">'longitude'</span>, <span class="st">'latitude'</span>)],</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                               <span class="at">min_year =</span> <span class="fu">min</span>(df<span class="sc">$</span>year), </span>
@@ -325,7 +338,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>time.end <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
 <span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(time.end <span class="sc">-</span> time.start)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>## Time difference of 7.823604 secs</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code>Time difference of 7.605049 secs</code></pre>
+</div>
+</div>
 <p>2 - <strong>What is a ROBOTS.TXT file? Identify one instance and explain what it allows/prevents.</strong></p>
 <p>The robots.txt file is a file that tells bots instructions of where the bot is allowed to crawl or not. It is a convention and it is a sign of good faith to respect the robots.txt file. The file allows or disallows certain behaviors of bots. These rules can be implemented globally or for specific bots.</p>
 <p>An example is the robots.txt file from <a href="https://www.iastate.edu/robots.txt">https://www.iastate.edu</a>. It specific disallows not clean URLs.</p>
@@ -342,52 +358,60 @@ Disallow: /index.php/user/logout
 Disallow: /index.php/media/oembed
 Disallow: /index.php/*/media/oembed</code></pre>
 <p>3- <strong>Identify a website that you would like to scrape (or one an example from class) and implement a scrape using the <code>polite</code> package.</strong></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(polite)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>## Warning: package 'polite' was built under R version 4.2.3</code></pre>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rvest)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>## Warning: package 'rvest' was built under R version 4.2.3</code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>## 
-## Attaching package: 'readr'
+<div class="cell" data-hash="index_cache/html/unnamed-chunk-4_bda5a81ff5d9e859549cfb3aa5b13a87">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(polite)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rvest)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'readr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:rvest':
 
-## The following object is masked from 'package:rvest':
-## 
-##     guess_encoding</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>session <span class="ot">&lt;-</span> <span class="fu">bow</span>(<span class="st">"https://www.nytimes.com/elections/2016/results/iowa"</span>, <span class="at">force =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">scrape</span>(session, <span class="at">query=</span><span class="fu">list</span>(<span class="at">t=</span><span class="st">"semi-soft"</span>, <span class="at">per_page=</span><span class="dv">100</span>))</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>tables <span class="ot">&lt;-</span> result <span class="sc">%&gt;%</span> <span class="fu">html_table</span>(<span class="at">fill=</span><span class="cn">TRUE</span>)</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>tables[[<span class="dv">2</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>## # A tibble: 99 × 3
-##    `Vote by county` Trump  Clinton
-##    &lt;chr&gt;            &lt;chr&gt;  &lt;chr&gt;  
-##  1 Polk             93,492 119,804
-##  2 Linn             48,390 58,935 
-##  3 Scott            39,149 40,440 
-##  4 Johnson          21,044 50,200 
-##  5 Black Hawk       27,476 32,233 
-##  6 Story            19,458 25,709 
-##  7 Dubuque          23,460 22,850 
-##  8 Woodbury         24,727 16,210 
-##  9 Pottawattamie    24,447 15,355 
-## 10 Dallas           19,339 15,701 
-## # … with 89 more rows</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>ia_results <span class="ot">&lt;-</span> tables[[<span class="dv">2</span>]] </span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>ia_results<span class="sc">$</span>Trump <span class="ot">&lt;-</span> <span class="fu">with</span>(ia_results,  <span class="fu">parse_number</span>(Trump))</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>ia_results<span class="sc">$</span>Clinton <span class="ot">&lt;-</span> <span class="fu">with</span>(ia_results,  <span class="fu">parse_number</span>(Clinton))</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ia_results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>## # A tibble: 6 × 3
-##   `Vote by county` Trump Clinton
-##   &lt;chr&gt;            &lt;dbl&gt;   &lt;dbl&gt;
-## 1 Polk             93492  119804
-## 2 Linn             48390   58935
-## 3 Scott            39149   40440
-## 4 Johnson          21044   50200
-## 5 Black Hawk       27476   32233
-## 6 Story            19458   25709</code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>## * The lockfile is already up to date.</code></pre>
+    guess_encoding</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>session <span class="ot">&lt;-</span> <span class="fu">bow</span>(<span class="st">"https://www.nytimes.com/elections/2016/results/iowa"</span>, <span class="at">force =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">scrape</span>(session, <span class="at">query=</span><span class="fu">list</span>(<span class="at">t=</span><span class="st">"semi-soft"</span>, <span class="at">per_page=</span><span class="dv">100</span>))</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>tables <span class="ot">&lt;-</span> result <span class="sc">%&gt;%</span> <span class="fu">html_table</span>(<span class="at">fill=</span><span class="cn">TRUE</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>tables[[<span class="dv">2</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 99 × 3
+   `Vote by county` Trump  Clinton
+   &lt;chr&gt;            &lt;chr&gt;  &lt;chr&gt;  
+ 1 Polk             93,492 119,804
+ 2 Linn             48,390 58,935 
+ 3 Scott            39,149 40,440 
+ 4 Johnson          21,044 50,200 
+ 5 Black Hawk       27,476 32,233 
+ 6 Story            19,458 25,709 
+ 7 Dubuque          23,460 22,850 
+ 8 Woodbury         24,727 16,210 
+ 9 Pottawattamie    24,447 15,355 
+10 Dallas           19,339 15,701 
+# … with 89 more rows</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>ia_results <span class="ot">&lt;-</span> tables[[<span class="dv">2</span>]] </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>ia_results<span class="sc">$</span>Trump <span class="ot">&lt;-</span> <span class="fu">with</span>(ia_results,  <span class="fu">parse_number</span>(Trump))</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>ia_results<span class="sc">$</span>Clinton <span class="ot">&lt;-</span> <span class="fu">with</span>(ia_results,  <span class="fu">parse_number</span>(Clinton))</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ia_results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  `Vote by county` Trump Clinton
+  &lt;chr&gt;            &lt;dbl&gt;   &lt;dbl&gt;
+1 Polk             93492  119804
+2 Linn             48390   58935
+3 Scott            39149   40440
+4 Johnson          21044   50200
+5 Black Hawk       27476   32233
+6 Story            19458   25709</code></pre>
+</div>
+</div>
+<div class="cell" data-hash="index_cache/html/unnamed-chunk-5_38fe079502d80bdfb9ff56a01d42be9e">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># renv::snapshot()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 </section>

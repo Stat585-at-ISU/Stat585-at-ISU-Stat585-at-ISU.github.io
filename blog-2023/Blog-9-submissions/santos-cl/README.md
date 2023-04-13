@@ -1,0 +1,144 @@
+Fixing a thing
+================
+CdS
+2023-03-30
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+
+[![Frontmatter
+check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)
+<!-- badges: end -->
+
+## Prompt:
+
+Fix one of the problems in one of our community packages at
+`https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all`,
+and write about it.
+
+## Instructions:
+
+What we want to know is the **exact** warning or error message of the
+item you fixed, and a description of what you did, also as specific as
+possible.
+
+Describe your experience below. Push this blog post to your blog-9 repo.
+Make sure the front matter check passes.
+
+**Which error or warning did you fix? … and how?**
+
+For this week’s blog, I decided to keep working on the ***Team2***
+package. The warning I identified dealt with us forgetting to include a
+library in the ***Imports*** section of the description, and using
+*library* within the functions. The error would be similar to the
+following message:
+
+     checking dependencies in R code ... WARNING
+      'library' or 'require' calls not declared from:
+        'tabulizer' 'tidyverse'
+      'library' or 'require' calls in package code:
+        'tabulizer' 'tidyverse'
+        Please use :: or requireNamespace() instead.
+        See section 'Suggested packages' in the 'Writing R Extensions' manual.
+
+The reason for this was that within the function *pdf_to_table* we were
+importing the library, like this:
+
+    pdf_to_tbl <- function(pdf, save_as = NULL) {
+
+      library(tidyverse)       <--------- This command was problematic
+      library(tabulizer)       <--------- This command was problematic
+     
+      plog <- tabulizer::extract_tables(file = pdf, method = "lattice")
+      df <- lapply(plog, extract_data_frame_page)
+
+      # identify the numeric columns, since some pages miss all "Report Number Assigned to Event"
+      n <- length(df)
+      numeric_columns <- df %>% lapply(., function(x)sapply(x, class)) %>%
+        lapply(., function(x)which(x == "numeric")) %>%
+        unlist %>% unique
+
+      ## Combining the different pages
+      df <- do.call(rbind, df)
+      df[numeric_columns] <- suppressWarnings(lapply(df[numeric_columns], function(x)as.numeric(x)))
+
+      if (!is.null(save_as) && dir.exists(dirname(save_as))){
+        utils::write.csv(df, save_as, row.names = FALSE)
+      }
+
+      return(df)
+
+    }
+
+I did three things to clear this warning: - Substitute the *tidyverse*
+call for the *magrittr* - Check if the name spaces “magrittr” and
+“tabulize” were available - In case they were, load the name space - Add
+*magrittr* and *tabulizer* to the ***Imports*** seciton of the
+description file
+
+The updated function is as it follows:
+
+    pdf_to_tbl <- function(pdf, save_as = NULL) {
+
+      
+      if(!requireNamespace("tabulizer", quietly = TRUE)){
+        warning("The tabulizer package is required for this function")
+        return(NULL)
+      }
+      
+      if(!requireNamespace("magrittr", quietly = TRUE)){
+        warning("The magrittr package is required for this function")
+        return(NULL)
+      }
+      
+      
+      loadNamespace('magrittr')
+     
+      
+      
+      plog <- tabulizer::extract_tables(file = pdf, method = "lattice")
+      df <- lapply(plog, extract_data_frame_page)
+
+      # identify the numeric columns, since some pages miss all "Report Number Assigned to Event"
+      n <- length(df)
+      numeric_columns <- df %>% lapply(., function(x)sapply(x, class)) %>%
+        lapply(., function(x)which(x == "numeric")) %>%
+        unlist %>% unique
+
+      ## Combining the different pages
+      df <- do.call(rbind, df)
+      df[numeric_columns] <- suppressWarnings(lapply(df[numeric_columns], function(x)as.numeric(x)))
+
+      if (!is.null(save_as) && dir.exists(dirname(save_as))){
+        utils::write.csv(df, save_as, row.names = FALSE)
+      }
+
+      return(df)
+
+    }
+
+The description file now also contains the updated ***Imports*** section
+
+    Package: Team2
+    Title: Get police presslogs
+    Version: 0.0.0.9000
+    Authors@R: c(
+        person("Caio", "dos Santos", , "clsantos@iastate.edu", role = c("aut", "cre")),
+        person("Alexandrea", "Arabio", , "aarabio@iastate.edu", role = "aut"),
+        person("Maxwell", "Skinner", , "mskinn25@iastate.edu", role = "aut")
+      )
+    Description: This package contains 3 functions to download, extract, and
+        filter presslog data. Also, it contains a sample data set.
+    License: MIT + file LICENSE
+    Encoding: UTF-8
+    Roxygen: list(markdown = TRUE)
+    RoxygenNote: 7.2.3
+    Imports: 
+        lubridate,
+        tabulizer,
+        magrittr
+    Depends: 
+        R (>= 2.10)
+    LazyData: true
+    LitrVersionUsed: 0.7.0
+    LitrId: afd1fe153acf34706b65fe5d2dcc1315

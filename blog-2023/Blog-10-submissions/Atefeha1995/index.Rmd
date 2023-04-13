@@ -1,0 +1,98 @@
+---
+author: "Atefeh Anisi"
+title: "Web scraping etiquette ..."
+categories: "Errors and warnings in packages"
+date: "2023-04-06"
+output: github_document
+---
+ 
+## Prompt:
+
+With great power comes great responsibility - a large part of the web is based on data and services that scrape those data. 
+Now that we start to apply scraping mechanisms, we need to think about how to apply those skills without becoming a burden to the internet society.
+
+Find sources on ethical web scraping - some readings that might help you get started with that are: 
+
+  - [James Densmore](https://towardsdatascience.com/ethics-in-web-scraping-b96b18136f01)
+
+  - R package [polite](https://github.com/dmi3kno/polite)
+
+  - [JAMI @ EMPIRICAL](https://www.empiricaldata.org/dataladyblog/a-guide-to-ethical-web-scraping)
+
+
+After reading through some of the ethics essays
+write a blog post addressing the following questions: 
+
+1. **What are your main three takeaways for ethical web scraping? - Give examples, or cite your sources.**
+
+From my perspective, the following are some key considerations for ethical online scraping:
+
+   - Respect the terms of service of the website: It's crucial to check the terms of service of any website before scraping to make sure that scraping is permitted.        Some websites may expressly forbid scraping or demand that you get consent before doing so.
+
+   - Avoid interfering with how the website functions: You shouldn't disrupt or harm the website in any manner with your scraping activity. This includes not sending        too many requests to the site's servers or doing the scrapping process during non-peak hours.
+
+   - Avoid scraping sensitive data, such as personal identifying information, financial information, or health information, to protect people's privacy.
+
+
+Being respectful of the websites you are scraping and the people or organizations whose data you are gathering is, in  general, a requirement for ethical web scraping. It is crucial to be open and honest about your objectives and to abstain from any behavior that can endanger the website or specific people.
+
+
+2. **What is a ROBOTS.TXT file? Identify one instance and explain what it allows/prevents.**
+
+A `robots.txt` file, found at the root of a website, tells web robots whether pages or parts of the website should be crawled. It is a plain text file that is open to the public and offers instructions for web robots.
+
+For example, suppose a website contains sensitive information that should not be available to search engines, including financial data or users' personal information. In that case, the website owner can make a `robots.txt` file and include a directive to forbid search engines from accessing that part. For instance, if the `robots.txt` file has the directive `"Disallow: /sensitive-data/,"` search engine bots won't be able to crawl the "sensitive-data" part of the website.
+
+But, a website owner may also utilize the `robots.txt` file to provide the particular search engine bots access to particular pages or parts of the website. For instance, the `robots.txt` directive `"Allow: /blog/"` added to the website's code will let web crawlers access the "/blog/" area.
+
+3. **Identify a website that you would like to scrape (or one an example from class) and implement a scrape using the `polite` package.**
+
+I used the `polite` package to scrape a sample website. The base URL of the website was `https://www.metacritic.com/` and the specific path I checked was `/movie/ponyo`. Then I looked for the director of the movie, and I got what I wanted.
+
+```{r}
+library(polite)
+library(rvest)
+
+```
+
+
+```{r}
+mc_bow <- bow(
+  url = "https://www.metacritic.com/",  # base URL
+  user_agent = "A Anisi",  # identify ourselves
+  force = TRUE
+)
+```
+
+
+```{r}
+session <- nod(
+  bow = mc_bow,
+  path = "/movie/ponyo"
+)
+```
+
+
+```{r}
+scraped_page <- scrape(session)
+```
+
+
+```{r}
+node_result <- html_nodes(
+  scraped_page, 
+  css = ".director span"
+)
+```
+
+
+```{r}
+text_result <- html_text(node_result)
+text_result
+```
+
+
+Instructions:
+
+Submit to your repo. Make sure that all of the github actions pass (check menu item Actions - all of the actions should have green checks)
+

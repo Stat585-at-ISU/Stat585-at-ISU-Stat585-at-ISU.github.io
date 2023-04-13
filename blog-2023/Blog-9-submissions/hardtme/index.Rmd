@@ -1,0 +1,72 @@
+---
+author: "Marie Hardt"
+title: "I Fixed It!"
+categories: "Errors and warnings in packages"
+date: "2023-03-30"
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+[![Frontmatter check](../../actions/workflows/check-yaml.yaml/badge.svg)](../../actions/workflows/check-yaml.yaml)
+<!-- badges: end -->
+
+## Prompt:
+
+Fix one of the problems in one of our community packages at `https://github.com/Stat585-at-ISU/lab-3-all-all-for-one-and-one-for-all`, and write about it. 
+
+## Instructions:
+
+What we want to know is the **exact** warning or error message of the item you fixed, and a description of what you did, also as specific as possible. 
+
+Describe your experience  below. Push this blog post to your blog-9 repo. Make sure the front matter check passes.
+
+**Which error or warning did you fix? ... and how?**
+
+I fixed the following note from my lab 3 group's TwoTeam4 package (This package was so named because it was my group's second attempt at a package, and was an improvement over the first version, Team4):
+
+```
+> checking R code for possible problems ... NOTE
+  get_pd_presslog: no visible global function definition for
+    ‘download.file’
+  get_presslog: no visible binding for global variable ‘plog_df’
+  get_presslog: no visible binding for global variable ‘Call Received
+    Date/Time’
+  get_presslog: no visible binding for global variable ‘NewDate’
+  pdf_to_tbl: no visible binding for global variable ‘tail’
+  pdf_to_tbl: no visible global function definition for ‘write.csv’
+  Undefined global functions or variables:
+    Call Received Date/Time NewDate download.file plog_df tail write.csv
+  Consider adding
+    importFrom("utils", "download.file", "tail", "write.csv")
+  to your NAMESPACE file.
+```
+
+My first step was to go into the `get_pd_presslog` and `get_presslog` functions and add `utils::` in front of the functions that were mentioned in the note. For example, instead of `download.file`, the `get_pd_presslog` function now includes `utils::download.file`. Since the functions were short, I preferred to account for each manually instead of using an `importFrom()` statement in the NAMESPACE file.
+
+After completing the first step, my note was reduced to
+
+```
+checking R code for possible problems ... NOTE
+  get_presslog: no visible binding for global variable ‘plog_df’
+  get_presslog: no visible binding for global variable ‘Call Received
+    Date/Time’
+  get_presslog: no visible binding for global variable ‘NewDate’
+  Undefined global functions or variables:
+    Call Received Date/Time NewDate plog_df
+```
+
+I next wanted to remove the "no visible binding for global variable" notes. These notes of this type referring to "Call Received Date/Time" and "NewDate" were coming from code using `tidyverse` functions, so I followed the suggestion at this [link](https://www.r-bloggers.com/2019/08/no-visible-binding-for-global-variable/) to include the `.data` pronoun from `rlang`. This produced an error since `rlang` was not listed as a dependency in the DESCRIPTION file for the package. I added `rlang` as an import and the error went away.
+
+After adding the `.data` pronoun to the `get_presslog` function, the note was reduced to
+
+```
+> checking R code for possible problems ... NOTE
+  get_presslog: no visible binding for global variable ‘plog_df’
+  Undefined global functions or variables:
+    plog_df
+```
+
+To solve the last part of the note, I added the line of code `plog_df <- TwoTeam4::plog_df` to the `get_presslog` function. This tells R that we want the `TwoTeam4` version of `plog_df`.
+
+After all these fixes, R CMD Check finished with 0 errors, 0 warnings, and 0 notes. Yay!
