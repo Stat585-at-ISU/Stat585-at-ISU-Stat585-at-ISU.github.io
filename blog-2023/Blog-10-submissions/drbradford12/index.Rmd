@@ -1,5 +1,5 @@
 ---
-author: "Who wrote this"
+author: "Denise Bradford"
 title: "Web scraping etiquette ..."
 categories: "Web scraping etiquette ..."
 date: "2023-04-06"
@@ -24,10 +24,46 @@ After reading through some of the ethics essays
 write a blog post addressing the following questions: 
 
 1. **What are your main three takeaways for ethical web scraping? - Give examples, or cite your sources.**
+
+Denise's Answers:
+
+>> On my honor, I will try to serve.. and live by the Girls Scout Law :)
+
+- Respect website terms of service: use the `ROBOTS.TXT` file to ensure that we know, hat is allowed and what is disallowed.
+
+- Obtain consent: Using the polite package, we can see if there are any reasons not to scrape a particular website.
+
+- Minimize impact on the website: We don't want to upset the flow if traffic when we could be using a publicly available API.
+
+
 2. **What is a ROBOTS.TXT file? Identify one instance and explain what it allows/prevents.**
+
+Denise's Answers:
+
+The `ROBOTS.TXT` file, a.k.a. Robots Exclusion Standard, indicates the web-crawling software where it is allowed (or not allowed) within the website. 
+
+An instance would be "Blocking a specific web crawler from a specific web page": 
+
+>> User-agent: Bingbot Disallow: /example-subfolder/blocked-page.html 
+
+This syntax tells only Bing’s crawler (user-agent name Bing) to avoid crawling the specific page at www.example.com/example-subfolder/blocked-page.html. 
+
 3. **Identify a website that you would like to scrape (or one an example from class) and implement a scrape using the `polite` package.**
+
+Denise's Answers:
+
+```{r}
+library(polite)
+
+# Set the user-agent to identify the scraper
+url <- "https://stats.gleague.nba.com/players/traditional/?sort=PTS&dir=-1"
+session <- bow(url,
+               user_agent = "Denise's R Webscraping Assignment")
+session
+
+```
+
 
 Instructions:
 
 Submit to your repo. Make sure that all of the github actions pass (check menu item Actions - all of the actions should have green checks)
-
