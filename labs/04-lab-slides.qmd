@@ -1,0 +1,49 @@
+---
+title: "Lab 4 - Adding a shiny app"
+format: revealjs
+navigation-mode: vertical
+---
+
+## Lab organization
+
+Teams:
+
+- User-interface
+https://classroom.github.com/a/03nFXsNc
+
+- Spatial
+https://classroom.github.com/a/K6iMZ-4m
+
+- Temporal
+https://classroom.github.com/a/5NgNwe04
+
+1.  As last time, there is a github classroom link. Select the invite with your team's number (or create a team in case there is none yet).
+
+2.  Hofmann, don't forget the Zoom breakout rooms. Join the room that matches your team number.
+
+3.  Final deliverable: submit a link to your repository in Canvas (This will show me that you are done working on your project).
+
+4.  Our goal for today: add a shiny up to the R package!
+
+## Make sure to talk!
+
+All team members are supposed to contribute ... last time you might have realized that it is a pretty big mess if everybody writes into the README file all at the same time.
+
+This time: figure out a plan before you start working. Include your plan as a table in the README.Rmd file for lab #4.
+
+## Our Goal for this lab
+
+-   create an R package ...
+
+-   ... based on the code from last time ...
+
+-   ... and make sure that the package passes R CMD check
+
+## Repo for the lab
+
+1.  Accept the link to the github classroom assignment (sent by email).
+
+2.  Check whether one of your team members has already created a team. In that case, join them. If none of your team members is listed yet, create a team.
+
+3.  Link the repository to RStudio ...
+
