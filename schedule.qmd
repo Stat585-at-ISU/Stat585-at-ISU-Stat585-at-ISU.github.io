@@ -32,7 +32,7 @@ Week | Topic | Notes
 12        | Event driven programming                                     | **Apr 6** Hands-on session: Project check-in. Make sure to prep some questions!  
 &nbsp;    | &nbsp;                                                       | **Apr 11** [Intro to shiny apps](../materials-2023/10_interactive/01_shiny.html), [zipped folder of example apps](../materials-2023/10_interactive/shiny.zip), [Dashboards](../materials-2023/10_interactive/02_shiny.html) 
 &nbsp;    | &nbsp;                                                       | **Apr 13** Lab 4: [a shiny app](labs/04-lab-slides.qmd)
-13        | Parsing data, profiling code                                 | **Apr 18**
+13        | Parsing data, profiling code                                 | **Apr 18** More data-scraping: [working with APIs](../materials-2023/11_web-scraping/03_api.html), [regular expressions](../materials-2023/07_regular-expressions/01_regular-expressions.html)
 &nbsp;    | &nbsp;                                                       | **Apr 20**
 14        | Databases                                                    | **Apr 25** 
 &nbsp;    | &nbsp;                                                       | **Apr 27**
