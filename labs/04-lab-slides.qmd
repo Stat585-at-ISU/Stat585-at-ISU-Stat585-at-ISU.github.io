@@ -33,11 +33,19 @@ This time: figure out a plan before you start working. Include your plan as a ta
 
 ## Our Goal for this lab
 
--   create an R package ...
-
--   ... based on the code from last time ...
+-   create a shiny app within the R package ...
 
 -   ... and make sure that the package passes R CMD check
+
+## Resources
+
+- getting a shiny app into an R package: https://stat585-at-isu.github.io/materials-2023/10_interactive/02_shiny.html#12
+
+- shiny in general: https://shiny.rstudio.com/tutorial/
+
+- for maps: leaflet package, https://rstudio.github.io/leaflet/shiny.html
+
+- for time series: plotly package, https://plotly-r.com/linking-views-with-shiny.html
 
 ## Repo for the lab
 
