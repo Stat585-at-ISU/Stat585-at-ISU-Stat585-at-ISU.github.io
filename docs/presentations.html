@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Stat 585 - Schedule</title>
+<title>Stat 585 - Presentation Schedule</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -58,7 +60,93 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-first-time .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: [{ data: ['index'] },{ data: ['categories'] }],
+      
+      searchColumns: [],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-first-time'] = new List('listing-first-time', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-second-time .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: [{ data: ['index'] },{ data: ['categories'] }],
+      
+      searchColumns: [],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-second-time'] = new List('listing-second-time', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-third-time .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: [{ data: ['index'] },{ data: ['categories'] }],
+      
+      searchColumns: [],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-third-time'] = new List('listing-third-time', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -84,7 +172,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./schedule.html" aria-current="page">
+    <a class="nav-link" href="./schedule.html">
  <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
@@ -126,7 +214,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#course-topics" id="toc-course-topics" class="nav-link active" data-scroll-target="#course-topics">Course Topics</a></li>
+  <li><a href="#tuesday-may-2" id="toc-tuesday-may-2" class="nav-link active" data-scroll-target="#tuesday-may-2">Tuesday, May 2</a></li>
+  <li><a href="#thursday-may-4" id="toc-thursday-may-4" class="nav-link" data-scroll-target="#thursday-may-4">Thursday, May 4</a></li>
+  <li><a href="#thursday-may-11" id="toc-thursday-may-11" class="nav-link" data-scroll-target="#thursday-may-11">Thursday, May 11</a></li>
   </ul>
 </nav>
     </div>
@@ -135,7 +225,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Schedule</h1>
+<h1 class="title">Presentation Schedule</h1>
 </div>
 
 
@@ -150,175 +240,79 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>The full syllabus is available <a href="syllabus.pdf">here</a></p>
-<section id="course-topics" class="level2">
-<h2 class="anchored" data-anchor-id="course-topics">Course Topics</h2>
-<table class="table">
+<p>Presentations are scheduled for May 2 and May 4 during our regular class time, 2:10 - 3:25, and Thursday, May 11 12-2:00 pm during Finals Week.</p>
+<section id="tuesday-may-2" class="level2">
+<h2 class="anchored" data-anchor-id="tuesday-may-2">Tuesday, May 2</h2>
+<div id="listing-first-time" class="quarto-listing quarto-listing-container-table">
+<div class="listing-actions-group">
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+
+<table class="quarto-listing-table table">
 <thead>
-<tr class="header">
-<th>Week</th>
-<th>Topic</th>
-<th>Notes</th>
+<tr>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
-<td>1 - 2</td>
-<td>Working Environment and Review Git, GitHub, and R Markdown</td>
-<td><strong>Jan 17 </strong> <a href="../materials-2023/00_getting-started/slides.html">Course intro &amp; syllabus</a> | <a href="../materials-2023/01_collaborative-environment/01_test-case.html">Collaborations - test case</a> | data: <a href="../materials-2023/01_collaborative-environment/data/brfss_iowa.csv">2015 BRFSS data for Iowa</a> | Code book: <a href="https://www.cdc.gov/brfss/annual_data/2015/pdf/codebook15_llcp.pdf">BRFSS Codebook 2015</a></td>
-</tr>
-<tr class="even">
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><strong>Jan 19</strong> <a href="../materials-2023/01_collaborative-environment/01_test-case.html#16">Collaborations - test case - part 2</a> | <a href="../materials-2023/01_collaborative-environment/02_test-case-solution.html">a solution to the test case</a></td>
-</tr>
-<tr class="odd">
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><strong>Jan 24</strong> <a href="../materials-2023/01_collaborative-environment/03_tools-of-the-trade.html">tools for collaborations</a> | <a href="https://ds202-at-isu.github.io/materials/01_collaborative-environment/03_rmarkdown.html#1">R Markdown refresher</a> | <a href="../materials-2023/01_collaborative-environment/05_responsible_git.html">to add or not to add? that is the git-tion</a></td>
-</tr>
-<tr class="even">
-<td>3 - 5</td>
-<td>Data structures in R: factors, lists, trees</td>
-<td><strong>Jan 26</strong> <a href="../materials-2023/02_tidyverse/01b_r-and-friends.html">Results from R &amp; friends</a> | <a href="../materials-2023/02_tidyverse/01_intro.html">Reviewing elements of the tidyverse: ggplot2, dplyr, tidyr with solutions</a></td>
-</tr>
-<tr class="odd">
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><strong>Jan 31</strong> <a href="../materials-2023/02_tidyverse/01_intro.html">Reviewing elements of the tidyverse: ggplot2, dplyr, tidyr with solutions</a></td>
-</tr>
-<tr class="even">
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><strong>Feb 2</strong> <a href="./labs/01-slides.html">Lab #1</a></td>
-</tr>
-<tr class="odd">
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><strong>Feb 7</strong> <a href="../materials-2023/03_data-structures/01_data-structures.html">Review of basic R types and structures, first look at lists</a>, <a href="../materials-2023/code/code-2023-02-07.R">code</a></td>
-</tr>
-<tr class="even">
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><strong>Feb 9</strong> <a href="../materials-2023/03_data-structures/01_data-structures.html#18">List objects</a></td>
-</tr>
-<tr class="odd">
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><strong>Feb 14</strong> <a href="../materials-2023/99_recaps/03_blog-recap.html">Recap of Blog 3</a>, <a href="../materials-2023/03_data-structures/01_data-structures.html#26">List objects</a>, <a href="../materials-2023/code/code-2023-02-14.R">code</a></td>
-</tr>
-<tr class="even">
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><strong>Feb 16</strong> <a href="labs/02_lab_2023.html">Lab #2</a></td>
-</tr>
-<tr class="odd">
-<td>6</td>
-<td>Split-apply-combine strategies with lists, Review of functional programming, conditionals, loops.</td>
-<td><strong>Feb 21</strong> <a href="../materials-2023/03_data-structures/02_date-and-time.html">Dates and time</a>, <a href="../materials-2023/code/code-2023-02-21.R">code</a></td>
-</tr>
-<tr class="even">
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><strong>Feb 23</strong> <a href="../materials-2023/04_functional-programming/01_functions.html">Reviewing Functions</a>, <a href="../materials-2023/04_functional-programming/02b_purrr.html">Split-apply-combine with lists</a>, <a href="../materials-2023/code/code-2023-02-23.R">code</a></td>
-</tr>
-<tr class="odd">
-<td>7-8</td>
-<td>Package system in R</td>
-<td><strong>Feb 28</strong> <a href="../materials-2023/09_packages/01_r-packages.html">A first R package</a>, <a href="https://jacobbien.github.io/litr-project/index.html">Let’s do that again with litr</a>, <a href="../materials-2023/code/code-2023-02-28.R">code</a></td>
-</tr>
-<tr class="even">
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><strong>Mar 2</strong> <a href="./labs/03-lab-slides.html">Lab #3</a></td>
-</tr>
-<tr class="odd">
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><strong>Mar 7</strong> <a href="../materials-2023/09_packages/02_r-packages-data.html">Data in packages</a>, <a href="../materials-2023/09_packages/01_r-packages.html#11">Package dependencies</a></td>
-</tr>
-<tr class="even">
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><strong>Mar 9</strong> <a href="../materials-2023/news/news-2023-03-09.html">Logistics</a>, <a href="../materials-2023/09_packages/01_r-packages-data.html#11">Package dependencies</a>, <a href="../materials-2023/09_packages/02_r-packages-data.html">The error fixing cycle</a></td>
-</tr>
-<tr class="odd">
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><strong>Mar 21</strong> <a href="../materials-2023/09_packages/01_r-packages.html#5">Let’s do that again: Packages in R</a>, <a href="../materials-2023/09_packages/02_r-packages-data-no-turns.html">Data in packages</a></td>
-</tr>
-<tr class="even">
-<td>9-10</td>
-<td>Testing code &amp; Critical analysis of code</td>
-<td><strong>Mar 23</strong> <a href="https://stat585-at-isu.github.io/materials-2023/09_packages/02_r-packages-data-no-turns.html#15">Connecting a package to Github</a>, <a href="https://stat585-at-isu.github.io/materials-2023/09_packages/02_r-packages-data-no-turns.html#14">Continuous Integration</a>, <a href="../materials-2023/08_testing-code/02_testing-code.html">Unit testing</a></td>
-</tr>
-<tr class="odd">
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><strong>Mar 28</strong> <a href="../materials-2023/08_testing-code/02_testing-code.html#15">The one where Austria was abducted …</a></td>
-</tr>
-<tr class="even">
-<td>11</td>
-<td>Web scraping, working with text: awk and grep</td>
-<td><strong>Mar 30</strong> <a href="https://stat585-at-isu.github.io/materials-2023/08_testing-code/02_testing-code.html#32">One more set of tests</a>, <a href="../materials-2023/11_web-scraping/01_web-scraping.html">Intro to web-scraping</a></td>
-</tr>
-<tr class="odd">
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><strong>Apr 4</strong> <a href="../materials-2023/11_web-scraping/01_web-scraping.html#5">Web-scraping - your turn :)</a>, <a href="../materials-2023/11_web-scraping/03_api.html">working with APIs</a>, <a href="https://stat585-at-isu.github.io/materials-2023/code/code-2023-04-04.R">code from class</a></td>
-</tr>
-<tr class="even">
-<td>12</td>
-<td>Event driven programming</td>
-<td><strong>Apr 6</strong> Hands-on session: Project check-in. Make sure to prep some questions!</td>
-</tr>
-<tr class="odd">
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><strong>Apr 11</strong> <a href="../materials-2023/10_interactive/01_shiny.html">Intro to shiny apps</a>, <a href="../materials-2023/10_interactive/shiny.zip">zipped folder of example apps</a>, <a href="../materials-2023/10_interactive/02_shiny.html">Dashboards</a></td>
-</tr>
-<tr class="even">
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><strong>Apr 13</strong> Lab 4: <a href="./labs/04-lab-slides.html">a shiny app</a></td>
-</tr>
-<tr class="odd">
-<td>13</td>
-<td>Parsing data, profiling code</td>
-<td><strong>Apr 18</strong> More data-scraping: <a href="../materials-2023/11_web-scraping/03_api.html">working with APIs</a>, <a href="https://stat585-at-isu.github.io/materials-2023/code/code-2023-04-18.R">code from class</a></td>
-</tr>
-<tr class="even">
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><strong>Apr 20</strong> <a href="../materials-2023/07_regular-expressions/01_regular-expressions.html">regular expressions</a>, <a href="../materials-2023/08_testing-code/03b_profiling-code.html">profiling code</a></td>
-</tr>
-<tr class="odd">
-<td>14</td>
-<td>Databases</td>
-<td><strong>Apr 25</strong></td>
-</tr>
-<tr class="even">
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><strong>Apr 27</strong></td>
-</tr>
-<tr class="odd">
-<td>15 Prep-week</td>
-<td>Project Presentations</td>
-<td><strong>May 2</strong> <a href="presentations.html">Presentations</a></td>
-</tr>
-<tr class="even">
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><strong>May 4</strong> <a href="presentations.html">Presentations</a></td>
-</tr>
-<tr class="odd">
-<td>16 Finals</td>
-<td>&nbsp;</td>
-<td><strong>May 11, 12-2pm</strong> <a href="presentations.html">Presentations</a></td>
-</tr>
+<tbody class="list">
 </tbody>
+
 </table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</section>
+<section id="thursday-may-4" class="level2">
+<h2 class="anchored" data-anchor-id="thursday-may-4">Thursday, May 4</h2>
+<div id="listing-second-time" class="quarto-listing quarto-listing-container-table">
+<div class="listing-actions-group">
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+</tr>
+</thead>
+<tbody class="list">
+</tbody>
+
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</section>
+<section id="thursday-may-11" class="level2">
+<h2 class="anchored" data-anchor-id="thursday-may-11">Thursday, May 11</h2>
+<div id="listing-third-time" class="quarto-listing quarto-listing-container-table">
+<div class="listing-actions-group">
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+</tr>
+</thead>
+<tbody class="list">
+</tbody>
+
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+
 
 
 </section>

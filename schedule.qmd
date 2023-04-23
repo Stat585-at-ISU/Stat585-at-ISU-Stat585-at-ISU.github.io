@@ -36,6 +36,6 @@ Week | Topic | Notes
 &nbsp;    | &nbsp;                                                       | **Apr 20** [regular expressions](../materials-2023/07_regular-expressions/01_regular-expressions.html), [profiling code](../materials-2023/08_testing-code/03b_profiling-code.html)
 14        | Databases                                                    | **Apr 25** 
 &nbsp;    | &nbsp;                                                       | **Apr 27**
-15, Finals | Project Presentations                                       | **May 2**
-&nbsp;    | &nbsp;                                                       | **May 4**
-&nbsp;    | &nbsp;                                                       | **May 11, 12-2pm**
+15 Prep-week | Project Presentations                                       | **May 2** [Presentations](presentations.html)
+&nbsp;    | &nbsp;                                                       | **May 4** [Presentations](presentations.html)
+16  Finals   | &nbsp;                                                       | **May 11, 12-2pm** [Presentations](presentations.html)
