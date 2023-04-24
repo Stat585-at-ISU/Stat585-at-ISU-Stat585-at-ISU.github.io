@@ -33,8 +33,8 @@ Week | Topic | Notes
 &nbsp;    | &nbsp;                                                       | **Apr 11** [Intro to shiny apps](../materials-2023/10_interactive/01_shiny.html), [zipped folder of example apps](../materials-2023/10_interactive/shiny.zip), [Dashboards](../materials-2023/10_interactive/02_shiny.html) 
 &nbsp;    | &nbsp;                                                       | **Apr 13** Lab 4: [a shiny app](labs/04-lab-slides.qmd)
 13        | Parsing data, profiling code                                 | **Apr 18** More data-scraping: [working with APIs](../materials-2023/11_web-scraping/03_api.html), [code from class](https://stat585-at-isu.github.io/materials-2023/code/code-2023-04-18.R)
-&nbsp;    | &nbsp;                                                       | **Apr 20** [regular expressions](../materials-2023/07_regular-expressions/01_regular-expressions.html), [profiling code](../materials-2023/08_testing-code/03b_profiling-code.html)
-14        | Databases                                                    | **Apr 25** 
+&nbsp;    | &nbsp;                                                       | **Apr 20** [regular expressions](../materials-2023/07_regular-expressions/01_regular-expressions.html), [code from class](https://stat585-at-isu.github.io/materials-2023/code/code-2023-04-20.R)
+14        | Databases                                                    | **Apr 25**  [profiling code](../materials-2023/08_testing-code/03b_profiling-code.html)
 &nbsp;    | &nbsp;                                                       | **Apr 27**
 15 Prep-week | Project Presentations                                       | **May 2** [Presentations](presentations.html)
 &nbsp;    | &nbsp;                                                       | **May 4** [Presentations](presentations.html)
