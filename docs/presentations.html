@@ -70,9 +70,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: [{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: [],
+      searchColumns: ["listing-date","listing-title","listing-author"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -98,9 +98,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: [{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: [],
+      searchColumns: ["listing-date","listing-title","listing-author"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -126,9 +126,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: [{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: [],
+      searchColumns: ["listing-date","listing-title","listing-author"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -245,6 +245,25 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="tuesday-may-2">Tuesday, May 2</h2>
 <div id="listing-first-time" class="quarto-listing quarto-listing-container-table">
 <div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-first-time-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-first-time'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+         <option value="listing-title-sort" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
+     </select>
+  </div>
     <div class="input-group input-group-sm quarto-listing-filter">
       <span class="input-group-text"><i class="bi bi-search"></i></span>
       <input type="text" class="search form-control" placeholder="Filter">
@@ -254,9 +273,51 @@ ul.task-list li input[type="checkbox"] {
 <table class="quarto-listing-table table">
 <thead>
 <tr>
+<th>
+<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Date</a>
+</th>
+<th>
+<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
+</th>
+<th>
+<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Author</a>
+</th>
 </tr>
 </thead>
 <tbody class="list">
+<tr data-index="0" data-listing-date-sort="1683003600000" data-listing-file-modified-sort="1682448567563" data-listing-reading-time-sort="0.745" data-listing-title-sort="PaperSearch: Web-scraping Research Articles for Information" data-listing-filename-sort="PaperSearch_May02.qmd">
+<td class="listing-date">
+May 2, 2023
+</td>
+<td class="listing-title">
+<a href="./presentations-2023/May-02/PaperSearch_May02.html" class="title">PaperSearch: Web-scraping Research Articles for Information</a>
+</td>
+<td class="listing-author">
+Sabrena Rutledge, Kundan Kumar
+</td>
+</tr>
+<tr data-index="1" data-listing-date-sort="1683003600000" data-listing-file-modified-sort="1682448341495" data-listing-reading-time-sort="0.28" data-listing-title-sort="The title of our talk" data-listing-filename-sort="presentation-sample-may-02.qmd">
+<td class="listing-date">
+May 2, 2023
+</td>
+<td class="listing-title">
+<a href="./presentations-2023/May-02/presentation-sample-may-02.html" class="title">The title of our talk</a>
+</td>
+<td class="listing-author">
+First Author, Second Author, Third Author
+</td>
+</tr>
+<tr data-index="2" data-listing-date-sort="1683003600000" data-listing-file-modified-sort="1682448584397" data-listing-reading-time-sort="1.13" data-listing-title-sort="aRcGeo: initializing arcGIS and arcpy connections" data-listing-filename-sort="presentation-celik.qmd">
+<td class="listing-date">
+May 2, 2023
+</td>
+<td class="listing-title">
+<a href="./presentations-2023/May-02/presentation-celik.html" class="title">aRcGeo: initializing arcGIS and arcpy connections</a>
+</td>
+<td class="listing-author">
+Harun Celik
+</td>
+</tr>
 </tbody>
 
 </table>
@@ -269,6 +330,25 @@ No matching items
 <h2 class="anchored" data-anchor-id="thursday-may-4">Thursday, May 4</h2>
 <div id="listing-second-time" class="quarto-listing quarto-listing-container-table">
 <div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-second-time-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-second-time'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+         <option value="listing-title-sort" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
+     </select>
+  </div>
     <div class="input-group input-group-sm quarto-listing-filter">
       <span class="input-group-text"><i class="bi bi-search"></i></span>
       <input type="text" class="search form-control" placeholder="Filter">
@@ -278,9 +358,29 @@ No matching items
 <table class="quarto-listing-table table">
 <thead>
 <tr>
+<th>
+<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Date</a>
+</th>
+<th>
+<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
+</th>
+<th>
+<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Author</a>
+</th>
 </tr>
 </thead>
 <tbody class="list">
+<tr data-index="0" data-listing-date-sort="1683176400000" data-listing-file-modified-sort="1682274919179" data-listing-reading-time-sort="0.28" data-listing-title-sort="The title of our talk" data-listing-filename-sort="presentation-sample-may-04.qmd">
+<td class="listing-date">
+May 4, 2023
+</td>
+<td class="listing-title">
+<a href="./presentations-2023/May-04/presentation-sample-may-04.html" class="title">The title of our talk</a>
+</td>
+<td class="listing-author">
+First Author, Second Author, Third Author
+</td>
+</tr>
 </tbody>
 
 </table>
@@ -293,6 +393,25 @@ No matching items
 <h2 class="anchored" data-anchor-id="thursday-may-11">Thursday, May 11</h2>
 <div id="listing-third-time" class="quarto-listing quarto-listing-container-table">
 <div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-third-time-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-third-time'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+         <option value="listing-title-sort" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
+     </select>
+  </div>
     <div class="input-group input-group-sm quarto-listing-filter">
       <span class="input-group-text"><i class="bi bi-search"></i></span>
       <input type="text" class="search form-control" placeholder="Filter">
@@ -302,9 +421,29 @@ No matching items
 <table class="quarto-listing-table table">
 <thead>
 <tr>
+<th>
+<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Date</a>
+</th>
+<th>
+<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
+</th>
+<th>
+<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Author</a>
+</th>
 </tr>
 </thead>
 <tbody class="list">
+<tr data-index="0" data-listing-date-sort="1683781200000" data-listing-file-modified-sort="1682274959893" data-listing-reading-time-sort="0.28" data-listing-title-sort="The title of our talk" data-listing-filename-sort="presentation-sample-may-11.qmd">
+<td class="listing-date">
+May 11, 2023
+</td>
+<td class="listing-title">
+<a href="./presentations-2023/May-11/presentation-sample-may-11.html" class="title">The title of our talk</a>
+</td>
+<td class="listing-author">
+First Author, Second Author, Third Author
+</td>
+</tr>
 </tbody>
 
 </table>

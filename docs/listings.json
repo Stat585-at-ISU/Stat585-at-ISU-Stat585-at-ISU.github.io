@@ -354,7 +354,13 @@
   },
   {
     "listing": "/presentations.html",
-    "items": []
+    "items": [
+      "/presentations-2023/May-02/PaperSearch_May02.html",
+      "/presentations-2023/May-02/presentation-sample-may-02.html",
+      "/presentations-2023/May-02/presentation-celik.html",
+      "/presentations-2023/May-04/presentation-sample-may-04.html",
+      "/presentations-2023/May-11/presentation-sample-may-11.html"
+    ]
   },
   {
     "listing": "/blog.html",
@@ -617,6 +623,16 @@
       "/blog-2023/Blog-4-submissions/drbradford12/index.html",
       "/blog-2023/Blog-4-submissions/Atefeha1995/AnisiAtefeh.html",
       "/blog-2023/Blog-3-submissions/drbradford12/index.html"
+    ]
+  },
+  {
+    "listing": "/projects.html",
+    "items": [
+      "/presentations-2023/May-02/PaperSearch_May02.html",
+      "/presentations-2023/May-02/presentation-sample-may-02.html",
+      "/presentations-2023/May-02/presentation-celik.html",
+      "/presentations-2023/May-04/presentation-sample-may-04.html",
+      "/presentations-2023/May-11/presentation-sample-may-11.html"
     ]
   }
 ]

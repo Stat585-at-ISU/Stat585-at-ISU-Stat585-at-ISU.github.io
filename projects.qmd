@@ -1,5 +1,15 @@
 ---
 title: "Projects"
+listing: 
+  - id: first-time
+    contents: "presentations-2023/May-02/"
+    type: table
+  - id: second-time
+    contents: "presentations-2023/May-04/"
+    type: table
+  - id: third-time
+    contents: "presentations-2023/May-11/"
+    type: table
 ---
 
 You can have a look at the scope of some projects from [2019](projects/projectSamples/projects-2019.qmd) and [2022](projects/projectSamples/projects-2022.qmd)
@@ -22,3 +32,24 @@ Abstract and Presentation slots
 - Stage 5 (May 9th, graded): Package submission to canvas (Finals week)
 
 We will be using the following [project rubric](projects/project-rubric.qmd) for evaluating the final submission. Presentations are peer-evaluated. Feedback will be given in [this form](https://heike.wufoo.com/forms/m11utxhi014nt1m/).
+
+
+Presentations are scheduled for May 2 and May 4 during our regular class time, 2:10 - 3:25, and Thursday, May 11 12-2:00 pm during Finals Week.
+
+## Tuesday, May 2
+
+:::{#first-time}
+:::
+
+## Thursday, May 4
+
+:::{#second-time}
+:::  
+  
+
+## Thursday, May 11
+
+:::{#third-time}
+:::  
+
+
