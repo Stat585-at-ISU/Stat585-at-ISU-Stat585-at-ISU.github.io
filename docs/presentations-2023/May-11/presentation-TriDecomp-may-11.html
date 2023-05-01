@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Sabrena Rutledge, Kundan Kumar">
-<meta name="dcterms.date" content="2023-05-02">
+<meta name="author" content="Alexandra Arabio, Ian Parzyszek">
+<meta name="dcterms.date" content="2023-05-27">
 
-<title>Stat 585 - PaperSearch: Web-scraping Research Articles for Information</title>
+<title>Stat 585 - TriDecomp: an extension of the package ‘handwriter’</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -124,14 +124,20 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">PaperSearch: Web-scraping Research Articles for Information</h1>
+<h1 class="title">TriDecomp: an extension of the package ‘handwriter’</h1>
 </div>
 
 
@@ -141,14 +147,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Sabrena Rutledge, Kundan Kumar </p>
+             <p>Alexandra Arabio, Ian Parzyszek </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 2, 2023</p>
+      <p class="date">May 27, 2023</p>
     </div>
   </div>
   
@@ -158,11 +164,16 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p><img src="PaperSearch_hexSticker.png" class="img-fluid"> Given the varying ways authors can provide data and supplementary materials in their publications, it can be troublesome to find the information you are seeking within the article. Here, we introduce PaperSearch, a package that will find relevant pieces of information from research articles. The goal of this package is to reduce time lost searching for descriptions, links, or analyzing supplementary tables. Currently, the package has three aspects: 1) finding the article name, journal, and author list; 2) finding the URLs for the article’s data and a description for each URL; 3) finding descriptions for each supplementary table within the article. Future directions for this project include new aspects that download the supplementary tables; find relevant filters for the supplementary tables within the article; and filtering and displaying the supplementary tables for analysis.</p>
-<p>Keywords: web-scraping, research articles, R package</p>
-<p>More information can be found on the corresponding <a href="https://github.com/Sabrenar/PaperSearch">Github repository</a></p>
+<section id="abstract" class="level2">
+<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
+<p>Our final project is motivated by the problem of there not being enough support to strengthen the discipline of forensic science handwriting analysis. Handwriting comparative analysis is based on the principle that no two individuals can produce the same writing and that an individual cannot exactly reproduce his/her handwriting. This project aims to assess and quantify the natural variations produced by a distinct writer. In an attempt to support traditional examination with objective measures, this project provides results from a study where features of handwriting are examined through point decomposition and rainbow triangulation.</p>
+<p>Our approach to solving this problem is to formulate a new method that we can automate through packaging in ‘R’. Using this method to examine handwriting samples, more specific information can be obtained from each exemplar and can be standardized to be compared both within a writer and between different writers. The characteristics or landmarks of each handwriting sample that gets marked as a different color node include the location that a pen stroke begins (marked blue), the location that a pen stroke ends (marked orange), and any location where a pen line overlaps itself (marked pink), the highest location that a pen stroke reaches (marked green), the lowest location that a pen stroke reaches (marked purple)Triangles can provide information on angles, edge slopes, edge lengths, and areas that all prove useful for quantitative analysis and when trying to compare triangles in terms of similarity and possible congruency or similarity.</p>
+<p>The key findings we will present on are: By forming rainbow triangles over these samples, it is possible to gauge the variation within a single writer and to compare these quantitative values to other samples of unknown sources. Rainbow triangles are formed so that each vortex or node within a triangle set has a unique color, and each edge is unique to its triangle so that it is not to be used to form a different triangle in another set. Using this information, the study aims to form a quantitative analysis of handwriting samples and to calculate how similar or dissimilar two samples are from one another</p>
+<p>We will be using this now to form these triangles from multiple samples from several different writers and to group, identify, and accurately determine what samples came from which writer. Multiple summary statistics will be explored to determine whether any can be used to discriminate between inclusions and exclusions using data where ground truth is known, such as a true match.</p>
+<p>More information can be found on the corresponding <a href="https://github.com/AArabio/TriDecomp">Github repository</a></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Sabrena Rutledge, Kundan Kumar">
-<meta name="dcterms.date" content="2023-05-02">
+<meta name="author" content="Gino Beltran">
+<meta name="dcterms.date" content="2023-05-11">
 
-<title>Stat 585 - PaperSearch: Web-scraping Research Articles for Information</title>
+<title>Stat 585 - No Freeze Growing Window for Corn</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -124,14 +124,20 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">PaperSearch: Web-scraping Research Articles for Information</h1>
+<h1 class="title">No Freeze Growing Window for Corn</h1>
 </div>
 
 
@@ -141,14 +147,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Sabrena Rutledge, Kundan Kumar </p>
+             <p>Gino Beltran </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 2, 2023</p>
+      <p class="date">May 11, 2023</p>
     </div>
   </div>
   
@@ -158,11 +164,15 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p><img src="PaperSearch_hexSticker.png" class="img-fluid"> Given the varying ways authors can provide data and supplementary materials in their publications, it can be troublesome to find the information you are seeking within the article. Here, we introduce PaperSearch, a package that will find relevant pieces of information from research articles. The goal of this package is to reduce time lost searching for descriptions, links, or analyzing supplementary tables. Currently, the package has three aspects: 1) finding the article name, journal, and author list; 2) finding the URLs for the article’s data and a description for each URL; 3) finding descriptions for each supplementary table within the article. Future directions for this project include new aspects that download the supplementary tables; find relevant filters for the supplementary tables within the article; and filtering and displaying the supplementary tables for analysis.</p>
-<p>Keywords: web-scraping, research articles, R package</p>
-<p>More information can be found on the corresponding <a href="https://github.com/Sabrenar/PaperSearch">Github repository</a></p>
+<section id="abstract" class="level2">
+<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
+<p>Over 13 million acres of corn are planted in Iowa every year, and over 80 million acres in the USA as a whole, and in 2021 US corn was worth over $86 billions (USDA)–the US is a corn powerhouse.</p>
+<p>Early corn planting favors higher yield, but germination and root development will not occur below 50F. Moreover, the risk of chilling or freeze damage increases the earlier corn is planted when sustain temperatures below 25F occur.</p>
+<p>To understand the risk of chilling or freeze damage, a package was develop to estimate the occurrence of temperatures below 50F for any given day, given the GPS coordinates for a given location and the historical 30-year weather information from public sources such as Iowa Environmental Mesonet (IEM) https://mesonet.agron.iastate.edu/</p>
+<p>Outcome includes 1) Percent occurrence of temperatures below 50F and below 32F. 2) Earliest planting and latest harvest dates with no historical (30year) risk of damage due to low temperatures.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
