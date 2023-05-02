@@ -3028,7 +3028,7 @@
     "href": "presentations.html#tuesday-may-2",
     "title": "Presentation Schedule",
     "section": "Tuesday, May 2",
-    "text": "Tuesday, May 2\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nMay 2, 2023\n\n\nPaperSearch: Web-scraping Research Articles for Information\n\n\nSabrena Rutledge, Kundan Kumar\n\n\n\n\nMay 2, 2023\n\n\nThe title of our talk\n\n\nFirst Author, Second Author, Third Author\n\n\n\n\nMay 2, 2023\n\n\naRcGeo: initializing arcGIS and arcpy connections\n\n\nHarun Celik\n\n\n\n\n\n\nNo matching items"
+    "text": "Tuesday, May 2\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nMay 2, 2023\n\n\n14:15 - 14:25ish aRcGeo: initializing arcGIS and arcpy connections\n\n\nHarun Celik\n\n\n\n\nMay 2, 2023\n\n\n14:30 - 14:45ish PaperSearch: Web-scraping Research Articles for Information\n\n\nSabrena Rutledge, Kundan Kumar\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "presentations.html#thursday-may-4",
@@ -3070,7 +3070,7 @@
     "href": "projects.html#tuesday-may-2",
     "title": "Projects",
     "section": "Tuesday, May 2",
-    "text": "Tuesday, May 2\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nMay 2, 2023\n\n\nPaperSearch: Web-scraping Research Articles for Information\n\n\nSabrena Rutledge, Kundan Kumar\n\n\n\n\nMay 2, 2023\n\n\nThe title of our talk\n\n\nFirst Author, Second Author, Third Author\n\n\n\n\nMay 2, 2023\n\n\naRcGeo: initializing arcGIS and arcpy connections\n\n\nHarun Celik\n\n\n\n\n\n\nNo matching items"
+    "text": "Tuesday, May 2\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nMay 2, 2023\n\n\n14:15 - 14:25ish aRcGeo: initializing arcGIS and arcpy connections\n\n\nHarun Celik\n\n\n\n\nMay 2, 2023\n\n\n14:30 - 14:45ish aRcGeo: initializing arcGIS and arcpy connections\n\n\nSabrena Rutledge, Kundan Kumar\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects.html#thursday-may-4",
@@ -3089,7 +3089,7 @@
   {
     "objectID": "presentations-2023/May-02/PaperSearch_May02.html",
     "href": "presentations-2023/May-02/PaperSearch_May02.html",
-    "title": "PaperSearch: Web-scraping Research Articles for Information",
+    "title": "14:30 - 14:45ish aRcGeo: initializing arcGIS and arcpy connections",
     "section": "",
     "text": "Given the varying ways authors can provide data and supplementary materials in their publications, it can be troublesome to find the information you are seeking within the article. Here, we introduce PaperSearch, a package that will find relevant pieces of information from research articles. The goal of this package is to reduce time lost searching for descriptions, links, or analyzing supplementary tables. Currently, the package has three aspects: 1) finding the article name, journal, and author list; 2) finding the URLs for the article’s data and a description for each URL; 3) finding descriptions for each supplementary table within the article. Future directions for this project include new aspects that download the supplementary tables; find relevant filters for the supplementary tables within the article; and filtering and displaying the supplementary tables for analysis.\nKeywords: web-scraping, research articles, R package\nMore information can be found on the corresponding Github repository"
   },
@@ -3138,6 +3138,20 @@
   {
     "objectID": "presentations-2023/May-11/presentation-sample-may-11.html",
     "href": "presentations-2023/May-11/presentation-sample-may-11.html",
+    "title": "The title of our talk",
+    "section": "",
+    "text": "Our final project is motivated by the problem of …\nOur approach to solving this problem is to …\nThe key findings we will present on are: …\nSome of the limitations were/we will be using this now for/our future work will be …\nMore information can be found on the corresponding Github repository"
+  },
+  {
+    "objectID": "presentations-2023/May-02/presentation-celik.html",
+    "href": "presentations-2023/May-02/presentation-celik.html",
+    "title": "14:15 - 14:25ish aRcGeo: initializing arcGIS and arcpy connections",
+    "section": "",
+    "text": "The development of aRcGeo is motivated by the problem of loading arcGIS spatial tools in an R environment. The aRcGeo package aims to unify the process of initializing an ArcGIS product and importing the arcpy python module into an R session. The function aRcGeo::init_arcpy() makes a call to arcgisbinding and imports from the reticulate package to initialize the arcpy python module. The function can take the name of a conda environment that is found when runnning reticulate::conda_list() or a local path to the arcpy python.exe file. Since all installations of arcpy automatically create a conda environment, the conda_env argument is preferrable.\nThe key findings I will be presenting on are the challenges posed by trying to initialize an ArcGIS environment in R without using the init_arcpy() function as well as demonstrating some of the capabilities in using ArcGIS functions in R after an initialization. I will also be demonstrating stress tests with invalid argument names and classes to demonstrate how the function responds. One major limitation of the package is that arcgisbinding must be installed in order for the function to initialize a connection to ArcGIS. The former package is not distributed for aRcGeo and is distributed as a windows only binary source file since ArcGIS Pro is a windows only software.\nMore information can be found on the corresponding aRcGeo Github repository"
+  },
+  {
+    "objectID": "presentations-2023/Retired/presentation-sample-may-02.html",
+    "href": "presentations-2023/Retired/presentation-sample-may-02.html",
     "title": "The title of our talk",
     "section": "",
     "text": "Our final project is motivated by the problem of …\nOur approach to solving this problem is to …\nThe key findings we will present on are: …\nSome of the limitations were/we will be using this now for/our future work will be …\nMore information can be found on the corresponding Github repository"
