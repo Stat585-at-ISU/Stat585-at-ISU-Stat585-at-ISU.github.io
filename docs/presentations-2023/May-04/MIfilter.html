@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Valerie Han, Marie Hardt, Anyesha Ray">
+<meta name="author" content="Motahareh Kashanian, Parvin Mohammadi, Atefeh Anisi">
 <meta name="dcterms.date" content="2023-05-04">
 
-<title>Stat 585 - 14:35 - 14:55 Methods for computing score-based likelihood ratios (SLRs) with dependent data</title>
+<title>Stat 585 - 14:55 - 15:15 MIFilter: Efficient Feature Selection for Classification Models with High Correlation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -137,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">14:35 - 14:55 Methods for computing score-based likelihood ratios (SLRs) with dependent data</h1>
+<h1 class="title">14:55 - 15:15 MIFilter: Efficient Feature Selection for Classification Models with High Correlation</h1>
 </div>
 
 
@@ -147,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Valerie Han, Marie Hardt, Anyesha Ray </p>
+             <p>Motahareh Kashanian, Parvin Mohammadi, Atefeh Anisi </p>
           </div>
   </div>
     
@@ -166,7 +166,11 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="abstract" class="level2">
 <h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
-<p>Score-based likelihood ratios (SLRs) are a statistical method used to quantify the weight of evidence and have been used in many forensic disciplines. Using the context of footwear evidence to make the problem more concrete, similarity/dissimilarity scores are computed from pairs of shoeprints. Therefore, there is dependence between scores that share a shoeprint or shoe in common. Given up to 5 similarity/dissimilarity scores, we include four different methods of computing the SLR that address the dependence. We also provide a visualization of the resulting SLR using an ROC curve. More information can be found on the corresponding <a href="https://github.com/valeriehan6/scoreLR">Github repository</a>.</p>
+<p>Our final project is motivated by the challenge of dealing with highly correlated features in classification models, which can result in poor performance and significant computational resources consumption. To address this problem, we propose MIFilter, an efficient feature selection package that reduces dimensionality by removing correlated and irrelevant features.</p>
+<p>Our approach includes dropping features with mutual information scores below a user-defined threshold and using mutual information scores to sort remaining features and drop those with high pairwise linear correlation coefficients above a user-defined threshold. MIFilter aims to improve the accuracy and efficiency of classification models by producing more reliable results in less time.</p>
+<p>The key findings of our project include the successful implementation of MIFilter and its ability to efficiently remove highly correlated features in classification models.</p>
+<p>One limitation of our project is that MIFilter is currently only designed for classification models. Future work will focus on expanding the package’s functionality to other machine learning tasks.</p>
+<p>More information about our project, including code and documentation, can be found on the corresponding [https://github.com/Atefeha1995/MI_correlation-based-filtering-algorithm.git].</p>
 
 
 </section>
