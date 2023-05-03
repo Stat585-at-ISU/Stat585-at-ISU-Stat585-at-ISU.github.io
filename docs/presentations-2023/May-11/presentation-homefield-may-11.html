@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Motahareh Kashanian, Parvin Mohammadi, Atefeh Anisi">
-<meta name="dcterms.date" content="2023-05-04">
+<meta name="author" content="Landon Getting, Sudesh Bhagat">
+<meta name="dcterms.date" content="2023-05-11">
 
-<title>Stat 585 - MIFilter: Efficient Feature Selection for Classification Models with High Correlation</title>
+<title>Stat 585 - homefield: querying, visualizing, and analyzing regional relevance</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -128,7 +128,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
+  <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract <img src="https://github.com/Landon-Getting/homefield-graphics/blob/main/sticker.png?raw=true" align="right" height="138"></a></li>
   </ul>
 </nav>
     </div>
@@ -137,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">MIFilter: Efficient Feature Selection for Classification Models with High Correlation</h1>
+<h1 class="title">homefield: querying, visualizing, and analyzing regional relevance</h1>
 </div>
 
 
@@ -147,14 +147,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Motahareh Kashanian, Parvin Mohammadi, Atefeh Anisi </p>
+             <p>Landon Getting, Sudesh Bhagat </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 4, 2023</p>
+      <p class="date">May 11, 2023</p>
     </div>
   </div>
   
@@ -165,12 +165,14 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <section id="abstract" class="level2">
-<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
-<p>Our final project is motivated by the challenge of dealing with highly correlated features in classification models, which can result in poor performance and significant computational resources consumption. To address this problem, we propose MIFilter, an efficient feature selection package that reduces dimensionality by removing correlated and irrelevant features.</p>
-<p>Our approach includes dropping features with mutual information scores below a user-defined threshold and using mutual information scores to sort remaining features and drop those with high pairwise linear correlation coefficients above a user-defined threshold. MIFilter aims to improve the accuracy and efficiency of classification models by producing more reliable results in less time.</p>
-<p>The key findings of our project include the successful implementation of MIFilter and its ability to efficiently remove highly correlated features in classification models.</p>
-<p>One limitation of our project is that MIFilter is currently only designed for classification models. Future work will focus on expanding the package’s functionality to other machine learning tasks.</p>
-<p>More information about our project, including code and documentation, can be found on the corresponding [https://github.com/Atefeha1995/MI_correlation-based-filtering-algorithm.git].</p>
+<h2 class="anchored" data-anchor-id="abstract">Abstract <img src="https://github.com/Landon-Getting/homefield-graphics/blob/main/sticker.png?raw=true" align="right" height="138"></h2>
+<p>The R homefield package helps gather data, create visuals, and analyze regional relevance. At the crux of homefield is the <code>homefield_map()</code> function which creates a homefield map.</p>
+<p><img src="https://github.com/Landon-Getting/homefield-graphics/blob/main/example_map.png?raw=true" class="img-fluid"></p>
+<p><code>homefield_map()</code> calculates the distance from each given entity to every U.S. county and assigns territory based on proximity. Each entity’s territory is distinguished via color and an image representing the entity. Users can create homefield maps with their own entities or use package functions such as <code>cfb_undefeated()</code> or <code>cfb_conquest()</code> to generate already structured data.</p>
+<p><code>homefield_stats()</code> enables users to analyze homefield maps by providing summary statistics such as size of territory, water area within territory, and population within territory. These stats can be further visualized in custom graphics or wielded by <code>homefield_racing()</code> to create a racing bar plot of map statistics over time.</p>
+<p><img src="https://github.com/Landon-Getting/homefield-graphics/blob/main/homefield_racing.gif?raw=true" class="img-fluid"></p>
+<p>Future work will focus on improving the placement and sizing of images on maps, reducing function runtime, and adding more parameters for graphical flexibility.</p>
+<p>More information can be found on the corresponding <a href="https://github.com/Landon-Getting/homefield">Github repository</a></p>
 
 
 </section>
