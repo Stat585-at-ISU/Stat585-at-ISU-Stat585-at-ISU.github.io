@@ -90,6 +90,22 @@
     ]
   },
   {
+    "listing": "/projects.html",
+    "items": [
+      "/presentations-2023/May-02/presentation-celik.html",
+      "/presentations-2023/May-02/PaperSearch_May02.html",
+      "/presentations-2023/May-04/presentation-vhdi.html",
+      "/presentations-2023/May-04/scoreLR.html",
+      "/presentations-2023/May-04/MIFilter.html",
+      "/presentations-2023/May-04/presentation-sample-may-04.html",
+      "/presentations-2023/May-11/presentation-Freeze-may-11.html",
+      "/presentations-2023/May-11/presentation-sample-may-11.html",
+      "/presentations-2023/May-11/presentation-TriDecomp-may-11.html",
+      "/presentations-2023/May-11/presentation-may-11-foodRecall-package.html",
+      "/presentations-2023/May-11/presentation-homefield-may-11.html"
+    ]
+  },
+  {
     "listing": "/blog-testing.html",
     "items": [
       "/blog-2023/Blog-5-submissions/gnbltrn/index.html",
@@ -359,8 +375,24 @@
       "/presentations-2023/May-02/PaperSearch_May02.html",
       "/presentations-2023/May-04/presentation-vhdi.html",
       "/presentations-2023/May-04/scoreLR.html",
-      "/presentations-2023/May-04/presentation-sample-may-04.html",
       "/presentations-2023/May-04/MIFilter.html",
+      "/presentations-2023/May-04/presentation-sample-may-04.html",
+      "/presentations-2023/May-11/presentation-Freeze-may-11.html",
+      "/presentations-2023/May-11/presentation-sample-may-11.html",
+      "/presentations-2023/May-11/presentation-TriDecomp-may-11.html",
+      "/presentations-2023/May-11/presentation-may-11-foodRecall-package.html",
+      "/presentations-2023/May-11/presentation-homefield-may-11.html"
+    ]
+  },
+  {
+    "listing": "/presentations-2023/presentations.html",
+    "items": [
+      "/presentations-2023/May-02/presentation-celik.html",
+      "/presentations-2023/May-02/PaperSearch_May02.html",
+      "/presentations-2023/May-04/presentation-vhdi.html",
+      "/presentations-2023/May-04/scoreLR.html",
+      "/presentations-2023/May-04/MIFilter.html",
+      "/presentations-2023/May-04/presentation-sample-may-04.html",
       "/presentations-2023/May-11/presentation-Freeze-may-11.html",
       "/presentations-2023/May-11/presentation-sample-may-11.html",
       "/presentations-2023/May-11/presentation-TriDecomp-may-11.html",
@@ -629,22 +661,6 @@
       "/blog-2023/Blog-4-submissions/drbradford12/index.html",
       "/blog-2023/Blog-4-submissions/Atefeha1995/AnisiAtefeh.html",
       "/blog-2023/Blog-3-submissions/drbradford12/index.html"
-    ]
-  },
-  {
-    "listing": "/projects.html",
-    "items": [
-      "/presentations-2023/May-02/presentation-celik.html",
-      "/presentations-2023/May-02/PaperSearch_May02.html",
-      "/presentations-2023/May-04/presentation-vhdi.html",
-      "/presentations-2023/May-04/scoreLR.html",
-      "/presentations-2023/May-04/presentation-sample-may-04.html",
-      "/presentations-2023/May-04/MIFilter.html",
-      "/presentations-2023/May-11/presentation-Freeze-may-11.html",
-      "/presentations-2023/May-11/presentation-sample-may-11.html",
-      "/presentations-2023/May-11/presentation-TriDecomp-may-11.html",
-      "/presentations-2023/May-11/presentation-may-11-foodRecall-package.html",
-      "/presentations-2023/May-11/presentation-homefield-may-11.html"
     ]
   }
 ]
