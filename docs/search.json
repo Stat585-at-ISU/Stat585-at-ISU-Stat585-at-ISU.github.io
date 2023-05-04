@@ -361,7 +361,7 @@
     "href": "projects.html#thursday-may-4",
     "title": "Projects",
     "section": "Thursday, May 4",
-    "text": "Thursday, May 4\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nMay 4, 2023\n\n\n14:15 - 14:40 Valid highest density intervals\n\n\nYichuan Bai, Caio dos Santos, An Phan, Yingchao Zhou\n\n\n\n\nMay 4, 2023\n\n\n14:45 - 15:05 Methods for computing score-based likelihood ratios (SLRs) with dependent data\n\n\nValerie Han, Marie Hardt, Anyesha Ray\n\n\n\n\nMay 4, 2023\n\n\n15:10 - 15:25 Title\n\n\nMuxin Hua and Tyler Wiederich\n\n\n\n\n\n\nNo matching items"
+    "text": "Thursday, May 4\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nMay 4, 2023\n\n\n14:15 - 14:40 Valid highest density intervals\n\n\nYichuan Bai, Caio dos Santos, An Phan, Yingchao Zhou\n\n\n\n\nMay 4, 2023\n\n\n14:45 - 15:05 Methods for computing score-based likelihood ratios (SLRs) with dependent data\n\n\nValerie Han, Marie Hardt, Anyesha Ray\n\n\n\n\nMay 4, 2023\n\n\n15:15 - 15:30 Photopal\n\n\nMuxin Hua and Tyler Wiederich\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects.html#thursday-may-11",
@@ -3056,7 +3056,7 @@
     "href": "presentations.html#thursday-may-4",
     "title": "Presentation Schedule",
     "section": "Thursday, May 4",
-    "text": "Thursday, May 4\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nMay 4, 2023\n\n\n14:15 - 14:40 Valid highest density intervals\n\n\nYichuan Bai, Caio dos Santos, An Phan, Yingchao Zhou\n\n\n\n\nMay 4, 2023\n\n\n14:45 - 15:05 Methods for computing score-based likelihood ratios (SLRs) with dependent data\n\n\nValerie Han, Marie Hardt, Anyesha Ray\n\n\n\n\nMay 4, 2023\n\n\n15:10 - 15:25 Title\n\n\nMuxin Hua and Tyler Wiederich\n\n\n\n\n\n\nNo matching items"
+    "text": "Thursday, May 4\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nMay 4, 2023\n\n\n14:15 - 14:40 Valid highest density intervals\n\n\nYichuan Bai, Caio dos Santos, An Phan, Yingchao Zhou\n\n\n\n\nMay 4, 2023\n\n\n14:45 - 15:05 Methods for computing score-based likelihood ratios (SLRs) with dependent data\n\n\nValerie Han, Marie Hardt, Anyesha Ray\n\n\n\n\nMay 4, 2023\n\n\n15:15 - 15:30 Photopal\n\n\nMuxin Hua and Tyler Wiederich\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "presentations.html#thursday-may-11",
@@ -3117,9 +3117,9 @@
   {
     "objectID": "presentations-2023/May-04/presentation-sample-may-04.html",
     "href": "presentations-2023/May-04/presentation-sample-may-04.html",
-    "title": "15:10 - 15:25 Title",
+    "title": "15:15 - 15:30 Photopal",
     "section": "",
-    "text": "Our final project is motivated by the problem of …\nOur approach to solving this problem is to …\nThe key findings we will present on are: …\nSome of the limitations were/we will be using this now for/our future work will be …\nMore information can be found on the corresponding Github repository"
+    "text": "Our final project is motivated by the problem of creating a color palette from images. The approach we took is to take the red-green-blue values from the image and use k-means clustering to group the most similar colors. With the colors generated, we implement a method to check color contrasts to verify that the palette has colors that are distinguishable to the human eye.\nIn addition to creating a palette, we also created a function to create the colorblind equivalent image using the common types of colorblindness (red, green, and blue) and used the same k-means clustering over the filtered image to create a palette.\nAlthough we have a method to check for small color contrasts, colors from an image may not be optimized for data visualizations. This is especially true with the colorblind filters since color is inherently removed from the source image, leaving less color differentiation.\nMore information can be found on the corresponding Github repository"
   },
   {
     "objectID": "presentations-2023/May-04/presentation-vhdi.html",
@@ -3168,7 +3168,7 @@
     "href": "presentations-2023/presentations.html#thursday-may-4",
     "title": "Presentation Schedule",
     "section": "Thursday, May 4",
-    "text": "Thursday, May 4\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nMay 4, 2023\n\n\n14:15 - 14:40 Valid highest density intervals\n\n\nYichuan Bai, Caio dos Santos, An Phan, Yingchao Zhou\n\n\n\n\nMay 4, 2023\n\n\n14:45 - 15:05 Methods for computing score-based likelihood ratios (SLRs) with dependent data\n\n\nValerie Han, Marie Hardt, Anyesha Ray\n\n\n\n\nMay 4, 2023\n\n\n15:10 - 15:25 Title\n\n\nMuxin Hua and Tyler Wiederich\n\n\n\n\n\n\nNo matching items"
+    "text": "Thursday, May 4\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nMay 4, 2023\n\n\n14:15 - 14:40 Valid highest density intervals\n\n\nYichuan Bai, Caio dos Santos, An Phan, Yingchao Zhou\n\n\n\n\nMay 4, 2023\n\n\n14:45 - 15:05 Methods for computing score-based likelihood ratios (SLRs) with dependent data\n\n\nValerie Han, Marie Hardt, Anyesha Ray\n\n\n\n\nMay 4, 2023\n\n\n15:15 - 15:30 Photopal\n\n\nMuxin Hua and Tyler Wiederich\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "presentations-2023/presentations.html#thursday-may-11",

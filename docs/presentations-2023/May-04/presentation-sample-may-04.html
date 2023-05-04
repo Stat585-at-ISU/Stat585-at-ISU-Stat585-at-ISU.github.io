@@ -9,7 +9,7 @@
 <meta name="author" content="Muxin Hua and Tyler Wiederich">
 <meta name="dcterms.date" content="2023-05-04">
 
-<title>Stat 585 - 15:10 - 15:25 Title</title>
+<title>Stat 585 - 15:15 - 15:30 Photopal</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -137,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">15:10 - 15:25 Title</h1>
+<h1 class="title">15:15 - 15:30 Photopal</h1>
 </div>
 
 
@@ -166,11 +166,10 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="abstract" class="level2">
 <h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
-<p>Our final project is motivated by the problem of …</p>
-<p>Our approach to solving this problem is to …</p>
-<p>The key findings we will present on are: …</p>
-<p>Some of the limitations were/we will be using this now for/our future work will be …</p>
-<p>More information can be found on the corresponding <a href="link to the repo">Github repository</a></p>
+<p>Our final project is motivated by the problem of creating a color palette from images. The approach we took is to take the red-green-blue values from the image and use k-means clustering to group the most similar colors. With the colors generated, we implement a method to check color contrasts to verify that the palette has colors that are distinguishable to the human eye.</p>
+<p>In addition to creating a palette, we also created a function to create the colorblind equivalent image using the common types of colorblindness (red, green, and blue) and used the same k-means clustering over the filtered image to create a palette.</p>
+<p>Although we have a method to check for small color contrasts, colors from an image may not be optimized for data visualizations. This is especially true with the colorblind filters since color is inherently removed from the source image, leaving less color differentiation.</p>
+<p>More information can be found on the corresponding <a href="https://github.com/Hiiiua/Photopal">Github repository</a></p>
 
 
 </section>
