@@ -30,7 +30,7 @@ Answer: Once using the plot function you are building the base for your figure. 
 
 Given your data, you could use the following code to accomplish your task.
 
-`{r}
+```{r}
 x  <- seq(-2, 2, 0.05)
 y1 <- pnorm(x)
 y2 <- pnorm(x, 1, 1)
@@ -41,6 +41,7 @@ plot(x, y2, type = "l", col = "green")
 plot(x, y1, type = "l", col = "red") +
 lines(x, y2, type = "l", col = "green")
 ```
+
 This will produce the following figure. 
 
 <img width="1031" alt="Solution" src="https://user-images.githubusercontent.com/100876336/214467489-4c7af004-e517-4576-84ee-10448abe476f.png">
